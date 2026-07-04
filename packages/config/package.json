@@ -1,0 +1,10 @@
+{
+  "name": "@lotus/config",
+  "version": "0.1.0",
+  "private": true,
+  "main": "tailwind.config.js",
+  "exports": {
+    "./tailwind": "./tailwind.config.js",
+    "./tsconfig": "./tsconfig.json"
+  }
+}
