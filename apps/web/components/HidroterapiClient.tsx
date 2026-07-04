@@ -24,19 +24,19 @@ export function HidroterapiClient() {
     {
       title: "Rehabilitasi Motorik & Stroke",
       desc: "Lingkungan air hangat mempermudah latihan gerak, melatih koordinasi motorik, serta melatih keseimbangan tubuh dengan risiko cedera jatuh nol.",
-      img: "/images/lotus_treatment_hydro_adult_float_therapy_therapist.jpg",
+      img: "/images/lotus_treatment_hydro_adult_dumbbell_therapy.jpg",
       bg: "bg-peach-soft",
     },
     {
       title: "Relaksasi Saraf & Otot",
       desc: "Jet aliran air hangat bertekanan melakukan pemijatan mikro pada otot-otot tegang, melancarkan aliran darah, serta menenangkan pikiran.",
-      img: "/images/lotus_treatment_hydro_patient_floating_alone.jpg",
+      img: "/images/lotus_treatment_hydro_equipment_noodle_front.jpg",
       bg: "bg-blush-soft",
     },
     {
       title: "Tumbuh Kembang & Bumil",
       desc: "Menghadirkan sarana aman untuk stimulasi gerak motorik anak-anak dan olahraga kardio kehamilan yang aman bebas cemas benturan.",
-      img: "/images/lotus_treatment_hydro_female_hijab_float_front.jpg",
+      img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
       bg: "bg-sand-soft",
     },
   ];
