@@ -4,15 +4,30 @@ import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
-import { motion } from "framer-motion";
-import { Check, Calendar, MessageSquare, AlertCircle } from "lucide-react";
+import { Check } from "lucide-react";
 
 export default function AkupunkturPage() {
-  const benefits = [
-    { title: "Meredakan Nyeri Kronis", desc: "Sangat efektif untuk migrain, nyeri punggung, leher, dan nyeri sendi secara alami tanpa ketergantungan obat." },
-    { title: "Mengurangi Stres & Kecemasan", desc: "Membantu tubuh melepaskan endorfin, hormon bahagia alami, untuk merilekskan sistem saraf Anda." },
-    { title: "Memperbaiki Kualitas Tidur", desc: "Mengatasi insomnia dan menyeimbangkan siklus sirkadian agar Anda bangun dengan segar." },
-    { title: "Meningkatkan Energi & Imunitas", desc: "Menyeimbangkan aliran energi (Qi) tubuh untuk mengembalikan vitalitas alami Anda." },
+  const applications = [
+    {
+      title: "Anak-Anak (Tumbuh Kembang)",
+      desc: "Membantu menstimulasi tumbuh kembang optimal anak, meningkatkan konsentrasi belajar, menjaga stabilitas emosi, serta meningkatkan imunitas tubuh secara alami.",
+      bg: "bg-peach-soft",
+    },
+    {
+      title: "Kesehatan Dewasa & Lansia",
+      desc: "Mengatasi keluhan umum seperti vertigo, gerd, hipertensi, diabetes, pemulihan stroke, nyeri sendi, saraf kejepit, hingga meredakan mual dan muntah akibat efek samping kemoterapi.",
+      bg: "bg-sage-soft",
+    },
+    {
+      title: "Reproduksi & Hormonal",
+      desc: "Mendukung program kehamilan alami (promil) serta persiapan program bayi tabung (IVF) dengan menyeimbangkan hormon reproduksi.",
+      bg: "bg-blush-soft",
+    },
+    {
+      title: "Slimming & Estetika Wajah",
+      desc: "Solusi alami untuk mengatasi jerawat (acne), menyamarkan kerutan wajah, serta merangsang kolagen untuk pengencangan kulit alami tanpa bahan kimia obat.",
+      bg: "bg-sand-soft",
+    },
   ];
 
   return (
@@ -36,12 +51,12 @@ export default function AkupunkturPage() {
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
-                Rasakan terapi tusuk jarum kuno yang disempurnakan dengan pendekatan medis modern. Ditangani oleh terapis ahli dalam ruangan yang 100% privat, tenang, dan higienis.
+                Rasakan terapi tusuk jarum kuno yang menggunakan media berupa jarum steril sekali pakai (disposable sterile needle), ditusukkan secara presisi untuk mengembalikan harmonisasi sistem saraf, peredaran darah, hormonal, dan imunitas Anda.
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Akupunktur"
+                  href="https://wa.me/6281802537509?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Akupunktur"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-dark font-bold text-sm px-8 py-4"
@@ -49,7 +64,7 @@ export default function AkupunkturPage() {
                   Pesan Sesi Akupunktur
                 </a>
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20mau%20tanya%20dulu%20tentang%20Akupunktur"
+                  href="https://wa.me/6281802537509?text=Halo%20Lotus%2C%20mau%20tanya%20dulu%20tentang%20Akupunktur"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-outline font-bold text-sm px-8 py-4"
@@ -85,13 +100,13 @@ export default function AkupunkturPage() {
           <div className="grid lg:grid-cols-[1.5fr_2fr] gap-12 lg:gap-20">
             <div>
               <span className="tag-pill bg-espresso/5 text-espresso/70 font-semibold text-xs mb-4 inline-block">
-                Proses Terapi
+                Metode Diagnosa
               </span>
               <h2 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight tracking-tight">
-                Apa yang Kamu Dapatkan di Sesi Pertamamu?
+                Bagaimana Diagnosa Akupunktur Lotus Ditegakkan?
               </h2>
               <p className="font-sans text-espresso/60 mt-4 leading-relaxed">
-                Kami memastikan setiap sesi berjalan dengan aman, steril, dan bebas rasa khawatir. Kami menggunakan jarum sekali pakai kualitas premium yang sangat tipis untuk meminimalkan ketidaknyamanan.
+                Kami tidak melakukan tindakan secara sembarangan. Sebelum memulai, kami melakukan rangkaian pemeriksaan holistik menyeluruh demi memastikan stimulasi titik tubuh Anda tepat sasaran.
               </p>
             </div>
             
@@ -101,9 +116,9 @@ export default function AkupunkturPage() {
                   1
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Konsultasi Personal</h3>
+                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Anamnesa & Palpasi Nadi</h3>
                   <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Terapis kami akan memeriksa kondisi fisik, denyut nadi, serta riwayat kesehatanmu untuk menentukan titik akupunktur terbaik yang sesuai dengan kebutuhan tubuhmu.
+                    Terapis kami akan melakukan wawancara medis mendalam serta meraba denyut nadi Anda untuk mengukur kekuatan dan keseimbangan aliran energi organ vital tubuh.
                   </p>
                 </div>
               </div>
@@ -113,9 +128,9 @@ export default function AkupunkturPage() {
                   2
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Sesi Penjaruman yang Rileks</h3>
+                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Pemeriksaan Visual Lidah</h3>
                   <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Jarum steril sekali pakai yang sangat tipis dimasukkan ke titik-titik meridian. Sebagian besar orang merasa sangat rileks dan bahkan tertidur selama sesi berlangsung.
+                    Kami melakukan pemeriksaan lidah (meliputi bentuk, warna, dan selaput lidah) yang secara klinis menggambarkan kondisi retensi cairan, panas, atau defisiensi energi di dalam tubuh Anda.
                   </p>
                 </div>
               </div>
@@ -125,9 +140,9 @@ export default function AkupunkturPage() {
                   3
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Pasca Sesi & Rekomendasi</h3>
+                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Kesesuaian 5 Unsur Tubuh</h3>
                   <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Terapis akan memberikan saran gaya hidup, asupan nutrisi, atau rencana perawatan lanjutan untuk membantu menjaga keseimbangan tubuh jangka panjang.
+                    Menganalisis kesesuaian sindrom klinis berdasarkan teori 5 Unsur Alami Tubuh (Kayu, Api, Tanah, Logam, dan Air) guna merancang peta titik stimulasi jarum yang harmonis bagi pemulihan Anda.
                   </p>
                 </div>
               </div>
@@ -136,26 +151,26 @@ export default function AkupunkturPage() {
         </div>
       </section>
 
-      {/* Benefits grid */}
-      <section className="section-pad">
+      {/* Application / Benefits Grid */}
+      <section className="section-pad bg-white">
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-sage/40 text-forest font-semibold text-xs mb-3 inline-block">
-              Manfaat Utama
+              Aplikasi Klinis
             </span>
             <h2 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight">
-              Mengapa Tubuhmu Membutuhkan Akupunktur?
+              Manfaat Akupunktur untuk Seluruh Keluarga
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
-            {benefits.map((b) => (
-              <div key={b.title} className="bg-sand-soft rounded-3xl p-8 flex flex-col gap-3">
-                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-terra flex-shrink-0">
+            {applications.map((app) => (
+              <div key={app.title} className={`${app.bg} rounded-3xl p-8 flex flex-col gap-3 hover:-translate-y-1 transition-transform duration-300`}>
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-terra flex-shrink-0 shadow-warm">
                   <Check size={16} />
                 </div>
-                <h3 className="font-display font-bold text-espresso text-xl">{b.title}</h3>
-                <p className="font-sans text-espresso/60 text-sm leading-relaxed">{b.desc}</p>
+                <h3 className="font-display font-bold text-espresso text-xl">{app.title}</h3>
+                <p className="font-sans text-espresso/65 text-sm leading-relaxed">{app.desc}</p>
               </div>
             ))}
           </div>

@@ -7,11 +7,20 @@ import { Marquee } from "@/components/Marquee";
 import { Check } from "lucide-react";
 
 export default function FisioterapiPage() {
-  const benefits = [
-    { title: "Pemulihan Cedera & Pasca Operasi", desc: "Membantu melatih kembali kekuatan dan rentang gerak tubuh Anda secara terstruktur dan bertahap." },
-    { title: "Manajemen Nyeri Muskuloskeletal", desc: "Mengurangi nyeri punggung, leher, bahu, dan lutut melalui terapi manual dan latihan spesifik." },
-    { title: "Fisioterapi Geriatri & Stroke", desc: "Program pemulihan gerak dan keseimbangan pasca stroke atau untuk menjaga keaktifan lansia." },
-    { title: "Ruang Fisioterapi Mandiri & Privat", desc: "Satu pasien per sesi. Anda mendapatkan perhatian penuh dari fisioterapis kami tanpa terdistraksi." },
+  const treatments = [
+    { title: "Nyeri & Persendian", desc: "Mengatasi keluhan pada area pinggang, bahu, leher, lutut, dan area persendian lainnya." },
+    { title: "Kelainan Tulang Belakang", desc: "Perawatan terapeutik khusus untuk masalah postur dan kelainan kelengkungan tulang belakang." },
+    { title: "Rehabilitasi Stroke & Pasca Operasi", desc: "Program terstruktur untuk melatih kembali gangguan motorik, keseimbangan, serta mempercepat pemulihan fisik." },
+    { title: "Kandungan & Tumbuh Kembang", desc: "Membimbing latihan fisik selama kehamilan, persiapan persalinan, serta stimulasi motorik tumbuh kembang anak." },
+  ];
+
+  const tools = [
+    "Manual Therapy",
+    "Neuromuskular Tapping (NMT)",
+    "Infra Red (IR)",
+    "Ultrasound (US)",
+    "Transcutaneus Electrical Stimulation (TENS)",
+    "Traksi Lumbal / Cervical",
   ];
 
   return (
@@ -35,12 +44,12 @@ export default function FisioterapiPage() {
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
-                Kembalikan fungsi gerak tubuh Anda secara optimal bersama fisioterapis profesional kami. Dilakukan di ruang privat yang dirancang hangat dan personal demi kenyamanan penyembuhan Anda.
+                Fisioterapi merupakan tindakan medis komprehensif untuk memelihara, memulihkan, dan memaksimalkan fungsi fisik secara keseluruhan pada seluruh rentang usia. Dilakukan dalam suasana privat demi pemulihan optimal Anda.
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Fisioterapi"
+                  href="https://wa.me/6281802537509?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Fisioterapi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-dark font-bold text-sm px-8 py-4"
@@ -48,12 +57,12 @@ export default function FisioterapiPage() {
                   Pesan Sesi Fisioterapi
                 </a>
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20mau%20konsultasi%20masalah%20fisioterapi"
+                  href="https://wa.me/6281802537509?text=Halo%20Lotus%2C%20mau%20konsultasi%20masalah%20fisioterapi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-outline font-bold text-sm px-8 py-4"
                 >
-                  Konsultasi Gratis
+                  Konsultasi Medis
                 </a>
               </div>
             </div>
@@ -84,51 +93,25 @@ export default function FisioterapiPage() {
           <div className="grid lg:grid-cols-[1.5fr_2fr] gap-12 lg:gap-20">
             <div>
               <span className="tag-pill bg-espresso/5 text-espresso/70 font-semibold text-xs mb-4 inline-block">
-                Pendekatan Kami
+                Fasilitas & Alat
               </span>
               <h2 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight tracking-tight">
-                Bagaimana Kami Membantu Anda Pulih?
+                Metode Terapi & Modalitas Modern Kami
               </h2>
               <p className="font-sans text-espresso/60 mt-4 leading-relaxed">
-                Kami percaya pemulihan fisik membutuhkan ketenangan pikiran. Lingkungan kami dirancang ramah untuk ibu rumah tangga, pekerja kantoran, olahragawan, maupun lansia.
+                Kami menggabungkan terapi manual (kinesioterapi/mobilisasi gerak) dengan dukungan modalitas alat fisioterapi bersertifikat klinis demi mempercepat regenerasi jaringan tubuh Anda.
               </p>
             </div>
             
-            <div className="flex flex-col gap-8">
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-white shadow-warm flex items-center justify-center font-display font-black text-espresso text-lg flex-shrink-0">
-                  1
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Asesmen Gerak & Fungsi</h3>
-                  <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Kami melakukan pemeriksaan menyeluruh pada postur, kekuatan otot, koordinasi saraf, dan pola jalan Anda untuk mendeteksi akar masalah nyeri atau keterbatasan gerak Anda.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-white shadow-warm flex items-center justify-center font-display font-black text-espresso text-lg flex-shrink-0">
-                  2
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Terapi Manual & Stimulasi</h3>
-                  <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Kombinasi terapi pijat medis khusus otot, mobilisasi sendi, dan stimulasi menggunakan alat fisioterapi modern untuk meredakan radang dan nyeri dengan cepat.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-white shadow-warm flex items-center justify-center font-display font-black text-espresso text-lg flex-shrink-0">
-                  3
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Latihan Penguatan Mandiri</h3>
-                  <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Fisioterapis kami membimbing Anda melakukan gerakan rehabilitasi yang tepat dan aman agar dapat Anda praktikkan di rumah untuk mencegah nyeri datang kembali.
-                  </p>
-                </div>
+            <div className="flex flex-col gap-6">
+              <h3 className="font-display font-bold text-espresso text-lg">Alat & Terapi yang Tersedia:</h3>
+              <div className="grid sm:grid-cols-2 gap-4">
+                {tools.map((tool) => (
+                  <div key={tool} className="flex items-center gap-3 bg-white p-4 rounded-2xl shadow-warm">
+                    <span className="text-terra text-base">✦</span>
+                    <span className="font-sans text-xs font-semibold text-espresso/80">{tool}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -140,21 +123,21 @@ export default function FisioterapiPage() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-sand/40 text-espresso/70 font-semibold text-xs mb-3 inline-block">
-              Manfaat Utama
+              Aplikasi Klinis
             </span>
             <h2 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight">
-              Kenapa Pilih Fisioterapi di Lotus?
+              Menyelesaikan Berbagai Masalah Fisik
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
-            {benefits.map((b) => (
-              <div key={b.title} className="bg-sand-soft rounded-3xl p-8 flex flex-col gap-3">
-                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-terra flex-shrink-0">
+            {treatments.map((t) => (
+              <div key={t.title} className="bg-sand-soft rounded-3xl p-8 flex flex-col gap-3">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-terra flex-shrink-0 shadow-warm">
                   <Check size={16} />
                 </div>
-                <h3 className="font-display font-bold text-espresso text-xl">{b.title}</h3>
-                <p className="font-sans text-espresso/60 text-sm leading-relaxed">{b.desc}</p>
+                <h3 className="font-display font-bold text-espresso text-xl">{t.title}</h3>
+                <p className="font-sans text-espresso/60 text-sm leading-relaxed">{t.desc}</p>
               </div>
             ))}
           </div>

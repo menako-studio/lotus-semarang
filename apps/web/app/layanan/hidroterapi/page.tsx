@@ -7,11 +7,11 @@ import { Marquee } from "@/components/Marquee";
 import { Check } from "lucide-react";
 
 export default function HidroterapiPage() {
-  const benefits = [
-    { title: "Mengurangi Beban Sendi", desc: "Daya apung air menopang berat badan hingga 90%, sangat meringankan tekanan pada sendi yang meradang." },
-    { title: "Melancarkan Aliran Darah", desc: "Suhu air hangat membantu melebarkan pembuluh darah, meningkatkan sirkulasi oksigen ke seluruh tubuh." },
-    { title: "Relaksasi Otot Maksimal", desc: "Tekanan air teratur membantu memijat otot-otot yang tegang dan memicu pelepasan ketegangan saraf." },
-    { title: "Privasi Total & Higienis", desc: "Satu-satunya kolam hidroterapi di Semarang yang disewakan secara privat per sesi demi kenyamanan penuh Anda." },
+  const treatments = [
+    { title: "Mereduksi Tekanan Sendi", desc: "Daya apung fisika air menopang berat badan Anda, meringankan tekanan sendi pinggang, lutut, dan kaki selama latihan." },
+    { title: "Pemulihan Stroke & Saraf", desc: "Latihan motorik dan keseimbangan pasca operasi/stroke menjadi jauh lebih mudah dilakukan di dalam air hangat." },
+    { title: "Relaksasi & Sirkulasi", desc: "Suhu hangat melancarkan aliran darah, mengurangi ketegangan saraf, dan memberikan efek relaksasi yang mempercepat penyembuhan." },
+    { title: "Tumbuh Kembang & Kehamilan", desc: "Sangat baik untuk latihan stimulasi gerak motorik anak-anak serta olahraga kehamilan yang aman bebas risiko benturan." },
   ];
 
   return (
@@ -35,12 +35,12 @@ export default function HidroterapiPage() {
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
-                Rasakan manfaat terapi air hangat bertekanan untuk pemulihan otot dan sendi. Dirancang khusus bagi Anda yang mendambakan privasi tanpa gangguan orang lain.
+                Hidroterapi merupakan tindakan fisioterapi yang menggunakan media air hangat. Adanya sifat fisika air meringankan massa tubuh sehingga membuat gerakan rehabilitasi terasa lebih ringan dan menyenangkan dibanding di darat.
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Hidroterapi"
+                  href="https://wa.me/6281802537509?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Hidroterapi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-dark font-bold text-sm px-8 py-4"
@@ -48,7 +48,7 @@ export default function HidroterapiPage() {
                   Pesan Sesi Hidroterapi
                 </a>
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20mau%20tanya%20detail%20kolam%20Hidroterapi"
+                  href="https://wa.me/6281802537509?text=Halo%20Lotus%2C%20mau%20tanya%20detail%20kolam%20Hidroterapi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-outline font-bold text-sm px-8 py-4"
@@ -87,10 +87,10 @@ export default function HidroterapiPage() {
                 Fasilitas Kolam
               </span>
               <h2 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight tracking-tight">
-                Mengapa Sesi Kolam Kami Berbeda?
+                Mengapa Hidroterapi Lotus Begitu Efektif?
               </h2>
               <p className="font-sans text-espresso/60 mt-4 leading-relaxed">
-                Kami menyediakan lingkungan bebas canggung yang ideal untuk rehabilitasi medis, ibu hamil, maupun kalangan Niqabi yang membutuhkan ruang aman dan tertutup.
+                Kondisi privat menjaga Anda bebas dari canggung, sementara suhu air hangat terapeutik yang terkendali merangsang relaksasi saraf secara alami.
               </p>
             </div>
             
@@ -100,9 +100,9 @@ export default function HidroterapiPage() {
                   1
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Suhu Air yang Diatur (Warm Pool)</h3>
+                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Relaksasi Apung Tubuh</h3>
                   <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Suhu air kolam kami dijaga pada kisaran 32°C hingga 34°C, suhu ideal untuk meredakan ketegangan otot dan mempercepat metabolisme tubuh.
+                    Sifat fisika air secara langsung mengurangi gaya gravitasi tubuh Anda, mengistirahatkan otot yang tegang, dan memudahkan sendi lutut/pinggang bergerak bebas nyeri.
                   </p>
                 </div>
               </div>
@@ -112,9 +112,9 @@ export default function HidroterapiPage() {
                   2
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Jet Air Terapeutik</h3>
+                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Jet Aliran Air Hangat</h3>
                   <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Semburan air bertekanan yang diarahkan secara presisi ke area otot atau sendi yang lelah untuk memberikan efek pijatan lembut.
+                    Kolam dilengkapi dengan semburan tekanan air terapeutik pada titik optimal untuk membantu memicu sirkulasi darah serta pemulihan otot pasca cedera/operasi.
                   </p>
                 </div>
               </div>
@@ -124,9 +124,9 @@ export default function HidroterapiPage() {
                   3
                 </div>
                 <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Sterilisasi Kualitas Air</h3>
+                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Higienitas Terjaga</h3>
                   <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Sistem filtrasi dan sterilisasi air dijalankan secara berkala sebelum dan sesudah sesi untuk menjamin higienitas air yang maksimal bagi kulit sensitif.
+                    Air disaring dan distabilkan secara teratur agar higienitas terjaga 100%, ramah untuk kulit anak-anak maupun terapi ibu hamil.
                   </p>
                 </div>
               </div>
@@ -140,21 +140,21 @@ export default function HidroterapiPage() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-peach/40 text-terra font-semibold text-xs mb-3 inline-block">
-              Keunggulan Utama
+              Aplikasi Klinis
             </span>
             <h2 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight">
-              Manfaat Hidroterapi untuk Tubuh
+              Manfaat Nyata Terapi Air Hangat
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
-            {benefits.map((b) => (
-              <div key={b.title} className="bg-peach-soft/30 rounded-3xl p-8 flex flex-col gap-3">
-                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-forest flex-shrink-0">
+            {treatments.map((t) => (
+              <div key={t.title} className="bg-peach-soft/30 rounded-3xl p-8 flex flex-col gap-3">
+                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-forest flex-shrink-0 shadow-warm">
                   <Check size={16} />
                 </div>
-                <h3 className="font-display font-bold text-espresso text-xl">{b.title}</h3>
-                <p className="font-sans text-espresso/60 text-sm leading-relaxed">{b.desc}</p>
+                <h3 className="font-display font-bold text-espresso text-xl">{t.title}</h3>
+                <p className="font-sans text-espresso/60 text-sm leading-relaxed">{t.desc}</p>
               </div>
             ))}
           </div>

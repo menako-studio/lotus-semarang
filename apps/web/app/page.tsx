@@ -121,7 +121,7 @@ function AboutSection() {
             Sudah lebih dari <strong className="text-espresso font-semibold">800 pasien</strong> yang mempercayakan kesehatan mereka kepada kami.
           </p>
           <a
-            href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20saya%20ingin%20konsultasi"
+            href="https://wa.me/6281802537509?text=Halo%20Lotus%2C%20saya%20ingin%20konsultasi"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-pill-dark inline-flex gap-2 py-4 px-8 text-base"
