@@ -20,7 +20,7 @@ const SEPARATOR = "✦";
 
 interface MarqueeProps {
   /** Background color token (default: espresso) */
-  bg?: "espresso" | "peach" | "sage" | "terra";
+  bg?: "espresso" | "peach" | "sage" | "terra" | "sand";
   /** Text color */
   textClass?: string;
   /** Speed variant */
@@ -37,6 +37,7 @@ export function Marquee({
     peach:    "bg-peach",
     sage:     "bg-sage",
     terra:    "bg-terra",
+    sand:     "bg-sand",
   };
 
   return (
