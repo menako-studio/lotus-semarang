@@ -87,9 +87,7 @@ export function Hero() {
             {/* CTA Buttons */}
             <motion.div className="flex flex-wrap gap-3" {...fadeUp(0.4)}>
               <a
-                href="https://wa.me/6287700303645"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/reservasi"
                 className="btn-pill-dark group gap-2.5 py-4 px-8 text-base"
               >
                 Mulai Perjalananmu

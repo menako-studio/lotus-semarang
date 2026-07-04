@@ -44,16 +44,14 @@ export function Footer() {
             Tim kami siap menyambut kamu.
           </motion.p>
           <motion.a
-            href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20saya%20ingin%20reservasi%20jadwal"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/reservasi"
             className="inline-flex items-center gap-2.5 bg-cream text-espresso rounded-full font-sans font-bold px-8 py-4 text-base hover:bg-sand transition-all duration-300 hover:scale-105 shadow-warm-lg"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            💬 Chat via WhatsApp
+            🌸 Reservasi Jadwal Terapi
           </motion.a>
         </div>
       </div>

@@ -7,6 +7,7 @@ import { ServicesGrid } from "@/components/ServicesGrid";
 import { Footer }       from "@/components/Footer";
 
 import { ReelsShowcase } from "@/components/ReelsShowcase";
+import { SearchableFaq } from "@/components/SearchableFaq";
 
 export const metadata: Metadata = {
   title: "Lotus Health, Beauty & Care — Wellness Privat di Semarang",
@@ -182,57 +183,109 @@ export default function HomePage() {
       {/* ── 6.5. REELS VIDEO SHOWCASE ── */}
       <ReelsShowcase />
 
-      {/* ── 7. TESTIMONIALS SECTION ── */}
+      {/* ── 7. GOOGLE REVIEWS SHOWCASE ── */}
       <section className="section-pad bg-white">
         <div className="container-wellness">
-          <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="tag-pill bg-blush/40 text-espresso font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Testimoni Pasien
-            </span>
-            <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              Kata Mereka yang Telah Sembuh
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-peach-soft/30 rounded-3xl p-8 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="text-terra text-lg">★★★★★</div>
-              <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                &ldquo;Sangat terbantu dengan sesi hidroterapi pasca operasi lutut saya. Kolamnya benar-benar privat, airnya hangat, dan instruktur mendampingi dengan sabar. Proses pemulihan saya terasa jauh lebih cepat dan nyaman.&rdquo;
-              </p>
-              <div className="mt-auto border-t border-espresso/5 pt-4">
-                <span className="font-display font-bold text-espresso text-sm">Ibu Riana</span>
-                <p className="font-sans text-[0.7rem] text-espresso/45">Pasien Hidroterapi, Semarang</p>
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            
+            {/* Left: Google Ratings Card */}
+            <div className="lg:col-span-4 bg-sand-soft/30 rounded-[2.5rem] p-8 border border-espresso/5 flex flex-col gap-6 sticky top-32">
+              <div className="flex items-center gap-3">
+                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm font-sans font-black text-espresso text-lg">
+                  G
+                </span>
+                <div>
+                  <div className="font-display font-bold text-espresso text-base">Ulasan Google Maps</div>
+                  <div className="font-sans text-xs text-espresso/50">Lotus Health, Beauty & Care</div>
+                </div>
               </div>
+
+              <div>
+                <div className="font-display font-black text-espresso text-6xl leading-none">4.9</div>
+                <div className="text-terra text-xl mt-2">★★★★★</div>
+                <p className="font-sans text-espresso/60 text-xs mt-2">
+                  Berdasarkan ulasan asli dari pasien terverifikasi di Semarang.
+                </p>
+              </div>
+
+              <a
+                href="https://maps.app.goo.gl/PWpA655K59Gq82Xy9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill-dark text-center w-full py-3.5 text-xs font-bold"
+              >
+                Tulis Ulasan di Google
+              </a>
             </div>
 
-            {/* Testimonial 2 */}
-            <div className="bg-sage-soft/30 rounded-3xl p-8 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="text-forest text-lg">★★★★★</div>
-              <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                &ldquo;Sebagai Niqabi, awalnya saya kesulitan mencari kolam renang terapi yang benar-benar privat. Di Lotus, privasinya luar biasa terjaga. Akupunktur kecantikan wajahnya juga membuat kulit segar alami.&rdquo;
-              </p>
-              <div className="mt-auto border-t border-espresso/5 pt-4">
-                <span className="font-display font-bold text-espresso text-sm">Fathimah</span>
-                <p className="font-sans text-[0.7rem] text-espresso/45">Pasien Akupunktur & Kolam Renang Privat</p>
+            {/* Right: Curated Reviews list */}
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              
+              {/* Review 1 */}
+              <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-peach-soft text-terra font-display font-black flex items-center justify-center text-sm">
+                      IR
+                    </div>
+                    <div>
+                      <h4 className="font-display font-bold text-espresso text-sm">Ibu Riana</h4>
+                      <span className="font-sans text-[0.65rem] text-espresso/45">Pasien Hidroterapi, Gisikdrono</span>
+                    </div>
+                  </div>
+                  <div className="text-terra text-sm">★★★★★</div>
+                </div>
+                <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
+                  &ldquo;Sangat terbantu dengan sesi hidroterapi pasca operasi lutut saya. Kolamnya benar-benar privat, airnya hangat konstan, dan instruktur mendampingi dengan sabar. Proses pemulihan saya terasa jauh lebih cepat dan tidak menegangkan.&rdquo;
+                </p>
               </div>
+
+              {/* Review 2 */}
+              <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-sage-soft text-forest font-display font-black flex items-center justify-center text-sm">
+                      FT
+                    </div>
+                    <div>
+                      <h4 className="font-display font-bold text-espresso text-sm">Fathimah</h4>
+                      <span className="font-sans text-[0.65rem] text-espresso/45">Pasien Akupunktur, Semarang Barat</span>
+                    </div>
+                  </div>
+                  <div className="text-terra text-sm">★★★★★</div>
+                </div>
+                <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
+                  &ldquo;Sebagai wanita berhijab (Niqabi), saya sangat pemilih dengan tempat terapi. Di Lotus, privasinya luar biasa terjaga (100% private suite). Terapisnya wanita ramah-ramah dan tindakan akupunktur wajahnya membuat kulit kencang alami.&rdquo;
+                </p>
+              </div>
+
+              {/* Review 3 */}
+              <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-sand-soft text-espresso font-display font-black flex items-center justify-center text-sm">
+                      BG
+                    </div>
+                    <div>
+                      <h4 className="font-display font-bold text-espresso text-sm">Bapak Gunawan</h4>
+                      <span className="font-sans text-[0.65rem] text-espresso/45">Pasien Fisioterapi, Ngaliyan</span>
+                    </div>
+                  </div>
+                  <div className="text-terra text-sm">★★★★★</div>
+                </div>
+                <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
+                  &ldquo;Saya menderita saraf kejepit di punggung bawah. Menjalani fisioterapi modalitas Ultrasound dan TENS di sini dipadu dengan latihan manual sangat meringankan nyeri. Terapisnya menjelaskan secara ilmiah dan mengedukasi gerakan mandiri di rumah.&rdquo;
+                </p>
+              </div>
+
             </div>
 
-            {/* Testimonial 3 */}
-            <div className="bg-sand-soft/50 rounded-3xl p-8 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="text-espresso-400 text-lg">★★★★★</div>
-              <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                &ldquo;Mengobati saraf kejepit di punggung bawah saya dengan fisioterapi modalitas TENS dan traksi di sini. Terapis menjelaskan secara ilmiah apa yang terjadi dan membimbing saya latihan mandiri di rumah.&rdquo;
-              </p>
-              <div className="mt-auto border-t border-espresso/5 pt-4">
-                <span className="font-display font-bold text-espresso text-sm">Bapak Gunawan</span>
-                <p className="font-sans text-[0.7rem] text-espresso/45">Pasien Fisioterapi, Semarang</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
+
+      {/* ── 7.5. SEARCHABLE FAQ SECTION ── */}
+      <SearchableFaq />
 
       {/* ── 8. FOOTER WITH CTA ── */}
       <Footer />

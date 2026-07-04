@@ -103,9 +103,7 @@ export function Navbar() {
           {/* CTA + Mobile Toggle */}
           <div className="flex items-center gap-3">
             <a
-              href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20ingin%20reservasi%20jadwal"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/reservasi"
               className="hidden sm:inline-flex btn-pill-dark text-xs px-6 py-3 font-bold"
             >
               Reservasi Jadwal
@@ -170,7 +168,7 @@ export function Navbar() {
 
             <div className="mt-auto flex flex-col gap-4">
               <a
-                href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20ingin%20reservasi%20jadwal"
+                href="/reservasi"
                 className="btn-pill-dark w-full justify-center text-center py-4 font-bold"
                 onClick={() => setIsOpen(false)}
               >
