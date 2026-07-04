@@ -6,6 +6,8 @@ import { Marquee }      from "@/components/Marquee";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { Footer }       from "@/components/Footer";
 
+import { ReelsShowcase } from "@/components/ReelsShowcase";
+
 export const metadata: Metadata = {
   title: "Lotus Health, Beauty & Care — Wellness Privat di Semarang",
 };
@@ -176,6 +178,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── 6.5. REELS VIDEO SHOWCASE ── */}
+      <ReelsShowcase />
 
       {/* ── 7. TESTIMONIALS SECTION ── */}
       <section className="section-pad bg-white">
