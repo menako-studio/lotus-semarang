@@ -1,6 +1,8 @@
-# 🌸 Lotus Semarang — Frontend Architecture
+# 🌸 Lotus Semarang — Accessible Modern Wellness Web App
 
-> *Suaka kolam renang privat dan hydrotherapy eksklusif di Semarang, Indonesia.*
+> *Suaka kolam renang privat, akupunktur medis, fisioterapi, dan swim course eksklusif di Semarang, Indonesia.*
+>
+> Desain dan layout terintegrasi yang diadaptasi dari benchmark estetika visual **wthn.com** (Accessible Modern Wellness: hangat, aman, privat, dan sedikit artsy).
 
 ---
 
@@ -9,144 +11,87 @@
 ```
 lotus-semarang/
 ├── apps/
-│   ├── web/                           # Public-facing website (Next.js 14)
+│   ├── web/                           # Website Pasien (Next.js 14, App Router)
 │   │   ├── app/
-│   │   │   ├── layout.tsx             # Root layout + next/font injection
-│   │   │   ├── page.tsx               # Home page composition
-│   │   │   └── globals.css            # Design tokens + base styles
+│   │   │   ├── layout.tsx             # Root layout + Google Fonts + SEO
+│   │   │   ├── page.tsx               # Halaman Utama (Server Component)
+│   │   │   ├── tentang-kami/page.tsx  # Halaman Profil Klinik (Server Component)
+│   │   │   ├── layanan/
+│   │   │   │   ├── akupunktur/page.tsx # Detail Akupunktur (Server Component)
+│   │   │   │   ├── hidroterapi/page.tsx# Detail Hidroterapi (Server Component)
+│   │   │   │   ├── fisioterapi/page.tsx# Detail Fisioterapi (Server Component)
+│   │   │   │   └── swim-course/page.tsx# Detail Swim Course (Server Component)
+│   │   │   └── globals.css            # Desain Token + Custom CSS Utility
 │   │   ├── components/
-│   │   │   ├── Navbar.tsx             # Sticky transparent→frosted navbar
-│   │   │   ├── Hero.tsx               # Full-screen hero + parallax
-│   │   │   ├── Sanctuary.tsx          # About section + editorial grid
-│   │   │   └── BookingFlow.tsx        # 3-step reservation wizard
-│   │   ├── next.config.js
-│   │   ├── tailwind.config.js         # Extends @lotus/config
+│   │   │   ├── Navbar.tsx             # Sticky navbar transparan → blur + Logo
+│   │   │   ├── Hero.tsx               # Split Hero Layout + Real optimized image
+│   │   │   ├── ServicesGrid.tsx       # 2x2 color-blocked grid WTHN-style
+│   │   │   ├── Footer.tsx             # Informasi alamat, WA, & Instagram
+│   │   │   ├── Marquee.tsx            # Running text penanda sirkulasi layanan
+│   │   │   ├── ReelsShowcase.tsx      # Showcase video Reels Instagram/YT
+│   │   │   └── *Client.tsx            # Client wrapper interaktif untuk SEO
+│   │   ├── next.config.js             # Konfigurasi Next.js (Remote YouTube image)
 │   │   └── package.json
 │   │
-│   └── admin/                         # Admin dashboard (Next.js 14, stub)
-│       ├── next.config.js
-│       └── package.json
+│   └── admin/                         # Dashboard Admin (Next.js 14, stub)
 │
 ├── packages/
-│   ├── ui/                            # Shared component library
-│   │   ├── components/
-│   │   │   ├── SectionWrapper.tsx     # Consistent section rhythm
-│   │   │   ├── EyebrowLabel.tsx       # Uppercase caption labels
-│   │   │   ├── GhostButton.tsx        # Ghost/outline CTA button
-│   │   │   └── DividerRule.tsx        # Editorial horizontal rule
-│   │   ├── lib/
-│   │   │   └── utils.ts               # cn() — clsx + tailwind-merge
-│   │   ├── index.ts                   # Barrel export
-│   │   └── package.json
-│   │
-│   └── config/                        # Shared configs
-│       ├── tailwind.config.js         # ← THE DESIGN SYSTEM
-│       ├── tsconfig.json
-│       └── package.json
+│   ├── ui/                            # Shared Component Library
+│   └── config/                        # Shared Tailwind & TypeScript Configs
 │
-├── turbo.json                         # Turborepo pipeline
+├── turbo.json                         # Turborepo build pipeline
 ├── pnpm-workspace.yaml
-├── package.json
-└── .gitignore
+└── README.md
 ```
 
 ---
 
-## Design System Tokens
+## Desain & Estetika Visual (WTHN-Style)
 
-### Color Palette
-| Token | Hex | Usage |
-|-------|-----|-------|
-| `ivory` | `#F9F6F0` | Primary background |
-| `stone` | `#C8BCA8` | Borders, dividers, muted elements |
-| `concrete` | `#D4CFC8` | Inset backgrounds |
-| `terracotta` | `#C17B5A` | Accent (photography-derived) |
-| `charcoal` | `#2C2B29` | Text primary, dark sections |
-| `gold` | `#B5995A` | Micro-accents, focus rings |
+### 1. Sistem Warna (Murni Putih & Pastel Hangat)
+* **Background Utama:** `#FFFFFF` (Murni Putih, sangat bersih dan profesional).
+* **Warna Aksen Pastel (Tailwind Config):**
+  * `peach` / `peach-soft`: Representasi kehangatan akupunktur.
+  * `sage` / `sage-soft`: Nuansa sejuk hidroterapi.
+  * `blush` / `blush-soft`: Kelembutan fisioterapi.
+  * `sand` / `sand-soft`: Sentuhan alami swim course.
+  * `espresso`: Warna teks utama dan tombol kontras gelap.
+  * `terra`: Warna aksen merah bata hangat.
 
-### Typography
-| Role | Font | Weight |
-|------|------|--------|
-| Heading / Display | Playfair Display | 400 (Regular), 500, 600, 700 |
-| Body / Nav / Caption | Inter | 300 (Light), 400, 500, 600 |
-
-### Motion Easings
-- `--ease-luxury`: `cubic-bezier(0.25, 0.1, 0.25, 1)` — smooth, refined
-- `--ease-reveal`: `cubic-bezier(0.76, 0, 0.24, 1)` — editorial slide
-- `--ease-silk`: `cubic-bezier(0.45, 0.05, 0.55, 0.95)` — silky image zoom
+### 2. Tipografi Premium (Google Fonts)
+* **Display / Headings:** **Fraunces** (Serif chunky bergaya artsy, modern, dan kokoh).
+* **Body / UI Elements:** **DM Sans** (Sans-serif bersih, netral, sangat mudah dibaca di mobile).
 
 ---
 
-## Getting Started
+## Fitur Unggulan & Optimasi (Best Practices)
+
+1. **Optimasi Pagespeed (Next.js Image):**
+   * Semua aset foto real beresolusi tinggi telah di-resize ke ukuran maksimal lebar **1400px** dan dikompresi ke WebP/JPG kualitas optimal.
+   * Menggunakan parameter Next.js Image `sizes`, `priority` (untuk LCP di atas lipatan layar), dan kompresi `quality` untuk meminimalkan waktu tunggu pemuatan gambar.
+2. **Kepatuhan SEO Next.js App Router:**
+   * Memisahkan logika halaman interaktif (Client Components, contoh: state FAQ accordion/motion) ke folder `components/` dengan nama suffix `*Client.tsx`.
+   * Menjadikan file `page.tsx` rute sebagai **Server Component** murni untuk mengekspor objek `metadata` dinamis per halaman secara optimal guna meningkatkan peringkat pencarian di Google.
+3. **Instagram Reels Showcase:**
+   * Integrasi bagian video pendek Reels YouTube secara interaktif. Menggunakan *thumbnail image lazy load* dengan tombol putar melayang, serta memicu pemutaran video secara dinamis via *Floating Modal* demi menjaga nilai Pagespeed tetap sempurna.
+4. **Pusat Kontak Baru:**
+   * Menghubungkan seluruh formulir CTA di header, tombol halaman detail, dan tautan di footer ke kontak WhatsApp resmi: **`087700303645`** (Format: `6287700303645`).
+   * Menghubungkan profil Instagram ke akun baru: **`@lotus_semarang`**.
+
+---
+
+## Cara Menjalankan Aplikasi
 
 ```bash
-# Install dependencies
+# 1. Pasang dependensi monorepo
 pnpm install
 
-# Start development (both apps via Turborepo)
+# 2. Jalankan server development (apps/web di localhost:3000)
 pnpm dev
 
-# Web app only (localhost:3000)
-pnpm --filter @lotus/web dev
-
-# Admin only (localhost:3001)
-pnpm --filter @lotus/admin dev
-
-# Build all apps
+# 3. Jalankan kompilasi produksi (Type-check & Build)
 pnpm build
 ```
-
----
-
-## Component Architecture
-
-### `Navbar.tsx`
-- **Behavior**: Transparent → frosted ivory (`backdrop-blur`) on scroll
-- **Hide/Show**: Hides on scroll-down, reveals on scroll-up
-- **Logo**: SVG wordmark with `filter: grayscale(1)` monochrome treatment
-- **Mobile**: Fullscreen overlay menu with staggered Framer Motion reveal
-
-### `Hero.tsx`
-- **Background**: Full-screen image with CSS Ken Burns animation
-- **Parallax**: `useScroll` + `useTransform` for image/content depth separation
-- **Entrance**: Staggered `motion.div` with `variants` and `staggerChildren`
-- **CTA**: Solid ivory button + ghost "Kerahasiaan terjamin" privacy note
-
-### `Sanctuary.tsx`
-- **Layout**: `grid-cols-[55%_45%]` asymmetric split
-- **Images**: Staggered vertical offset (main + two inset offset by `mt-8`)
-- **Text**: `lg:sticky lg:top-32` for reading-while-scrolling effect
-- **Scroll-trigger**: `useInView` from Framer Motion, `once: true`
-
-### `BookingFlow.tsx`
-- **Pattern**: Multi-step wizard with `AnimatePresence` directional slide
-- **Steps**: Tanggal → Detail Tamu → Konfirmasi (3 steps)
-- **Progress**: Animated `motion.div` progress bar
-- **Privacy UX**: Lock icon, privacy note, consent checkbox
-
----
-
-## Photo Replacement Checklist
-
-Replace Unsplash placeholders with actual Lotus Semarang photography:
-
-- [ ] `Hero.tsx` — `HERO_IMAGE` const → actual hero pool photo
-- [ ] `Sanctuary.tsx` → `images.main`, `images.inset`, `images.detail`
-- [ ] `page.tsx` (Gallery) → 4 gallery images
-- [ ] `/public/og-image.jpg` → Open Graph social card
-- [ ] `/public/favicon.svg` → Brand favicon
-
----
-
-## Next Steps (Phase 2)
-
-- [ ] Fasilitas section — full component with image cards
-- [ ] Gallery lightbox — click-to-expand with Framer Motion layout animation
-- [ ] Testimonials / Ulasan section
-- [ ] WhatsApp integration for booking confirmation
-- [ ] Admin dashboard — reservation management table
-- [ ] `next-sitemap` for SEO sitemap generation
-- [ ] Vercel deployment configuration
 
 ---
 
