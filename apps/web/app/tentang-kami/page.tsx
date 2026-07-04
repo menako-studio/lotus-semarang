@@ -74,11 +74,13 @@ export default function TentangKamiPage() {
           >
             <div className="absolute inset-0 bg-espresso/5 z-10 pointer-events-none" />
             <Image
-              src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=1600&q=85&fit=crop"
+              src="/images/team-lotus.jpg"
               alt="Lotus Wellness Retreat Semarang"
               fill
               className="object-cover"
               priority
+              sizes="100vw"
+              quality={85}
             />
           </motion.div>
         </div>
@@ -118,10 +120,12 @@ export default function TentangKamiPage() {
               <div className="absolute inset-0 rounded-[3rem] bg-peach-soft rotate-2" />
               <div className="relative rounded-[2.5rem] overflow-hidden aspect-[3/4] shadow-warm-lg z-10">
                 <Image
-                  src="https://images.unsplash.com/photo-1594824813573-246434e33963?w=800&q=85&fit=crop"
+                  src="/images/lotus_team_founder_doctor_portrait.jpg"
                   alt="drg. Arini Jannata, S.Tr. Akup, MM"
                   fill
                   className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  quality={85}
                 />
               </div>
             </div>
@@ -212,34 +216,42 @@ export default function TentangKamiPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="relative rounded-3xl overflow-hidden aspect-square img-zoom shadow-warm">
               <Image
-                src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80&fit=crop"
+                src="/images/lotus_interior_reception_greeting_staff.jpg"
                 alt="Ruang Tunggu Santai"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
+                quality={80}
               />
             </div>
             <div className="relative rounded-3xl overflow-hidden aspect-square img-zoom shadow-warm mt-4 md:mt-0">
               <Image
-                src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80&fit=crop"
+                src="/images/lotus_hydrotherapy_pool_male_floating_device.jpg"
                 alt="Area Hidroterapi"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
+                quality={80}
               />
             </div>
             <div className="relative rounded-3xl overflow-hidden aspect-square img-zoom shadow-warm">
               <Image
-                src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?w=600&q=80&fit=crop"
+                src="/images/lotus_tools_acupuncture_needles_steel_jar.jpg"
                 alt="Detail Aromaterapi & Lilin"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
+                quality={80}
               />
             </div>
             <div className="relative rounded-3xl overflow-hidden aspect-square img-zoom shadow-warm mt-4 md:mt-0">
               <Image
-                src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80&fit=crop"
+                src="/images/lotus_equipment_kwd808_electro_acupuncture.jpg"
                 alt="Ruang Konsultasi Medis"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 50vw, 25vw"
+                quality={80}
               />
             </div>
           </div>

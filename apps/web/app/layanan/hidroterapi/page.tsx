@@ -63,10 +63,13 @@ export default function HidroterapiPage() {
               <div className="absolute inset-0 rounded-[3rem] bg-sage/20 -rotate-3" />
               <div className="relative rounded-[3rem] overflow-hidden aspect-[4/3] lg:aspect-[4/5] img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1576037722146-b28df2632723?w=800&q=80&fit=crop"
+                  src="/images/lotus_treatment_hydro_female_hijab_supine_wide.jpg"
                   alt="Kolam Hidroterapi Privat di Lotus Semarang"
                   fill
+                  priority
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={85}
                 />
               </div>
             </div>

@@ -79,10 +79,13 @@ export default function AkupunkturPage() {
               <div className="absolute inset-0 rounded-[3rem] bg-peach/20 -rotate-3" />
               <div className="relative rounded-[3rem] overflow-hidden aspect-[4/3] lg:aspect-[4/5] img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80&fit=crop"
+                  src="/images/lotus_treatment_body_back_acupuncture_female.jpg"
                   alt="Terapi Akupunktur di Lotus Semarang"
                   fill
+                  priority
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={85}
                 />
               </div>
             </div>

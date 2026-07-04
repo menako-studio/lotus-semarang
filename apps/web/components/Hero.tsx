@@ -168,13 +168,13 @@ export function Hero() {
                 style={{ backgroundColor: "#F2C4A8", opacity: 0.15 }}
               />
               <Image
-                src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=900&q=85&fit=crop"
+                src="/images/lotus_consultation_doctor_patient_model_hijab.jpg"
                 alt="Terapis profesional Lotus Health memberikan perawatan dalam suasana yang nyaman dan privat"
                 fill
                 priority
                 quality={85}
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 90vw, 45vw"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </motion.div>

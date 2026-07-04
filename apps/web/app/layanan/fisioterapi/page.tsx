@@ -72,10 +72,13 @@ export default function FisioterapiPage() {
               <div className="absolute inset-0 rounded-[3rem] bg-blush/20 -rotate-3" />
               <div className="relative rounded-[3rem] overflow-hidden aspect-[4/3] lg:aspect-[4/5] img-zoom">
                 <Image
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&q=80&fit=crop"
+                  src="/images/lotus_treatment_physio_adult_ball_exercise_wide.jpg"
                   alt="Fisioterapi di Lotus Semarang"
                   fill
+                  priority
                   className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={85}
                 />
               </div>
             </div>
