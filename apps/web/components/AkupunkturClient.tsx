@@ -24,7 +24,7 @@ export function AkupunkturClient() {
     {
       title: "Dewasa & Lansia",
       desc: "Efektif untuk meredakan nyeri sendi, vertigo, gerd, hipertensi, saraf kejepit, migrain, pemulihan stroke, hingga mengurangi mual akibat kemoterapi.",
-      img: "/images/lotus_treatment_body_moxibustion_smoke_therapy.jpg",
+      img: "/images/lotus_treatment_facial_portrait_patient_elderly.jpg",
       bg: "bg-sage-soft",
     },
     {

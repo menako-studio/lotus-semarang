@@ -77,7 +77,7 @@ export default function HomePage() {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
               <div className="lg:col-span-6 order-2 lg:order-1 relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-warm-lg img-zoom">
                 <Image
-                  src="/images/lotus_staff_portrait_headshot_beige_hijab.jpg"
+                  src="/images/lotus_treatment_body_abdomen_male_patient.jpg"
                   alt="Konsultasi Diagnosa Medis Holistik"
                   fill
                   className="object-cover"

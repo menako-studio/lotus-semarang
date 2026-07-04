@@ -18,19 +18,19 @@ export function FisioterapiClient() {
     {
       title: "Nyeri & Persendian",
       desc: "Perawatan rehabilitatif komprehensif untuk meredakan nyeri pada pinggang, leher, bahu, lutut, dan masalah persendian gerak lainnya.",
-      img: "/images/lotus_treatment_physio_adult_ball_exercise_close.jpg",
+      img: "/images/lotus_treatment_physio_knee_mobilization_closeup.webp",
       bg: "bg-blush-soft",
     },
     {
       title: "Kelainan Tulang Belakang",
       desc: "Terapi manual terfokus untuk membantu memperbaiki kelainan kelengkungan tulang belakang dan memulihkan postur tubuh ideal Anda.",
-      img: "/images/lotus_staff_portrait_headshot_beige_hijab.jpg",
+      img: "/images/lotus_treatment_pediatric_spine_assessment_hijab.webp",
       bg: "bg-peach-soft",
     },
     {
       title: "Stroke & Pemulihan Motorik",
       desc: "Latihan pemulihan saraf dan gerak motorik yang terstruktur pasca stroke, cedera traumatis, maupun pasca tindakan operasi medis.",
-      img: "/images/lotus_treatment_body_arm_therapist_interaction.jpg",
+      img: "/images/lotus_treatment_physio_adult_ball_exercise_close.jpg",
       bg: "bg-sage-soft",
     },
     {
@@ -273,7 +273,7 @@ export function FisioterapiClient() {
             <div className="flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
                 <Image
-                  src="/images/lotus_treatment_body_arm_therapist_interaction.jpg"
+                  src="/images/lotus_treatment_physio_adult_rehab_lunge.webp"
                   alt="Edukasi Gerak Mandiri"
                   fill
                   className="object-cover"
