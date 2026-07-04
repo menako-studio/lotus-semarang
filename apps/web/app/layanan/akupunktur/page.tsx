@@ -1,32 +1,62 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
-import { Check } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, AlertCircle, HelpCircle } from "lucide-react";
 
 export default function AkupunkturPage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   const applications = [
     {
       title: "Anak-Anak (Tumbuh Kembang)",
-      desc: "Membantu menstimulasi tumbuh kembang optimal anak, meningkatkan konsentrasi belajar, menjaga stabilitas emosi, serta meningkatkan imunitas tubuh secara alami.",
+      desc: "Menstimulasi tumbuh kembang motorik, meningkatkan konsentrasi belajar, merelaksasi stabilitas emosi, serta meningkatkan daya tahan tubuh alami.",
+      img: "/images/lotus_treatment_baby_model_high_angle.webp",
       bg: "bg-peach-soft",
     },
     {
-      title: "Kesehatan Dewasa & Lansia",
-      desc: "Mengatasi keluhan umum seperti vertigo, gerd, hipertensi, diabetes, pemulihan stroke, nyeri sendi, saraf kejepit, hingga meredakan mual dan muntah akibat efek samping kemoterapi.",
+      title: "Dewasa & Lansia",
+      desc: "Efektif untuk meredakan nyeri sendi, vertigo, gerd, hipertensi, saraf kejepit, migrain, pemulihan stroke, hingga mengurangi mual akibat kemoterapi.",
+      img: "/images/lotus_treatment_body_moxibustion_smoke_therapy.jpg",
       bg: "bg-sage-soft",
     },
     {
       title: "Reproduksi & Hormonal",
-      desc: "Mendukung program kehamilan alami (promil) serta persiapan program bayi tabung (IVF) dengan menyeimbangkan hormon reproduksi.",
+      desc: "Menyeimbangkan hormon reproduksi untuk mendukung program kehamilan (promil) alami dan mempersiapkan program bayi tabung (IVF).",
+      img: "/images/lotus_consultation_doctor_patient_model_hijab.jpg",
       bg: "bg-blush-soft",
     },
     {
       title: "Slimming & Estetika Wajah",
-      desc: "Solusi alami untuk mengatasi jerawat (acne), menyamarkan kerutan wajah, serta merangsang kolagen untuk pengencangan kulit alami tanpa bahan kimia obat.",
+      desc: "Terapi akupunktur kecantikan wajah untuk merangsang kolagen, mengencangkan kulit, menyamarkan kerutan, dan meredakan jerawat.",
+      img: "/images/lotus_treatment_facial_portrait_patient_closed_eyes.jpg",
       bg: "bg-sand-soft",
+    },
+  ];
+
+  const faqs = [
+    {
+      q: "Apakah terapi akupunktur terasa sakit?",
+      a: "Sebagian besar pasien merasakan sensasi gigitan semut kecil yang sangat minim saat jarum dimasukkan. Jarum yang digunakan adalah disposable sterile needle kualitas premium yang berukuran sangat tipis (jauh lebih kecil dari jarum suntik biasa).",
+    },
+    {
+      q: "Berapa sesi terapi yang saya butuhkan?",
+      a: "Tergantung pada keluhan dan respon tubuh Anda. Untuk keluhan akut, biasanya 4-6 sesi sudah terasa perubahannya. Untuk keluhan kronis atau program kehamilan (promil), disarankan melakukan paket perawatan 10-12 sesi secara rutin.",
+    },
+    {
+      q: "Apakah aman bagi ibu hamil dan anak-anak?",
+      a: "Sangat aman. Terapis kami bersertifikat medis resmi dan memahami titik-titik meridian mana saja yang aman untuk menstimulasi tumbuh kembang anak-anak serta titik kontraindikasi bagi ibu hamil.",
+    },
+    {
+      q: "Apa yang harus saya persiapkan sebelum sesi terapi?",
+      a: "Kenakan pakaian yang longgar dan nyaman (agar mudah mengakses titik lengan/kaki), pastikan Anda sudah makan sekitar 1-2 jam sebelum terapi, dan hindari konsumsi kafein berlebih sebelum sesi dimulai.",
     },
   ];
 
@@ -34,24 +64,24 @@ export default function AkupunkturPage() {
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-36 lg:pb-24">
+      {/* ── 1. HERO SECTION (50/50 Dual Image Layout) ── */}
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="container-wellness">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
-            {/* Left Column: Title & Intro */}
-            <div className="flex flex-col gap-6">
+            {/* Left Content */}
+            <div className="lg:col-span-6 flex flex-col gap-6">
               <div>
-                <span className="tag-pill bg-peach/40 text-terra font-semibold text-xs mb-4 inline-block">
-                  Layanan Unggulan
+                <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+                  Layanan Medis & Estetika
                 </span>
-                <h1 className="font-display font-black text-espresso text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+                <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
                   Akupunktur<br />
-                  <span className="text-terra">Modern & Privat.</span>
+                  <span className="text-terra">Medis Privat.</span>
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
-                Rasakan terapi tusuk jarum kuno yang menggunakan media berupa jarum steril sekali pakai (disposable sterile needle), ditusukkan secara presisi untuk mengembalikan harmonisasi sistem saraf, peredaran darah, hormonal, dan imunitas Anda.
+                Kembalikan keseimbangan aliran energi tubuh Anda secara ilmiah. Kami menggabungkan stimulasi saraf modern dengan jarum steril sekali pakai untuk pemulihan nyeri, kesehatan hormonal, dan kecantikan kulit wajah Anda.
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
@@ -74,18 +104,33 @@ export default function AkupunkturPage() {
               </div>
             </div>
 
-            {/* Right Column: Rounded Image Block */}
-            <div className="relative">
-              <div className="absolute inset-0 rounded-[3rem] bg-peach/20 -rotate-3" />
-              <div className="relative rounded-[3rem] overflow-hidden aspect-[4/3] lg:aspect-[4/5] img-zoom">
+            {/* Right: Overlapping Editorial Images (WTHN style) */}
+            <div className="lg:col-span-6 relative flex items-center justify-center min-h-[380px] lg:min-h-[500px]">
+              {/* Background Peach Box */}
+              <div className="absolute top-10 left-10 w-4/5 h-4/5 bg-peach-soft rounded-[3rem] -rotate-3" />
+              
+              {/* Large Vertical Portrait */}
+              <div className="absolute top-0 right-4 w-[65%] aspect-[3/4] rounded-3xl overflow-hidden shadow-warm-lg img-zoom z-10">
                 <Image
                   src="/images/lotus_treatment_body_back_acupuncture_female.jpg"
-                  alt="Terapi Akupunktur di Lotus Semarang"
+                  alt="Sesi Terapi Akupunktur Tubuh"
                   fill
-                  priority
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                  sizes="40vw"
                   quality={85}
+                />
+              </div>
+
+              {/* Smaller Overlapping Square */}
+              <div className="absolute bottom-4 left-4 w-[45%] aspect-square rounded-3xl overflow-hidden shadow-warm-xl border-4 border-white img-zoom z-20">
+                <Image
+                  src="/images/lotus_treatment_body_acupuncture_macro_needle.jpg"
+                  alt="Detail Jarum Akupunktur Steril"
+                  fill
+                  className="object-cover"
+                  sizes="25vw"
+                  quality={80}
                 />
               </div>
             </div>
@@ -97,83 +142,225 @@ export default function AkupunkturPage() {
       {/* Marquee Accent */}
       <Marquee bg="peach" textClass="text-espresso" speed="slow" />
 
-      {/* Expectation Details Section */}
-      <section className="section-pad bg-peach-soft/30">
+      {/* ── 2. HOW IT WORKS (Scientific Details + Large Visual) ── */}
+      <section className="section-pad bg-white">
         <div className="container-wellness">
-          <div className="grid lg:grid-cols-[1.5fr_2fr] gap-12 lg:gap-20">
-            <div>
-              <span className="tag-pill bg-espresso/5 text-espresso/70 font-semibold text-xs mb-4 inline-block">
-                Metode Diagnosa
-              </span>
-              <h2 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight tracking-tight">
-                Bagaimana Diagnosa Akupunktur Lotus Ditegakkan?
-              </h2>
-              <p className="font-sans text-espresso/60 mt-4 leading-relaxed">
-                Kami tidak melakukan tindakan secara sembarangan. Sebelum memulai, kami melakukan rangkaian pemeriksaan holistik menyeluruh demi memastikan stimulasi titik tubuh Anda tepat sasaran.
-              </p>
-            </div>
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             
-            <div className="flex flex-col gap-8">
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-white shadow-warm flex items-center justify-center font-display font-black text-terra text-lg flex-shrink-0">
-                  1
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Anamnesa & Palpasi Nadi</h3>
-                  <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Terapis kami akan melakukan wawancara medis mendalam serta meraba denyut nadi Anda untuk mengukur kekuatan dan keseimbangan aliran energi organ vital tubuh.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-white shadow-warm flex items-center justify-center font-display font-black text-terra text-lg flex-shrink-0">
-                  2
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Pemeriksaan Visual Lidah</h3>
-                  <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Kami melakukan pemeriksaan lidah (meliputi bentuk, warna, dan selaput lidah) yang secara klinis menggambarkan kondisi retensi cairan, panas, atau defisiensi energi di dalam tubuh Anda.
-                  </p>
-                </div>
-              </div>
+            {/* Left: Beautiful landscape image */}
+            <div className="lg:col-span-6 relative aspect-[4/3] rounded-[3.5rem] overflow-hidden shadow-warm-lg img-zoom">
+              <Image
+                src="/images/lotus_tools_acupuncture_needles_steel_jar.jpg"
+                alt="Jarum Steril Sekali Pakai Lotus Semarang"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={85}
+              />
+            </div>
 
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-white shadow-warm flex items-center justify-center font-display font-black text-terra text-lg flex-shrink-0">
-                  3
+            {/* Right: Scientific Explanations */}
+            <div className="lg:col-span-6 flex flex-col gap-6">
+              <span className="tag-pill bg-espresso/5 text-espresso/80 font-bold text-xs uppercase tracking-wider self-start">
+                Sains di Balik Terapi
+              </span>
+              <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight tracking-tight">
+                Bagaimana Akupunktur Memulihkan Tubuhmu?
+              </h2>
+              
+              <div className="flex flex-col gap-6 mt-4">
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-peach-soft text-terra flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                    01
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Membuka Aliran Oksigen</h3>
+                    <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                      Penusukan titik meridian memicu sirkulasi darah lokal secara instan, mengalirkan oksigen dan nutrisi untuk memperbaiki sel-sel tubuh yang meradang.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-display font-bold text-espresso text-lg mb-2">Kesesuaian 5 Unsur Tubuh</h3>
-                  <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                    Menganalisis kesesuaian sindrom klinis berdasarkan teori 5 Unsur Alami Tubuh (Kayu, Api, Tanah, Logam, dan Air) guna merancang peta titik stimulasi jarum yang harmonis bagi pemulihan Anda.
-                  </p>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-sage-soft text-forest flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                    02
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Stimulasi Pelepasan Endorfin</h3>
+                    <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                      Stimulasi jarum memberi sinyal pada otak untuk melepaskan hormon endorfin dan enkefalin, pereda nyeri alami tubuh yang efektif meredakan nyeri fisik dan stres mental.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-blush-soft text-espresso-600 flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                    03
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Regulasi Sistem Saraf & Hormon</h3>
+                    <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                      Membantu menyelaraskan kembali sistem saraf otonom Anda, menurunkan kadar hormon stres kortisol, serta memperbaiki keseimbangan hormon reproduksi tubuh.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Application / Benefits Grid */}
-      <section className="section-pad bg-white">
+      {/* ── 3. DETAILED APPLICATIONS GRID (WTHN Style Cards with Photos) ── */}
+      <section className="section-pad bg-sand-soft/30 border-y border-espresso/5">
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="tag-pill bg-sage/40 text-forest font-semibold text-xs mb-3 inline-block">
-              Aplikasi Klinis
+            <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+              Kasus & Penanganan
             </span>
-            <h2 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight">
-              Manfaat Akupunktur untuk Seluruh Keluarga
+            <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
+              Bidang Aplikasi Terapi Akupunktur
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
-            {applications.map((app) => (
-              <div key={app.title} className={`${app.bg} rounded-3xl p-8 flex flex-col gap-3 hover:-translate-y-1 transition-transform duration-300`}>
-                <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-terra flex-shrink-0 shadow-warm">
-                  <Check size={16} />
+            {applications.map((app, i) => (
+              <div
+                key={i}
+                className={`${app.bg} rounded-[2.5rem] p-8 lg:p-10 flex flex-col gap-6 shadow-warm hover:-translate-y-1 transition-all duration-300`}
+              >
+                {/* Horizontal split inside card: Title/desc left, Image right */}
+                <div className="grid grid-cols-[3fr_1.5fr] gap-4 items-center">
+                  <div className="flex flex-col gap-2">
+                    <h3 className="font-display font-black text-espresso text-xl lg:text-2xl leading-tight">
+                      {app.title}
+                    </h3>
+                    <p className="font-sans text-espresso/65 text-xs lg:text-sm leading-relaxed">
+                      {app.desc}
+                    </p>
+                  </div>
+                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-warm img-zoom">
+                    <Image
+                      src={app.img}
+                      alt={app.title}
+                      fill
+                      className="object-cover"
+                      sizes="20vw"
+                      quality={80}
+                    />
+                  </div>
                 </div>
-                <h3 className="font-display font-bold text-espresso text-xl">{app.title}</h3>
-                <p className="font-sans text-espresso/65 text-sm leading-relaxed">{app.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. WHAT TO EXPECT (Three step vertical flow with detailed images) ── */}
+      <section className="section-pad bg-white">
+        <div className="container-wellness">
+          <div className="text-center max-w-xl mx-auto mb-16">
+            <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+              Prosedur Tindakan
+            </span>
+            <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
+              Bagaimana Sesi Terapi Anda Berlangsung?
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+            
+            {/* Step 1 */}
+            <div className="flex flex-col gap-4">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
+                <Image
+                  src="/images/lotus_consultation_doctor_patient_model_hijab.jpg"
+                  alt="Konsultasi Diagnosa Lidah & Nadi"
+                  fill
+                  className="object-cover"
+                  sizes="30vw"
+                  quality={80}
+                />
+              </div>
+              <span className="font-display font-black text-terra text-lg">01. Diagnosa Holistik</span>
+              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                Kami melakukan konsultasi personal meliputi anamnesa keluhan, palpasi denyut nadi, pemeriksaan visual lidah, serta keselarasan 5 unsur organ tubuh Anda.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="flex flex-col gap-4">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
+                <Image
+                  src="/images/lotus_equipment_kwd808_electro_acupuncture.jpg"
+                  alt="Sesi Penjaruman Aman & Steril"
+                  fill
+                  className="object-cover"
+                  sizes="30vw"
+                  quality={80}
+                />
+              </div>
+              <span className="font-display font-black text-terra text-lg">02. Penjaruman & Stimulasi</span>
+              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                Jarum steril berukuran mikro dimasukkan dengan lembut ke titik terapi. Dapat dikombinasikan dengan stimulasi elektrik elektro-akupunktur atau terapi moxibustion (pembakaran moxa).
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex flex-col gap-4">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
+                <Image
+                  src="/images/lotus_treatment_body_arm_therapist_interaction.jpg"
+                  alt="Edukasi Pasca Terapi"
+                  fill
+                  className="object-cover"
+                  sizes="30vw"
+                  quality={80}
+                />
+              </div>
+              <span className="font-display font-black text-terra text-lg">03. Rencana Tindak Lanjut</span>
+              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                Jarum dilepas secara steril setelah 20-30 menit. Terapis memberikan anjuran gaya hidup, asupan nutrisi penyeimbang, serta menjadwalkan sesi evaluasi lanjutan.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. FAQs ACCORDION (WTHN Style) ── */}
+      <section className="section-pad bg-peach-soft/20 border-t border-espresso/5">
+        <div className="container-wellness max-w-4xl">
+          <div className="text-center mb-12">
+            <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+              Pertanyaan Umum
+            </span>
+            <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
+              Hal-Hal yang Sering Ditanyakan
+            </h2>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl border border-espresso/5 shadow-warm overflow-hidden transition-all duration-300"
+              >
+                <button
+                  className="w-full px-6 py-5 flex items-center justify-between text-left font-display font-bold text-espresso hover:text-terra text-base md:text-lg"
+                  onClick={() => toggleFaq(index)}
+                >
+                  <span className="flex items-center gap-3">
+                    <HelpCircle size={18} className="text-terra" />
+                    {faq.q}
+                  </span>
+                  {openFaq === index ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                </button>
+                {openFaq === index && (
+                  <div className="px-6 pb-6 pt-1 font-sans text-espresso/65 text-sm leading-relaxed border-t border-espresso/5">
+                    {faq.a}
+                  </div>
+                )}
               </div>
             ))}
           </div>
