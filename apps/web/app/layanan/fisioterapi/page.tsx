@@ -49,7 +49,7 @@ export default function FisioterapiPage() {
               
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
-                  href="https://wa.me/6281802537509?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Fisioterapi"
+                  href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Fisioterapi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-dark font-bold text-sm px-8 py-4"
@@ -57,7 +57,7 @@ export default function FisioterapiPage() {
                   Pesan Sesi Fisioterapi
                 </a>
                 <a
-                  href="https://wa.me/6281802537509?text=Halo%20Lotus%2C%20mau%20konsultasi%20masalah%20fisioterapi"
+                  href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20mau%20konsultasi%20masalah%20fisioterapi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-outline font-bold text-sm px-8 py-4"

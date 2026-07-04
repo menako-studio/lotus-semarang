@@ -44,7 +44,7 @@ export function Footer() {
             Tim kami siap menyambut kamu.
           </motion.p>
           <motion.a
-            href="https://wa.me/6281802537509?text=Halo%20Lotus%2C%20saya%20ingin%20reservasi%20jadwal"
+            href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20saya%20ingin%20reservasi%20jadwal"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 bg-cream text-espresso rounded-full font-sans font-bold px-8 py-4 text-base hover:bg-sand transition-all duration-300 hover:scale-105 shadow-warm-lg"
@@ -133,34 +133,34 @@ export function Footer() {
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/6281802537509"
+                  href="https://wa.me/6287700303645"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group"
                 >
                   <Phone size={16} className="text-peach flex-shrink-0" />
                   <span className="font-sans text-cream/65 group-hover:text-cream transition-colors duration-200 text-sm">
-                    0818 0253 7509
+                    0877 0030 3645
                   </span>
                 </a>
 
                 {/* Instagram */}
                 <a
-                  href="https://instagram.com/lotussemarang"
+                  href="https://instagram.com/lotus_semarang"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 group"
                 >
                   <Instagram size={16} className="text-peach flex-shrink-0" />
                   <span className="font-sans text-cream/65 group-hover:text-cream transition-colors duration-200 text-sm">
-                    @lotussemarang
+                    @lotus_semarang
                   </span>
                 </a>
               </div>
 
               {/* Quick WA CTA */}
               <a
-                href="https://wa.me/6281802537509?text=Halo%20Lotus%2C%20saya%20ingin%20tanya-tanya%20tentang%20layanan"
+                href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20saya%20ingin%20tanya-tanya%20tentang%20layanan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-6 bg-peach/20 hover:bg-peach/30 text-cream rounded-full px-5 py-2.5 text-sm font-sans font-medium transition-all duration-300"
