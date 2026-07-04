@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { MapPin, Phone, Instagram, Clock } from "lucide-react";
 
 const navLinks = [
-  { label: "Akupunktur",  href: "#akupunktur" },
-  { label: "Hidroterapi", href: "#hidroterapi" },
-  { label: "Fisioterapi", href: "#fisioterapi" },
-  { label: "Swim Course", href: "#swim-course" },
-  { label: "Tentang Kami", href: "#tentang" },
+  { label: "Akupunktur",  href: "/layanan/akupunktur" },
+  { label: "Hidroterapi", href: "/layanan/hidroterapi" },
+  { label: "Fisioterapi", href: "/layanan/fisioterapi" },
+  { label: "Swim Course", href: "/layanan/swim-course" },
+  { label: "Tentang Kami", href: "/tentang-kami" },
 ];
 
 export function Footer() {
@@ -120,7 +120,7 @@ export function Footer() {
 
                  {/* Address */}
                 <a
-                  href="https://maps.google.com/?q=Jalan+Pamularsih+no+90/100+Gisikdrono+Semarang"
+                  href="https://maps.app.goo.gl/PWpA655K59Gq82Xy9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-3 group"

@@ -18,13 +18,13 @@ export function FisioterapiClient() {
     {
       title: "Nyeri & Persendian",
       desc: "Perawatan rehabilitatif komprehensif untuk meredakan nyeri pada pinggang, leher, bahu, lutut, dan masalah persendian gerak lainnya.",
-      img: "/images/lotus_treatment_physio_kinesio_tape_knee.jpg",
+      img: "/images/lotus_treatment_physio_adult_ball_exercise_close.jpg",
       bg: "bg-blush-soft",
     },
     {
       title: "Kelainan Tulang Belakang",
       desc: "Terapi manual terfokus untuk membantu memperbaiki kelainan kelengkungan tulang belakang dan memulihkan postur tubuh ideal Anda.",
-      img: "/images/lotus_treatment_physio_adult_ball_exercise_close.jpg",
+      img: "/images/lotus_staff_portrait_headshot_beige_hijab.jpg",
       bg: "bg-peach-soft",
     },
     {
@@ -152,8 +152,8 @@ export function FisioterapiClient() {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-6 relative aspect-[4/3] rounded-[3.5rem] overflow-hidden shadow-warm-lg img-zoom">
               <Image
-                src="/images/lotus_treatment_body_arm_therapist_interaction.jpg"
-                alt="Terapi Manual Mobilisasi Sendi"
+                src="/images/team-lotus-2.jpg"
+                alt="Tim Terapis Fisioterapi Lotus Semarang"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -273,7 +273,7 @@ export function FisioterapiClient() {
             <div className="flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
                 <Image
-                  src="/images/lotus_treatment_physio_child_exercise_ball.jpg"
+                  src="/images/lotus_treatment_body_arm_therapist_interaction.jpg"
                   alt="Edukasi Gerak Mandiri"
                   fill
                   className="object-cover"

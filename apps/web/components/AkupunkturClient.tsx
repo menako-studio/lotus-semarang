@@ -30,7 +30,7 @@ export function AkupunkturClient() {
     {
       title: "Reproduksi & Hormonal",
       desc: "Menyeimbangkan hormon reproduksi untuk mendukung program kehamilan (promil) alami dan mempersiapkan program bayi tabung (IVF).",
-      img: "/images/lotus_consultation_doctor_patient_model_hijab.jpg",
+      img: "/images/lotus_treatment_body_abdomen_male_patient.jpg",
       bg: "bg-blush-soft",
     },
     {
