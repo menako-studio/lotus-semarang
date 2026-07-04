@@ -72,6 +72,47 @@ export const viewport: Viewport = {
 
 /* ─── Root Layout ────────────────────────────────────────────────────────── */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Lotus Health, Beauty & Care",
+    "image": "https://lotussemarang.com/og-image.jpg",
+    "@id": "https://lotussemarang.com/#business",
+    "url": "https://lotussemarang.com",
+    "telephone": "+6287700303645",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jl. Pamularsih No. 90/100, Gisikdrono, Semarang Barat",
+      "addressLocality": "Semarang",
+      "addressRegion": "Jawa Tengah",
+      "postalCode": "50149",
+      "addressCountry": "ID"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "-6.9934758",
+      "longitude": "110.3957242"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      }
+    ],
+    "sameAs": [
+      "https://instagram.com/lotus_semarang"
+    ]
+  };
+
   return (
     <html
       lang="id"
@@ -82,6 +123,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="antialiased overflow-x-hidden bg-cream">
         {children}

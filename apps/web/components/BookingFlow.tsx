@@ -384,12 +384,41 @@ export function BookingFlow() {
                     Terima Kasih
                   </h3>
                   <p className="font-sans text-charcoal-400 leading-relaxed max-w-sm mb-2" style={{ fontSize: "0.9rem" }}>
-                    Reservasi Anda sedang kami proses. Tim Lotus Semarang akan menghubungi Anda melalui WhatsApp dalam 30 menit.
+                    Reservasi Anda sedang kami proses. Untuk mempercepat konfirmasi, silakan kirim detail reservasi langsung ke WhatsApp kami.
                   </p>
-                  <p className="font-sans text-charcoal-300" style={{ fontSize: "0.7rem", letterSpacing: "0.15em" }}>
+                  
+                  {/* WhatsApp Confirmation Button */}
+                  <a
+                    href={`https://wa.me/6287700303645?text=${encodeURIComponent(
+                      `Halo Lotus Semarang, saya ingin konfirmasi reservasi dengan detail berikut:\n\n` +
+                      `- Nama: ${formData.name || "-"}\n` +
+                      `- No. WhatsApp: ${formData.phone || "-"}\n` +
+                      `- Tanggal: ${formData.date || "-"}\n` +
+                      `- Durasi Sesi: ${formData.duration || "-"}\n` +
+                      `- Waktu Mulai: ${formData.session_time || "-"}\n` +
+                      `- Pilihan Kolam: ${formData.pool || "-"}\n` +
+                      `- Jumlah Tamu: ${formData.guests || "-"}\n` +
+                      `- Preferensi Privasi: ${formData.privacy_pref || "-"}\n` +
+                      `- Metode Pembayaran: ${formData.payment || "-"}\n` +
+                      `- Permintaan Khusus: ${formData.special_req || "-"}\n\n` +
+                      `Mohon segera dikonfirmasi. Terima kasih!`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-3 bg-charcoal text-ivory px-8 py-4 text-xs uppercase tracking-widest hover:bg-charcoal-600 transition-all duration-500 font-sans mt-6"
+                    style={{ letterSpacing: "0.2em" }}
+                  >
+                    Kirim ke WhatsApp
+                    <ChevronRight
+                      size={14}
+                      className="transition-transform duration-400 group-hover:translate-x-1"
+                    />
+                  </a>
+
+                  <p className="font-sans text-charcoal-300 mt-6" style={{ fontSize: "0.7rem", letterSpacing: "0.15em" }}>
                     Privasi Anda adalah prioritas utama kami.
                   </p>
-                  <div className="flex items-center gap-2 mt-8 text-charcoal-300">
+                  <div className="flex items-center gap-2 mt-6 text-charcoal-300">
                     <Lock size={12} />
                     <span className="text-[0.6rem] font-sans uppercase tracking-widest">Informasi Anda Aman</span>
                   </div>
