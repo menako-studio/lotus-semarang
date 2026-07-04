@@ -86,8 +86,8 @@ export function Footer() {
                 <Clock size={15} className="text-peach mt-0.5 flex-shrink-0" />
                 <div className="font-sans text-cream/50" style={{ fontSize: "0.82rem" }}>
                   <div className="font-semibold text-cream/70 mb-1">Jam Operasional</div>
-                  <div>Senin – Jumat: 08.00 – 20.00</div>
-                  <div>Sabtu – Minggu: 08.00 – 18.00</div>
+                  <div>Senin – Sabtu: 09.00 – 17.00</div>
+                  <div>Minggu: Libur (Tutup)</div>
                 </div>
               </div>
             </div>
