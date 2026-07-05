@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import { Navbar }       from "@/components/Navbar";
 import { Hero }         from "@/components/Hero";
@@ -8,12 +9,13 @@ import { Footer }       from "@/components/Footer";
 
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 import { SearchableFaq } from "@/components/SearchableFaq";
-
-export const metadata: Metadata = {
-  title: "Lotus Health, Beauty & Care — Wellness Privat di Semarang",
-};
+import { useLanguage } from "@/components/LanguageContext";
 
 export default function HomePage() {
+  const { t } = useLanguage();
+
+  const reviewsList = t("reviews.list") || [];
+
   return (
     <main className="min-h-screen bg-white text-espresso">
 
@@ -33,10 +35,10 @@ export default function HomePage() {
           
           <div className="text-center max-w-xl mx-auto mb-16 lg:mb-24">
             <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              The Lotus Experience
+              {t("experience.tagline")}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
-              Suasana Terapi Nyaman yang Dirancang Khusus
+              {t("experience.title")}
             </h2>
           </div>
 
@@ -47,19 +49,19 @@ export default function HomePage() {
               <div className="lg:col-span-6 flex flex-col gap-5">
                 <span className="text-3xl">🔒</span>
                 <h3 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight">
-                  Privasi Mutlak & Ramah Niqabi
+                  {t("experience.privacyTitle")}
                 </h3>
                 <p className="font-sans text-espresso/70 text-base leading-relaxed">
-                  Kami memahami kebutuhan kenyamanan ekstra Anda. Setiap kolam hidroterapi, ruang akupunktur, dan ruang fisioterapi disewa khusus 100% secara privat per sesi. Tidak ada mata asing, tidak ada canggung — hanya ruang suaka pribadi Anda sepenuhnya.
+                  {t("experience.privacyDesc")}
                 </p>
                 <div className="flex gap-4 mt-2">
                   <div className="flex items-center gap-2">
                     <span className="text-forest">✓</span>
-                    <span className="font-sans text-xs font-bold text-espresso/60">One Patient per Session</span>
+                    <span className="font-sans text-xs font-bold text-espresso/60">{t("experience.privacyBadge1")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-forest">✓</span>
-                    <span className="font-sans text-xs font-bold text-espresso/60">Fully Enclosed Suite</span>
+                    <span className="font-sans text-xs font-bold text-espresso/60">{t("experience.privacyBadge2")}</span>
                   </div>
                 </div>
               </div>
@@ -92,19 +94,19 @@ export default function HomePage() {
               <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col gap-5">
                 <span className="text-3xl">👩‍⚕️</span>
                 <h3 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight">
-                  Didukung Sains & Tenaga Medis Bersertifikat
+                  {t("experience.scienceTitle")}
                 </h3>
                 <p className="font-sans text-espresso/70 text-base leading-relaxed">
-                  Didirikan oleh praktisi berpengalaman **drg. Arini Jannata, S.Tr. Akup, MM**, seluruh tindakan medis di Lotus Semarang dijalankan oleh fisioterapis dan akupunkturis berlisensi resmi. Kami mendiagnosa secara ilmiah melalui anamnesa fisik, nadi, lidah, dan struktur tulang belakang.
+                  {t("experience.scienceDesc")}
                 </p>
                 <div className="flex gap-4 mt-2">
                   <div className="flex items-center gap-2">
                     <span className="text-terra">✓</span>
-                    <span className="font-sans text-xs font-bold text-espresso/60">Certified Therapists</span>
+                    <span className="font-sans text-xs font-bold text-espresso/60">{t("experience.scienceBadge1")}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <span className="text-terra">✓</span>
-                    <span className="font-sans text-xs font-bold text-espresso/60">Modern Modality Tools</span>
+                    <span className="font-sans text-xs font-bold text-espresso/60">{t("experience.scienceBadge2")}</span>
                   </div>
                 </div>
               </div>
@@ -123,14 +125,14 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end mb-14">
             <div className="lg:col-span-7">
               <span className="tag-pill bg-sage/40 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-                Eksplorasi Ruang
+                {t("gallery.tagline")}
               </span>
               <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight tracking-tight">
-                Galeri Suasana Retreat
+                {t("gallery.title")}
               </h2>
             </div>
             <p className="lg:col-span-5 font-sans text-espresso/65 text-base md:text-lg leading-relaxed">
-              Melihat lebih dekat kenyamanan ruang tunggu, kolam renang air hangat privat, serta peralatan terapi higienis kami.
+              {t("gallery.desc")}
             </p>
           </div>
 
@@ -195,7 +197,7 @@ export default function HomePage() {
                   G
                 </span>
                 <div>
-                  <div className="font-display font-bold text-espresso text-base">Ulasan Google Maps</div>
+                  <div className="font-display font-bold text-espresso text-base">{t("reviews.gmaps")}</div>
                   <div className="font-sans text-xs text-espresso/50">Lotus Health, Beauty & Care</div>
                 </div>
               </div>
@@ -204,7 +206,7 @@ export default function HomePage() {
                 <div className="font-display font-black text-espresso text-6xl leading-none">4.9</div>
                 <div className="text-terra text-xl mt-2">★★★★★</div>
                 <p className="font-sans text-espresso/60 text-xs mt-2">
-                  Berdasarkan ulasan asli dari pasien terverifikasi di Semarang.
+                  {t("reviews.sub")}
                 </p>
               </div>
 
@@ -214,7 +216,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="btn-pill-dark text-center w-full py-3.5 text-xs font-bold"
               >
-                Tulis Ulasan di Google
+                {t("reviews.cta")}
               </a>
             </div>
 
@@ -222,61 +224,67 @@ export default function HomePage() {
             <div className="lg:col-span-8 flex flex-col gap-6">
               
               {/* Review 1 */}
-              <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-peach-soft text-terra font-display font-black flex items-center justify-center text-sm">
-                      IR
+              {reviewsList[0] && (
+                <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-peach-soft text-terra font-display font-black flex items-center justify-center text-sm">
+                        IR
+                      </div>
+                      <div>
+                        <h4 className="font-display font-bold text-espresso text-sm">{reviewsList[0].name}</h4>
+                        <span className="font-sans text-[0.65rem] text-espresso/45">{reviewsList[0].role}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-display font-bold text-espresso text-sm">Ibu Riana</h4>
-                      <span className="font-sans text-[0.65rem] text-espresso/45">Pasien Hidroterapi, Gisikdrono</span>
-                    </div>
+                    <div className="text-terra text-sm">★★★★★</div>
                   </div>
-                  <div className="text-terra text-sm">★★★★★</div>
+                  <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
+                    &ldquo;{reviewsList[0].text}&rdquo;
+                  </p>
                 </div>
-                <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                  &ldquo;Sangat terbantu dengan sesi hidroterapi pasca operasi lutut saya. Kolamnya benar-benar privat, airnya hangat konstan, dan instruktur mendampingi dengan sabar. Proses pemulihan saya terasa jauh lebih cepat dan tidak menegangkan.&rdquo;
-                </p>
-              </div>
+              )}
 
               {/* Review 2 */}
-              <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-sage-soft text-forest font-display font-black flex items-center justify-center text-sm">
-                      FT
+              {reviewsList[1] && (
+                <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-sage-soft text-forest font-display font-black flex items-center justify-center text-sm">
+                        FT
+                      </div>
+                      <div>
+                        <h4 className="font-display font-bold text-espresso text-sm">{reviewsList[1].name}</h4>
+                        <span className="font-sans text-[0.65rem] text-espresso/45">{reviewsList[1].role}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-display font-bold text-espresso text-sm">Fathimah</h4>
-                      <span className="font-sans text-[0.65rem] text-espresso/45">Pasien Akupunktur, Semarang Barat</span>
-                    </div>
+                    <div className="text-terra text-sm">★★★★★</div>
                   </div>
-                  <div className="text-terra text-sm">★★★★★</div>
+                  <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
+                    &ldquo;{reviewsList[1].text}&rdquo;
+                  </p>
                 </div>
-                <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                  &ldquo;Sebagai wanita berhijab (Niqabi), saya sangat pemilih dengan tempat terapi. Di Lotus, privasinya luar biasa terjaga (100% private suite). Terapisnya wanita ramah-ramah dan tindakan akupunktur wajahnya membuat kulit kencang alami.&rdquo;
-                </p>
-              </div>
+              )}
 
               {/* Review 3 */}
-              <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-sand-soft text-espresso font-display font-black flex items-center justify-center text-sm">
-                      BG
+              {reviewsList[2] && (
+                <div className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300">
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-sand-soft text-espresso font-display font-black flex items-center justify-center text-sm">
+                        BG
+                      </div>
+                      <div>
+                        <h4 className="font-display font-bold text-espresso text-sm">{reviewsList[2].name}</h4>
+                        <span className="font-sans text-[0.65rem] text-espresso/45">{reviewsList[2].role}</span>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-display font-bold text-espresso text-sm">Bapak Gunawan</h4>
-                      <span className="font-sans text-[0.65rem] text-espresso/45">Pasien Fisioterapi, Ngaliyan</span>
-                    </div>
+                    <div className="text-terra text-sm">★★★★★</div>
                   </div>
-                  <div className="text-terra text-sm">★★★★★</div>
+                  <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
+                    &ldquo;{reviewsList[2].text}&rdquo;
+                  </p>
                 </div>
-                <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                  &ldquo;Saya menderita saraf kejepit di punggung bawah. Menjalani fisioterapi modalitas Ultrasound dan TENS di sini dipadu dengan latihan manual sangat meringankan nyeri. Terapisnya menjelaskan secara ilmiah dan mengedukasi gerakan mandiri di rumah.&rdquo;
-                </p>
-              </div>
+              )}
 
             </div>
 

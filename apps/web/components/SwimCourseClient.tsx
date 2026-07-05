@@ -5,16 +5,18 @@ import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
+import { useLanguage } from "@/components/LanguageContext";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 
 export function SwimCourseClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const { t, language } = useLanguage();
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const applications = [
+  const applications = language === "id" ? [
     {
       title: "Anak-Anak & Pemula",
       desc: "Latihan renang privat dasar dengan metode ramah anak yang berfokus pada water safety (keselamatan air) dan melatih keberanian di air.",
@@ -39,9 +41,34 @@ export function SwimCourseClient() {
       img: "/images/lotus_treatment_hydro_elderly_hijab_smile_edge.jpg",
       bg: "bg-blush-soft",
     },
+  ] : [
+    {
+      title: "Kids & Beginners",
+      desc: "Basic private swimming lessons with child-friendly methods focusing on water safety and building confidence in water.",
+      img: "/images/lotus_treatment_hydro_female_hijab_float_front.jpg",
+      bg: "bg-sand-soft",
+    },
+    {
+      title: "Adults & Seniors",
+      desc: "Swimming lessons to build cardio stamina, preserve knee joint flexibility, and breathing therapy for asthma/seniors.",
+      img: "/images/swimming-course-lansia-2.jpg",
+      bg: "bg-sage-soft",
+    },
+    {
+      title: "Stroke Development",
+      desc: "Refining hand and foot coordination for breaststroke (frog), freestyle, backstroke, and efficient breathing techniques.",
+      img: "/images/lotus_hydrotherapy_pool_male_floating_device.jpg",
+      bg: "bg-peach-soft",
+    },
+    {
+      title: "Women-Only Private Sessions",
+      desc: "100% private pool rental options with trained female instructors, giving full privacy to hijabi mothers (Niqabi).",
+      img: "/images/lotus_treatment_hydro_elderly_hijab_smile_edge.jpg",
+      bg: "bg-blush-soft",
+    },
   ];
 
-  const faqs = [
+  const faqs = language === "id" ? [
     {
       q: "Berapa kapasitas kolam renang saat kelas berlangsung?",
       a: "Satu kelas renang bersifat 100% privat (1 instruktur melayani 1 murid). Area kolam renang disewa khusus untuk sesi latihan Anda tanpa terganggu oleh kehadiran pengunjung umum.",
@@ -58,6 +85,23 @@ export function SwimCourseClient() {
       q: "Berapa kali pertemuan untuk paket kelas renang?",
       a: "Tersedia paket 4 kali pertemuan (mingguan) atau paket intensif 8 kali pertemuan yang bisa Anda sesuaikan sendiri jadwalnya bersama instruktur terkait.",
     },
+  ] : [
+    {
+      q: "What is the capacity of the pool during class?",
+      a: "Each swimming class is 100% private (1 instructor serves 1 student). The pool area is booked exclusively for your training session, uninterrupted by public visitors.",
+    },
+    {
+      q: "What is the pool water temperature?",
+      a: "Our swimming pool is heated constantly between 30°C and 32°C. This warm temperature relaxes the student's body, prevents muscle cramps, and is highly safe for kids and seniors.",
+    },
+    {
+      q: "Are female instructors available?",
+      a: "Yes. We provide certified professional female instructors for the complete comfort of female students, kids, and hijabi mothers.",
+    },
+    {
+      q: "How many sessions are included in the swim packages?",
+      a: "We offer weekly packages of 4 sessions or intensive packages of 8 sessions, which you can schedule flexibly with your assigned instructor.",
+    },
   ];
 
   return (
@@ -73,33 +117,35 @@ export function SwimCourseClient() {
             <div className="lg:col-span-6 flex flex-col gap-6">
               <div>
                 <span className="tag-pill bg-sand/40 text-espresso font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-                  Kursus Renang Privat
+                  {t("swimCoursePage.eyebrow")}
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
-                  Swim Course<br />
-                  <span className="text-espresso">Belajar Bebas Khawatir.</span>
+                  {language === "id" ? "Swim Course" : "Private Swim"}<br />
+                  <span className="text-espresso">{language === "id" ? "Belajar Bebas Khawatir." : "Worry-Free Swimming."}</span>
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
-                Dapatkan bimbingan renang intensif di kolam hangat tertutup. Sempurna bagi pemula, anak-anak, lansia, maupun ibu berjilbab yang menginginkan privasi mutlak selama belajar berenang.
+                {language === "id" 
+                  ? "Dapatkan bimbingan renang intensif di kolam hangat tertutup. Sempurna bagi pemula, anak-anak, lansia, maupun ibu berjilbab yang menginginkan privasi mutlak selama belajar berenang."
+                  : "Get intensive swimming guidance in an enclosed warm pool. Perfect for beginners, kids, seniors, and hijabi women seeking absolute privacy while learning to swim."}
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Swim%20Course"
+                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(t("swimCoursePage.whatsAppPrompt"))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-dark font-bold text-sm px-8 py-4"
                 >
-                  Daftar Kelas Renang
+                  {t("swimCoursePage.cta")}
                 </a>
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20mau%20tanya%20jadwal%20dan%20biaya%20Swim%20Course"
+                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(language === "id" ? "Halo Lotus, mau tanya jadwal dan biaya Swim Course" : "Hello Lotus, I'd like to ask about schedules and rates for Swim Course")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-outline font-bold text-sm px-8 py-4"
                 >
-                  Tanya Jadwal & Biaya
+                  {language === "id" ? "Tanya Jadwal & Biaya" : "Inquire Rates & Schedules"}
                 </a>
               </div>
             </div>
@@ -153,10 +199,10 @@ export function SwimCourseClient() {
             </div>
             <div className="lg:col-span-6 flex flex-col gap-6">
               <span className="tag-pill bg-espresso/5 text-espresso/80 font-bold text-xs uppercase tracking-wider self-start">
-                Metode Pembelajaran
+                {language === "id" ? "Metode Pembelajaran" : "Learning Method"}
               </span>
               <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight tracking-tight">
-                Mengapa Memilih Kelas Renang Privat Kami?
+                {language === "id" ? "Mengapa Memilih Kelas Renang Privat Kami?" : "Why Choose Our Private Swimming Classes?"}
               </h2>
               <div className="flex flex-col gap-6 mt-4">
                 <div className="flex gap-4">
@@ -164,9 +210,13 @@ export function SwimCourseClient() {
                     01
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Kurikulum Bertahap (Step-by-Step)</h3>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
+                      {language === "id" ? "Kurikulum Bertahap (Step-by-Step)" : "Step-by-Step Curriculum"}
+                    </h3>
                     <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      Latihan dimulai dari pengenalan air dan meluncur secara menyenangkan. Tidak dipaksa, menyesuaikan kecepatan belajar masing-masing murid.
+                      {language === "id"
+                        ? "Latihan dimulai dari pengenalan air dan meluncur secara menyenangkan. Tidak dipaksa, menyesuaikan kecepatan belajar masing-masing murid."
+                        : "Training starts from water introduction and gliding in a fun way. No pressure, matching each student's learning pace."}
                     </p>
                   </div>
                 </div>
@@ -175,9 +225,13 @@ export function SwimCourseClient() {
                     02
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Kolam Hangat Bersih</h3>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
+                      {language === "id" ? "Kolam Hangat Bersih" : "Clean Warm Pool"}
+                    </h3>
                     <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      Suhu kolam yang hangat membuat murid tidak mudah kedinginan dan merasa nyaman berlatih gerakan kaki/tangan lebih lama di dalam air.
+                      {language === "id"
+                        ? "Suhu kolam yang hangat membuat murid tidak mudah kedinginan dan merasa nyaman berlatih gerakan kaki/tangan lebih lama di dalam air."
+                        : "The warm pool temperature keeps students from getting cold easily, allowing them to practice foot/hand movements longer in comfort."}
                     </p>
                   </div>
                 </div>
@@ -186,9 +240,13 @@ export function SwimCourseClient() {
                     03
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Privasi Menenangkan</h3>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
+                      {language === "id" ? "Privasi Menenangkan" : "Soothing Privacy"}
+                    </h3>
                     <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      Sangat cocok bagi ibu-ibu yang risih apabila dilihat orang lain saat latihan renang, memberikan rasa aman 100% tanpa canggung.
+                      {language === "id"
+                        ? "Sangat cocok bagi ibu-ibu yang risih apabila dilihat orang lain saat latihan renang, memberikan rasa aman 100% tanpa canggung."
+                        : "Perfect for women who prefer not to be seen by others during swim practice, providing 100% peace of mind without awkwardness."}
                     </p>
                   </div>
                 </div>
@@ -203,10 +261,10 @@ export function SwimCourseClient() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Kelas Pilihan
+              {language === "id" ? "Kelas Pilihan" : "Class Options"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              Kategori Program Swim Course
+              {language === "id" ? "Kategori Program Swim Course" : "Swim Course Program Categories"}
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
@@ -246,10 +304,10 @@ export function SwimCourseClient() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-sand/40 text-espresso font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Alur Latihan
+              {language === "id" ? "Alur Latihan" : "Practice Flow"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              Prosedur Sesi Latihan Renang Anda
+              {language === "id" ? "Prosedur Sesi Latihan Renang Anda" : "Your Swim Practice Session Procedure"}
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
@@ -264,9 +322,13 @@ export function SwimCourseClient() {
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-espresso text-lg">01. Pengenalan & Asesmen</span>
+              <span className="font-display font-black text-espresso text-lg">
+                {language === "id" ? "01. Pengenalan & Asesmen" : "01. Introduction & Assessment"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Instruktur melakukan evaluasi keberanian air, mengajarkan teknik pernapasan dasar di kolam, meluncur dengan media bantu yang aman.
+                {language === "id"
+                  ? "Instruktur melakukan evaluasi keberanian air, mengajarkan teknik pernapasan dasar di kolam, meluncur dengan media bantu yang aman."
+                  : "The instructor evaluates water confidence, teaches basic pool breathing techniques, and guides gliding with safe float aids."}
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -280,9 +342,13 @@ export function SwimCourseClient() {
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-espresso text-lg">02. Pengembangan Gaya</span>
+              <span className="font-display font-black text-espresso text-lg">
+                {language === "id" ? "02. Pengembangan Gaya" : "02. Stroke Development"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Melatih gerakan tungkai dan lengan gaya dada atau gaya bebas secara teratur, melatih koordinasi pernapasan di permukaan air.
+                {language === "id"
+                  ? "Melatih gerakan tungkai dan lengan gaya dada atau gaya bebas secara teratur, melatih koordinasi pernapasan di permukaan air."
+                  : "Practicing leg and arm movements for breaststroke or freestyle regularly, training breathing coordination on the water surface."}
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -296,9 +362,13 @@ export function SwimCourseClient() {
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-espresso text-lg">03. Pemantapan Gerak</span>
+              <span className="font-display font-black text-espresso text-lg">
+                {language === "id" ? "03. Pemantapan Gerak" : "03. Movement Consolidation"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Melatih ketahanan fisik (stamina) renang beberapa putaran bolak-balik tanpa jeda, serta memantapkan teknik water safety mandiri.
+                {language === "id"
+                  ? "Melatih ketahanan fisik (stamina) renang beberapa putaran bolak-balik tanpa jeda, serta memantapkan teknik water safety mandiri."
+                  : "Training swim endurance (stamina) with several back-and-forth laps without stopping, and reinforcing independent water safety techniques."}
               </p>
             </div>
           </div>
@@ -310,10 +380,10 @@ export function SwimCourseClient() {
         <div className="container-wellness max-w-4xl">
           <div className="text-center mb-12">
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Pertanyaan Umum
+              {language === "id" ? "Pertanyaan Umum" : "Frequently Asked Questions"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
-              Hal-Hal yang Sering Ditanyakan
+              {language === "id" ? "Hal-Hal yang Sering Ditanyakan" : "Common Questions Asked"}
             </h2>
           </div>
           <div className="flex flex-col gap-3">

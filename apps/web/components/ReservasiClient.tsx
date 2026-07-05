@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Calendar, Clock, User, MessageSquare, ChevronRight, ChevronLeft, CheckCircle2 } from "lucide-react";
+import { ChevronRight, ChevronLeft, CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
 
 export function ReservasiClient() {
+  const { t, language } = useLanguage();
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     layanan: "",
@@ -18,10 +19,10 @@ export function ReservasiClient() {
   });
 
   const layananList = [
-    { id: "akupunktur", label: "Akupunktur Medis / Wajah", emoji: "🪡", color: "border-peach hover:bg-peach-soft/30" },
-    { id: "hidroterapi", label: "Hidroterapi privat Kolam Hangat", emoji: "🌊", color: "border-sage hover:bg-sage-soft/30" },
-    { id: "fisioterapi", label: "Fisioterapi & Terapi Manual", emoji: "💪", color: "border-blush hover:bg-blush-soft/30" },
-    { id: "swim-course", label: "Swim Course Privat (Anak/Dewasa/Wanita)", emoji: "🏊", color: "border-sand hover:bg-sand-soft/30" },
+    { id: "akupunktur", label: `${t("services.akupunktur.name")} / ${language === "id" ? "Wajah" : "Facial"}`, emoji: "🪡", color: "border-peach hover:bg-peach-soft/30" },
+    { id: "hidroterapi", label: `${t("services.hidroterapi.name")} (${language === "id" ? "Kolam Hangat" : "Warm Pool"})`, emoji: "🌊", color: "border-sage hover:bg-sage-soft/30" },
+    { id: "fisioterapi", label: `${t("services.fisioterapi.name")} & ${language === "id" ? "Terapi Manual" : "Manual Therapy"}`, emoji: "💪", color: "border-blush hover:bg-blush-soft/30" },
+    { id: "swim-course", label: `${t("services.swimCourse.name")} (${language === "id" ? "Anak/Dewasa/Wanita" : "Kids/Adults/Women"})`, emoji: "🏊", color: "border-sand hover:bg-sand-soft/30" },
   ];
 
   const jamList = [
@@ -42,16 +43,16 @@ export function ReservasiClient() {
 
   const handleSendWhatsApp = () => {
     const formattedLayanan = layananList.find(l => l.id === formData.layanan)?.label || formData.layanan;
-    const text = `Halo Lotus Semarang, saya ingin melakukan reservasi sesi terapi:
+    const text = `${t("bookingFlow.waMessage.intro")}
 
-- *Layanan*: ${formattedLayanan}
-- *Hari*: ${formData.hari}
-- *Jam*: ${formData.jam} WIB
-- *Nama Lengkap*: ${formData.nama}
-- *Keluhan*: ${formData.keluhan || "-"}
-- *Catatan Tambahan*: ${formData.catatan || "-"}
+- *${t("bookingFlow.waMessage.service")}*: ${formattedLayanan}
+- *${t("bookingFlow.waMessage.date")}*: ${formData.hari}
+- *${t("bookingFlow.waMessage.time")}*: ${formData.jam} ${language === "id" ? "WIB" : "GMT+7"}
+- *${t("bookingFlow.waMessage.name")}*: ${formData.nama}
+- *${t("bookingFlow.waMessage.complaint")}*: ${formData.keluhan || "-"}
+- *${t("bookingFlow.waMessage.notes")}*: ${formData.catatan || "-"}
 
-Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
+${t("bookingFlow.waMessage.outro")}`;
 
     const encodedText = encodeURIComponent(text);
     const whatsappUrl = `https://wa.me/6287700303645?text=${encodedText}`;
@@ -68,13 +69,13 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
           {/* Header */}
           <div className="text-center mb-12">
             <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Reservasi Online
+              {t("bookingFlow.tag")}
             </span>
             <h1 className="font-display font-black text-espresso text-4xl lg:text-6xl tracking-tight mb-3">
-              Pesan Sesi Terapi Anda
+              {t("bookingFlow.title")}
             </h1>
             <p className="font-sans text-espresso/60 text-sm">
-              Sistem reservasi privat mudah yang langsung terhubung dengan asisten medis kami via WhatsApp.
+              {t("bookingFlow.subtitle")}
             </p>
           </div>
 
@@ -109,7 +110,7 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
             {step === 1 && (
               <div className="flex flex-col gap-6">
                 <h2 className="font-display font-bold text-espresso text-xl lg:text-2xl text-center mb-2">
-                  Layanan apa yang Anda butuhkan?
+                  {t("bookingFlow.step1Title")}
                 </h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {layananList.map((layanan) => (
@@ -136,14 +137,14 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
             {step === 2 && (
               <div className="flex flex-col gap-6">
                 <h2 className="font-display font-bold text-espresso text-xl lg:text-2xl text-center mb-2">
-                  Kapan Anda ingin berkunjung?
+                  {t("bookingFlow.step2Title")}
                 </h2>
                 
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* Hari Input */}
                   <div className="flex flex-col gap-2">
                     <label className="font-sans font-bold text-xs text-espresso/60 uppercase tracking-wider">
-                      Pilih Hari Kunjungan
+                      {t("bookingFlow.step2LabelDay")}
                     </label>
                     <input
                       type="date"
@@ -152,14 +153,14 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
                       className="w-full bg-sand-soft/30 border border-espresso/5 rounded-xl px-4 py-3.5 font-sans text-sm focus:outline-none focus:border-terra"
                     />
                     <span className="font-sans text-[0.7rem] text-espresso/40">
-                      *Jam operasional: Senin – Sabtu (Minggu Libur).
+                      {t("bookingFlow.step2Notice")}
                     </span>
                   </div>
 
                   {/* Jam Grid */}
                   <div className="flex flex-col gap-3">
                     <label className="font-sans font-bold text-xs text-espresso/60 uppercase tracking-wider">
-                      Pilih Waktu (WIB)
+                      {t("bookingFlow.step2LabelTime")}
                     </label>
                     <div className="grid grid-cols-3 gap-2">
                       {jamList.map((jam) => (
@@ -185,14 +186,14 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
                     onClick={prevStep}
                     className="flex items-center gap-1.5 font-sans font-bold text-xs text-espresso/50 hover:text-espresso"
                   >
-                    <ChevronLeft size={16} /> Kembali
+                    <ChevronLeft size={16} /> {t("bookingFlow.prev")}
                   </button>
                   <button
                     disabled={!formData.hari || !formData.jam}
                     onClick={nextStep}
                     className="btn-pill-dark px-6 py-2.5 text-xs font-bold disabled:opacity-50 disabled:pointer-events-none"
                   >
-                    Lanjut <ChevronRight size={16} className="inline ml-1" />
+                    {t("bookingFlow.next")} <ChevronRight size={16} className="inline ml-1" />
                   </button>
                 </div>
               </div>
@@ -202,17 +203,17 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
             {step === 3 && (
               <div className="flex flex-col gap-6">
                 <h2 className="font-display font-bold text-espresso text-xl lg:text-2xl text-center mb-2">
-                  Detail Informasi Pasien
+                  {t("bookingFlow.step3Title")}
                 </h2>
                 
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col gap-1.5">
                     <label className="font-sans font-bold text-xs text-espresso/60 uppercase tracking-wider">
-                      Nama Lengkap Pasien
+                      {t("bookingFlow.step3LabelName")}
                     </label>
                     <input
                       type="text"
-                      placeholder="Masukkan nama lengkap Anda"
+                      placeholder={t("bookingFlow.step3PlaceholderName")}
                       value={formData.nama}
                       onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
                       className="w-full bg-sand-soft/30 border border-espresso/5 rounded-xl px-4 py-3.5 font-sans text-sm focus:outline-none focus:border-terra"
@@ -221,11 +222,11 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
 
                   <div className="flex flex-col gap-1.5">
                     <label className="font-sans font-bold text-xs text-espresso/60 uppercase tracking-wider">
-                      Keluhan Utama (Gejala)
+                      {t("bookingFlow.step3LabelComplaint")}
                     </label>
                     <textarea
                       rows={3}
-                      placeholder="Contoh: Nyeri sendi lutut kanan saat digerakkan, atau vertigo berulang"
+                      placeholder={t("bookingFlow.step3PlaceholderComplaint")}
                       value={formData.keluhan}
                       onChange={(e) => setFormData({ ...formData, keluhan: e.target.value })}
                       className="w-full bg-sand-soft/30 border border-espresso/5 rounded-xl px-4 py-3.5 font-sans text-sm focus:outline-none focus:border-terra resize-none"
@@ -234,11 +235,11 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
 
                   <div className="flex flex-col gap-1.5">
                     <label className="font-sans font-bold text-xs text-espresso/60 uppercase tracking-wider">
-                      Catatan Tambahan (Bumil / Lansia / Hijab-only)
+                      {t("bookingFlow.step3LabelNotes")}
                     </label>
                     <input
                       type="text"
-                      placeholder="Contoh: Butuh terapis wanita karena berhijab"
+                      placeholder={t("bookingFlow.step3PlaceholderNotes")}
                       value={formData.catatan}
                       onChange={(e) => setFormData({ ...formData, catatan: e.target.value })}
                       className="w-full bg-sand-soft/30 border border-espresso/5 rounded-xl px-4 py-3.5 font-sans text-sm focus:outline-none focus:border-terra"
@@ -251,14 +252,14 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
                     onClick={prevStep}
                     className="flex items-center gap-1.5 font-sans font-bold text-xs text-espresso/50 hover:text-espresso"
                   >
-                    <ChevronLeft size={16} /> Kembali
+                    <ChevronLeft size={16} /> {t("bookingFlow.prev")}
                   </button>
                   <button
                     disabled={!formData.nama || !formData.keluhan}
                     onClick={nextStep}
                     className="btn-pill-dark px-6 py-2.5 text-xs font-bold disabled:opacity-50 disabled:pointer-events-none"
                   >
-                    Lanjut <ChevronRight size={16} className="inline ml-1" />
+                    {t("bookingFlow.next")} <ChevronRight size={16} className="inline ml-1" />
                   </button>
                 </div>
               </div>
@@ -273,35 +274,35 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
                 
                 <div>
                   <h2 className="font-display font-bold text-espresso text-xl lg:text-2xl mb-1">
-                    Konfirmasi Reservasi
+                    {t("bookingFlow.step4Title")}
                   </h2>
                   <p className="font-sans text-espresso/60 text-xs">
-                    Silakan periksa kembali rincian janji terapi Anda sebelum mengirimkan konfirmasi.
+                    {t("bookingFlow.step4Subtitle")}
                   </p>
                 </div>
 
                 {/* Summary Table */}
                 <div className="bg-sand-soft/30 rounded-2xl p-6 text-left border border-espresso/5 flex flex-col gap-3 font-sans text-sm">
                   <div className="flex justify-between border-b border-espresso/5 pb-2">
-                    <span className="text-espresso/50">Layanan:</span>
+                    <span className="text-espresso/50">{t("bookingFlow.summaryService")}</span>
                     <span className="font-bold text-espresso">
                       {layananList.find(l => l.id === formData.layanan)?.label}
                     </span>
                   </div>
                   <div className="flex justify-between border-b border-espresso/5 pb-2">
-                    <span className="text-espresso/50">Jadwal:</span>
+                    <span className="text-espresso/50">{t("bookingFlow.summarySchedule")}</span>
                     <span className="font-bold text-espresso">{formData.hari}</span>
                   </div>
                   <div className="flex justify-between border-b border-espresso/5 pb-2">
-                    <span className="text-espresso/50">Jam Terapi:</span>
-                    <span className="font-bold text-espresso">{formData.jam} WIB</span>
+                    <span className="text-espresso/50">{t("bookingFlow.summaryTime")}</span>
+                    <span className="font-bold text-espresso">{formData.jam} {language === "id" ? "WIB" : "GMT+7"}</span>
                   </div>
                   <div className="flex justify-between border-b border-espresso/5 pb-2">
-                    <span className="text-espresso/50">Nama Pasien:</span>
+                    <span className="text-espresso/50">{t("bookingFlow.summaryPatient")}</span>
                     <span className="font-bold text-espresso">{formData.nama}</span>
                   </div>
                   <div className="flex flex-col gap-1">
-                    <span className="text-espresso/50">Keluhan:</span>
+                    <span className="text-espresso/50">{t("bookingFlow.summaryComplaint")}</span>
                     <span className="font-medium text-espresso/80 bg-white p-2.5 rounded-lg border border-espresso/5 text-xs">
                       {formData.keluhan}
                     </span>
@@ -313,13 +314,13 @@ Mohon konfirmasi ketersediaan jadwalnya. Terima kasih.`;
                     onClick={prevStep}
                     className="flex items-center gap-1.5 font-sans font-bold text-xs text-espresso/50 hover:text-espresso"
                   >
-                    <ChevronLeft size={16} /> Kembali
+                    <ChevronLeft size={16} /> {t("bookingFlow.prev")}
                   </button>
                   <button
                     onClick={handleSendWhatsApp}
                     className="btn-pill-dark px-8 py-3 text-sm font-bold flex items-center gap-2 bg-forest hover:bg-forest/90"
                   >
-                    💬 Kirim via WhatsApp
+                    {t("bookingFlow.sendWhatsApp")}
                   </button>
                 </div>
               </div>

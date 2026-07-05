@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Play, X, Heart } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
 
 interface ReelItem {
   id: string;
@@ -14,44 +15,19 @@ interface ReelItem {
 
 export function ReelsShowcase() {
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  const { t } = useLanguage();
 
-  const reels: ReelItem[] = [
-    {
-      id: "azv-Y1Or_Ps",
-      title: "Penjelasan Lengkap Terapi Fisioterapi Medis",
-      category: "Edukasi Fisioterapi",
-      likes: "1.2k",
-      thumbnail: "https://img.youtube.com/vi/azv-Y1Or_Ps/sddefault.jpg",
-    },
-    {
-      id: "DqXYDhLji4Y",
-      title: "Cerita Kesembuhan Akupunktur Pasien Lansia",
-      category: "Testimoni Akupunktur",
-      likes: "945",
-      thumbnail: "https://img.youtube.com/vi/DqXYDhLji4Y/sddefault.jpg",
-    },
-    {
-      id: "J_L5eCHy-Fk",
-      title: "Proses Tindakan Akupunktur Slimming Alami",
-      category: "Estetika Wajah",
-      likes: "1.5k",
-      thumbnail: "https://img.youtube.com/vi/J_L5eCHy-Fk/sddefault.jpg",
-    },
-    {
-      id: "VtuUAN56IfI",
-      title: "Akupunktur Anak Mengatasi Susah Makan",
-      category: "Pediatrik / Anak",
-      likes: "876",
-      thumbnail: "https://img.youtube.com/vi/VtuUAN56IfI/sddefault.jpg",
-    },
-    {
-      id: "fhbQ6rYgPB4",
-      title: "Sesi Terapi Fisioterapi Tumbuh Kembang Anak",
-      category: "Cinematic Fisioterapi",
-      likes: "1.1k",
-      thumbnail: "https://img.youtube.com/vi/fhbQ6rYgPB4/sddefault.jpg",
-    },
-  ];
+  const reelsList = t("reels.list") || [];
+  const videoIds = ["azv-Y1Or_Ps", "DqXYDhLji4Y", "J_L5eCHy-Fk", "VtuUAN56IfI", "fhbQ6rYgPB4"];
+  const likesList = ["1.2k", "945", "1.5k", "876", "1.1k"];
+
+  const reels: ReelItem[] = videoIds.map((id, index) => ({
+    id,
+    title: reelsList[index]?.title || "",
+    category: reelsList[index]?.category || "",
+    likes: likesList[index] || "0",
+    thumbnail: `https://img.youtube.com/vi/${id}/sddefault.jpg`,
+  }));
 
   return (
     <section className="section-pad bg-white border-b border-espresso/5">
@@ -60,13 +36,13 @@ export function ReelsShowcase() {
         {/* Header */}
         <div className="text-center max-w-xl mx-auto mb-14">
           <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-            Edukasi Video Reels
+            {t("reels.eyebrow")}
           </span>
           <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
-            Galeri Video Terapi & Testimoni
+            {t("reels.title")}
           </h2>
           <p className="font-sans text-espresso/60 text-sm mt-3 leading-relaxed">
-            Lihat secara langsung proses tindakan akupunktur medis, latihan kolam renang hangat, serta kisah kesembuhan pasien.
+            {t("reels.desc")}
           </p>
         </div>
 

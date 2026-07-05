@@ -1,17 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Phone, Instagram, Clock } from "lucide-react";
-
-const navLinks = [
-  { label: "Akupunktur",  href: "/layanan/akupunktur" },
-  { label: "Hidroterapi", href: "/layanan/hidroterapi" },
-  { label: "Fisioterapi", href: "/layanan/fisioterapi" },
-  { label: "Swim Course", href: "/layanan/swim-course" },
-  { label: "Tentang Kami", href: "/tentang-kami" },
-];
+import { MapPin, Phone, Instagram, Clock, Facebook } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
 
 export function Footer() {
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t("services.akupunktur.name"),  href: "/layanan/akupunktur" },
+    { label: t("services.hidroterapi.name"), href: "/layanan/hidroterapi" },
+    { label: t("services.fisioterapi.name"), href: "/layanan/fisioterapi" },
+    { label: t("services.swimCourse.name"), href: "/layanan/swim-course" },
+    { label: t("navbar.tentangKami"), href: "/tentang-kami" },
+  ];
+
   return (
     <footer id="kontak" className="bg-espresso text-cream overflow-hidden">
 
@@ -19,7 +22,7 @@ export function Footer() {
       <div className="bg-terra py-16 px-6">
         <div className="container-wellness text-center">
           <motion.h2
-            className="font-display font-black text-cream"
+            className="font-display font-black text-cream whitespace-pre-line"
             style={{
               fontSize: "clamp(2rem, 5vw, 4rem)",
               lineHeight: "1.05",
@@ -30,7 +33,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            Mulai Hari Ini,<br />Karena Kamu Layak.
+            {t("footer.ctaTitle")}
           </motion.h2>
           <motion.p
             className="font-sans text-cream/75 mt-4 mb-8 max-w-md mx-auto leading-relaxed"
@@ -40,8 +43,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Satu langkah kecil untuk hidupmu yang lebih sehat dan bahagia.
-            Tim kami siap menyambut kamu.
+            {t("footer.ctaDesc")}
           </motion.p>
           <motion.a
             href="/reservasi"
@@ -51,7 +53,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            🌸 Reservasi Jadwal Terapi
+            {t("footer.ctaBtn")}
           </motion.a>
         </div>
       </div>
@@ -75,17 +77,16 @@ export function Footer() {
                 </div>
               </div>
               <p className="font-sans text-cream/55 leading-relaxed max-w-sm" style={{ fontSize: "0.9rem" }}>
-                Tempat perawatan kesehatan yang terasa seperti rumah sendiri —
-                hangat, privat, dan selalu menyambut kamu apa adanya.
+                {t("footer.desc")}
               </p>
 
               {/* Operating hours */}
               <div className="flex items-start gap-3 mt-6">
                 <Clock size={15} className="text-peach mt-0.5 flex-shrink-0" />
                 <div className="font-sans text-cream/50" style={{ fontSize: "0.82rem" }}>
-                  <div className="font-semibold text-cream/70 mb-1">Jam Operasional</div>
-                  <div>Senin – Sabtu: 09.00 – 17.00</div>
-                  <div>Minggu: Libur (Tutup)</div>
+                  <div className="font-semibold text-cream/70 mb-1">{t("footer.opsHours")}</div>
+                  <div>{t("footer.mondaySaturday")}</div>
+                  <div>{t("footer.sundayClosed")}</div>
                 </div>
               </div>
             </div>
@@ -93,7 +94,7 @@ export function Footer() {
             {/* Nav links */}
             <div>
               <div className="font-sans text-cream/40 text-[0.65rem] tracking-widest uppercase mb-5 font-semibold">
-                Layanan
+                {t("footer.servicesHeader")}
               </div>
               <ul className="flex flex-col gap-3">
                 {navLinks.map((link) => (
@@ -112,7 +113,7 @@ export function Footer() {
             {/* Contact */}
             <div>
               <div className="font-sans text-cream/40 text-[0.65rem] tracking-widest uppercase mb-5 font-semibold">
-                Hubungi Kami
+                {t("footer.contactHeader")}
               </div>
               <div className="flex flex-col gap-4">
 
@@ -154,6 +155,19 @@ export function Footer() {
                     @lotus_semarang
                   </span>
                 </a>
+
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/lotusacupuncturecenter/?locale=id_ID"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 group"
+                >
+                  <Facebook size={16} className="text-peach flex-shrink-0" />
+                  <span className="font-sans text-cream/65 group-hover:text-cream transition-colors duration-200 text-sm">
+                    Lotus Acupuncture Center
+                  </span>
+                </a>
               </div>
 
               {/* Quick WA CTA */}
@@ -163,7 +177,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-6 bg-peach/20 hover:bg-peach/30 text-cream rounded-full px-5 py-2.5 text-sm font-sans font-medium transition-all duration-300"
               >
-                💬 Tanya Gratis via WA
+                {t("footer.askWa")}
               </a>
             </div>
           </div>
@@ -171,7 +185,7 @@ export function Footer() {
           {/* Bottom bar */}
           <div className="border-t border-cream/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
             <span className="font-sans text-cream/25 text-xs">
-              © 2025 Lotus Health, Beauty & Care. Semua hak dilindungi.
+              {t("footer.rights")}
             </span>
             <span className="font-sans text-cream/20 text-xs">
               Made with ❤ in Semarang

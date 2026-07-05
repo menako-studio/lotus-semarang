@@ -5,16 +5,18 @@ import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
+import { useLanguage } from "@/components/LanguageContext";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 
 export function FisioterapiClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const { t, language } = useLanguage();
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const applications = [
+  const applications = language === "id" ? [
     {
       title: "Nyeri & Persendian",
       desc: "Perawatan rehabilitatif komprehensif untuk meredakan nyeri pada pinggang, leher, bahu, lutut, dan masalah persendian gerak lainnya.",
@@ -39,18 +41,50 @@ export function FisioterapiClient() {
       img: "/images/lotus_treatment_physio_child_exercise_ball.jpg",
       bg: "bg-sand-soft",
     },
+  ] : [
+    {
+      title: "Pain & Joints",
+      desc: "Comprehensive rehabilitative care to relieve pain in the lower back, neck, shoulders, knees, and other joint movement issues.",
+      img: "/images/lotus_treatment_physio_knee_mobilization_closeup.webp",
+      bg: "bg-blush-soft",
+    },
+    {
+      title: "Spinal Abnormalities",
+      desc: "Focused manual therapy to help correct spinal curvature abnormalities and restore your ideal posture.",
+      img: "/images/lotus_treatment_pediatric_spine_assessment_hijab.webp",
+      bg: "bg-peach-soft",
+    },
+    {
+      title: "Stroke & Motor Recovery",
+      desc: "Structured nerve and motor movement recovery exercises post-stroke, traumatic injury, or post-surgical medical procedures.",
+      img: "/images/lotus_treatment_physio_adult_ball_exercise_close.jpg",
+      bg: "bg-sage-soft",
+    },
+    {
+      title: "Pregnancy & Development",
+      desc: "Therapeutic physical exercise for pelvic recovery of pregnant/postpartum mothers and stimulation to train children's motor skills.",
+      img: "/images/lotus_treatment_physio_child_exercise_ball.jpg",
+      bg: "bg-sand-soft",
+    },
   ];
 
-  const tools = [
+  const tools = language === "id" ? [
     "Manual Therapy (Kinesioterapi)",
     "Neuromuskular Tapping (NMT)",
     "Infra Red (IR) Lamp",
     "Ultrasound (US) Therapy",
     "Transcutaneus Electrical Stimulation (TENS)",
     "Traksi Lumbal / Cervical (Tarikan Tulang)",
+  ] : [
+    "Manual Therapy (Kinesiotherapy)",
+    "Neuromuscular Tapping (NMT)",
+    "Infra Red (IR) Lamp",
+    "Ultrasound (US) Therapy",
+    "Transcutaneous Electrical Stimulation (TENS)",
+    "Lumbar / Cervical Traction (Spinal Traction)",
   ];
 
-  const faqs = [
+  const faqs = language === "id" ? [
     {
       q: "Apakah layanan Fisioterapi di Lotus dikerjakan secara privat?",
       a: "Ya. Setiap sesi fisioterapi bersifat privat (satu pasien per sesi) di dalam ruangan terapi khusus. Anda akan mendapatkan perhatian penuh dan pendampingan 1-on-1 dari fisioterapis kami tanpa terganggu.",
@@ -67,6 +101,23 @@ export function FisioterapiClient() {
       q: "Apakah saya perlu membawa rujukan dokter?",
       a: "Tidak wajib. Fisioterapis kami akan melakukan asesmen gerak & fungsi fisik lengkap pada pertemuan pertama untuk mendiagnosa keluhan Anda dan merancang rencana terapi yang aman bagi kondisi Anda.",
     },
+  ] : [
+    {
+      q: "Is the Physical Therapy service at Lotus private?",
+      a: "Yes. Every physical therapy session is completely private (one patient per session) in a dedicated therapy room. You will receive undivided attention and 1-on-1 guidance from our therapist without interruption.",
+    },
+    {
+      q: "What equipment modalities are used during physical therapy?",
+      a: "We use accredited medical standard equipment such as Neuromuscular Tapping (NMT), Infra Red (IR) Lamp, Ultrasound (US), TENS (electrical nerve stimulation), and Lumbar/Cervical Traction for spinal traction.",
+    },
+    {
+      q: "How long is each physical therapy session?",
+      a: "One physical therapy session ranges from 45 to 60 minutes, which includes an initial movement & function assessment, manual therapy / device stimulation, and guided home exercises.",
+    },
+    {
+      q: "Do I need to bring a doctor's referral?",
+      a: "Not mandatory. Our physical therapist will conduct a complete movement & physical function assessment on the first visit to diagnose your complaint and design a safe therapy plan for your condition.",
+    },
   ];
 
   return (
@@ -82,33 +133,35 @@ export function FisioterapiClient() {
             <div className="lg:col-span-6 flex flex-col gap-6">
               <div>
                 <span className="tag-pill bg-blush/40 text-espresso font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-                  Rehabilitasi Fisik & Saraf
+                  {t("fisioterapiPage.eyebrow")}
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
-                  Fisioterapi<br />
-                  <span className="text-terra">Pulih Secara Nyaman.</span>
+                  {language === "id" ? "Fisioterapi" : "Physical Therapy"}<br />
+                  <span className="text-terra">{language === "id" ? "Pulih Secara Nyaman." : "Recover Comfortably."}</span>
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
-                Fisioterapi merupakan tindakan medis penting untuk memelihara, memulihkan, dan memaksimalkan fungsi fisik tubuh pada seluruh rentang usia. Pulih kembali secara percaya diri di ruang terapi privat kami.
+                {language === "id" 
+                  ? "Fisioterapi merupakan tindakan medis penting untuk memelihara, memulihkan, dan memaksimalkan fungsi fisik tubuh pada seluruh rentang usia. Pulih kembali secara percaya diri di ruang terapi privat kami."
+                  : "Physiotherapy is an essential medical procedure to maintain, restore, and maximize the body's physical function across all age groups. Recover confidently in our private therapy rooms."}
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Fisioterapi"
+                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(t("fisioterapiPage.whatsAppPrompt"))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-dark font-bold text-sm px-8 py-4"
                 >
-                  Pesan Sesi Fisioterapi
+                  {t("fisioterapiPage.cta")}
                 </a>
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20mau%20konsultasi%20masalah%20fisioterapi"
+                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(language === "id" ? "Halo Lotus, mau konsultasi masalah fisioterapi" : "Hello Lotus, I'd like to consult on physical therapy issues")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-outline font-bold text-sm px-8 py-4"
                 >
-                  Konsultasi Medis
+                  {language === "id" ? "Konsultasi Medis" : "Medical Consultation"}
                 </a>
               </div>
             </div>
@@ -146,7 +199,7 @@ export function FisioterapiClient() {
       {/* Marquee Accent */}
       <Marquee bg="terra" textClass="text-cream" speed="slow" />
 
-      {/* Sains Section */}
+      {/* Science Section */}
       <section className="section-pad bg-white">
         <div className="container-wellness">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -162,13 +215,15 @@ export function FisioterapiClient() {
             </div>
             <div className="lg:col-span-6 flex flex-col gap-6">
               <span className="tag-pill bg-espresso/5 text-espresso/80 font-bold text-xs uppercase tracking-wider self-start">
-                Teknologi Modalitas
+                {language === "id" ? "Teknologi Modalitas" : "Modality Technology"}
               </span>
               <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight tracking-tight">
-                Pilihan Modalitas Alat Fisioterapi Kami
+                {language === "id" ? "Pilihan Modalitas Alat Fisioterapi Kami" : "Our Physical Therapy Device Modality Options"}
               </h2>
               <p className="font-sans text-espresso/60 leading-relaxed">
-                Fisioterapis kami mengombinasikan manipulasi gerak manual dengan penerapan teknologi alat fisioterapi modern untuk merangsang proses perbaikan jaringan sel saraf dan otot dengan cepat.
+                {language === "id"
+                  ? "Fisioterapis kami mengombinasikan manipulasi gerak manual dengan penerapan teknologi alat fisioterapi modern untuk merangsang proses perbaikan jaringan sel saraf dan otot dengan cepat."
+                  : "Our physical therapists combine manual movement manipulation with modern physical therapy device technology to stimulate fast repair of nerve cells and muscle tissue."}
               </p>
               <div className="grid sm:grid-cols-2 gap-4 mt-2">
                 {tools.map((tool) => (
@@ -188,10 +243,10 @@ export function FisioterapiClient() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Manfaat Utama
+              {language === "id" ? "Manfaat Utama" : "Key Benefits"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              Kondisi Fisik Yang Kami Tangani
+              {language === "id" ? "Kondisi Fisik Yang Kami Tangani" : "Physical Conditions We Treat"}
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
@@ -231,59 +286,71 @@ export function FisioterapiClient() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-blush/40 text-espresso font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Alur Pemeriksaan
+              {language === "id" ? "Prosedur Tindakan" : "Treatment Procedure"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              Prosedur Sesi Fisioterapi Anda
+              {language === "id" ? "Bagaimana Sesi Terapi Anda Berlangsung?" : "How Does Your Therapy Session Go?"}
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             <div className="flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
                 <Image
-                  src="/images/lotus_consultation_doctor_patient_model_hijab.jpg"
-                  alt="Asesmen Fungsi Gerak Awal"
+                  src="/images/lotus_treatment_physio_adult_ball_exercise_wide.jpg"
+                  alt="Asesmen Awal Fisioterapi"
                   fill
                   className="object-cover"
                   sizes="30vw"
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-terra text-lg">01. Asesmen Gerak & Fungsi</span>
+              <span className="font-display font-black text-espresso-400 text-lg">
+                {language === "id" ? "01. Asesmen Fisik Awal" : "01. Initial Physical Assessment"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Fisioterapis kami mengukur keterbatasan sendi, memeriksa titik nyeri otot, serta menganalisis pola gerak alami Anda untuk merancang rencana rehabilitasi yang aman.
+                {language === "id"
+                  ? "Pemeriksaan detail rentang gerak (Range of Motion), uji kekuatan otot, pemeriksaan postur tulang belakang, serta analisis respon refleks saraf Anda."
+                  : "Detailed range of motion test, muscle strength assessment, spine posture check, and analysis of your nerve reflex responses."}
               </p>
             </div>
             <div className="flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
                 <Image
-                  src="/images/lotus_treatment_physio_adult_ball_exercise_close.jpg"
-                  alt="Sesi Terapi & Latihan Pemulihan"
+                  src="/images/lotus_treatment_physio_knee_mobilization_closeup.webp"
+                  alt="Terapi Manual Mobilisasi Sendi"
                   fill
                   className="object-cover"
                   sizes="30vw"
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-terra text-lg">02. Terapi Manual & Alat</span>
+              <span className="font-display font-black text-espresso-400 text-lg">
+                {language === "id" ? "02. Terapi Manual & Alat" : "02. Manual & Device Therapy"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Tindakan terapi pijat medis gerak, kinesioterapi, dikombinasikan dengan stimulasi gelombang ultrasound (US), sinar infra merah, atau tarikan tulang traksi sesuai kebutuhan medis Anda.
+                {language === "id"
+                  ? "Kombinasi terapi pijat manipulasi (manual mobilization) untuk mengendurkan sendi kaku dipadu dengan stimulasi alat medis pereda nyeri otot."
+                  : "Combination of massage manipulation therapy (manual mobilization) to loosen stiff joints paired with medical device muscle pain relief stimulation."}
               </p>
             </div>
             <div className="flex flex-col gap-4">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
                 <Image
-                  src="/images/lotus_treatment_physio_adult_rehab_lunge.webp"
-                  alt="Edukasi Gerak Mandiri"
+                  src="/images/lotus_treatment_physio_child_exercise_ball.jpg"
+                  alt="Latihan Pemulihan & Edukasi Mandiri"
                   fill
                   className="object-cover"
                   sizes="30vw"
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-terra text-lg">03. Edukasi Latihan Rumah</span>
+              <span className="font-display font-black text-espresso-400 text-lg">
+                {language === "id" ? "03. Edukasi Latihan Mandiri" : "03. Home Exercise Education"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Anda dibekali instruksi gerakan peregangan dan penguatan otot mandiri yang aman dipraktikkan di rumah guna menjaga kelenturan sendi dan mencegah kekambuhan nyeri.
+                {language === "id"
+                  ? "Terapis melatih gerakan rehabilitasi bertahap untuk dipraktikkan secara aman di rumah demi mempercepat dan mempertahankan pemulihan fisik Anda."
+                  : "The therapist trains gradual rehabilitation movements to practice safely at home to accelerate and sustain your physical recovery."}
               </p>
             </div>
           </div>
@@ -295,10 +362,10 @@ export function FisioterapiClient() {
         <div className="container-wellness max-w-4xl">
           <div className="text-center mb-12">
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Pertanyaan Umum
+              {language === "id" ? "Pertanyaan Umum" : "Frequently Asked Questions"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
-              Hal-Hal yang Sering Ditanyakan
+              {language === "id" ? "Hal-Hal yang Sering Ditanyakan" : "Common Questions Asked"}
             </h2>
           </div>
           <div className="flex flex-col gap-3">

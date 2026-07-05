@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
 
 /* ─── Animation Helpers ──────────────────────────────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -11,15 +12,16 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.7, delay, ease: [0.45, 0.05, 0.55, 0.95] },
 });
 
-/* ─── Trust Badges ───────────────────────────────────────────────────────── */
-const badges = [
-  { emoji: "🔒", text: "Privasi Terjamin" },
-  { emoji: "⭐", text: "Tenaga Ahli Bersertifikat" },
-  { emoji: "🌿", text: "Ramah & Nyaman" },
-];
-
 /* ─── Hero Component ─────────────────────────────────────────────────────── */
 export function Hero() {
+  const { t } = useLanguage();
+
+  const badges = [
+    { emoji: "🔒", text: t("hero.badges.privacy") },
+    { emoji: "⭐", text: t("hero.badges.expert") },
+    { emoji: "🌿", text: t("hero.badges.cozy") },
+  ];
+
   return (
     <section
       className="min-h-screen flex items-center bg-cream overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-0"
@@ -34,7 +36,7 @@ export function Hero() {
             {/* Eyebrow pill */}
             <motion.div {...fadeUp(0.1)}>
               <span className="tag-pill bg-sage/30 text-forest font-semibold text-xs">
-                ✦ Wellness Privat di Semarang
+                {t("hero.eyebrow")}
               </span>
             </motion.div>
 
@@ -48,12 +50,12 @@ export function Hero() {
               }}
               {...fadeUp(0.2)}
             >
-              Sembuh Itu{" "}
+              {t("hero.titleStart")}{" "}
               <span
                 className="relative inline-block"
                 style={{ color: "var(--color-terra)" }}
               >
-                Menyenangkan.
+                {t("hero.titleEnd")}
                 {/* Underline squiggle decoration */}
                 <svg
                   className="absolute -bottom-2 left-0 w-full"
@@ -79,9 +81,7 @@ export function Hero() {
               style={{ fontSize: "clamp(1rem, 1.5vw, 1.125rem)" }}
               {...fadeUp(0.3)}
             >
-              Dari akupunktur yang menenangkan hingga hidroterapi yang memulihkan —
-              kami menghadirkan perawatan medis berbasis sains dalam suasana yang{" "}
-              <em className="not-italic font-semibold text-espresso">hangat, privat, dan bebas rasa canggung.</em>
+              {t("hero.subheading")}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -90,14 +90,14 @@ export function Hero() {
                 href="/reservasi"
                 className="btn-pill-dark group gap-2.5 py-4 px-8 text-base"
               >
-                Mulai Perjalananmu
+                {t("hero.ctaStart")}
                 <ArrowRight
                   size={16}
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </a>
               <a href="#layanan" className="btn-pill-outline py-4 px-8 text-base">
-                Lihat Layanan
+                {t("hero.ctaServices")}
               </a>
             </motion.div>
 
@@ -137,7 +137,7 @@ export function Hero() {
               transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
             >
               <div className="font-display font-black text-forest text-lg leading-none">800+</div>
-              <div className="font-sans text-[0.6rem] text-forest/70 font-medium mt-0.5">Pasien Puas</div>
+              <div className="font-sans text-[0.6rem] text-forest/70 font-medium mt-0.5">{t("hero.satisfiedPatients")}</div>
             </motion.div>
 
             {/* Floating accent pill — bottom right */}
@@ -149,8 +149,8 @@ export function Hero() {
               <div className="flex items-center gap-2">
                 <ShieldCheck size={16} className="text-forest" />
                 <div>
-                  <div className="font-sans text-[0.6rem] font-semibold text-espresso">100% Privat</div>
-                  <div className="font-sans text-[0.55rem] text-espresso/50">Nyaman & Aman</div>
+                  <div className="font-sans text-[0.6rem] font-semibold text-espresso">{t("hero.privateSuite")}</div>
+                  <div className="font-sans text-[0.55rem] text-espresso/50">{t("hero.safeCozy")}</div>
                 </div>
               </div>
             </motion.div>

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Search, HelpCircle, ChevronDown, ChevronUp, Check } from "lucide-react";
+import { Search, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
+import { useLanguage } from "@/components/LanguageContext";
 
 interface FaqItem {
   q: string;
@@ -13,63 +14,18 @@ export function SearchableFaq() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   const categories = [
-    { id: "all", label: "Semua Kategori" },
-    { id: "umum", label: "Umum & Fasilitas" },
-    { id: "akupunktur", label: "Akupunktur" },
-    { id: "hidroterapi", label: "Hidroterapi" },
-    { id: "fisioterapi", label: "Fisioterapi" },
-    { id: "renang", label: "Swim Course" },
+    { id: "all", label: t("faq.categories.all") },
+    { id: "umum", label: t("faq.categories.umum") },
+    { id: "akupunktur", label: t("faq.categories.akupunktur") },
+    { id: "hidroterapi", label: t("faq.categories.hidroterapi") },
+    { id: "fisioterapi", label: t("faq.categories.fisioterapi") },
+    { id: "renang", label: t("faq.categories.renang") },
   ];
 
-  const faqs: FaqItem[] = [
-    {
-      category: "umum",
-      q: "Di mana lokasi Lotus Semarang?",
-      a: "Kami berlokasi di Jl. Pamularsih No. 90/100, Gisikdrono, Semarang Barat, Semarang, Jawa Tengah. Lokasi kami sangat mudah diakses dan dilengkapi dengan area parkir privat yang aman.",
-    },
-    {
-      category: "umum",
-      q: "Bagaimana cara melakukan reservasi sesi terapi?",
-      a: "Anda bisa memesan jadwal secara online melalui website ini dengan masuk ke halaman Reservasi, lalu mengisi formulir singkat yang akan terhubung langsung ke WhatsApp asisten medis kami.",
-    },
-    {
-      category: "umum",
-      q: "Apakah konsultasi awal di Lotus Semarang gratis?",
-      a: "Ya. Kami menyediakan sesi konsultasi gratis sebelum memulai tindakan terapi untuk menganalisis keluhan Anda secara medis dan menyusun program terapi yang aman.",
-    },
-    {
-      category: "umum",
-      q: "Apakah area terapi privat aman untuk wanita berhijab?",
-      a: "Sangat aman. Seluruh area ruang terapi dan kolam hidroterapi kami tertutup rapat (100% private suite) dan kami menyediakan tenaga terapis wanita profesional khusus untuk melayani pasien wanita.",
-    },
-    {
-      category: "akupunktur",
-      q: "Apakah terapi akupunktur medis aman untuk anak-anak?",
-      a: "Sangat aman. Terapi akupunktur anak (pediatrik) menggunakan jarum ultra-tipis atau metode non-jarum (laser/akupresur) untuk membantu mengatasi keluhan tumbuh kembang dan nafsu makan.",
-    },
-    {
-      category: "akupunktur",
-      q: "Apakah akupunktur bisa membantu program kehamilan (promil)?",
-      a: "Ya. Akupunktur promil berfungsi menyeimbangkan hormon reproduksi, melancarkan aliran darah ke rahim, serta merelaksasi sistem saraf stres untuk mendukung keberhasilan promil alami maupun IVF.",
-    },
-    {
-      category: "hidroterapi",
-      q: "Apa bedanya kolam hidroterapi dengan kolam renang biasa?",
-      a: "Kolam hidroterapi kami diatur konstan dengan suhu hangat terapeutik (32°C - 34°C) dan dilengkapi dengan jet air bertekanan untuk terapi otot, serta disewa secara privat penuh.",
-    },
-    {
-      category: "fisioterapi",
-      q: "Peralatan modalitas apa saja yang digunakan di Fisioterapi?",
-      a: "Kami menyediakan modalitas lengkap standar medis terakreditasi seperti alat Ultrasound (US), TENS (stimulasi saraf elektrik), Infra Red (IR) Lamp, dan alat Traksi tulang belakang.",
-    },
-    {
-      category: "renang",
-      q: "Apakah kelas renang (Swim Course) cocok untuk lansia?",
-      a: "Sangat cocok. Latihan renang privat di kolam hangat kami sangat dianjurkan bagi lansia untuk melatih kekuatan jantung dan paru-paru tanpa risiko benturan keras pada sendi lutut.",
-    },
-  ];
+  const faqs: FaqItem[] = t("faq.list") || [];
 
   const filteredFaqs = faqs.filter((faq) => {
     const matchesSearch =
@@ -87,10 +43,10 @@ export function SearchableFaq() {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="tag-pill bg-sage/40 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-            Pusat Edukasi & FAQ
+            {t("faq.eyebrow")}
           </span>
           <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
-            Pertanyaan Yang Sering Diajukan
+            {t("faq.title")}
           </h2>
         </div>
 
@@ -98,7 +54,7 @@ export function SearchableFaq() {
         <div className="relative mb-8 max-w-xl mx-auto shadow-warm rounded-2xl overflow-hidden border border-espresso/5">
           <input
             type="text"
-            placeholder="Cari keluhan atau pertanyaan Anda di sini..."
+            placeholder={t("faq.searchPlaceholder")}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full bg-white px-6 py-4.5 pl-12 font-sans text-sm focus:outline-none focus:ring-1 focus:ring-terra text-espresso placeholder:text-espresso/45"
@@ -153,7 +109,7 @@ export function SearchableFaq() {
             ))
           ) : (
             <div className="text-center py-10 font-sans text-espresso/40 text-sm">
-              Tidak ada hasil pencarian yang cocok dengan kata kunci Anda.
+              {t("faq.noResults")}
             </div>
           )}
         </div>

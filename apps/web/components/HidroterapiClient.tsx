@@ -5,16 +5,18 @@ import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
+import { useLanguage } from "@/components/LanguageContext";
 import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
 
 export function HidroterapiClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const { t, language } = useLanguage();
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const applications = [
+  const applications = language === "id" ? [
     {
       title: "Mereduksi Beban Sendi",
       desc: "Prinsip fisika daya apung air mengurangi beban tubuh hingga 90%, sangat meringankan tekanan pada sendi lutut, pinggang, dan tulang belakang Anda.",
@@ -39,9 +41,34 @@ export function HidroterapiClient() {
       img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
       bg: "bg-sand-soft",
     },
+  ] : [
+    {
+      title: "Reduce Joint Load",
+      desc: "The physical principles of water buoyancy reduce body weight by up to 90%, greatly relieving pressure on your knee joints, waist, and spine.",
+      img: "/images/lotus_hydrotherapy_pool_male_floating_device.jpg",
+      bg: "bg-sage-soft",
+    },
+    {
+      title: "Motor & Stroke Rehab",
+      desc: "The warm water environment eases movement exercises, trains motor coordination, and improves balance with zero fall injury risk.",
+      img: "/images/lotus_treatment_hydro_adult_dumbbell_therapy.jpg",
+      bg: "bg-peach-soft",
+    },
+    {
+      title: "Nerve & Muscle Relaxation",
+      desc: "Pressurized warm water jets provide micro-massage on tense muscles, improve blood circulation, and calm the mind.",
+      img: "/images/lotus_treatment_hydro_equipment_noodle_front.jpg",
+      bg: "bg-blush-soft",
+    },
+    {
+      title: "Child Development & Pregnancy",
+      desc: "Provides a safe environment to stimulate kids' motor skills and safe cardio exercise for pregnant mothers without worrying about impact.",
+      img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
+      bg: "bg-sand-soft",
+    },
   ];
 
-  const faqs = [
+  const faqs = language === "id" ? [
     {
       q: "Apakah kolam hidroterapi di Lotus Semarang bersifat privat?",
       a: "Ya, 100% privat. Setiap sesi disewakan secara eksklusif per pasien/keluarga. Tidak ada tamu lain yang masuk ke area kolam selama sesi Anda berlangsung, sangat nyaman untuk ibu berhijab (Niqabi) dan pasien yang butuh ketenangan penuh.",
@@ -58,6 +85,23 @@ export function HidroterapiClient() {
       q: "Apakah hidroterapi aman bagi penderita stroke dan lansia?",
       a: "Sangat aman dan sangat direkomendasikan. Latihan di dalam air hangat jauh lebih ringan dilakukan bagi penderita stroke atau lansia yang memiliki keterbatasan kekuatan otot di darat.",
     },
+  ] : [
+    {
+      q: "Is the hydrotherapy pool at Lotus Semarang private?",
+      a: "Yes, 100% private. Each session is leased exclusively per patient/family. No other guests will enter the pool area during your session, making it highly comfortable for hijabi mothers (Niqabi) and patients requiring complete quietness.",
+    },
+    {
+      q: "What is the water temperature of the hydrotherapy pool?",
+      a: "Our pool water temperature is kept constant at 32°C to 34°C. This therapeutic warm temperature is ideal for relieving muscle tension and dilating blood vessels for better circulation.",
+    },
+    {
+      q: "What should I bring to the hydrotherapy session?",
+      a: "Just bring comfortable swimwear. For hijabi women, it is recommended to bring clean Muslimah swimwear/burkini. We provide sterile shower facilities, clean towels, and body soap post-session.",
+    },
+    {
+      q: "Is hydrotherapy safe for stroke patients and seniors?",
+      a: "Extremely safe and highly recommended. Exercises in warm water are much lighter to perform for stroke survivors or seniors who have limited muscle strength on land.",
+    },
   ];
 
   return (
@@ -73,33 +117,35 @@ export function HidroterapiClient() {
             <div className="lg:col-span-6 flex flex-col gap-6">
               <div>
                 <span className="tag-pill bg-sage/40 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-                  Fisioterapi Media Air
+                  {t("hidroterapiPage.eyebrow")}
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
-                  Hidroterapi<br />
-                  <span className="text-forest">Suaka Air Privat.</span>
+                  {language === "id" ? "Hidroterapi" : "Hydrotherapy"}<br />
+                  <span className="text-forest">{language === "id" ? "Suaka Air Privat." : "Private Water Sanctuary."}</span>
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
-                Temukan pemulihan fisik yang menenangkan. Kolam air hangat privat kami memanfaatkan hukum fisika air untuk meringankan beban sendi, mempercepat pemulihan motorik, dan merelaksasi otot Anda.
+                {language === "id" 
+                  ? "Temukan pemulihan fisik yang menenangkan. Kolam air hangat privat kami memanfaatkan hukum fisika air untuk meringankan beban sendi, mempercepat pemulihan motorik, dan merelaksasi otot Anda."
+                  : "Discover a soothing physical recovery. Our private warm water pool utilizes the physics laws of water to reduce joint load, accelerate motor recovery, and relax your muscles."}
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%20Semarang%2C%20saya%20tertarik%20dengan%20layanan%20Hidroterapi"
+                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(t("hidroterapiPage.whatsAppPrompt"))}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-dark font-bold text-sm px-8 py-4"
                 >
-                  Pesan Sesi Hidroterapi
+                  {t("hidroterapiPage.cta")}
                 </a>
                 <a
-                  href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20mau%20tanya%20detail%20kolam%20Hidroterapi"
+                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(language === "id" ? "Halo Lotus, mau tanya detail kolam Hidroterapi" : "Hello Lotus, I'd like to ask details about Hydrotherapy Pool")}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill-outline font-bold text-sm px-8 py-4"
                 >
-                  Hubungi Kami
+                  {language === "id" ? "Hubungi Kami" : "Contact Us"}
                 </a>
               </div>
             </div>
@@ -153,10 +199,10 @@ export function HidroterapiClient() {
             </div>
             <div className="lg:col-span-6 flex flex-col gap-6">
               <span className="tag-pill bg-espresso/5 text-espresso/80 font-bold text-xs uppercase tracking-wider self-start">
-                Fisika Air & Pemulihan
+                {language === "id" ? "Fisika Air & Pemulihan" : "Water Physics & Recovery"}
               </span>
               <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight tracking-tight">
-                Mengapa Tubuh Anda Lebih Mudah Pulih di Dalam Air?
+                {language === "id" ? "Mengapa Tubuh Anda Lebih Mudah Pulih di Dalam Air?" : "Why Does Your Body Recover Easier in Water?"}
               </h2>
               <div className="flex flex-col gap-6 mt-4">
                 <div className="flex gap-4">
@@ -164,9 +210,13 @@ export function HidroterapiClient() {
                     01
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Daya Apung Hidrostatik</h3>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
+                      {language === "id" ? "Daya Apung Hidrostatik" : "Hydrostatic Buoyancy"}
+                    </h3>
                     <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      Mengurangi beban gravitasi tubuh Anda secara drastis, sehingga otot dan sendi yang cedera dapat digerakkan secara bebas tanpa rasa sakit akibat beban berat badan.
+                      {language === "id"
+                        ? "Mengurangi beban gravitasi tubuh Anda secara drastis, sehingga otot dan sendi yang cedera dapat digerakkan secara bebas tanpa rasa sakit akibat beban berat badan."
+                        : "Drastically reduces the gravitational load on your body, so injured muscles and joints can be moved freely without pain from body weight."}
                     </p>
                   </div>
                 </div>
@@ -175,9 +225,13 @@ export function HidroterapiClient() {
                     02
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Tekanan Hidrodinamis</h3>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
+                      {language === "id" ? "Tekanan Hidrodinamis" : "Hydrodynamic Pressure"}
+                    </h3>
                     <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      Tekanan air merangsang sirkulasi cairan getah bening dan melancarkan aliran darah balik ke jantung, sangat efektif mengurangi pembengkakan kaki/sendi.
+                      {language === "id"
+                        ? "Tekanan air merangsang sirkulasi cairan getah bening dan melancarkan aliran darah balik ke jantung, sangat efektif mengurangi pembengkakan kaki/sendi."
+                        : "Water pressure stimulates lymph fluid circulation and returns blood flow back to the heart, highly effective in reducing foot/joint swelling."}
                     </p>
                   </div>
                 </div>
@@ -186,9 +240,13 @@ export function HidroterapiClient() {
                     03
                   </div>
                   <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">Termoregulasi Relaksasi</h3>
+                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
+                      {language === "id" ? "Termoregulasi Relaksasi" : "Relaxation Thermoregulation"}
+                    </h3>
                     <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      Suhu kolam air hangat yang stabil memberikan stimulasi nyaman pada ujung saraf kulit, mematikan sinyal rasa nyeri, serta melemaskan kekakuan otot.
+                      {language === "id"
+                        ? "Suhu kolam air hangat yang stabil memberikan stimulasi nyaman pada ujung saraf kulit, mematikan sinyal rasa nyeri, serta melemaskan kekakuan otot."
+                        : "Stable warm pool temperature provides comfortable stimulation on skin nerve endings, shutting down pain signals, and relaxing muscle stiffness."}
                     </p>
                   </div>
                 </div>
@@ -203,10 +261,10 @@ export function HidroterapiClient() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Manfaat Utama
+              {language === "id" ? "Manfaat Utama" : "Key Benefits"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              Aplikasi Hidroterapi yang Kami Sediakan
+              {language === "id" ? "Aplikasi Hidroterapi yang Kami Sediakan" : "Hydrotherapy Applications We Provide"}
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
@@ -246,10 +304,10 @@ export function HidroterapiClient() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-sage/45 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Alur Terapi Kolam
+              {language === "id" ? "Alur Terapi Kolam" : "Pool Therapy Flow"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              Bagaimana Sesi Hidroterapi Anda Berlangsung?
+              {language === "id" ? "Bagaimana Sesi Hidroterapi Anda Berlangsung?" : "How Does Your Hydrotherapy Session Go?"}
             </h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
@@ -264,9 +322,13 @@ export function HidroterapiClient() {
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-forest text-lg">01. Persiapan & Bilas Steril</span>
+              <span className="font-display font-black text-forest text-lg">
+                {language === "id" ? "01. Persiapan & Bilas Steril" : "01. Preparation & Sterile Rinse"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Pasien diwajibkan bilas mandi steril terlebih dahulu. Instruktur menyiapkan alat bantu apung (noodles, belt, dumbbell air) sesuai dengan rencana latihan motorik pasien.
+                {language === "id"
+                  ? "Pasien diwajibkan bilas mandi steril terlebih dahulu. Instruktur menyiapkan alat bantu apung (noodles, belt, dumbbell air) sesuai dengan rencana latihan motorik pasien."
+                  : "Patients are required to rinse in a sterile shower first. The instructor prepares float aids (noodles, belt, water dumbbells) according to the patient's motor exercise plan."}
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -280,9 +342,13 @@ export function HidroterapiClient() {
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-forest text-lg">02. Latihan Terapeutik Air</span>
+              <span className="font-display font-black text-forest text-lg">
+                {language === "id" ? "02. Latihan Terapeutik Air" : "02. Water Therapeutic Exercise"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Di bawah bimbingan instruktur profesional, Anda melakukan latihan gerak sendi, penguatan otot, atau relaksasi apung dengan jet air hangat bertekanan di area kolam privat.
+                {language === "id"
+                  ? "Di bawah bimbingan instruktur profesional, Anda melakukan latihan gerak sendi, penguatan otot, atau relaksasi apung dengan jet air hangat bertekanan di area kolam privat."
+                  : "Under the guidance of a professional instructor, you perform joint movement exercises, muscle strengthening, or floating relaxation with pressurized warm water jets in the private pool area."}
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -296,9 +362,13 @@ export function HidroterapiClient() {
                   quality={80}
                 />
               </div>
-              <span className="font-display font-black text-forest text-lg">03. Bilas & Evaluasi</span>
+              <span className="font-display font-black text-forest text-lg">
+                {language === "id" ? "03. Bilas & Evaluasi" : "03. Rinse & Evaluation"}
+              </span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Setelah 30-45 menit latihan, Anda membilas diri di kamar mandi steril privat yang hangat. Instruktur mencatat perkembangan gerak sendi Anda untuk sesi berikutnya.
+                {language === "id"
+                  ? "Setelah 30-45 menit latihan, Anda membilas diri di kamar mandi steril privat yang hangat. Instruktur mencatat perkembangan gerak sendi Anda untuk sesi berikutnya."
+                  : "After 30-45 minutes of training, you rinse off in the warm private sterile shower. The instructor records your joint movement progress for the next session."}
               </p>
             </div>
           </div>
@@ -310,10 +380,10 @@ export function HidroterapiClient() {
         <div className="container-wellness max-w-4xl">
           <div className="text-center mb-12">
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Pertanyaan Umum
+              {language === "id" ? "Pertanyaan Umum" : "Frequently Asked Questions"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
-              Hal-Hal yang Sering Ditanyakan
+              {language === "id" ? "Hal-Hal yang Sering Ditanyakan" : "Common Questions Asked"}
             </h2>
           </div>
           <div className="flex flex-col gap-3">

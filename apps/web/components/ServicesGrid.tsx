@@ -2,69 +2,71 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
-/* ─── Service Data ────────────────────────────────────────────────────────── */
-const services = [
-  {
-    id:       "akupunktur",
-    number:   "01",
-    name:     "Akupunktur",
-    tagline:  "Rileks Sampai ke Ujung Jarum",
-    desc:     "Terapi tusuk jarum modern yang mengurangi nyeri kronis, stres, dan insomnia. Ditangani oleh akupunkturis bersertifikat dalam ruang privat yang tenang.",
-    benefits: ["Kurangi nyeri kronik", "Atasi stres & kecemasan", "Perbaiki kualitas tidur"],
-    cta:      "Coba Akupunktur",
-    bg:       "bg-peach-soft",
-    accent:   "bg-peach",
-    textAccent: "text-terra",
-    emoji:    "🪡",
-    href:     "/layanan/akupunktur",
-  },
-  {
-    id:       "hidroterapi",
-    number:   "02",
-    name:     "Hidroterapi",
-    tagline:  "Sembuh Bareng Air Hangat",
-    desc:     "Fisioterapi media air hangat memanfaatkan sifat fisika air untuk meringankan gerakan tubuh Anda, melatih otot, dan mempercepat pemulihan sendi.",
-    benefits: ["Meringankan massa tubuh", "Relaksasi sendi & otot", "Aman untuk segala usia"],
-    cta:      "Pesan Sesi Air",
-    bg:       "bg-sage-soft",
-    accent:   "bg-sage",
-    textAccent: "text-forest",
-    emoji:    "💧",
-    href:     "/layanan/hidroterapi",
-  },
-  {
-    id:       "fisioterapi",
-    number:   "03",
-    name:     "Fisioterapi Privat",
-    tagline:  "Optimalkan Gerak Tubuhmu",
-    desc:     "Memelihara, memulihkan, dan memaksimalkan fungsi fisik secara keseluruhan menggunakan modalitas alat NMT, IR, US, TENS, dan Traksi.",
-    benefits: ["Manual & modalitas alat", "Pemulihan gerak & saraf", "Pasca cedera & operasi"],
-    cta:      "Mulai Rehabilitasi",
-    bg:       "bg-blush-soft",
-    accent:   "bg-blush",
-    textAccent: "text-espresso-600",
-    emoji:    "🦾",
-    href:     "/layanan/fisioterapi",
-  },
-  {
-    id:       "swim-course",
-    number:   "04",
-    name:     "Swim Course",
-    tagline:  "Belajar Renang, Bebas Khawatir",
-    desc:     "Kursus renang privat eksklusif untuk anak-anak hingga dewasa. Dilatih instruktur berpengalaman di kolam hangat steril bebas canggung.",
-    benefits: ["Untuk anak & dewasa", "Instruktur ramah & ahli", "Sesi privat 100%"],
-    cta:      "Daftar Kelas",
-    bg:       "bg-sand-soft",
-    accent:   "bg-sand",
-    textAccent: "text-espresso",
-    emoji:    "🏊",
-    href:     "#swim-course",
-  },
-];
+import { useLanguage } from "@/components/LanguageContext";
 
 /* ─── ServicesGrid Component ──────────────────────────────────────────────── */
 export function ServicesGrid() {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      id:       "akupunktur",
+      number:   "01",
+      name:     t("services.akupunktur.name"),
+      tagline:  t("services.akupunktur.tagline"),
+      desc:     t("services.akupunktur.desc"),
+      benefits: t("services.akupunktur.benefits"),
+      cta:      t("services.akupunktur.cta"),
+      bg:       "bg-peach-soft",
+      accent:   "bg-peach",
+      textAccent: "text-terra",
+      emoji:    "🪡",
+      href:     "/layanan/akupunktur",
+    },
+    {
+      id:       "hidroterapi",
+      number:   "02",
+      name:     t("services.hidroterapi.name"),
+      tagline:  t("services.hidroterapi.tagline"),
+      desc:     t("services.hidroterapi.desc"),
+      benefits: t("services.hidroterapi.benefits"),
+      cta:      t("services.hidroterapi.cta"),
+      bg:       "bg-sage-soft",
+      accent:   "bg-sage",
+      textAccent: "text-forest",
+      emoji:    "💧",
+      href:     "/layanan/hidroterapi",
+    },
+    {
+      id:       "fisioterapi",
+      number:   "03",
+      name:     t("services.fisioterapi.name"),
+      tagline:  t("services.fisioterapi.tagline"),
+      desc:     t("services.fisioterapi.desc"),
+      benefits: t("services.fisioterapi.benefits"),
+      cta:      t("services.fisioterapi.cta"),
+      bg:       "bg-blush-soft",
+      accent:   "bg-blush",
+      textAccent: "text-espresso-600",
+      emoji:    "🦾",
+      href:     "/layanan/fisioterapi",
+    },
+    {
+      id:       "swim-course",
+      number:   "04",
+      name:     t("services.swimCourse.name"),
+      tagline:  t("services.swimCourse.tagline"),
+      desc:     t("services.swimCourse.desc"),
+      benefits: t("services.swimCourse.benefits"),
+      cta:      t("services.swimCourse.cta"),
+      bg:       "bg-sand-soft",
+      accent:   "bg-sand",
+      textAccent: "text-espresso",
+      emoji:    "🏊",
+      href:     "/layanan/swim-course", // update href to go to page instead of hash
+    },
+  ];
+
   return (
     <section id="layanan" className="section-pad bg-cream">
       <div className="container-wellness">
@@ -78,10 +80,10 @@ export function ServicesGrid() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            Layanan Kami
+            {t("services.eyebrow")}
           </motion.span>
           <motion.h2
-            className="font-display font-black text-espresso"
+            className="font-display font-black text-espresso whitespace-pre-line"
             style={{
               fontSize: "clamp(2rem, 5vw, 3.75rem)",
               lineHeight: "1.05",
@@ -92,7 +94,7 @@ export function ServicesGrid() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Semua yang Kamu<br />Butuhkan, di Satu Tempat.
+            {t("services.title")}
           </motion.h2>
           <motion.p
             className="font-sans text-espresso/60 mt-4 leading-relaxed"
@@ -102,7 +104,7 @@ export function ServicesGrid() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Perawatan medis berbasis sains yang terasa seperti <em className="not-italic font-semibold">me time</em> — bukan kunjungan ke klinik.
+            {t("services.subheading")}
           </motion.p>
         </div>
 
@@ -126,7 +128,7 @@ export function ServicesGrid() {
 }
 
 /* ─── Service Card Sub-component ─────────────────────────────────────────── */
-function ServiceCard({ service }: { service: (typeof services)[0] }) {
+function ServiceCard({ service }: { service: any }) {
   return (
     <a
       href={service.href}
@@ -164,7 +166,7 @@ function ServiceCard({ service }: { service: (typeof services)[0] }) {
 
       {/* Benefit pills */}
       <div className="flex flex-wrap gap-2">
-        {service.benefits.map((b) => (
+        {service.benefits.map((b: string) => (
           <span
             key={b}
             className="tag-pill bg-white/60 text-espresso/70 text-[0.65rem]"

@@ -1,20 +1,6 @@
 "use client";
 
-/* ─── Service items repeated for seamless loop ───────────────────────────── */
-const items = [
-  "Akupunktur",
-  "Hidroterapi",
-  "Fisioterapi",
-  "Swim Course",
-  "Akupunktur",
-  "Hidroterapi",
-  "Fisioterapi",
-  "Swim Course",
-  "Akupunktur",
-  "Hidroterapi",
-  "Fisioterapi",
-  "Swim Course",
-];
+import { useLanguage } from "@/components/LanguageContext";
 
 const SEPARATOR = "✦";
 
@@ -39,6 +25,18 @@ export function Marquee({
     terra:    "bg-terra",
     sand:     "bg-sand",
   };
+
+  const { t } = useLanguage();
+
+  const services = [
+    t("services.akupunktur.name"),
+    t("services.hidroterapi.name"),
+    t("services.fisioterapi.name"),
+    t("services.swimCourse.name"),
+  ];
+
+  // Repeat for seamless loop
+  const items = [...services, ...services, ...services];
 
   return (
     <div

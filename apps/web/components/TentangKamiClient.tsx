@@ -4,8 +4,11 @@ import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/components/LanguageContext";
 
 export function TentangKamiClient() {
+  const { t } = useLanguage();
+
   const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
@@ -21,21 +24,20 @@ export function TentangKamiClient() {
         <div className="container-wellness text-center max-w-4xl">
           <motion.div {...fadeUp(0)}>
             <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider mb-5 inline-block">
-              Tentang Kami
+              {t("navbar.tentangKami")}
             </span>
           </motion.div>
           <motion.h1
             className="font-display font-black text-espresso text-5xl lg:text-8.5xl leading-[1.02] tracking-tight mb-8"
             {...fadeUp(0.1)}
           >
-            Mendefinisikan Ulang<br />
-            <span className="text-terra">Kesehatan & Perawatan.</span>
+            {t("tentangKamiPage.title")}
           </motion.h1>
           <motion.p
             className="font-sans text-espresso/70 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto"
             {...fadeUp(0.2)}
           >
-            Sejak tahun 2014, kami telah merancang ulang pengalaman pemulihan kesehatan dan terapi tubuh menjadi ritual perawatan diri yang menyenangkan.
+            {t("tentangKamiPage.desc")}
           </motion.p>
         </div>
       </section>
@@ -69,15 +71,15 @@ export function TentangKamiClient() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5">
               <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight tracking-tight">
-                Penyembuhan Tidak Harus Terasa Dingin.
+                {t("tentangKamiPage.missionTitle")}
               </h2>
             </div>
             <div className="lg:col-span-7 flex flex-col gap-6 font-sans text-espresso/70 text-base md:text-lg leading-relaxed">
               <p>
-                Banyak orang membayangkan klinik terapi sebagai ruangan yang sunyi, dingin, dan menegangkan. Di Lotus Semarang, kami mematahkan stigma tersebut. Kami percaya bahwa pemulihan fisik berjalan optimal ketika pikiran Anda merasa tenang, aman, dan disambut dengan hangat.
+                {t("tentangKamiPage.missionDesc1")}
               </p>
               <p>
-                Kami merancang tempat retret di mana Anda dapat berkonsultasi secara privat, berenang di air hangat tanpa cemas terlihat orang lain, serta melakukan sesi penjaruman akupunktur dalam suasana santai layaknya klub perawatan diri premium.
+                {t("tentangKamiPage.missionDesc2")}
               </p>
             </div>
           </div>
@@ -89,21 +91,21 @@ export function TentangKamiClient() {
         <div className="container-wellness">
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             <div className="flex flex-col gap-4">
-              <span className="font-display font-black text-terra text-lg">01. Privasi Mutlak</span>
+              <span className="font-display font-black text-terra text-lg">{t("tentangKamiPage.values.val1Title")}</span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Setiap ruangan kolam dan bilik tindakan disewakan khusus privat per sesi. Kami sangat menjaga privasi ibu berhijab (Niqabi) dan pasien yang membutuhkan ketenangan penuh.
+                {t("tentangKamiPage.values.val1Desc")}
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <span className="font-display font-black text-forest text-lg">02. Personalisasi Terapi</span>
+              <span className="font-display font-black text-forest text-lg">{t("tentangKamiPage.values.val2Title")}</span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Tidak ada resep universal. Program latihan hidroterapi, titik akupunktur, dan stimulasi fisioterapi Anda dirancang khusus mengikuti asesmen gerak tubuh Anda.
+                {t("tentangKamiPage.values.val2Desc")}
               </p>
             </div>
             <div className="flex flex-col gap-4">
-              <span className="font-display font-black text-espresso-400 text-lg">03. Pendekatan Medis Modern</span>
+              <span className="font-display font-black text-espresso-400 text-lg">{t("tentangKamiPage.values.val3Title")}</span>
               <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                Kami menggabungkan terapi fisik tradisional seperti akupunktur meridian dengan modalitas modern (Ultrasound, TENS, Infra Red) berbasis sains anatomis yang terukur.
+                {t("tentangKamiPage.values.val3Desc")}
               </p>
             </div>
           </div>
@@ -126,18 +128,17 @@ export function TentangKamiClient() {
             </div>
             <div className="lg:col-span-7 flex flex-col gap-6">
               <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider self-start">
-                Pendiri Lotus Semarang
+                {t("tentangKamiPage.founderTitle")}
               </span>
               <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight tracking-tight">
-                drg. Arini Jannata,<br />
-                <span className="text-terra">S.Tr. Akup, MM</span>
+                {t("tentangKamiPage.founderName")}
               </h2>
               <div className="font-sans text-espresso/70 text-base leading-relaxed flex flex-col gap-4">
                 <p>
-                  Didirikan pada tahun 2014, Lotus Semarang lahir dari visi drg. Arini Jannata untuk menghadirkan suaka pemulihan medis yang nyaman, estetik, dan berorientasi pada privasi pasien.
+                  {t("tentangKamiPage.founderDesc1")}
                 </p>
                 <p>
-                  Menggabungkan latar belakang medis gigi, pendidikan akupunktur klinis, serta manajemen pelayanan kesehatan, beliau merancang alur terapi holistik terintegrasi yang menggabungkan hidroterapi kolam hangat, stimulasi saraf akupunktur, dan rehabilitasi fisioterapi di Semarang.
+                  {t("tentangKamiPage.founderDesc2")}
                 </p>
               </div>
             </div>
@@ -150,10 +151,10 @@ export function TentangKamiClient() {
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              Retreat Space
+              {t("tentangKamiPage.galleryTag")}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              Galeri Ruang Kami
+              {t("tentangKamiPage.galleryTitle")}
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
