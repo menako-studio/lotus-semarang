@@ -352,6 +352,11 @@ export const translations: Record<string, any> = {
         notes: "Catatan Tambahan",
         outro: "Mohon konfirmasi ketersediaan jadwalnya. Terima kasih."
       }
+    },
+    notFound: {
+      title: "404 Halaman Tidak Ditemukan",
+      subtitle: "Halaman yang Anda minta tidak tersedia.",
+      backHome: "Kembali ke Beranda"
     }
   },
   en: {
@@ -708,6 +713,11 @@ export const translations: Record<string, any> = {
         notes: "Additional Notes",
         outro: "Please confirm availability. Thank you."
       }
+    },
+    notFound: {
+      title: "404 Page Not Found",
+      subtitle: "The page you requested does not exist.",
+      backHome: "Back to the frontpage"
     }
   }
 };
