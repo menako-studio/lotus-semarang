@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
 import { useLanguage } from "@/components/LanguageContext";
-import { ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
+import { ChevronDown, ChevronUp, HelpCircle, ArrowRight } from "lucide-react";
 
 export function HidroterapiClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -21,50 +22,50 @@ export function HidroterapiClient() {
       title: "Mereduksi Beban Sendi",
       desc: "Prinsip fisika daya apung air mengurangi beban tubuh hingga 90%, sangat meringankan tekanan pada sendi lutut, pinggang, dan tulang belakang Anda.",
       img: "/images/lotus_hydrotherapy_pool_male_floating_device.jpg",
-      bg: "bg-sage-soft",
+      bg: "bg-hydro-soft/80 border border-hydro/20",
     },
     {
       title: "Rehabilitasi Motorik & Stroke",
       desc: "Lingkungan air hangat mempermudah latihan gerak, melatih koordinasi motorik, serta melatih keseimbangan tubuh dengan risiko cedera jatuh nol.",
       img: "/images/lotus_treatment_hydro_adult_dumbbell_therapy.jpg",
-      bg: "bg-peach-soft",
+      bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
       title: "Relaksasi Saraf & Otot",
       desc: "Jet aliran air hangat bertekanan melakukan pemijatan mikro pada otot-otot tegang, melancarkan aliran darah, serta menenangkan pikiran.",
       img: "/images/lotus_treatment_hydro_equipment_noodle_front.jpg",
-      bg: "bg-blush-soft",
+      bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
       title: "Tumbuh Kembang & Bumil",
       desc: "Menghadirkan sarana aman untuk stimulasi gerak motorik anak-anak dan olahraga kardio kehamilan yang aman bebas cemas benturan.",
       img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
-      bg: "bg-sand-soft",
+      bg: "bg-sand-soft/80 border border-sand/30",
     },
   ] : [
     {
       title: "Reduce Joint Load",
       desc: "The physical principles of water buoyancy reduce body weight by up to 90%, greatly relieving pressure on your knee joints, waist, and spine.",
       img: "/images/lotus_hydrotherapy_pool_male_floating_device.jpg",
-      bg: "bg-sage-soft",
+      bg: "bg-hydro-soft/80 border border-hydro/20",
     },
     {
       title: "Motor & Stroke Rehab",
       desc: "The warm water environment eases movement exercises, trains motor coordination, and improves balance with zero fall injury risk.",
       img: "/images/lotus_treatment_hydro_adult_dumbbell_therapy.jpg",
-      bg: "bg-peach-soft",
+      bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
       title: "Nerve & Muscle Relaxation",
       desc: "Pressurized warm water jets provide micro-massage on tense muscles, improve blood circulation, and calm the mind.",
       img: "/images/lotus_treatment_hydro_equipment_noodle_front.jpg",
-      bg: "bg-blush-soft",
+      bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
       title: "Child Development & Pregnancy",
       desc: "Provides a safe environment to stimulate kids' motor skills and safe cardio exercise for pregnant mothers without worrying about impact.",
       img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
-      bg: "bg-sand-soft",
+      bg: "bg-sand-soft/80 border border-sand/30",
     },
   ];
 
@@ -109,19 +110,24 @@ export function HidroterapiClient() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="container-wellness">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-6 flex flex-col gap-6">
+            <motion.div
+              className="lg:col-span-6 flex flex-col gap-6"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
               <div>
-                <span className="tag-pill bg-sage/40 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+                <span className="tag-pill bg-hydro/20 text-hydro-muted font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-hydro/30">
                   {t("hidroterapiPage.eyebrow")}
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
                   {language === "id" ? "Hidroterapi" : "Hydrotherapy"}<br />
-                  <span className="text-forest">{language === "id" ? "Suaka Air Privat." : "Private Water Sanctuary."}</span>
+                  <span className="text-hydro-muted">{language === "id" ? "Suaka Air Privat." : "Private Water Sanctuary."}</span>
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
@@ -135,9 +141,10 @@ export function HidroterapiClient() {
                   href={`https://wa.me/6287700303645?text=${encodeURIComponent(t("hidroterapiPage.whatsAppPrompt"))}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-dark font-bold text-sm px-8 py-4"
+                  className="btn-pill-dark font-bold text-sm px-8 py-4 shadow-warm group gap-2"
                 >
                   {t("hidroterapiPage.cta")}
+                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
                   href={`https://wa.me/6287700303645?text=${encodeURIComponent(language === "id" ? "Halo Lotus, mau tanya detail kolam Hidroterapi" : "Hello Lotus, I'd like to ask details about Hydrotherapy Pool")}`}
@@ -148,11 +155,16 @@ export function HidroterapiClient() {
                   {language === "id" ? "Hubungi Kami" : "Contact Us"}
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right: Overlapping Editorial Images */}
-            <div className="lg:col-span-6 relative flex items-center justify-center min-h-[380px] lg:min-h-[500px]">
-              <div className="absolute top-10 left-10 w-4/5 h-4/5 bg-sage-soft rounded-[3rem] -rotate-3" />
+            <motion.div
+              className="lg:col-span-6 relative flex items-center justify-center min-h-[380px] lg:min-h-[500px]"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="absolute top-10 left-10 w-4/5 h-4/5 bg-hydro-soft rounded-[3rem] -rotate-3" />
               <div className="absolute top-0 right-4 w-[65%] aspect-[3/4] rounded-3xl overflow-hidden shadow-warm-lg img-zoom z-10">
                 <Image
                   src="/images/lotus_treatment_hydro_female_hijab_supine_wide.jpg"
@@ -160,7 +172,7 @@ export function HidroterapiClient() {
                   fill
                   className="object-cover"
                   priority
-                  sizes="40vw"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   quality={85}
                 />
               </div>
@@ -170,11 +182,11 @@ export function HidroterapiClient() {
                   alt="Detail Sesi Floating Hidroterapi"
                   fill
                   className="object-cover"
-                  sizes="25vw"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
                   quality={80}
                 />
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
@@ -187,7 +199,13 @@ export function HidroterapiClient() {
       <section className="section-pad bg-white">
         <div className="container-wellness">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            <div className="lg:col-span-6 relative aspect-[4/3] rounded-[3.5rem] overflow-hidden shadow-warm-lg img-zoom">
+            <motion.div
+              className="lg:col-span-6 relative aspect-[4/3] rounded-[3.5rem] overflow-hidden shadow-warm-lg img-zoom"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+            >
               <Image
                 src="/images/lotus_treatment_hydro_patient_floating_alone.jpg"
                 alt="Manfaat Daya Apung Air Fisika"
@@ -196,8 +214,14 @@ export function HidroterapiClient() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={85}
               />
-            </div>
-            <div className="lg:col-span-6 flex flex-col gap-6">
+            </motion.div>
+            <motion.div
+              className="lg:col-span-6 flex flex-col gap-6"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+            >
               <span className="tag-pill bg-espresso/5 text-espresso/80 font-bold text-xs uppercase tracking-wider self-start">
                 {language === "id" ? "Fisika Air & Pemulihan" : "Water Physics & Recovery"}
               </span>
@@ -206,7 +230,7 @@ export function HidroterapiClient() {
               </h2>
               <div className="flex flex-col gap-6 mt-4">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-sage-soft text-forest flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-hydro-soft text-hydro-muted flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-hydro/20">
                     01
                   </div>
                   <div>
@@ -221,7 +245,7 @@ export function HidroterapiClient() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-peach-soft text-terra flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-sage-soft text-forest flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-sage/20">
                     02
                   </div>
                   <div>
@@ -236,7 +260,7 @@ export function HidroterapiClient() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-blush-soft text-espresso-600 flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-blush-soft text-blush-deep flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-blush/20">
                     03
                   </div>
                   <div>
@@ -251,27 +275,37 @@ export function HidroterapiClient() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Applications Section */}
-      <section className="section-pad bg-sage-soft/10 border-y border-espresso/5">
+      <section className="section-pad bg-cream-warm/40 border-y border-espresso/5">
         <div className="container-wellness">
-          <div className="text-center max-w-xl mx-auto mb-16">
+          <motion.div
+            className="text-center max-w-xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
               {language === "id" ? "Manfaat Utama" : "Key Benefits"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
               {language === "id" ? "Aplikasi Hidroterapi yang Kami Sediakan" : "Hydrotherapy Applications We Provide"}
             </h2>
-          </div>
+          </motion.div>
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
             {applications.map((app, i) => (
-              <div
+              <motion.div
                 key={i}
-                className={`${app.bg} rounded-[2.5rem] p-8 lg:p-10 flex flex-col gap-6 shadow-warm hover:-translate-y-1 transition-all duration-300`}
+                className={`${app.bg} rounded-[2.5rem] p-8 lg:p-10 flex flex-col gap-6 shadow-warm hover:-translate-y-1.5 transition-all duration-300`}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="grid grid-cols-[3fr_1.5fr] gap-4 items-center">
                   <div className="flex flex-col gap-2">
@@ -293,7 +327,7 @@ export function HidroterapiClient() {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -302,112 +336,130 @@ export function HidroterapiClient() {
       {/* Steps Section */}
       <section className="section-pad bg-white">
         <div className="container-wellness">
-          <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="tag-pill bg-sage/45 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+          <motion.div
+            className="text-center max-w-xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="tag-pill bg-sage/30 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-sage/20">
               {language === "id" ? "Alur Terapi Kolam" : "Pool Therapy Flow"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
               {language === "id" ? "Bagaimana Sesi Hidroterapi Anda Berlangsung?" : "How Does Your Hydrotherapy Session Go?"}
             </h2>
-          </div>
+          </motion.div>
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
-                <Image
-                  src="/images/lotus_treatment_hydro_equipment_noodle_angle.jpg"
-                  alt="Persiapan Alat Bantu Apung"
-                  fill
-                  className="object-cover"
-                  sizes="30vw"
-                  quality={80}
-                />
-              </div>
-              <span className="font-display font-black text-forest text-lg">
-                {language === "id" ? "01. Persiapan & Bilas Steril" : "01. Preparation & Sterile Rinse"}
-              </span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {language === "id"
+            {[
+              {
+                img: "/images/lotus_treatment_hydro_equipment_noodle_angle.jpg",
+                alt: "Persiapan Alat Bantu Apung",
+                step: language === "id" ? "01. Persiapan & Bilas Steril" : "01. Preparation & Sterile Rinse",
+                desc: language === "id"
                   ? "Pasien diwajibkan bilas mandi steril terlebih dahulu. Instruktur menyiapkan alat bantu apung (noodles, belt, dumbbell air) sesuai dengan rencana latihan motorik pasien."
-                  : "Patients are required to rinse in a sterile shower first. The instructor prepares float aids (noodles, belt, water dumbbells) according to the patient's motor exercise plan."}
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
-                <Image
-                  src="/images/lotus_treatment_hydro_adult_float_therapy_therapist.jpg"
-                  alt="Latihan Terapi Bersama Instruktur"
-                  fill
-                  className="object-cover"
-                  sizes="30vw"
-                  quality={80}
-                />
-              </div>
-              <span className="font-display font-black text-forest text-lg">
-                {language === "id" ? "02. Latihan Terapeutik Air" : "02. Water Therapeutic Exercise"}
-              </span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {language === "id"
+                  : "Patients are required to rinse in a sterile shower first. The instructor prepares float aids (noodles, belt, water dumbbells) according to the patient's motor exercise plan."
+              },
+              {
+                img: "/images/lotus_treatment_hydro_adult_float_therapy_therapist.jpg",
+                alt: "Latihan Terapi Bersama Instruktur",
+                step: language === "id" ? "02. Latihan Terapeutik Air" : "02. Water Therapeutic Exercise",
+                desc: language === "id"
                   ? "Di bawah bimbingan instruktur profesional, Anda melakukan latihan gerak sendi, penguatan otot, atau relaksasi apung dengan jet air hangat bertekanan di area kolam privat."
-                  : "Under the guidance of a professional instructor, you perform joint movement exercises, muscle strengthening, or floating relaxation with pressurized warm water jets in the private pool area."}
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
-                <Image
-                  src="/images/lotus_treatment_hydro_elderly_hijab_smile_edge.jpg"
-                  alt="Selesai Sesi Relaksasi"
-                  fill
-                  className="object-cover"
-                  sizes="30vw"
-                  quality={80}
-                />
-              </div>
-              <span className="font-display font-black text-forest text-lg">
-                {language === "id" ? "03. Bilas & Evaluasi" : "03. Rinse & Evaluation"}
-              </span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {language === "id"
+                  : "Under the guidance of a professional instructor, you perform joint movement exercises, muscle strengthening, or floating relaxation with pressurized warm water jets in the private pool area."
+              },
+              {
+                img: "/images/lotus_treatment_hydro_elderly_hijab_smile_edge.jpg",
+                alt: "Selesai Sesi Relaksasi",
+                step: language === "id" ? "03. Bilas & Evaluasi" : "03. Rinse & Evaluation",
+                desc: language === "id"
                   ? "Setelah 30-45 menit latihan, Anda membilas diri di kamar mandi steril privat yang hangat. Instruktur mencatat perkembangan gerak sendi Anda untuk sesi berikutnya."
-                  : "After 30-45 minutes of training, you rinse off in the warm private sterile shower. The instructor records your joint movement progress for the next session."}
-              </p>
-            </div>
+                  : "After 30-45 minutes of training, you rinse off in the warm private sterile shower. The instructor records your joint movement progress for the next session."
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                className="flex flex-col gap-4"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: idx * 0.15 }}
+              >
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
+                  <Image
+                    src={item.img}
+                    alt={item.alt}
+                    fill
+                    className="object-cover"
+                    sizes="30vw"
+                    quality={80}
+                  />
+                </div>
+                <span className="font-display font-black text-forest text-lg">
+                  {item.step}
+                </span>
+                <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="section-pad bg-sage-soft/20 border-t border-espresso/5">
+      <section className="section-pad bg-cream-warm/40 border-t border-espresso/5">
         <div className="container-wellness max-w-4xl">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
               {language === "id" ? "Pertanyaan Umum" : "Frequently Asked Questions"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
               {language === "id" ? "Hal-Hal yang Sering Ditanyakan" : "Common Questions Asked"}
             </h2>
-          </div>
+          </motion.div>
           <div className="flex flex-col gap-3">
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-white rounded-2xl border border-espresso/5 shadow-warm overflow-hidden transition-all duration-300"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
               >
                 <button
-                  className="w-full px-6 py-5 flex items-center justify-between text-left font-display font-bold text-espresso hover:text-forest text-base md:text-lg"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left font-display font-bold text-espresso hover:text-hydro-muted text-base md:text-lg transition-colors"
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="flex items-center gap-3">
-                    <HelpCircle size={18} className="text-forest" />
+                    <HelpCircle size={18} className="text-hydro-muted flex-shrink-0" />
                     {faq.q}
                   </span>
-                  {openFaq === index ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  {openFaq === index ? <ChevronUp size={18} className="flex-shrink-0 text-hydro-muted" /> : <ChevronDown size={18} className="flex-shrink-0 text-espresso/40" />}
                 </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-6 pt-1 font-sans text-espresso/65 text-sm leading-relaxed border-t border-espresso/5">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-1 font-sans text-espresso/65 text-sm leading-relaxed border-t border-espresso/5">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
         </div>

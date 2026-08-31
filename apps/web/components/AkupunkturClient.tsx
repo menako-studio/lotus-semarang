@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
 import { useLanguage } from "@/components/LanguageContext";
-import { Check, ChevronDown, ChevronUp, HelpCircle } from "lucide-react";
+import { ChevronDown, ChevronUp, HelpCircle, ArrowRight } from "lucide-react";
 
 export function AkupunkturClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -21,50 +22,50 @@ export function AkupunkturClient() {
       title: "Anak-Anak (Tumbuh Kembang)",
       desc: "Menstimulasi tumbuh kembang motorik, meningkatkan konsentrasi belajar, merelaksasi stabilitas emosi, serta meningkatkan daya tahan tubuh alami.",
       img: "/images/lotus_treatment_baby_model_high_angle.webp",
-      bg: "bg-peach-soft",
+      bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
       title: "Dewasa & Lansia",
       desc: "Efektif untuk meredakan nyeri sendi, vertigo, gerd, hipertensi, saraf kejepit, migrain, pemulihan stroke, hingga mengurangi mual akibat kemoterapi.",
       img: "/images/lotus_treatment_facial_portrait_patient_elderly.jpg",
-      bg: "bg-sage-soft",
+      bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
       title: "Reproduksi & Hormonal",
       desc: "Menyeimbangkan hormon reproduksi untuk mendukung program kehamilan (promil) alami dan mempersiapkan program bayi tabung (IVF).",
       img: "/images/lotus_treatment_body_abdomen_male_patient.jpg",
-      bg: "bg-blush-soft",
+      bg: "bg-peach-soft/80 border border-peach/20",
     },
     {
       title: "Slimming & Estetika Wajah",
       desc: "Terapi akupunktur kecantikan wajah untuk merangsang kolagen, mengencangkan kulit, menyamarkan kerutan, dan meredakan jerawat.",
       img: "/images/lotus_treatment_facial_portrait_patient_closed_eyes.jpg",
-      bg: "bg-sand-soft",
+      bg: "bg-sand-soft/80 border border-sand/30",
     },
   ] : [
     {
       title: "Children (Growth & Development)",
       desc: "Stimulates motor growth and development, improves concentration, relaxes emotional stability, and boosts natural immunity.",
       img: "/images/lotus_treatment_baby_model_high_angle.webp",
-      bg: "bg-peach-soft",
+      bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
       title: "Adults & Seniors",
       desc: "Effective for relieving joint pain, vertigo, GERD, hypertension, pinched nerves, migraines, stroke recovery, and reducing chemotherapy nausea.",
       img: "/images/lotus_treatment_facial_portrait_patient_elderly.jpg",
-      bg: "bg-sage-soft",
+      bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
       title: "Reproductive & Hormonal",
       desc: "Balances reproductive hormones to support natural pregnancy programs (promil) and prepare for in vitro fertilization (IVF).",
       img: "/images/lotus_treatment_body_abdomen_male_patient.jpg",
-      bg: "bg-blush-soft",
+      bg: "bg-peach-soft/80 border border-peach/20",
     },
     {
       title: "Slimming & Facial Aesthetics",
       desc: "Facial beauty acupuncture therapy to stimulate collagen, tighten skin, smooth wrinkles, and clear acne.",
       img: "/images/lotus_treatment_facial_portrait_patient_closed_eyes.jpg",
-      bg: "bg-sand-soft",
+      bg: "bg-sand-soft/80 border border-sand/30",
     },
   ];
 
@@ -109,19 +110,24 @@ export function AkupunkturClient() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24">
+      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="container-wellness">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-6 flex flex-col gap-6">
+            <motion.div
+              className="lg:col-span-6 flex flex-col gap-6"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            >
               <div>
-                <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+                <span className="tag-pill bg-blush/20 text-blush-deep font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-blush/20">
                   {t("akupunkturPage.eyebrow")}
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
                   {language === "id" ? "Akupunktur" : "Medical"}<br />
-                  <span className="text-terra">{language === "id" ? "Medis Privat." : "Private Acupuncture."}</span>
+                  <span className="text-blush">{language === "id" ? "Medis Privat." : "Private Acupuncture."}</span>
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
@@ -135,9 +141,10 @@ export function AkupunkturClient() {
                   href={`https://wa.me/6287700303645?text=${encodeURIComponent(t("akupunkturPage.whatsAppPrompt"))}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-dark font-bold text-sm px-8 py-4"
+                  className="btn-pill-dark font-bold text-sm px-8 py-4 shadow-warm group gap-2"
                 >
                   {t("akupunkturPage.cta")}
+                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
                   href={`https://wa.me/6287700303645?text=${encodeURIComponent(language === "id" ? "Halo Lotus, mau tanya dulu tentang Akupunktur" : "Hello Lotus, I'd like to ask about Acupuncture first")}`}
@@ -148,11 +155,16 @@ export function AkupunkturClient() {
                   {language === "id" ? "Tanya Dokter" : "Ask Doctor"}
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right: Overlapping Editorial Images */}
-            <div className="lg:col-span-6 relative flex items-center justify-center min-h-[380px] lg:min-h-[500px]">
-              <div className="absolute top-10 left-10 w-4/5 h-4/5 bg-peach-soft rounded-[3rem] -rotate-3" />
+            <motion.div
+              className="lg:col-span-6 relative flex items-center justify-center min-h-[380px] lg:min-h-[500px]"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="absolute top-10 left-10 w-4/5 h-4/5 bg-blush-soft rounded-[3rem] -rotate-3" />
               <div className="absolute top-0 right-4 w-[65%] aspect-[3/4] rounded-3xl overflow-hidden shadow-warm-lg img-zoom z-10">
                 <Image
                   src="/images/lotus_treatment_body_back_acupuncture_female.jpg"
@@ -160,7 +172,7 @@ export function AkupunkturClient() {
                   fill
                   className="object-cover"
                   priority
-                  sizes="40vw"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   quality={85}
                 />
               </div>
@@ -170,24 +182,30 @@ export function AkupunkturClient() {
                   alt="Detail Jarum Akupunktur Steril"
                   fill
                   className="object-cover"
-                  sizes="25vw"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
                   quality={80}
                 />
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
       </section>
 
       {/* Marquee Accent */}
-      <Marquee bg="peach" textClass="text-espresso" speed="slow" />
+      <Marquee bg="blush" textClass="text-white" speed="slow" />
 
       {/* Science Section */}
       <section className="section-pad bg-white">
         <div className="container-wellness">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            <div className="lg:col-span-6 relative aspect-[4/3] rounded-[3.5rem] overflow-hidden shadow-warm-lg img-zoom">
+            <motion.div
+              className="lg:col-span-6 relative aspect-[4/3] rounded-[3.5rem] overflow-hidden shadow-warm-lg img-zoom"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+            >
               <Image
                 src="/images/lotus_tools_acupuncture_needles_steel_jar.jpg"
                 alt="Jarum Steril Sekali Pakai Lotus Semarang"
@@ -196,8 +214,14 @@ export function AkupunkturClient() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 quality={85}
               />
-            </div>
-            <div className="lg:col-span-6 flex flex-col gap-6">
+            </motion.div>
+            <motion.div
+              className="lg:col-span-6 flex flex-col gap-6"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+            >
               <span className="tag-pill bg-espresso/5 text-espresso/80 font-bold text-xs uppercase tracking-wider self-start">
                 {language === "id" ? "Sains di Balik Terapi" : "Science Behind Therapy"}
               </span>
@@ -206,7 +230,7 @@ export function AkupunkturClient() {
               </h2>
               <div className="flex flex-col gap-6 mt-4">
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-peach-soft text-terra flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-blush-soft text-blush-deep flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-blush/20">
                     01
                   </div>
                   <div>
@@ -221,7 +245,7 @@ export function AkupunkturClient() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-sage-soft text-forest flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-sage-soft text-forest flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-sage/20">
                     02
                   </div>
                   <div>
@@ -236,7 +260,7 @@ export function AkupunkturClient() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-blush-soft text-espresso-600 flex items-center justify-center font-display font-black text-lg flex-shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-sand-soft text-espresso flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-sand/30">
                     03
                   </div>
                   <div>
@@ -251,27 +275,37 @@ export function AkupunkturClient() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Applications Grid */}
-      <section className="section-pad bg-sand-soft/30 border-y border-espresso/5">
+      <section className="section-pad bg-cream-warm/40 border-y border-espresso/5">
         <div className="container-wellness">
-          <div className="text-center max-w-xl mx-auto mb-16">
+          <motion.div
+            className="text-center max-w-xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
               {language === "id" ? "Kasus & Penanganan" : "Cases & Treatments"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
               {language === "id" ? "Bidang Aplikasi Terapi Akupunktur" : "Acupuncture Therapy Application Areas"}
             </h2>
-          </div>
+          </motion.div>
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
             {applications.map((app, i) => (
-              <div
+              <motion.div
                 key={i}
-                className={`${app.bg} rounded-[2.5rem] p-8 lg:p-10 flex flex-col gap-6 shadow-warm hover:-translate-y-1 transition-all duration-300`}
+                className={`${app.bg} rounded-[2.5rem] p-8 lg:p-10 flex flex-col gap-6 shadow-warm hover:-translate-y-1.5 transition-all duration-300`}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <div className="grid grid-cols-[3fr_1.5fr] gap-4 items-center">
                   <div className="flex flex-col gap-2">
@@ -293,7 +327,7 @@ export function AkupunkturClient() {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -302,112 +336,130 @@ export function AkupunkturClient() {
       {/* Steps Section */}
       <section className="section-pad bg-white">
         <div className="container-wellness">
-          <div className="text-center max-w-xl mx-auto mb-16">
-            <span className="tag-pill bg-peach/40 text-terra font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+          <motion.div
+            className="text-center max-w-xl mx-auto mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="tag-pill bg-blush/20 text-blush-deep font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-blush/20">
               {language === "id" ? "Prosedur Tindakan" : "Treatment Procedure"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
               {language === "id" ? "Bagaimana Sesi Terapi Anda Berlangsung?" : "How Does Your Therapy Session Go?"}
             </h2>
-          </div>
+          </motion.div>
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
-                <Image
-                  src="/images/lotus_consultation_doctor_patient_model_hijab.jpg"
-                  alt="Konsultasi Diagnosa Lidah & Nadi"
-                  fill
-                  className="object-cover"
-                  sizes="30vw"
-                  quality={80}
-                />
-              </div>
-              <span className="font-display font-black text-terra text-lg">
-                {language === "id" ? "01. Diagnosa Holistik" : "01. Holistic Diagnosis"}
-              </span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {language === "id"
+            {[
+              {
+                img: "/images/lotus_consultation_doctor_patient_model_hijab.jpg",
+                alt: "Konsultasi Diagnosa Lidah & Nadi",
+                step: language === "id" ? "01. Diagnosa Holistik" : "01. Holistic Diagnosis",
+                desc: language === "id"
                   ? "Kami melakukan konsultasi personal meliputi anamnesa keluhan, palpasi denyut nadi, pemeriksaan visual lidah, serta keselarasan 5 unsur organ tubuh Anda."
-                  : "We conduct a personal consultation covering case history, pulse palpation, visual tongue check, and the harmony of your body's 5 organ elements."}
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
-                <Image
-                  src="/images/lotus_equipment_kwd808_electro_acupuncture.jpg"
-                  alt="Sesi Penjaruman Aman & Steril"
-                  fill
-                  className="object-cover"
-                  sizes="30vw"
-                  quality={80}
-                />
-              </div>
-              <span className="font-display font-black text-terra text-lg">
-                {language === "id" ? "02. Penjaruman & Stimulasi" : "02. Needling & Stimulation"}
-              </span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {language === "id"
+                  : "We conduct a personal consultation covering case history, pulse palpation, visual tongue check, and the harmony of your body's 5 organ elements."
+              },
+              {
+                img: "/images/lotus_equipment_kwd808_electro_acupuncture.jpg",
+                alt: "Sesi Penjaruman Aman & Steril",
+                step: language === "id" ? "02. Penjaruman & Stimulasi" : "02. Needling & Stimulation",
+                desc: language === "id"
                   ? "Jarum steril berukuran mikro dimasukkan dengan lembut ke titik terapi. Dapat dikombinasikan dengan stimulasi elektrik elektro-akupunktur atau terapi moxibustion (pembakaran moxa)."
-                  : "Micro-sized sterile needles are gently inserted into therapy points. Can be combined with electro-acupuncture electrical stimulation or moxibustion therapy."}
-              </p>
-            </div>
-            <div className="flex flex-col gap-4">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
-                <Image
-                  src="/images/lotus_treatment_body_arm_therapist_interaction.jpg"
-                  alt="Edukasi Pasca Terapi"
-                  fill
-                  className="object-cover"
-                  sizes="30vw"
-                  quality={80}
-                />
-              </div>
-              <span className="font-display font-black text-terra text-lg">
-                {language === "id" ? "03. Rencana Tindak Lanjut" : "03. Follow-Up Plan"}
-              </span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {language === "id"
+                  : "Micro-sized sterile needles are gently inserted into therapy points. Can be combined with electro-acupuncture electrical stimulation or moxibustion therapy."
+              },
+              {
+                img: "/images/lotus_treatment_body_arm_therapist_interaction.jpg",
+                alt: "Edukasi Pasca Terapi",
+                step: language === "id" ? "03. Rencana Tindak Lanjut" : "03. Follow-Up Plan",
+                desc: language === "id"
                   ? "Jarum dilepas secara steril setelah 20-30 menit. Terapis memberikan anjuran gaya hidup, asupan nutrisi penyeimbang, serta menjadwalkan sesi evaluasi lanjutan."
-                  : "Needles are sterilely removed after 20-30 minutes. The therapist advises on lifestyle, balancing nutritional intake, and schedules follow-up evaluations."}
-              </p>
-            </div>
+                  : "Needles are sterilely removed after 20-30 minutes. The therapist advises on lifestyle, balancing nutritional intake, and schedules follow-up evaluations."
+              }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                className="flex flex-col gap-4"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: idx * 0.15 }}
+              >
+                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
+                  <Image
+                    src={item.img}
+                    alt={item.alt}
+                    fill
+                    className="object-cover"
+                    sizes="30vw"
+                    quality={80}
+                  />
+                </div>
+                <span className="font-display font-black text-blush-deep text-lg">
+                  {item.step}
+                </span>
+                <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="section-pad bg-peach-soft/20 border-t border-espresso/5">
+      <section className="section-pad bg-cream-warm/40 border-t border-espresso/5">
         <div className="container-wellness max-w-4xl">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
               {language === "id" ? "Pertanyaan Umum" : "Frequently Asked Questions"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
               {language === "id" ? "Hal-Hal yang Sering Ditanyakan" : "Common Questions Asked"}
             </h2>
-          </div>
+          </motion.div>
           <div className="flex flex-col gap-3">
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
                 className="bg-white rounded-2xl border border-espresso/5 shadow-warm overflow-hidden transition-all duration-300"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
               >
                 <button
-                  className="w-full px-6 py-5 flex items-center justify-between text-left font-display font-bold text-espresso hover:text-terra text-base md:text-lg"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left font-display font-bold text-espresso hover:text-blush text-base md:text-lg transition-colors"
                   onClick={() => toggleFaq(index)}
                 >
                   <span className="flex items-center gap-3">
-                    <HelpCircle size={18} className="text-terra" />
+                    <HelpCircle size={18} className="text-blush flex-shrink-0" />
                     {faq.q}
                   </span>
-                  {openFaq === index ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                  {openFaq === index ? <ChevronUp size={18} className="flex-shrink-0 text-blush" /> : <ChevronDown size={18} className="flex-shrink-0 text-espresso/40" />}
                 </button>
-                {openFaq === index && (
-                  <div className="px-6 pb-6 pt-1 font-sans text-espresso/65 text-sm leading-relaxed border-t border-espresso/5">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
+                <AnimatePresence>
+                  {openFaq === index && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6 pt-1 font-sans text-espresso/65 text-sm leading-relaxed border-t border-espresso/5">
+                        {faq.a}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
         </div>

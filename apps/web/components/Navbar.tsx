@@ -84,23 +84,23 @@ export function Navbar() {
               onMouseEnter={() => setIsLayananOpen(true)}
               onMouseLeave={() => setIsLayananOpen(false)}
             >
-              <button className="flex items-center gap-1 font-sans text-sm font-semibold text-espresso/85 hover:text-terra py-2 transition-colors duration-200">
-                {t("navbar.layanan")} <ChevronDown size={14} className={`transition-transform duration-200 ${isLayananOpen ? "rotate-180" : ""}`} />
+              <button className="flex items-center gap-1 font-sans text-sm font-semibold text-espresso/85 hover:text-blush py-2 transition-colors duration-200">
+                {t("navbar.layanan")} <ChevronDown size={14} className={`transition-transform duration-200 ${isLayananOpen ? "rotate-180 text-blush" : ""}`} />
               </button>
               <AnimatePresence>
                 {isLayananOpen && (
                   <motion.div
                     className="absolute top-full left-0 w-48 bg-white border border-espresso/5 rounded-2xl shadow-warm-lg p-2 flex flex-col z-50 mt-1"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
                   >
                     {layananItems.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="font-sans text-xs font-semibold text-espresso/70 hover:text-terra hover:bg-peach-soft/40 px-4 py-2.5 rounded-xl transition-all"
+                        className="font-sans text-xs font-semibold text-espresso/70 hover:text-blush hover:bg-blush-soft/60 px-4 py-2.5 rounded-xl transition-all"
                       >
                         {item.label}
                       </Link>
@@ -112,18 +112,18 @@ export function Navbar() {
 
             <Link
               href="/tentang-kami"
-              className="font-sans text-sm font-semibold text-espresso/85 hover:text-terra transition-colors duration-200 relative group"
+              className="font-sans text-sm font-semibold text-espresso/85 hover:text-blush transition-colors duration-200 relative group"
             >
               {t("navbar.tentangKami")}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-terra rounded-full group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blush rounded-full group-hover:w-full transition-all duration-300" />
             </Link>
 
             <Link
               href="#kontak"
-              className="font-sans text-sm font-semibold text-espresso/85 hover:text-terra transition-colors duration-200 relative group"
+              className="font-sans text-sm font-semibold text-espresso/85 hover:text-blush transition-colors duration-200 relative group"
             >
               {t("navbar.kontak")}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-terra rounded-full group-hover:w-full transition-all duration-300" />
+              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blush rounded-full group-hover:w-full transition-all duration-300" />
             </Link>
           </nav>
 
@@ -132,12 +132,12 @@ export function Navbar() {
             <LanguageSelector />
             <a
               href="/reservasi"
-              className="hidden sm:inline-flex btn-pill-dark text-xs px-6 py-3 font-bold"
+              className="hidden sm:inline-flex btn-pill-dark text-xs px-6 py-3 font-bold shadow-warm"
             >
               {t("navbar.reservasi")}
             </a>
             <button
-              className="md:hidden p-2 rounded-full hover:bg-peach/30 transition-colors text-espresso"
+              className="md:hidden p-2 rounded-full hover:bg-blush/20 transition-colors text-espresso"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? t("navbar.tutupMenu") : t("navbar.bukaMenu")}
             >
@@ -168,7 +168,7 @@ export function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="font-display text-xl font-extrabold text-espresso hover:text-terra transition-colors"
+                    className="font-display text-xl font-extrabold text-espresso hover:text-blush transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.label}
@@ -180,7 +180,7 @@ export function Navbar() {
 
               <Link
                 href="/tentang-kami"
-                className="font-display text-2xl font-black text-espresso hover:text-terra transition-colors"
+                className="font-display text-2xl font-black text-espresso hover:text-blush transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {t("navbar.tentangKami")}
@@ -188,7 +188,7 @@ export function Navbar() {
 
               <Link
                 href="#kontak"
-                className="font-display text-2xl font-black text-espresso hover:text-terra transition-colors"
+                className="font-display text-2xl font-black text-espresso hover:text-blush transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {t("navbar.hubungiKami")}
@@ -198,7 +198,7 @@ export function Navbar() {
             <div className="mt-auto flex flex-col gap-4">
               <a
                 href="/reservasi"
-                className="btn-pill-dark w-full justify-center text-center py-4 font-bold"
+                className="btn-pill-dark w-full justify-center text-center py-4 font-bold shadow-warm"
                 onClick={() => setIsOpen(false)}
               >
                 {t("navbar.reservasiWa")}

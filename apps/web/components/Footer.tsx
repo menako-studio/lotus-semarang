@@ -19,10 +19,11 @@ export function Footer() {
     <footer id="kontak" className="bg-espresso text-cream overflow-hidden">
 
       {/* ── Top CTA Band ── */}
-      <div className="bg-terra py-16 px-6">
-        <div className="container-wellness text-center">
+      <div className="bg-blush py-16 px-6 relative overflow-hidden">
+        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/10 blur-2xl pointer-events-none" />
+        <div className="container-wellness text-center relative z-10">
           <motion.h2
-            className="font-display font-black text-cream whitespace-pre-line"
+            className="font-display font-black text-white whitespace-pre-line"
             style={{
               fontSize: "clamp(2rem, 5vw, 4rem)",
               lineHeight: "1.05",
@@ -36,7 +37,7 @@ export function Footer() {
             {t("footer.ctaTitle")}
           </motion.h2>
           <motion.p
-            className="font-sans text-cream/75 mt-4 mb-8 max-w-md mx-auto leading-relaxed"
+            className="font-sans text-white/85 mt-4 mb-8 max-w-md mx-auto leading-relaxed"
             style={{ fontSize: "1rem" }}
             initial={{ opacity: 0, y: 12 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +48,7 @@ export function Footer() {
           </motion.p>
           <motion.a
             href="/reservasi"
-            className="inline-flex items-center gap-2.5 bg-cream text-espresso rounded-full font-sans font-bold px-8 py-4 text-base hover:bg-sand transition-all duration-300 hover:scale-105 shadow-warm-lg"
+            className="inline-flex items-center gap-2.5 bg-white text-espresso rounded-full font-sans font-bold px-8 py-4 text-base hover:bg-cream-warm transition-all duration-300 hover:scale-105 shadow-warm-lg"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

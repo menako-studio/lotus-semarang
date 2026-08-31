@@ -7,20 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // ─── Warm Wellness Color Palette ─────────────────────────────────────
+      // ─── Refined Lotus Wellness Sanctuary Color Palette ──────────────────
       colors: {
-        // Backgrounds — skin-tone pastels
+        // Lotus Blossom & Rose Petal (Aligned with Logo Flower)
+        blush:    { DEFAULT: "#D97087", light: "#F4A6C1", muted: "#C45A72", deep: "#B8556D", soft: "#FDF2F4" },
+        lotus:    { DEFAULT: "#D97087", light: "#F4A6C1", muted: "#C45A72", deep: "#B8556D", soft: "#FDF2F4" },
+        // Backgrounds & Accents — skin-tone & warm pastels
         peach:    { DEFAULT: "#F2C4A8", light: "#FAE8DC", muted: "#E8B090", soft: "#FDF0E8" },
         sand:     { DEFAULT: "#E8D5B5", light: "#F5ECD8", muted: "#D4BF98", soft: "#FAF5EC" },
-        sage:     { DEFAULT: "#B8C9A8", light: "#D4E2C8", muted: "#9DB88A", soft: "#EDF2E8" },
-        terra:    { DEFAULT: "#D4845A", light: "#E8A888", muted: "#BC6E44", soft: "#FAEEE8" },
-        blush:    { DEFAULT: "#E8C4C0", light: "#F5DDD8", muted: "#D4A8A4", soft: "#FDF5F4" },
-        // Deep grounding text colors
-        espresso: { DEFAULT: "#2D1F14", 700: "#3D2A1A", 600: "#4D3522", 500: "#5C4030", 400: "#8B6B55", 300: "#B89880", 200: "#D4BBA8", 100: "#F0E8E0" },
-        forest:   { DEFAULT: "#1E3A28", 700: "#264A34", 600: "#2E5A40", 500: "#3A7050", 400: "#5A9068", 300: "#88B895", 200: "#B8D8C0", 100: "#E4F0E8" },
-        // Warm cream base
-        cream:    { DEFAULT: "#FFFFFF", warm: "#FAF0E4", deep: "#F5E8D4" },
-        // Keep ivory for compatibility
+        // Botanical Lotus Leaf & Sage (Aligned with Logo Stem)
+        sage:     { DEFAULT: "#7A9A82", light: "#A3BDAA", muted: "#5B7F64", soft: "#EEF4F0" },
+        forest:   { DEFAULT: "#2D4836", 700: "#22392B", 600: "#2E4A37", 500: "#3D684E", 400: "#5C8C6F", 300: "#88B298", 200: "#BCD4C5", 100: "#EEF4F0" },
+        // Warm Earth Terracotta
+        terra:    { DEFAULT: "#C86A50", light: "#E08B74", muted: "#AC543D", soft: "#FAEEE8" },
+        // Aquatic Spa & Hydrotherapy Mist
+        hydro:    { DEFAULT: "#5A9491", light: "#7EA8A4", muted: "#437875", soft: "#EBF3F2" },
+        // Deep grounding editorial espresso / charcoal
+        espresso: { DEFAULT: "#241C18", 700: "#332722", 600: "#45362F", 500: "#57443C", 400: "#80685E", 300: "#AC968B", 200: "#D3C6BF", 100: "#EDE6E2" },
+        // Warm retreat cream base
+        cream:    { DEFAULT: "#FFFFFF", warm: "#FAF7F2", deep: "#F5EDE0" },
         ivory:    { DEFAULT: "#FFFFFF" },
       },
 

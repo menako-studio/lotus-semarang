@@ -4,15 +4,19 @@
 
 /* ─── CSS Design Tokens ───────────────────────────────────────────────────── */
 :root {
+  --color-blush:     #D97087;
+  --color-lotus:     #D97087;
   --color-peach:     #F2C4A8;
   --color-sand:      #E8D5B5;
-  --color-sage:      #B8C9A8;
-  --color-terra:     #D4845A;
-  --color-blush:     #E8C4C0;
-  --color-espresso:  #2D1F14;
-  --color-forest:    #1E3A28;
+  --color-sage:      #7A9A82;
+  --color-forest:    #2D4836;
+  --color-terra:     #C86A50;
+  --color-hydro:     #5A9491;
+  --color-espresso:  #241C18;
   --color-cream:     #FFFFFF;
+  --color-cream-warm:#FAF7F2;
 
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-smooth: cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
@@ -54,8 +58,8 @@
   }
 
   ::selection {
-    background-color: var(--color-peach);
-    color: var(--color-espresso);
+    background-color: var(--color-blush);
+    color: #FFFFFF;
   }
 }
 
@@ -88,7 +92,7 @@
 
   .btn-pill-dark:hover {
     @apply bg-espresso-700 scale-[1.02];
-    box-shadow: 0 8px 24px rgba(45, 31, 20, 0.25);
+    box-shadow: 0 8px 24px rgba(36, 28, 24, 0.22);
   }
 
   .btn-pill-outline {
@@ -96,7 +100,17 @@
   }
 
   .btn-pill-outline:hover {
-    @apply bg-espresso text-cream;
+    @apply bg-espresso text-cream scale-[1.02];
+    box-shadow: 0 8px 24px rgba(36, 28, 24, 0.15);
+  }
+
+  .btn-pill-lotus {
+    @apply btn-pill bg-blush text-white;
+  }
+
+  .btn-pill-lotus:hover {
+    @apply bg-blush-muted scale-[1.02];
+    box-shadow: 0 8px 24px rgba(217, 112, 135, 0.3);
   }
 
   .btn-pill-peach {
@@ -115,11 +129,11 @@
 
   /* Service card — color-blocked */
   .service-card {
-    @apply rounded-3xl p-8 lg:p-10 flex flex-col gap-5 transition-transform duration-300;
+    @apply rounded-3xl p-8 lg:p-10 flex flex-col gap-5 transition-all duration-500;
   }
 
   .service-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
   }
 
   /* Image container — rounded mask */
@@ -133,7 +147,7 @@
   }
 
   .img-zoom img {
-    transition: transform 0.8s var(--ease-smooth);
+    transition: transform 0.9s var(--ease-smooth);
     will-change: transform;
   }
 
@@ -154,13 +168,13 @@
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--color-cream); }
-::-webkit-scrollbar-thumb { background: var(--color-peach); border-radius: 2px; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--color-cream-warm); }
+::-webkit-scrollbar-thumb { background: var(--color-blush); border-radius: 4px; }
 
 /* ─── Focus ──────────────────────────────────────────────────────────────── */
 *:focus-visible {
-  outline: 2px solid var(--color-terra);
+  outline: 2px solid var(--color-blush);
   outline-offset: 3px;
   border-radius: 4px;
 }
