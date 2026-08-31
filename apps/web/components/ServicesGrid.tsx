@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
+import { trackServiceClick } from "@/lib/analytics";
 
 /* ─── ServicesGrid Component ──────────────────────────────────────────────── */
 export function ServicesGrid() {
@@ -132,6 +133,7 @@ function ServiceCard({ service }: { service: any }) {
   return (
     <a
       href={service.href}
+      onClick={() => trackServiceClick(service.id, service.name, "services_grid")}
       className={`service-card ${service.bg} group block`}
     >
       {/* Top row: number + emoji */}

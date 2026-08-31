@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, HelpCircle, ChevronDown, ChevronUp } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
+import { trackFaqToggle } from "@/lib/analytics";
 
 interface FaqItem {
   q: string;
@@ -114,7 +115,11 @@ export function SearchableFaq() {
               >
                 <button
                   className="w-full px-6 py-5 flex items-center justify-between text-left font-display font-bold text-espresso hover:text-blush text-base md:text-lg transition-colors"
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  onClick={() => {
+                    const isOpening = openIndex !== index;
+                    setOpenIndex(isOpening ? index : null);
+                    trackFaqToggle(faq.q, isOpening);
+                  }}
                 >
                   <span className="flex items-center gap-3">
                     <HelpCircle size={18} className="text-blush flex-shrink-0" />

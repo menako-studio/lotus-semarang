@@ -6,6 +6,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ChevronRight, ChevronLeft, CheckCircle2, Send } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
+import { trackBookingStep, trackWhatsAppLead, trackServiceClick } from "@/lib/analytics";
 
 export function ReservasiClient() {
   const { t, language } = useLanguage();
@@ -30,11 +31,23 @@ export function ReservasiClient() {
     "09.00", "10.00", "11.00", "13.00", "14.00", "15.00", "16.00"
   ];
 
-  const nextStep = () => setStep((prev) => Math.min(prev + 1, 4));
+  const nextStep = () => {
+    setStep((prev) => {
+      const next = Math.min(prev + 1, 4);
+      const stepNames = ["Pilih Layanan", "Pilih Jadwal", "Data Pasien", "Konfirmasi WhatsApp"];
+      trackBookingStep(next, stepNames[next - 1] || `Step ${next}`, formData.layanan);
+      return next;
+    });
+  };
+
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
   const handleSelectLayanan = (id: string) => {
     setFormData({ ...formData, layanan: id });
+    const selected = layananList.find(l => l.id === id);
+    if (selected) {
+      trackServiceClick(id, selected.label, "reservasi_wizard");
+    }
     nextStep();
   };
 
@@ -44,6 +57,16 @@ export function ReservasiClient() {
 
   const handleSendWhatsApp = () => {
     const formattedLayanan = layananList.find(l => l.id === formData.layanan)?.label || formData.layanan;
+    
+    // Trigger GA4 & GTM high value conversion lead
+    trackWhatsAppLead({
+      service: formattedLayanan,
+      sourceLocation: "reservasi_wizard_submit",
+      bookingDate: formData.hari,
+      bookingTime: formData.jam,
+      patientName: formData.nama,
+    });
+
     const text = `${t("bookingFlow.waMessage.intro")}
 
 - *${t("bookingFlow.waMessage.service")}*: ${formattedLayanan}

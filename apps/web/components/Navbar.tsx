@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,10 +27,15 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleLanguageChange = (newLang: "id" | "en") => {
+    setLanguage(newLang);
+    trackEvent("change_language", { language: newLang });
+  };
+
   const LanguageSelector = () => (
     <div className="flex items-center bg-espresso/5 rounded-full p-0.5 border border-espresso/10">
       <button
-        onClick={() => setLanguage("id")}
+        onClick={() => handleLanguageChange("id")}
         className={`px-2.5 py-1 text-xs font-bold rounded-full transition-all duration-300 ${
           language === "id"
             ? "bg-espresso text-cream shadow-sm"
@@ -39,7 +45,7 @@ export function Navbar() {
         ID
       </button>
       <button
-        onClick={() => setLanguage("en")}
+        onClick={() => handleLanguageChange("en")}
         className={`px-2.5 py-1 text-xs font-bold rounded-full transition-all duration-300 ${
           language === "en"
             ? "bg-espresso text-cream shadow-sm"
@@ -132,6 +138,7 @@ export function Navbar() {
             <LanguageSelector />
             <a
               href="/reservasi"
+              onClick={() => trackEvent("click_cta", { cta_name: "Navbar Reservasi", cta_location: "header" })}
               className="hidden sm:inline-flex btn-pill-dark text-xs px-6 py-3 font-bold shadow-warm"
             >
               {t("navbar.reservasi")}
@@ -158,50 +165,48 @@ export function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col gap-5 mt-8">
-              {/* Layanan Title */}
-              <div className="font-sans text-[0.65rem] tracking-widest text-espresso/45 uppercase font-bold flex justify-between items-center">
-                <span>{t("navbar.layananKami")}</span>
-                <LanguageSelector />
-              </div>
-              <div className="grid grid-cols-2 gap-3 pl-1">
-                {layananItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="font-display text-xl font-extrabold text-espresso hover:text-blush transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+              <span className="text-xs font-bold text-espresso/40 tracking-wider uppercase">
+                {t("navbar.layanan")}
+              </span>
+              {layananItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="font-display text-2xl font-bold text-espresso hover:text-blush transition-colors"
+                >
+                  {item.label}
+                </Link>
+              ))}
 
               <div className="h-px bg-espresso/5 my-2" />
 
               <Link
                 href="/tentang-kami"
-                className="font-display text-2xl font-black text-espresso hover:text-blush transition-colors"
                 onClick={() => setIsOpen(false)}
+                className="font-display text-2xl font-bold text-espresso hover:text-blush transition-colors"
               >
                 {t("navbar.tentangKami")}
               </Link>
-
               <Link
                 href="#kontak"
-                className="font-display text-2xl font-black text-espresso hover:text-blush transition-colors"
                 onClick={() => setIsOpen(false)}
+                className="font-display text-2xl font-bold text-espresso hover:text-blush transition-colors"
               >
-                {t("navbar.hubungiKami")}
+                {t("navbar.kontak")}
               </Link>
             </nav>
 
             <div className="mt-auto flex flex-col gap-4">
               <a
                 href="/reservasi"
-                className="btn-pill-dark w-full justify-center text-center py-4 font-bold shadow-warm"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  trackEvent("click_cta", { cta_name: "Mobile Menu Reservasi", cta_location: "mobile_drawer" });
+                }}
+                className="btn-pill-dark w-full text-center py-4 font-bold shadow-warm block"
               >
-                {t("navbar.reservasiWa")}
+                {t("navbar.reservasi")}
               </a>
               <p className="text-center text-xs text-espresso/45 font-sans">
                 {t("navbar.address")}

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Play, X, Heart } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
+import { trackReelView } from "@/lib/analytics";
 
 interface ReelItem {
   id: string;
@@ -58,7 +59,10 @@ export function ReelsShowcase() {
           {reels.map((reel, idx) => (
             <motion.div
               key={reel.id}
-              onClick={() => setActiveVideoId(reel.id)}
+              onClick={() => {
+                setActiveVideoId(reel.id);
+                trackReelView(reel.id, reel.title);
+              }}
               className="flex-shrink-0 w-[260px] lg:w-full snap-start group relative aspect-[9/16] rounded-[2.5rem] overflow-hidden bg-espresso/5 shadow-warm border border-espresso/5 cursor-pointer hover:shadow-warm-lg transition-all duration-300"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}

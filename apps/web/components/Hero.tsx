@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
+import { trackEvent } from "@/lib/analytics";
 
 /* ─── Animation Helpers ──────────────────────────────────────────────────── */
 const fadeUp = (delay = 0) => ({
@@ -87,6 +88,7 @@ export function Hero() {
             <motion.div className="flex flex-wrap gap-3.5" {...fadeUp(0.35)}>
               <a
                 href="/reservasi"
+                onClick={() => trackEvent("click_cta", { cta_name: "Hero Reservasi Sekarang", cta_location: "hero_primary" })}
                 className="btn-pill-dark group gap-2.5 py-4 px-8 text-base shadow-warm"
               >
                 {t("hero.ctaStart")}
@@ -95,7 +97,11 @@ export function Hero() {
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </a>
-              <a href="#layanan" className="btn-pill-outline py-4 px-8 text-base">
+              <a
+                href="#layanan"
+                onClick={() => trackEvent("click_cta", { cta_name: "Hero Lihat Layanan", cta_location: "hero_secondary" })}
+                className="btn-pill-outline py-4 px-8 text-base"
+              >
                 {t("hero.ctaServices")}
               </a>
             </motion.div>

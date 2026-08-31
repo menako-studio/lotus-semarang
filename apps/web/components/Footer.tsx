@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MapPin, Phone, Instagram, Clock, Facebook } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
+import { trackDirectContact, trackWhatsAppLead } from "@/lib/analytics";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -123,6 +124,7 @@ export function Footer() {
                   href="https://maps.app.goo.gl/PWpA655K59Gq82Xy9"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackDirectContact("maps", "Footer Maps Click - Jl Pamularsih")}
                   className="flex items-start gap-3 group"
                 >
                   <MapPin size={16} className="text-peach mt-0.5 flex-shrink-0" />
@@ -136,6 +138,7 @@ export function Footer() {
                   href="https://wa.me/6287700303645"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppLead({ sourceLocation: "footer_phone_link" })}
                   className="flex items-center gap-3 group"
                 >
                   <Phone size={16} className="text-peach flex-shrink-0" />
@@ -149,6 +152,7 @@ export function Footer() {
                   href="https://instagram.com/lotus_semarang"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackDirectContact("instagram", "@lotus_semarang")}
                   className="flex items-center gap-3 group"
                 >
                   <Instagram size={16} className="text-peach flex-shrink-0" />
@@ -162,6 +166,7 @@ export function Footer() {
                   href="https://www.facebook.com/lotusacupuncturecenter/?locale=id_ID"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackDirectContact("phone", "Facebook Lotus")}
                   className="flex items-center gap-3 group"
                 >
                   <Facebook size={16} className="text-peach flex-shrink-0" />
@@ -176,6 +181,7 @@ export function Footer() {
                 href="https://wa.me/6287700303645?text=Halo%20Lotus%2C%20saya%20ingin%20tanya-tanya%20tentang%20layanan"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppLead({ sourceLocation: "footer_quick_cta" })}
                 className="inline-flex items-center gap-2 mt-6 bg-peach/20 hover:bg-peach/30 text-cream rounded-full px-5 py-2.5 text-sm font-sans font-medium transition-all duration-300"
               >
                 {t("footer.askWa")}
