@@ -57,6 +57,15 @@ export const metadata: Metadata = {
       "Temukan keseimbangan jiwa dan raga bersama kami. Akupunktur, Hidroterapi, Fisioterapi & Swim Course di lingkungan yang privat dan nyaman.",
     images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Lotus Health Semarang" }],
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+    ],
+    shortcut: ["/icon.png"],
+    apple: [
+      { url: "/icon.png", type: "image/png" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
