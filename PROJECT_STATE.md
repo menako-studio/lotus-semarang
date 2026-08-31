@@ -119,8 +119,11 @@ lotus-semarang/
 - **YouTube Reels Showcase**:
   - Video IDs: `azv-Y1Or_Ps`, `DqXYDhLji4Y`, `J_L5eCHy-Fk`, `VtuUAN56IfI`, `fhbQ6rYgPB4`.
   - Lazy loads thumbnails from `https://img.youtube.com/vi/{id}/sddefault.jpg` and mounts modal iframe on click.
-- **SEO & Structured Data**:
-  - JSON-LD `@type: MedicalBusiness` embedded in `apps/web/app/layout.tsx` with Google Maps geo-coordinates (`-6.9934758, 110.3957242`) and opening hours.
+- **SEO, Structured Data & Analytics**:
+  - Dynamic XML Sitemap (`apps/web/app/sitemap.ts`) & `robots.txt` (`apps/web/app/robots.ts`) with high priority indexing for `/`, `/layanan/akupunktur`, and `/layanan/hidroterapi`.
+  - Rich JSON-LD Schemas on all pages: `MedicalClinic`, `HealthAndBeautyBusiness`, `MedicalProcedure`, `OfferCatalog`, `BreadcrumbList`, geo-coordinates (`-6.9934758, 110.3957242`), and `sameAs` social entity verification.
+  - Google Tag Manager & GA4 helper module (`apps/web/lib/analytics.ts`) with conversion event tracking: WhatsApp booking dispatch (`generate_lead`), step checkout progression (`checkout_progress`), service clicks (`select_item`), and local contact channels (`contact`).
+  - Next.js Script integration in `layout.tsx` driven by `NEXT_PUBLIC_GTM_ID` and `NEXT_PUBLIC_GA_ID` environment variables.
 
 ---
 
