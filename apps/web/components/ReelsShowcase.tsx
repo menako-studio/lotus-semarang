@@ -20,8 +20,8 @@ export function ReelsShowcase() {
   const { t } = useLanguage();
 
   const reelsList = t("reels.list") || [];
-  const videoIds = ["azv-Y1Or_Ps", "DqXYDhLji4Y", "J_L5eCHy-Fk", "VtuUAN56IfI", "fhbQ6rYgPB4"];
-  const likesList = ["1.2k", "945", "1.5k", "876", "1.1k"];
+  const videoIds = ["azv-Y1Or_Ps", "DqXYDhLji4Y", "J_L5eCHy-Fk", "VtuUAN56IfI"];
+  const likesList = ["1.2k", "945", "1.5k", "876"];
 
   const reels: ReelItem[] = videoIds.map((id, index) => ({
     id,
@@ -55,7 +55,7 @@ export function ReelsShowcase() {
         </motion.div>
 
         {/* Reels Horizontal Scroll / Responsive Grid */}
-        <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0">
+        <div className="flex gap-6 overflow-x-auto pb-6 scrollbar-hide snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:max-w-6xl lg:mx-auto lg:overflow-visible lg:pb-0">
           {reels.map((reel, idx) => (
             <motion.div
               key={reel.id}

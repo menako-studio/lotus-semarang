@@ -138,8 +138,7 @@ export const translations: Record<string, any> = {
         { title: "Penjelasan Lengkap Terapi Fisioterapi Medis", category: "Edukasi Fisioterapi" },
         { title: "Cerita Kesembuhan Akupunktur Pasien Lansia", category: "Testimoni Akupunktur" },
         { title: "Proses Tindakan Akupunktur Slimming Alami", category: "Estetika Wajah" },
-        { title: "Akupunktur Anak Mengatasi Susah Makan", category: "Pediatrik / Anak" },
-        { title: "Sesi Terapi Fisioterapi Tumbuh Kembang Anak", category: "Cinematic Fisioterapi" }
+        { title: "Akupunktur Anak Mengatasi Susah Makan", category: "Pediatrik / Anak" }
       ]
     },
     reviews: {
@@ -581,8 +580,7 @@ export const translations: Record<string, any> = {
         { title: "Full Explanation of Medical Physical Therapy", category: "Physiotherapy Education" },
         { title: "Elderly Patient's Acupuncture Recovery Story", category: "Acupuncture Testimony" },
         { title: "Natural Slimming Acupuncture Flow", category: "Facial Aesthetics" },
-        { title: "Children Acupuncture for Loss of Appetite", category: "Pediatrics" },
-        { title: "Child Developmental Physical Therapy Session", category: "Cinematic Physiotherapy" }
+        { title: "Children Acupuncture for Loss of Appetite", category: "Pediatrics" }
       ]
     },
     reviews: {
