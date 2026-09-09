@@ -22,7 +22,7 @@ export function ReservasiClient() {
 
   const layananList = [
     { id: "akupunktur", label: `${t("services.akupunktur.name")} / ${language === "id" ? "Wajah" : "Facial"}`, emoji: "🪡", color: "border-blush/30 hover:bg-blush-soft/60" },
-    { id: "hidroterapi", label: `${t("services.hidroterapi.name")} (${language === "id" ? "Kolam Hangat" : "Warm Pool"})`, emoji: "🌊", color: "border-hydro/30 hover:bg-hydro-soft/60" },
+    { id: "hidroterapi", label: `${t("services.hidroterapi.name")} (${language === "id" ? "Kolam Privat" : "Private Pool"})`, emoji: "🌊", color: "border-hydro/30 hover:bg-hydro-soft/60" },
     { id: "fisioterapi", label: `${t("services.fisioterapi.name")} & ${language === "id" ? "Terapi Manual" : "Manual Therapy"}`, emoji: "💪", color: "border-sage/30 hover:bg-sage-soft/60" },
     { id: "swim-course", label: `${t("services.swimCourse.name")} (${language === "id" ? "Anak/Dewasa/Wanita" : "Kids/Adults/Women"})`, emoji: "🏊", color: "border-sand/40 hover:bg-sand-soft/60" },
   ];

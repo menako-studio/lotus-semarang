@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     template: "%s | Lotus Semarang",
   },
   description:
-    "Pusat akupunktur medis profesional, kolam hidroterapi air hangat privat 32-34°C, fisioterapi, dan kursus renang eksklusif di Semarang. Privasi terjamin, nyaman, ditangani tenaga ahli.",
+    "Pusat akupunktur medis profesional, kolam hidroterapi privat semi-outdoor, fisioterapi, dan kursus renang eksklusif di Semarang. Privasi terjamin, nyaman, ditangani tenaga medis bersertifikat.",
   keywords: [
     "akupunktur semarang",
     "akupuntur semarang",
     "klinik akupunktur semarang",
     "hidroterapi semarang",
     "kolam hidroterapi semarang",
-    "terapi air hangat semarang",
+    "terapi media air semarang",
     "fisioterapi semarang",
     "swim course semarang",
     "les renang semarang",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     siteName: "Lotus Health, Beauty & Care Semarang",
     title: "Lotus Health, Beauty & Care — Akupunktur & Hidroterapi Privat Semarang",
     description:
-      "Layanan akupunktur medis, hidroterapi air hangat privat 32-34°C, fisioterapi, dan les renang eksklusif di Semarang. Temukan keseimbangan jiwa dan raga.",
+      "Layanan akupunktur medis, hidroterapi privat semi-outdoor, fisioterapi, dan les renang eksklusif di Semarang. Pendekatan personal, profesional, dan nyaman.",
     images: [
       {
         url: "/images/hero-1.webp",
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Lotus Health, Beauty & Care — Akupunktur & Hidroterapi Semarang",
-    description: "Klinik akupunktur medis & kolam hidroterapi air hangat privat terbaik di Semarang.",
+    description: "Klinik akupunktur medis & kolam hidroterapi privat semi-outdoor profesional di Semarang.",
     images: ["/images/hero-1.webp"],
   },
   icons: {
@@ -184,8 +184,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "@type": "Offer",
           "itemOffered": {
             "@type": "MedicalProcedure",
-            "name": "Hidroterapi Air Hangat Privat Semarang",
-            "description": "Terapi air hangat suhu 32-34°C di kolam privat indoor untuk pemulihan sendi, pasca stroke, dan relaksasi.",
+            "name": "Hidroterapi Privat Semi-Outdoor Semarang",
+            "description": "Fisioterapi media air di kolam privat semi-outdoor untuk pemulihan sendi, saraf, pasca stroke, dan relaksasi.",
             "url": "https://lotussemarang.com/layanan/hidroterapi"
           }
         },
@@ -202,8 +202,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           "@type": "Offer",
           "itemOffered": {
             "@type": "Course",
-            "name": "Kursus Les Renang Privat Kolam Hangat",
-            "description": "Pelatihan renang privat intensif untuk balita, anak-anak, wanita, dan dewasa dengan instruktur bersertifikasi.",
+            "name": "Kursus Les Renang Privat",
+            "description": "Pelatihan renang privat intensif untuk balita, anak-anak, wanita, dan dewasa dengan instruktur berpengalaman di kolam semi-outdoor privat.",
             "url": "https://lotussemarang.com/layanan/swim-course"
           }
         }

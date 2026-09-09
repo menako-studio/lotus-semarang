@@ -4,7 +4,7 @@ import { TentangKamiClient } from "@/components/TentangKamiClient";
 export const metadata: Metadata = {
   title: "Tentang Kami | Lotus Health, Beauty & Care Semarang",
   description:
-    "Didirikan tahun 2014 oleh drg. Arini Jannata, S.Tr. Akup, MM. Lotus Semarang menghadirkan konsep wellness privat terpadu: Akupunktur Medis, Hidroterapi Air Hangat, & Fisioterapi.",
+    "Didirikan tahun 2014 oleh drg. Arini Jannata, S.Tr. Akup, MM. Lotus Semarang menghadirkan pelayanan kesehatan privat terpadu: Akupunktur Medis, Hidroterapi, & Fisioterapi.",
   keywords: [
     "lotus semarang",
     "drg arini jannata",

@@ -2,18 +2,17 @@ import type { Metadata } from "next";
 import { HidroterapiClient } from "@/components/HidroterapiClient";
 
 export const metadata: Metadata = {
-  title: "Kolam Hidroterapi Air Hangat Privat Semarang | Lotus Health",
+  title: "Kolam Hidroterapi Privat Semi-Outdoor Semarang | Lotus Health",
   description:
-    "Cari kolam hidroterapi hangat privat di Semarang? Lotus Health menyediakan hidroterapi air hangat suhu 32-34°C untuk pemulihan stroke, saraf, sendi lutut, bumil, & relaksasi.",
+    "Cari kolam hidroterapi privat di Semarang? Lotus Health menyediakan fisioterapi media air semi-outdoor untuk pemulihan pinggang, lutut, saraf, pasca stroke, dan bumil.",
   keywords: [
     "hidroterapi semarang",
     "kolam hidroterapi semarang",
-    "terapi air hangat semarang",
     "fisioterapi air semarang",
     "rehab stroke semarang",
-    "kolam renang hangat semarang",
     "terapi air semarang",
     "hydrotherapy semarang",
+    "kolam renang privat semarang",
   ],
   alternates: {
     canonical: "/layanan/hidroterapi",
@@ -24,10 +23,10 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Kolam Hidroterapi Air Hangat Privat di Semarang | Lotus Health",
-    description: "Satu-satunya kolam hidroterapi air hangat privat 32-34°C di Semarang dengan sterilisasi klorin rendah dan privasi 100% terjaga.",
+    title: "Kolam Hidroterapi Privat Semi-Outdoor di Semarang | Lotus Health",
+    description: "Kolam hidroterapi privat semi-outdoor di Semarang dengan pendampingan 1 pasien 1 fisioterapis dan privasi terjaga.",
     url: "https://lotussemarang.com/layanan/hidroterapi",
-    images: [{ url: "/images/hero-1.webp", width: 1200, height: 630, alt: "Hidroterapi Air Hangat Semarang Lotus Health" }],
+    images: [{ url: "/images/hero-1.webp", width: 1200, height: 630, alt: "Hidroterapi Semi-Outdoor Semarang Lotus Health" }],
   },
 };
 
@@ -53,15 +52,15 @@ export default function HidroterapiPage() {
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Hidroterapi Air Hangat Semarang",
+            "name": "Hidroterapi Privat Semarang",
             "item": "https://lotussemarang.com/layanan/hidroterapi"
           }
         ]
       },
       {
         "@type": "MedicalProcedure",
-        "name": "Kolam Hidroterapi Air Hangat Privat Semarang",
-        "description": "Terapi aquatic air hangat suhu 32-34°C di kolam indoor privat Semarang untuk rehabilitasi saraf, kelumpuhan pasca stroke, osteoarthritis, nyeri pinggang (LBP), dan relaksasi ibu hamil.",
+        "name": "Kolam Hidroterapi Privat Semi-Outdoor Semarang",
+        "description": "Fisioterapi media air di kolam semi-outdoor privat Semarang untuk rehabilitasi saraf, kelumpuhan pasca stroke, keluhan persendian, nyeri pinggang, dan relaksasi kehamilan.",
         "procedureType": "NonSurgicalProcedure",
         "bodyLocation": "Full Body",
         "relevantSpecialty": {

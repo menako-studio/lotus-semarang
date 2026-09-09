@@ -26,19 +26,19 @@ export function HidroterapiClient() {
     },
     {
       title: "Rehabilitasi Motorik & Stroke",
-      desc: "Lingkungan air hangat mempermudah latihan gerak, melatih koordinasi motorik, serta melatih keseimbangan tubuh dengan risiko cedera jatuh nol.",
+      desc: "Media air mempermudah latihan gerak tubuh, melatih koordinasi motorik, serta melatih keseimbangan dengan risiko cedera benturan yang minimal.",
       img: "/images/lotus_treatment_hydro_adult_dumbbell_therapy.jpg",
       bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
       title: "Relaksasi Saraf & Otot",
-      desc: "Jet aliran air hangat bertekanan melakukan pemijatan mikro pada otot-otot tegang, melancarkan aliran darah, serta menenangkan pikiran.",
+      desc: "Efek relaksasi dan gaya apung air meredakan ketegangan otot, melancarkan sirkulasi darah, serta menenangkan sistem saraf tubuh.",
       img: "/images/lotus_treatment_hydro_equipment_noodle_front.jpg",
       bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
       title: "Tumbuh Kembang & Bumil",
-      desc: "Menghadirkan sarana aman untuk stimulasi gerak motorik anak-anak dan olahraga kardio kehamilan yang aman bebas cemas benturan.",
+      desc: "Menghadirkan sarana aman untuk stimulasi gerak motorik anak-anak dan olahraga kehamilan yang aman bebas cemas benturan.",
       img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
       bg: "bg-sand-soft/80 border border-sand/30",
     },
@@ -51,19 +51,19 @@ export function HidroterapiClient() {
     },
     {
       title: "Motor & Stroke Rehab",
-      desc: "The warm water environment eases movement exercises, trains motor coordination, and improves balance with zero fall injury risk.",
+      desc: "The water environment eases movement exercises, trains motor coordination, and improves balance with minimal impact risk.",
       img: "/images/lotus_treatment_hydro_adult_dumbbell_therapy.jpg",
       bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
       title: "Nerve & Muscle Relaxation",
-      desc: "Pressurized warm water jets provide micro-massage on tense muscles, improve blood circulation, and calm the mind.",
+      desc: "Buoyancy and gentle water movement relieve muscle tension, promote blood circulation, and calm the nervous system.",
       img: "/images/lotus_treatment_hydro_equipment_noodle_front.jpg",
       bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
       title: "Child Development & Pregnancy",
-      desc: "Provides a safe environment to stimulate kids' motor skills and safe cardio exercise for pregnant mothers without worrying about impact.",
+      desc: "Provides a safe environment to stimulate kids' motor skills and safe exercise for pregnant mothers without worrying about impact.",
       img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
       bg: "bg-sand-soft/80 border border-sand/30",
     },
@@ -72,36 +72,36 @@ export function HidroterapiClient() {
   const faqs = language === "id" ? [
     {
       q: "Apakah kolam hidroterapi di Lotus Semarang bersifat privat?",
-      a: "Ya, 100% privat. Setiap sesi disewakan secara eksklusif per pasien/keluarga. Tidak ada tamu lain yang masuk ke area kolam selama sesi Anda berlangsung, sangat nyaman untuk ibu berhijab (Niqabi) dan pasien yang butuh ketenangan penuh.",
+      a: "Ya, 100% privat. Setiap sesi disewakan secara eksklusif 1 pasien : 1 fisioterapis. Tidak ada orang lain yang masuk ke area kolam selama sesi Anda berlangsung, sangat nyaman untuk wanita berhijab dan pasien yang membutuhkan privasi tinggi.",
     },
     {
-      q: "Berapa suhu air kolam hidroterapi?",
-      a: "Suhu air kolam kami diatur konstan berkisar antara 32°C hingga 34°C. Suhu hangat terapeutik ini sangat ideal untuk meredakan ketegangan otot dan melebarkan pembuluh darah untuk sirkulasi darah yang lebih baik.",
+      q: "Apakah kolam hidroterapi Lotus air hangat?",
+      a: "Kolam di Lotus Semarang adalah kolam semi-outdoor dengan air bersih bersuhu biasa (bukan air hangat). Area kolam terlindung dari terik matahari siang hari dan aman dari hujan, sehingga suasana terapi tetap sejuk, nyaman, dan higienis.",
     },
     {
       q: "Apa yang harus saya bawa saat sesi hidroterapi?",
-      a: "Cukup bawa pakaian renang yang nyaman. Bagi wanita berhijab, disarankan membawa baju renang muslimah/burkini yang bersih. Kami menyediakan fasilitas shower steril, handuk bersih, dan sabun pasca sesi.",
+      a: "Cukup bawa pakaian renang yang nyaman. Bagi wanita berhijab, disarankan membawa baju renang muslimah yang bersih. Kami menyediakan fasilitas ruang bilas bersih dan privat pasca sesi.",
     },
     {
       q: "Apakah hidroterapi aman bagi penderita stroke dan lansia?",
-      a: "Sangat aman dan sangat direkomendasikan. Latihan di dalam air hangat jauh lebih ringan dilakukan bagi penderita stroke atau lansia yang memiliki keterbatasan kekuatan otot di darat.",
+      a: "Sangat aman dan didampingi langsung oleh fisioterapis profesional secara personal. Latihan di dalam media air jauh lebih ringan dilakukan bagi penderita stroke atau lansia yang memiliki keterbatasan kekuatan otot di darat.",
     },
   ] : [
     {
       q: "Is the hydrotherapy pool at Lotus Semarang private?",
-      a: "Yes, 100% private. Each session is leased exclusively per patient/family. No other guests will enter the pool area during your session, making it highly comfortable for hijabi mothers (Niqabi) and patients requiring complete quietness.",
+      a: "Yes, 100% private. Each session is 1 patient : 1 physiotherapist. No other guests will enter the pool area during your session, ensuring total comfort and privacy.",
     },
     {
-      q: "What is the water temperature of the hydrotherapy pool?",
-      a: "Our pool water temperature is kept constant at 32°C to 34°C. This therapeutic warm temperature is ideal for relieving muscle tension and dilating blood vessels for better circulation.",
+      q: "Is the hydrotherapy pool at Lotus heated?",
+      a: "The pool at Lotus Semarang is a semi-outdoor pool with fresh clean water (standard temperature, not heated). It is sheltered from direct sun and protected from rain, keeping it cool, pleasant, and clean throughout the day.",
     },
     {
       q: "What should I bring to the hydrotherapy session?",
-      a: "Just bring comfortable swimwear. For hijabi women, it is recommended to bring clean Muslimah swimwear/burkini. We provide sterile shower facilities, clean towels, and body soap post-session.",
+      a: "Just bring comfortable swimwear. For hijabi women, it is recommended to bring clean Muslimah swimwear. We provide private sterile shower facilities post-session.",
     },
     {
       q: "Is hydrotherapy safe for stroke patients and seniors?",
-      a: "Extremely safe and highly recommended. Exercises in warm water are much lighter to perform for stroke survivors or seniors who have limited muscle strength on land.",
+      a: "Extremely safe and personally assisted 1-on-1 by certified physiotherapists. Exercising in water significantly reduces body load for stroke survivors or seniors with limited strength on land.",
     },
   ];
 
@@ -132,8 +132,8 @@ export function HidroterapiClient() {
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
                 {language === "id" 
-                  ? "Temukan pemulihan fisik yang menenangkan. Kolam air hangat privat kami memanfaatkan hukum fisika air untuk meringankan beban sendi, mempercepat pemulihan motorik, dan merelaksasi otot Anda."
-                  : "Discover a soothing physical recovery. Our private warm water pool utilizes the physics laws of water to reduce joint load, accelerate motor recovery, and relax your muscles."}
+                  ? "Temukan pemulihan fisik yang menenangkan. Kolam semi-outdoor privat kami memanfaatkan sifat fisika air untuk meringankan beban sendi, mempercepat pemulihan motorik, dan mendukung proses penyembuhan."
+                  : "Discover a soothing physical recovery. Our private semi-outdoor pool utilizes the physics principles of water to reduce joint load, accelerate motor recovery, and support your healing process."}
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
@@ -265,12 +265,12 @@ export function HidroterapiClient() {
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-espresso text-lg mb-1">
-                      {language === "id" ? "Termoregulasi Relaksasi" : "Relaxation Thermoregulation"}
+                      {language === "id" ? "Suasana Nyaman & Teduh" : "Comfortable & Sheltered Atmosphere"}
                     </h3>
                     <p className="font-sans text-espresso/65 text-sm leading-relaxed">
                       {language === "id"
-                        ? "Suhu kolam air hangat yang stabil memberikan stimulasi nyaman pada ujung saraf kulit, mematikan sinyal rasa nyeri, serta melemaskan kekakuan otot."
-                        : "Stable warm pool temperature provides comfortable stimulation on skin nerve endings, shutting down pain signals, and relaxing muscle stiffness."}
+                        ? "Area kolam semi-outdoor yang terlindung dari cuaca memberikan stimulasi segar dan nyaman, membebaskan pikiran dari stres, serta melemaskan kekakuan otot."
+                        : "Sheltered semi-outdoor pool area provides a refreshing and comfortable environment, relieving stress and relaxing muscle stiffness."}
                     </p>
                   </div>
                 </div>
@@ -365,16 +365,16 @@ export function HidroterapiClient() {
                 alt: "Latihan Terapi Bersama Instruktur",
                 step: language === "id" ? "02. Latihan Terapeutik Air" : "02. Water Therapeutic Exercise",
                 desc: language === "id"
-                  ? "Di bawah bimbingan instruktur profesional, Anda melakukan latihan gerak sendi, penguatan otot, atau relaksasi apung dengan jet air hangat bertekanan di area kolam privat."
-                  : "Under the guidance of a professional instructor, you perform joint movement exercises, muscle strengthening, or floating relaxation with pressurized warm water jets in the private pool area."
+                  ? "Di bawah bimbingan fisioterapis profesional, Anda melakukan latihan gerak sendi, penguatan otot, atau relaksasi apung secara privat di kolam semi-outdoor."
+                  : "Under the guidance of a professional physiotherapist, you perform joint movement exercises, muscle strengthening, or floating relaxation in the private semi-outdoor pool."
               },
               {
                 img: "/images/lotus_treatment_hydro_elderly_hijab_smile_edge.jpg",
                 alt: "Selesai Sesi Relaksasi",
                 step: language === "id" ? "03. Bilas & Evaluasi" : "03. Rinse & Evaluation",
                 desc: language === "id"
-                  ? "Setelah 30-45 menit latihan, Anda membilas diri di kamar mandi steril privat yang hangat. Instruktur mencatat perkembangan gerak sendi Anda untuk sesi berikutnya."
-                  : "After 30-45 minutes of training, you rinse off in the warm private sterile shower. The instructor records your joint movement progress for the next session."
+                  ? "Setelah 30-45 menit latihan, Anda membilas diri di ruang bilas privat yang bersih. Fisioterapis mencatat perkembangan gerak sendi Anda untuk sesi berikutnya."
+                  : "After 30-45 minutes of training, you rinse off in the clean private shower. The physiotherapist records your joint movement progress for the next session."
               }
             ].map((item, idx) => (
               <motion.div

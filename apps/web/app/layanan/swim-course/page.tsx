@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import { SwimCourseClient } from "@/components/SwimCourseClient";
 
 export const metadata: Metadata = {
-  title: "Kursus Les Renang Privat Kolam Hangat Semarang | Lotus Health",
+  title: "Kursus Les Renang Privat Semi-Outdoor Semarang | Lotus Health",
   description:
-    "Cari kelas renang privat air hangat di Semarang? Lotus Health menyediakan les renang privat untuk anak-anak, lansia, pemula, dan kelas khusus wanita (hijab-friendly).",
+    "Cari kelas renang privat di Semarang? Lotus Health menyediakan les renang privat semi-outdoor untuk anak-anak, dewasa, lansia, dan kelas khusus wanita (hijab-friendly).",
   keywords: [
     "swim course semarang",
     "les renang semarang",
     "kursus renang semarang",
     "les renang privat semarang",
-    "kolam renang hangat semarang",
+    "kolam renang privat semarang",
     "les renang anak semarang",
     "les renang wanita semarang",
   ],
@@ -53,8 +53,8 @@ export default function SwimCoursePage() {
       },
       {
         "@type": "Course",
-        "name": "Kursus Les Renang Privat Kolam Hangat Semarang",
-        "description": "Les renang privat eksklusif di kolam indoor air hangat bersuhu 32-34°C, higienis dan ramah muslimah.",
+        "name": "Kursus Les Renang Privat Semarang",
+        "description": "Les renang privat eksklusif di kolam semi-outdoor privat yang higienis, terlindung dari terik dan hujan, serta ramah muslimah.",
         "provider": {
           "@type": "MedicalClinic",
           "name": "Lotus Health, Beauty & Care",

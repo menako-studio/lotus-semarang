@@ -75,8 +75,8 @@ export function SwimCourseClient() {
       a: "Satu kelas renang bersifat 100% privat (1 instruktur melayani 1 murid). Area kolam renang disewa khusus untuk sesi latihan Anda tanpa terganggu oleh kehadiran pengunjung umum.",
     },
     {
-      q: "Berapa suhu air kolam renang?",
-      a: "Kolam renang kami dipanaskan konstan berkisar antara 30°C hingga 32°C. Suhu hangat ini membuat tubuh murid rileks, mencegah kram otot, dan sangat aman bagi anak-anak maupun lansia.",
+      q: "Apakah kolam renang di Lotus air hangat?",
+      a: "Kolam renang di Lotus Semarang menggunakan air bersih biasa dengan konsep semi-outdoor yang terlindung dari terik matahari dan aman dari hujan. Suasana latihan sangat sejuk, nyaman, dan tenang.",
     },
     {
       q: "Apakah disediakan instruktur wanita?",
@@ -92,8 +92,8 @@ export function SwimCourseClient() {
       a: "Each swimming class is 100% private (1 instructor serves 1 student). The pool area is booked exclusively for your training session, uninterrupted by public visitors.",
     },
     {
-      q: "What is the pool water temperature?",
-      a: "Our swimming pool is heated constantly between 30°C and 32°C. This warm temperature relaxes the student's body, prevents muscle cramps, and is highly safe for kids and seniors.",
+      q: "Is the swimming pool at Lotus heated?",
+      a: "The pool at Lotus Semarang is a sheltered semi-outdoor pool with clean freshwater (not heated). It is well protected from direct sunlight and rain, keeping the practice cool and comfortable.",
     },
     {
       q: "Are female instructors available?",
@@ -132,8 +132,8 @@ export function SwimCourseClient() {
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
                 {language === "id" 
-                  ? "Dapatkan bimbingan renang intensif di kolam hangat tertutup. Sempurna bagi pemula, anak-anak, lansia, maupun ibu berjilbab yang menginginkan privasi mutlak selama belajar berenang."
-                  : "Get intensive swimming guidance in an enclosed warm pool. Perfect for beginners, kids, seniors, and hijabi women seeking absolute privacy while learning to swim."}
+                  ? "Dapatkan bimbingan renang privat di kolam semi-outdoor yang teduh dan nyaman. Sempurna bagi anak-anak hingga dewasa yang ingin mulai belajar berenang maupun menjaga kebugaran tubuh."
+                  : "Get private swimming instruction in a sheltered, comfortable semi-outdoor pool. Perfect for children to adults who want to learn swimming or stay fit and active."}
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
@@ -208,7 +208,7 @@ export function SwimCourseClient() {
             >
               <Image
                 src="/images/lotus_hydrotherapy_pool_male_floating_device.jpg"
-                alt="Manfaat Latihan Fisik Kolam Renang Hangat"
+                alt="Manfaat Latihan Fisik Kolam Renang Semi-Outdoor"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -250,12 +250,12 @@ export function SwimCourseClient() {
                   </div>
                   <div>
                     <h3 className="font-display font-bold text-espresso text-lg mb-1">
-                      {language === "id" ? "Kolam Hangat Bersih" : "Clean Warm Pool"}
+                      {language === "id" ? "Kolam Semi-Outdoor Teduh" : "Sheltered Semi-Outdoor Pool"}
                     </h3>
                     <p className="font-sans text-espresso/65 text-sm leading-relaxed">
                       {language === "id"
-                        ? "Suhu kolam yang hangat membuat murid tidak mudah kedinginan dan merasa nyaman berlatih gerakan kaki/tangan lebih lama di dalam air."
-                        : "The warm pool temperature keeps students from getting cold easily, allowing them to practice foot/hand movements longer in comfort."}
+                        ? "Area kolam semi-outdoor terlindung dari terik matahari dan hujan, menjaga murid tetap nyaman berlatih tanpa kepanasan."
+                        : "The sheltered semi-outdoor pool protects students from hot sun and rain, keeping practice sessions comfortable."}
                     </p>
                   </div>
                 </div>
