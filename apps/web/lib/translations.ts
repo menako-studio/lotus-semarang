@@ -13,20 +13,12 @@ export const translations: Record<string, any> = {
       address: "Jl. Pamularsih No. 90/100, Semarang"
     },
     hero: {
-      eyebrow: "✦ Wellness Privat di Semarang",
-      titleStart: "Sembuh Itu ",
+      eyebrow: "Akupunktur · Fisioterapi · Hidroterapi",
+      titleStart: "Sehat Itu ",
       titleEnd: "Menyenangkan.",
-      subheading: "Dari akupunktur yang menenangkan hingga hidroterapi yang memulihkan — kami menghadirkan perawatan medis berbasis sains dalam suasana yang hangat, privat, dan bebas rasa canggung.",
-      ctaStart: "Mulai Perjalananmu",
+      subheading: "Karena merawat tubuh bukan hanya tentang mengatasi keluhan, tetapi juga tentang menjaga dan menikmati kualitas hidup. Di Lotus, setiap perawatan dilakukan secara personal, profesional, dan privat dalam suasana yang nyaman.",
+      ctaStart: "Reservasi Sekarang",
       ctaServices: "Lihat Layanan",
-      badges: {
-        privacy: "Privasi Terjamin",
-        expert: "Tenaga Ahli Bersertifikat",
-        cozy: "Ramah & Nyaman"
-      },
-      satisfiedPatients: "Pasien Puas",
-      privateSuite: "100% Privat",
-      safeCozy: "Nyaman & Aman"
     },
     services: {
       eyebrow: "Layanan Kami",
@@ -373,20 +365,12 @@ export const translations: Record<string, any> = {
       address: "Jl. Pamularsih No. 90/100, Semarang"
     },
     hero: {
-      eyebrow: "✦ Private Wellness in Semarang",
-      titleStart: "Healing Is ",
-      titleEnd: "Pleasant.",
-      subheading: "From calming acupuncture to restorative hydrotherapy — we bring science-based medical treatments in a warm, private, and zero-awkward environment.",
-      ctaStart: "Start Your Journey",
-      ctaServices: "View Services",
-      badges: {
-        privacy: "Guaranteed Privacy",
-        expert: "Certified Specialist",
-        cozy: "Cozy & Welcoming"
-      },
-      satisfiedPatients: "Happy Patients",
-      privateSuite: "100% Private",
-      safeCozy: "Safe & Comfortable"
+      eyebrow: "Acupuncture · Physiotherapy · Hydrotherapy",
+      titleStart: "Healthy Living is ",
+      titleEnd: "Delightful.",
+      subheading: "Because caring for your body is not just about addressing complaints, but also about maintaining and enjoying your quality of life. At Lotus, each treatment is delivered personally, professionally, and privately in a comfortable atmosphere.",
+      ctaStart: "Book Reservation",
+      ctaServices: "Explore Services",
     },
     services: {
       eyebrow: "Our Services",

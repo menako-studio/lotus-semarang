@@ -17,16 +17,10 @@ const fadeUp = (delay = 0) => ({
 export function Hero() {
   const { t } = useLanguage();
 
-  const badges = [
-    { emoji: "🔒", text: t("hero.badges.privacy") },
-    { emoji: "⭐", text: t("hero.badges.expert") },
-    { emoji: "🌿", text: t("hero.badges.cozy") },
-  ];
-
   return (
     <section
       className="min-h-screen flex items-center bg-cream overflow-hidden pt-24 pb-16 lg:pt-28 lg:pb-0"
-      aria-label="Lotus Health, Beauty & Care — Wellness Privat di Semarang"
+      aria-label="Lotus Health, Beauty & Care — Akupunktur, Fisioterapi, Hidroterapi"
     >
       <div className="container-wellness w-full">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center min-h-[calc(100vh-7rem)]">
@@ -36,7 +30,7 @@ export function Hero() {
 
             {/* Eyebrow pill */}
             <motion.div {...fadeUp(0.05)}>
-              <span className="tag-pill bg-blush/20 text-blush-deep font-bold text-xs border border-blush/30">
+              <span className="font-sans font-bold text-xs md:text-sm text-espresso/60 tracking-wider uppercase">
                 {t("hero.eyebrow")}
               </span>
             </motion.div>
@@ -45,16 +39,14 @@ export function Hero() {
             <motion.h1
               className="font-display font-black text-espresso"
               style={{
-                fontSize: "clamp(2.75rem, 6.5vw, 5.5rem)",
-                lineHeight: "1.0",
+                fontSize: "clamp(2.75rem, 6vw, 5.25rem)",
+                lineHeight: "1.02",
                 letterSpacing: "-0.025em",
               }}
               {...fadeUp(0.15)}
             >
               {t("hero.titleStart")}{" "}
-              <span
-                className="relative inline-block text-blush"
-              >
+              <span className="relative inline-block text-blush">
                 {t("hero.titleEnd")}
                 {/* Underline squiggle decoration */}
                 <svg
@@ -77,48 +69,32 @@ export function Hero() {
 
             {/* Subheading */}
             <motion.p
-              className="font-sans text-espresso/70 leading-relaxed max-w-lg"
-              style={{ fontSize: "clamp(1rem, 1.5vw, 1.125rem)" }}
+              className="font-sans text-espresso/75 leading-relaxed max-w-lg text-base md:text-lg"
               {...fadeUp(0.25)}
             >
               {t("hero.subheading")}
             </motion.p>
 
             {/* CTA Buttons */}
-            <motion.div className="flex flex-wrap gap-3.5" {...fadeUp(0.35)}>
+            <motion.div className="flex flex-wrap items-center gap-3.5 pt-2" {...fadeUp(0.35)}>
               <a
-                href="/reservasi"
-                onClick={() => trackEvent("click_cta", { cta_name: "Hero Reservasi Sekarang", cta_location: "hero_primary" })}
+                href="#layanan"
+                onClick={() => trackEvent("click_cta", { cta_name: "Hero Lihat Layanan", cta_location: "hero_primary" })}
                 className="btn-pill-dark group gap-2.5 py-4 px-8 text-base shadow-warm"
               >
-                {t("hero.ctaStart")}
+                {t("hero.ctaServices")}
                 <ArrowRight
                   size={16}
                   className="transition-transform duration-300 group-hover:translate-x-1"
                 />
               </a>
               <a
-                href="#layanan"
-                onClick={() => trackEvent("click_cta", { cta_name: "Hero Lihat Layanan", cta_location: "hero_secondary" })}
+                href="/reservasi"
+                onClick={() => trackEvent("click_cta", { cta_name: "Hero Reservasi Sekarang", cta_location: "hero_secondary" })}
                 className="btn-pill-outline py-4 px-8 text-base"
               >
-                {t("hero.ctaServices")}
+                {t("hero.ctaStart")}
               </a>
-            </motion.div>
-
-            {/* Trust Badges */}
-            <motion.div
-              className="flex flex-wrap gap-4 pt-2"
-              {...fadeUp(0.45)}
-            >
-              {badges.map((b) => (
-                <div key={b.text} className="flex items-center gap-2 bg-cream-warm/80 px-3.5 py-1.5 rounded-full border border-espresso/5">
-                  <span className="text-sm">{b.emoji}</span>
-                  <span className="font-sans text-xs font-semibold text-espresso/70">
-                    {b.text}
-                  </span>
-                </div>
-              ))}
             </motion.div>
           </div>
 
@@ -134,31 +110,6 @@ export function Hero() {
               className="absolute inset-0 rounded-[3rem] lg:rounded-[4rem] -rotate-3 bg-blush/20"
             />
 
-            {/* Floating accent pill — top left */}
-            <motion.div
-              className="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 z-10 bg-sage-soft/95 backdrop-blur-md rounded-2xl px-5 py-3.5 shadow-warm border border-sage/30"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="font-display font-black text-forest text-xl leading-none">800+</div>
-              <div className="font-sans text-[0.65rem] text-forest/80 font-bold mt-1">{t("hero.satisfiedPatients")}</div>
-            </motion.div>
-
-            {/* Floating accent pill — bottom right */}
-            <motion.div
-              className="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 z-10 bg-white/95 backdrop-blur-md rounded-2xl px-5 py-3.5 shadow-warm-lg border border-blush/20"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            >
-              <div className="flex items-center gap-2.5">
-                <ShieldCheck size={18} className="text-blush" />
-                <div>
-                  <div className="font-sans text-[0.65rem] font-bold text-espresso">{t("hero.privateSuite")}</div>
-                  <div className="font-sans text-[0.55rem] text-espresso/60">{t("hero.safeCozy")}</div>
-                </div>
-              </div>
-            </motion.div>
-
             {/* Main image container — rounded mask */}
             <div
               className="relative w-full max-w-[480px] lg:max-w-none img-zoom shadow-warm-xl"
@@ -170,7 +121,7 @@ export function Hero() {
               />
               <Image
                 src="/images/lotus_consultation_doctor_patient_model_hijab.jpg"
-                alt="Terapis profesional Lotus Health memberikan perawatan dalam suasana yang nyaman dan privat"
+                alt="Terapis profesional Lotus Semarang memberikan perawatan dalam suasana yang nyaman dan privat"
                 fill
                 priority
                 quality={85}
