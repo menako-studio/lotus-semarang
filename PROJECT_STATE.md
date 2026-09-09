@@ -6,10 +6,13 @@
 
 ## 1. EXECUTIVE SUMMARY & TECH STACK
 
-### 1.1 Application Scope & Purpose
-**Lotus Semarang** (`Lotus Health, Beauty & Care`) is a private wellness, medical acupuncture, hydrotherapy, physiotherapy, and exclusive swimming course clinic based in Semarang, Indonesia.
-- **Client Website (`apps/web`)**: Production-ready patient-facing portal featuring service catalogs, interactive multi-step booking to WhatsApp, multilingual i18n support (Indonesian & English), video reels showcase with YouTube embed modal, and SEO-optimized architecture.
-- **Aesthetic Benchmark**: Inspired by **wthn.com** (warm pastel tones, skin tones, cream background `#FFFFFF`/`#FAF0E4`, serif typography `Fraunces`, modern UI `DM Sans`).
+### 1.1 Application Scope & Brand Positioning
+**Lotus Semarang** (`Lotus Health, Beauty & Care`) is a private clinical healthcare therapy clinic based in Semarang, Central Java (Jl. Pamularsih No. 90/100, Gisikdrono, Semarang Barat).
+- **Core Clinical Services**: Medical Acupuncture (Akupunktur Medis), Hydrotherapy (Hidroterapi), and Physiotherapy (Fisioterapi), accompanied by an Advanced Active Maintenance Program (Swim Course).
+- **Brand Identity & Tone**: Professional medical therapy and rehabilitation in a comfortable, private, and personal environment. **NOT** a luxury day spa, beauty salon, reflexology massage, or "kretek" chiropractic parlor.
+- **Facility Specification**: Semi-outdoor private swimming pool (fresh, clean water sheltered from rain and mid-day sun, comfortable ambient temperature; **not** a heated/warm-water pool), sterile treatment suites, and licensed medical staff.
+- **Aesthetic Benchmark**: Warm, accessible modern healthcare therapy inspired by visual aesthetics of **wthn.com** (warm cream `#FFFFFF`/`#FAF0E4`/`#FAF7F2`, serif typography `Fraunces`, clean UI `DM Sans`).
+- **Client Website (`apps/web`)**: Production-ready patient-facing portal featuring service catalogs, interactive multi-step booking to WhatsApp, bilingual i18n support (Indonesian & English), video reels showcase with YouTube embed modal, and SEO-optimized architecture.
 - **Admin Dashboard (`apps/admin`)**: Monorepo workspace placeholder for future internal clinic management.
 
 ### 1.2 Tech Stack & Key Tooling
@@ -20,7 +23,7 @@
 - **Animation & Transitions**: `framer-motion` (`^11.2.10`).
 - **Icons**: `lucide-react` (`^0.395.0`).
 - **State Management & i18n**: React Context API (`LanguageContext.tsx`) + `localStorage` persistence (`lotus_language` key).
-- **Database & Backend APIs**: Currently static / client-driven; bookings dispatch structured WhatsApp payload directly to clinic operators (`+6287700303645`). No external DB connected yet.
+- **Integrations**: Direct WhatsApp generator to official clinic hotline (`+6287700303645`), Google Maps embed & links (`https://maps.app.goo.gl/PWpA655K59Gq82Xy9`), Google Reviews 4.9 showcase, and YouTube modal player.
 
 ---
 
@@ -33,7 +36,7 @@ lotus-semarang/
 │   ├── web/                           # Patient Web Application (Next.js 14 App Router)
 │   │   ├── app/
 │   │   │   ├── layout.tsx             # Root layout: Fraunces & DM Sans fonts, JSON-LD Schema.org
-│   │   │   ├── page.tsx               # Homepage: Hero, Marquee, Services, Experience, Gallery, Reels, Reviews, FAQ
+│   │   │   ├── page.tsx               # Homepage: Hero, Marquee, Services, Experience, Team, Gallery, Reels, Reviews, FAQ, Contact
 │   │   │   ├── globals.css            # CSS variables, typography utilities, pill buttons, animations
 │   │   │   ├── not-found.tsx          # Custom 404 error page with i18n support
 │   │   │   ├── tentang-kami/page.tsx  # About page (Server Component wrapper + metadata)
@@ -45,26 +48,28 @@ lotus-semarang/
 │   │   │       └── swim-course/page.tsx
 │   │   ├── components/                # Interactive UI and Client views
 │   │   │   ├── Navbar.tsx             # Sticky header, dropdown, language switcher (ID/EN), mobile drawer
-│   │   │   ├── Hero.tsx               # Split hero layout with trust badges & CTAs
-│   │   │   ├── ServicesGrid.tsx       # 2x2 color-blocked service cards
-│   │   │   ├── SearchableFaq.tsx      # Category-filterable & searchable FAQ accordion
+│   │   │   ├── Hero.tsx               # Streamlined hero: "Sehat Itu Menyenangkan." + CTAs
+│   │   │   ├── ServicesGrid.tsx       # 3 uniform clinical cards (Akupunktur, Hidroterapi, Fisioterapi) + Swim Course journey
+│   │   │   ├── TeamShowcase.tsx       # "Kenali Tim yang Merawatmu": 9 certified medical therapists & credentials
+│   │   │   ├── ContactSection.tsx     # Amana Care-inspired 2-column contact: WhatsApp form + Info & Google Maps
+│   │   │   ├── SearchableFaq.tsx      # Category-filterable & searchable FAQ with 7 exact clinical questions
 │   │   │   ├── ReelsShowcase.tsx      # YouTube video modal player & reels showcase
 │   │   │   ├── ReservasiClient.tsx    # 4-step interactive booking wizard + WhatsApp formatter
 │   │   │   ├── BookingFlow.tsx        # Alternative luxury multi-step booking module
 │   │   │   ├── AkupunkturClient.tsx   # Detailed Acupuncture landing & pricing/benefits
-│   │   │   ├── HidroterapiClient.tsx  # Detailed Hydrotherapy landing
-│   │   │   ├── FisioterapiClient.tsx  # Detailed Physiotherapy landing
-│   │   │   ├── SwimCourseClient.tsx   # Detailed Swim Course landing
-│   │   │   ├── TentangKamiClient.tsx  # Founder profile, clinic history & vision
+│   │   │   ├── HidroterapiClient.tsx  # Detailed Hydrotherapy landing (semi-outdoor pool, private 1-on-1)
+│   │   │   ├── FisioterapiClient.tsx  # Detailed Physiotherapy landing (modalities + kinesitherapy)
+│   │   │   ├── SwimCourseClient.tsx   # Detailed Swim Course landing (kids, adults, active seniors)
+│   │   │   ├── TentangKamiClient.tsx  # Founder profile drg. Arini Jannata, clinic history & philosophy
 │   │   │   ├── Footer.tsx             # Contact info, map links, schedule & bottom bar
 │   │   │   ├── Marquee.tsx            # Animated continuous marquee banners
-│   │   │   ├── Sanctuary.tsx          # Wellness retreat space feature section
 │   │   │   └── LanguageContext.tsx    # Translation provider & useLanguage hook
 │   │   ├── lib/
-│   │   │   └── translations.ts        # Full bilingual dictionary (ID / EN)
+│   │   │   ├── translations.ts        # Full bilingual dictionary (ID / EN)
+│   │   │   └── analytics.ts           # GA4 / GTM event tracking utilities
 │   │   ├── public/                    # High-res compressed WebP/JPG assets & logo
 │   │   ├── next.config.js             # Transpiles @lotus/ui, remote image patterns (Unsplash, YouTube)
-│   │   └── tailwind.config.js         # Wellness color tokens (peach, sand, sage, terra, blush, espresso)
+│   │   └── tailwind.config.js         # Wellness color tokens (peach, sand, sage, terra, blush, espresso, forest)
 │   │
 │   └── admin/                         # Admin Dashboard (Stub)
 │       ├── package.json               # Next.js 14 setup on port 3001
@@ -85,103 +90,44 @@ lotus-semarang/
 └── package.json                       # Root script definitions
 ```
 
-### 2.2 Architectural Patterns
-1. **Server vs. Client Component Separation (SEO First)**:
-   - `apps/web/app/**/page.tsx` are pure **Server Components** exporting Next.js `Metadata` objects (canonical URLs, OpenGraph, title templates, SEO keywords).
-   - Interactive DOM logic (accordions, language switching, step forms, Framer Motion) is encapsulated in `components/*Client.tsx` marked with `"use client"`.
-2. **Design Token Hierarchy**:
-   - Primary design tokens live in `apps/web/tailwind.config.js` and `packages/config/tailwind.config.js`.
-   - Core palette: `peach` (`#F2C4A8`), `sand` (`#E8D5B5`), `sage` (`#B8C9A8`), `terra` (`#D4845A`), `blush` (`#E8C4C0`), `espresso` (`#2D1F14`), `forest` (`#1E3A28`), `cream` (`#FFFFFF`).
-3. **Structured Localization Pattern**:
-   - `lib/translations.ts` contains keyed dictionary structures for `id` (Indonesian default) and `en` (English).
-   - `LanguageContext.tsx` provides `t("path.to.key")` with automatic fallback to `id` if any English key is missing.
+---
+
+## 3. HOMEPAGE ARCHITECTURE & CLIENT REVISIONS
+
+Following the comprehensive 12-page clinic revision document (`WEB LOTUS.pdf`), the homepage layout is structured as follows:
+
+| Section | Component | Description & Key Specs |
+|---|---|---|
+| **1. Header & Hero** | `Hero.tsx` | Eyebrow: `Akupunktur · Fisioterapi · Hidroterapi`. Title: `Sehat Itu Menyenangkan.` Subcopy emphasizes personalized, professional, and private care. Action buttons: `[Lihat Layanan]` & `[Reservasi Sekarang]`. Removed distracting bottom trust pills. |
+| **2. Marquee** | `Marquee.tsx` | Dark espresso band with smooth infinite scrolling text. |
+| **3. Services** | `ServicesGrid.tsx` | Split into 2 tiers: <br>1. **3 Primary Healthcare Cards**: Akupunktur, Hidroterapi, and Fisioterapi with comprehensive symptom lists and badges.<br>2. **Program Lanjutan**: Swim Course presented with the Care → Recovery → Maintenance → Active lifestyle journey. |
+| **4. Experience** | `page.tsx` (Section 4) | **4 Value Pillars**: Privat (1 patient/session), Personal (custom care plan), Nyaman untuk Menjadi Dirimu Sendiri (safe & welcoming), Bersih Terawat dan Profesional (certified hygiene & therapists). Updated visual with aesthetic hydrotherapy floating photo. |
+| **5. Team Directory** | `TeamShowcase.tsx` | "Kenali Tim yang Merawatmu" featuring 9 certified therapists across Acupuncture, Physiotherapy, and Swim Coaching with official credentials (`A.Md.Kes`, `A.Md.Fis`, `S.Tr.Kes`, `S.Fis`, `Ftr`). |
+| **6. Facility Gallery** | `page.tsx` (Section 6) | 4 facility showcase cards (Acupuncture Suite, Hydrotherapy Pool, Physiotherapy Gym, Consultation Lounge) with streamlined titles. |
+| **7. Video Reels** | `ReelsShowcase.tsx` | 5 Instagram/YouTube video reels with modal video player for visual proof. |
+| **8. Testimonials** | `page.tsx` (Section 7) | "Cerita dari Mereka": Google Reviews 4.9 rating summary card on the left + 5 core value reviews highlighting stroke rehab, hijabi privacy, back pain relief, fear-free acupuncture, and sports recovery. |
+| **9. FAQ** | `SearchableFaq.tsx` | Searchable accordion with the **exact 7 clinical questions** from the client: reservation policy, painless acupuncture, children safety, hydrotherapy vs. swimming, swimming ability requirement, referral requirements, and initial consultation. |
+| **10. Contact / CTA** | `ContactSection.tsx` | Amana Care-inspired 2-column layout: Left column features an interactive WhatsApp form (Nama, Jenis Kelamin, Usia, Pesan) dispatching to `+6287700303645`. Right column features clinic address, operating hours, direct links, and a responsive Google Maps embed. |
+| **11. Footer** | `Footer.tsx` | Clinic branding, operating hours, navigation links, and social channels. |
 
 ---
 
-## 3. CURRENT IMPLEMENTATION STATE & DATA FLOW
+## 4. DATA FLOW & TECHNICAL MATURITY
 
-### 3.1 Active Modules & Pages
-| Route | Type | Implementation State | Description |
-|---|---|---|---|
-| `/` | Page (SSR + Client) | **Completed** | Full landing page: Hero, ServicesGrid, Experience, Gallery, Reels, Reviews, FAQ, Footer |
-| `/tentang-kami` | Page (SSR + Client) | **Completed** | Profile of founder drg. Arini Jannata, clinic history (since 2014), holistic philosophy |
-| `/layanan/akupunktur` | Page (SSR + Client) | **Completed** | Medical & facial acupuncture, electro-acupuncture, slimming, pediatric treatments |
-| `/layanan/hidroterapi` | Page (SSR + Client) | **Completed** | Warm water therapy pool (32-34°C), private hydro sessions, stroke/joint rehabilitation |
-| `/layanan/fisioterapi` | Page (SSR + Client) | **Completed** | Modality tools (NMT, IR, US, TENS, Traction) + manual therapy exercises |
-| `/layanan/swim-course` | Page (SSR + Client) | **Completed** | Private swimming course for children, women, and seniors in sterile heated pool |
-| `/reservasi` | Page (SSR + Client) | **Completed** | 4-step wizard: Service → Schedule (Date & Time) → Patient info → WhatsApp dispatch |
-| `/_not-found` | Page (Client) | **Completed** | Clean localized 404 page |
+### 4.1 Data Flow & External Integrations
+- **WhatsApp Direct Booking Flows**:
+  - `ContactSection.tsx`: Homepage interactive contact form dispatching to WhatsApp hotline (`+6287700303645`).
+  - `ReservasiClient.tsx`: 4-step comprehensive booking wizard on `/reservasi`.
+- **Google Maps Integration**:
+  - Embedded iframe centered on `Jl. Pamularsih No. 90/100, Semarang`.
+  - Direct directions link to Google Maps: `https://maps.app.goo.gl/PWpA655K59Gq82Xy9`.
+- **Localization (i18n)**:
+  - Central dictionary in `apps/web/lib/translations.ts` containing complete parallel translations for `id` and `en`.
+  - `LanguageContext.tsx` handles seamless switching with `localStorage` persistence.
+- **Analytics & Tracking**:
+  - `apps/web/lib/analytics.ts` tracks WhatsApp leads (`generate_lead`), contact methods (`contact`), FAQ expansions (`view_faq`), and service selections (`select_item`).
 
-### 3.2 Data Flow & External Integrations
-- **WhatsApp Direct Booking Flow**:
-  - `ReservasiClient.tsx` collects `layanan`, `hari`, `jam`, `nama`, `keluhan`, `catatan`.
-  - Encodes URI string to `https://wa.me/6287700303645?text={encoded_message}` and opens WhatsApp directly in a new tab.
-- **YouTube Reels Showcase**:
-  - Video IDs: `azv-Y1Or_Ps`, `DqXYDhLji4Y`, `J_L5eCHy-Fk`, `VtuUAN56IfI`, `fhbQ6rYgPB4`.
-  - Lazy loads thumbnails from `https://img.youtube.com/vi/{id}/sddefault.jpg` and mounts modal iframe on click.
-- **SEO, Structured Data & Analytics**:
-  - Dynamic XML Sitemap (`apps/web/app/sitemap.ts`) & `robots.txt` (`apps/web/app/robots.ts`) with high priority indexing for `/`, `/layanan/akupunktur`, and `/layanan/hidroterapi`.
-  - Rich JSON-LD Schemas on all pages: `MedicalClinic`, `HealthAndBeautyBusiness`, `MedicalProcedure`, `OfferCatalog`, `BreadcrumbList`, geo-coordinates (`-6.9934758, 110.3957242`), and `sameAs` social entity verification.
-  - Google Tag Manager & GA4 helper module (`apps/web/lib/analytics.ts`) with conversion event tracking: WhatsApp booking dispatch (`generate_lead`), step checkout progression (`checkout_progress`), service clicks (`select_item`), and local contact channels (`contact`).
-  - Next.js Script integration in `layout.tsx` driven by `NEXT_PUBLIC_GTM_ID` and `NEXT_PUBLIC_GA_ID` environment variables.
-
----
-
-## 4. SUBSYSTEMS STATUS & TECHNICAL MATURITY
-
-### 4.1 Subsystem Snapshot
-1. **`apps/web` (Patient Portal)**:
-   - **Status**: Production-ready.
-   - Favicon & App Icons: Configured with `icon.png` (308KB hi-res lotus icon) in both `public/` and `app/` with explicit Next.js metadata icons & apple touch icon.
-   - Linting & Type-checking: Strict type safety and 0 ESLint warnings (`pnpm lint`, `pnpm type-check`, `pnpm build`).
-2. **`apps/admin` (Admin Management Portal)**:
-   - **Status**: Initialized & running on port `3001`.
-   - Contains Next.js 14 App Router layout (`app/layout.tsx`), dashboard overview page (`app/page.tsx`), and global styles (`app/globals.css`).
-   - Integrated with monorepo `turbo run dev` and `turbo run build`.
-3. **Shared Packages (`@lotus/ui` & `@lotus/config`)**:
-   - Reusable UI primitives (`SectionWrapper`, `EyebrowLabel`, `GhostButton`, `DividerRule`, `cn` helper).
-   - Shared Tailwind design tokens and TypeScript base configurations.
-
-### 4.2 Potential Future Enhancements
-1. **Admin Portal Data Integration**:
-   - Connect `apps/admin` with a persistent database or headless CMS / Supabase for live booking and patient records.
-2. **Double Booking Flow Components Cleanup**:
-   - `components/ReservasiClient.tsx` is the active production booking wizard on `/reservasi`.
-   - `components/BookingFlow.tsx` remains as an alternative luxury multi-step booking variant.
-3. **YouTube Video Fallbacks**:
-   - YouTube video thumbnails load cleanly; ensure fallback image gracefully handles offline network states.
-
----
-
-## 5. AI AGENT CODING GUIDELINES
-
-### 5.1 Naming Conventions & File Placement
-- **Client Components**: Store in `apps/web/components/` with PascalCase naming (e.g., `ServiceNameClient.tsx`). Always add `"use client";` at line 1.
-- **Server Routes**: Place in `apps/web/app/<route-name>/page.tsx`. Keep `page.tsx` minimal: export `metadata` and render the respective client component.
-- **Shared Utilities**: Place common helper functions in `packages/ui/lib/utils.ts` or `apps/web/lib/`.
-- **Translations**: When adding new text or UI copy, ALWAYS add keys to both `id` and `en` in `apps/web/lib/translations.ts`.
-
-### 5.2 Tailwind & Style Rules
-- Use semantic color names from the design system:
-  - `bg-cream` / `bg-cream-warm`
-  - `text-espresso` / `text-espresso/70`
-  - `text-terra` / `bg-peach-soft` / `bg-sage-soft` / `bg-blush-soft` / `bg-sand-soft`
-- Font classes:
-  - Headings: `font-display` (Fraunces serif)
-  - Body & UI: `font-sans` (DM Sans)
-- Interactive buttons: Use `.btn-pill-dark`, `.btn-pill-outline`, or `.tag-pill`.
-
-### 5.3 Step-by-Step Feature Implementation Workflow
-When an AI agent is requested to build or modify features:
-1. **Types & Translations**:
-   - Update dictionary keys in `apps/web/lib/translations.ts` (both `id` and `en`).
-2. **Component Implementation**:
-   - Create or update the component in `apps/web/components/`.
-   - Consume translation keys using `const { t, language } = useLanguage();`.
-3. **Route Integration (If new page)**:
-   - Create `apps/web/app/<path>/page.tsx`.
-   - Define canonical `metadata` (Title, Description, Keywords, OpenGraph).
-4. **Verification**:
-   - Run type checking: `pnpm --filter @lotus/web type-check`.
-   - Run production build: `pnpm --filter @lotus/web build`.
-   - Validate that no broken imports or missing keys exist.
+### 4.2 Quality Assurance & Verification
+- **Build Status**: 100% clean production build (`pnpm --filter @lotus/web build`) with all 13 routes prerendered statically.
+- **Type Safety**: TypeScript 5 strict mode passed with 0 errors.
+- **Linting**: ESLint passed with 0 warnings.
