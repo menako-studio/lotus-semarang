@@ -21,36 +21,65 @@ export const translations: Record<string, any> = {
       ctaServices: "Lihat Layanan",
     },
     services: {
-      eyebrow: "Layanan Kami",
-      title: "Semua yang Kamu\nButuhkan, di Satu Tempat.",
-      subheading: "Perawatan medis berbasis sains yang terasa seperti me time — bukan kunjungan ke klinik.",
+      eyebrow: "Layanan Lotus",
+      title: "Temukan Perawatan yang Sesuai\nuntukmu.",
+      subheading: "Di Lotus, setiap perawatan disesuaikan dengan kondisi, tujuan, dan kebutuhanmu—dengan pendekatan yang profesional dan personal.",
+      helpsWithLabel: "Dapat membantu untuk:",
+      learnMore: "Pelajari Lebih Lanjut",
       akupunktur: {
         name: "Akupunktur",
-        tagline: "Rileks Sampai ke Ujung Jarum",
-        desc: "Terapi tusuk jarum modern yang mengurangi nyeri kronis, stres, dan insomnia. Ditangani oleh akupunkturis bersertifikat dalam ruang privat yang tenang.",
-        benefits: ["Kurangi nyeri kronik", "Atasi stres & kecemasan", "Perbaiki kualitas tidur"],
-        cta: "Coba Akupunktur"
+        tagline: "Mengembalikan Keseimbangan, Mendukung Kesehatan",
+        desc: "Tindakan menggunakan jarum steril sekali pakai pada titik-titik akupunktur yang disesuaikan dengan kebutuhan setiap individu. Stimulasi akupunktur berperan dalam mengharmoniskan sistem saraf, peredaran darah, hormonal, dan imunitas.",
+        indications: [
+          "Nyeri dan gangguan saraf",
+          "Vertigo, GERD, hipertensi, dan diabetes",
+          "Gangguan tidur, stres, dan stabilitas emosi",
+          "Pemulihan pasca stroke",
+          "Program hamil dan persiapan bayi tabung",
+          "Stimulasi tumbuh kembang anak",
+          "Perawatan estetika wajah dan slimming"
+        ],
+        cta: "Pelajari Lebih Lanjut"
       },
       hidroterapi: {
         name: "Hidroterapi",
-        tagline: "Sembuh Bareng Air Hangat",
-        desc: "Fisioterapi media air hangat memanfaatkan sifat fisika air untuk meringankan gerakan tubuh Anda, melatih otot, dan mempercepat pemulihan sendi.",
-        benefits: ["Meringankan massa tubuh", "Relaksasi sendi & otot", "Aman untuk segala usia"],
-        cta: "Pesan Sesi Air"
+        tagline: "Bergerak Lebih Mudah, Terasa Lebih Ringan",
+        desc: "Tindakan fisioterapi yang memanfaatkan media air untuk mengurangi beban tubuh sehingga latihan gerak menjadi lebih mudah. Efek relaksasi dari air membantu membuat latihan lebih nyaman, menyenangkan, dan mendukung proses pemulihan.",
+        indications: [
+          "Keluhan pinggang, bahu, dan leher",
+          "Keluhan lutut dan persendian",
+          "Kelainan tulang belakang",
+          "Pemulihan pasca stroke dan operasi",
+          "Gangguan motorik dan keseimbangan",
+          "Stimulasi tumbuh kembang anak",
+          "Kehamilan dan persiapan persalinan"
+        ],
+        badge: "Kolam privat · 1 pasien : 1 fisioterapis",
+        cta: "Pelajari Lebih Lanjut"
       },
       fisioterapi: {
-        name: "Fisioterapi Privat",
-        tagline: "Optimalkan Gerak Tubuhmu",
-        desc: "Memelihara, memulihkan, dan memaksimalkan fungsi fisik secara keseluruhan menggunakan modalitas alat NMT, IR, US, TENS, dan Traksi.",
-        benefits: ["Manual & modalitas alat", "Pemulihan gerak & saraf", "Pasca cedera & operasi"],
-        cta: "Mulai Rehabilitasi"
+        name: "Fisioterapi",
+        tagline: "Memulihkan dan Mengoptimalkan Gerak Tubuh",
+        desc: "Tindakan fisioterapi untuk membantu memelihara, memulihkan, dan memaksimalkan fungsi fisik sesuai kondisi dan kebutuhan setiap individu, mulai dari anak hingga lansia.",
+        indications: [
+          "Keluhan bahu, leher, dan pinggang",
+          "Nyeri lutut dan persendian",
+          "Gangguan tulang belakang",
+          "Pemulihan pasca stroke dan operasi",
+          "Gangguan motorik dan keseimbangan",
+          "Stimulasi tumbuh kembang anak",
+          "Persiapan kehamilan dan persalinan"
+        ],
+        cta: "Pelajari Lebih Lanjut"
       },
       swimCourse: {
-        name: "Swim Course",
-        tagline: "Belajar Renang, Bebas Khawatir",
-        desc: "Kursus renang privat eksklusif untuk anak-anak hingga dewasa. Dilatih instruktur berpengalaman di kolam hangat steril bebas canggung.",
-        benefits: ["Untuk anak & dewasa", "Instruktur ramah & ahli", "Sesi privat 100%"],
-        cta: "Daftar Kelas"
+        eyebrow: "Program Lanjutan",
+        tagline: "Sehat Bukan Sekadar Pulih",
+        title: "Tetap Aktif dan Produktif",
+        journey: "Care → Recovery → Maintenance → Active",
+        desc: "Menjaga tubuh tetap aktif juga menjadi bagian dari kesehatan. Lotus menghadirkan latihan renang privat untuk anak hingga dewasa, baik untuk yang ingin mulai belajar berenang, meningkatkan kemampuan, maupun menjadikan renang sebagai bagian dari rutinitas menjaga kesehatan.",
+        badge: "Privat · Anak hingga lansia · Instruktur berpengalaman",
+        cta: "Pelajari Lebih Lanjut"
       }
     },
     experience: {
@@ -373,36 +402,65 @@ export const translations: Record<string, any> = {
       ctaServices: "Explore Services",
     },
     services: {
-      eyebrow: "Our Services",
-      title: "Everything You Need,\nAll In One Place.",
-      subheading: "Science-based medical care that feels like self-care — not a clinic visit.",
+      eyebrow: "Lotus Services",
+      title: "Find the Care Tailored\nFor You.",
+      subheading: "At Lotus, every treatment is tailored to your condition, goals, and needs — with a professional and personalized approach.",
+      helpsWithLabel: "Can help with:",
+      learnMore: "Learn More",
       akupunktur: {
         name: "Acupuncture",
-        tagline: "Relax Down to the Needle Tip",
-        desc: "Modern needle therapy reducing chronic pain, stress, and insomnia. Handled by certified acupuncturists in a quiet private room.",
-        benefits: ["Reduce chronic pain", "Relieve stress & anxiety", "Improve sleep quality"],
-        cta: "Try Acupuncture"
+        tagline: "Restoring Balance, Supporting Health",
+        desc: "Procedure using single-use sterile needles on acupuncture points tailored to each individual's needs. Acupuncture stimulation harmonizes the nervous, circulatory, hormonal, and immune systems.",
+        indications: [
+          "Nerve pain and disorders",
+          "Vertigo, GERD, hypertension, and diabetes",
+          "Sleep issues, stress, and emotional stability",
+          "Post-stroke recovery",
+          "Pregnancy preparation and IVF support",
+          "Child growth and motor development stimulation",
+          "Facial aesthetic rejuvenation and slimming"
+        ],
+        cta: "Learn More"
       },
       hidroterapi: {
         name: "Hydrotherapy",
-        tagline: "Heal Together with Warm Water",
-        desc: "Warm water physiotherapy leveraging water physics to ease body movements, strengthen muscles, and speed up joint recovery.",
-        benefits: ["Reduce body weight impact", "Relax joints & muscles", "Safe for all ages"],
-        cta: "Book Water Session"
+        tagline: "Move Easier, Feel Lighter",
+        desc: "Physiotherapy utilizing water properties to reduce body weight impact, making movement exercises easier. Water relaxation enhances comfort, ease, and supports active recovery.",
+        indications: [
+          "Waist, shoulder, and neck complaints",
+          "Knee and joint issues",
+          "Spine conditions and disorders",
+          "Post-stroke and post-surgery recovery",
+          "Motor and balance impairments",
+          "Child development stimulation",
+          "Pregnancy support and labor preparation"
+        ],
+        badge: "Private pool · 1 patient : 1 physiotherapist",
+        cta: "Learn More"
       },
       fisioterapi: {
-        name: "Private Physiotherapy",
-        tagline: "Optimize Your Body Movement",
-        desc: "Maintain, restore, and maximize physical function using NMT, IR, US, TENS, and Traction modalities.",
-        benefits: ["Manual & modality tools", "Movement & nerve recovery", "Post-injury & surgery rehab"],
-        cta: "Start Rehab"
+        name: "Physiotherapy",
+        tagline: "Restoring and Optimizing Body Movement",
+        desc: "Physiotherapy care to maintain, restore, and maximize physical function according to individual conditions and needs, from children to seniors.",
+        indications: [
+          "Shoulder, neck, and lower back complaints",
+          "Knee and joint pain",
+          "Spinal disorders",
+          "Post-stroke and surgery rehab",
+          "Motor and balance challenges",
+          "Child development stimulation",
+          "Pregnancy and labor conditioning"
+        ],
+        cta: "Learn More"
       },
       swimCourse: {
-        name: "Swim Course",
-        tagline: "Learn to Swim, Worry-Free",
-        desc: "Exclusive private swimming course for children to adults. Trained by experienced coaches in a warm, sterile, awkward-free pool.",
-        benefits: ["For kids & adults", "Expert & friendly coaches", "100% private sessions"],
-        cta: "Register Class"
+        eyebrow: "Advanced Program",
+        tagline: "Health is More Than Just Recovery",
+        title: "Stay Active and Productive",
+        journey: "Care → Recovery → Maintenance → Active",
+        desc: "Keeping your body active is an essential part of health. Lotus presents private swimming lessons for children to adults, whether beginning to swim, leveling up skills, or maintaining lifelong active vitality.",
+        badge: "Private · Children to seniors · Experienced instructors",
+        cta: "Learn More"
       }
     },
     experience: {
