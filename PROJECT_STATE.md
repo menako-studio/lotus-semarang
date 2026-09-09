@@ -22,6 +22,7 @@
 - **Styling**: Tailwind CSS v3 (`3.4.4`) with customized wellness design tokens + PostCSS + Autoprefixer.
 - **Animation & Transitions**: `framer-motion` (`^11.2.10`).
 - **Icons**: `lucide-react` (`^0.395.0`).
+- **Image Optimization Engine**: `sharp` (`^0.35.4`) for native libvips AVIF/WebP generation.
 - **State Management & i18n**: React Context API (`LanguageContext.tsx`) + `localStorage` persistence (`lotus_language` key).
 - **Integrations**: Direct WhatsApp generator to official clinic hotline (`+6287700303645`), Google Maps embed & links (`https://maps.app.goo.gl/PWpA655K59Gq82Xy9`), Google Reviews 4.9 showcase, and YouTube modal player.
 
@@ -128,6 +129,19 @@ Following the comprehensive 12-page clinic revision document (`WEB LOTUS.pdf`), 
   - `apps/web/lib/analytics.ts` tracks WhatsApp leads (`generate_lead`), contact methods (`contact`), FAQ expansions (`view_faq`), and service selections (`select_item`).
 
 ### 4.2 Quality Assurance & Verification
-- **Build Status**: 100% clean production build (`pnpm --filter @lotus/web build`) with all 13 routes prerendered statically.
+- **Build Status**: 100% clean production build (`pnpm --filter @lotus/web build`) with all routes prerendered statically.
 - **Type Safety**: TypeScript 5 strict mode passed with 0 errors.
 - **Linting**: ESLint passed with 0 warnings.
+
+### 4.3 Image Performance Optimization & Core Web Vitals
+- **Native Image Pipeline Engine**: `sharp` (`^0.35.4`) installed in `@lotus/web`, replacing slow WebAssembly Squoosh with high-performance C/libvips processing for on-demand AVIF and WebP transcoding.
+- **Cache Optimization**: Configured `minimumCacheTTL: 31536000` (1 year) with tailored `deviceSizes` (`[640, 750, 828, 1080, 1200, 1920]`) and `imageSizes` (`[16, 32, 48, 64, 96, 128, 256, 384]`) in `apps/web/next.config.js`.
+- **Source Asset Optimization**:
+  - Total static image asset weight reduced by **~77% (from 17.5 MB down to 4.05 MB)**.
+  - Purged 7 unused bloat/duplicate files (including a 5.3 MB leftover raw photo).
+  - Losslessly/perceptually optimized all JPEGs via MozJPEG (quality 80, progressive, subsampling 4:2:0), WebP files with maximum effort compression, and PNG files (`icon.png`, `logo.png`) with palette quantization (saving up to 73%).
+  - Generated dedicated 1200x630 `hero-1.webp` for OpenGraph, Twitter cards, and Schema.org metadata previews.
+- **Responsive Layout & LCP**:
+  - Fine-tuned `sizes` attributes across all Next.js `<Image>` components (`Navbar.tsx`, `Hero.tsx`, `TentangKamiClient.tsx`, `AkupunkturClient.tsx`, `HidroterapiClient.tsx`, `FisioterapiClient.tsx`, `SwimCourseClient.tsx`).
+  - Added strict dimensions on the navbar logo to prevent oversized thumbnail requests on retina viewports.
+
