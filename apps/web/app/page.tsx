@@ -11,6 +11,7 @@ import { Footer }       from "@/components/Footer";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 import { SearchableFaq } from "@/components/SearchableFaq";
 import { TeamShowcase }  from "@/components/TeamShowcase";
+import { ContactSection } from "@/components/ContactSection";
 import { useLanguage } from "@/components/LanguageContext";
 
 export default function HomePage() {
@@ -289,6 +290,9 @@ export default function HomePage() {
 
       {/* ── 7.5. SEARCHABLE FAQ SECTION ── */}
       <SearchableFaq />
+
+      {/* ── 7.6. AMANA-STYLE CONTACT & MAP SECTION ── */}
+      <ContactSection />
 
       {/* ── 8. FOOTER WITH CTA ── */}
       <Footer />
