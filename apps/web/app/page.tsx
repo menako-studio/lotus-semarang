@@ -30,12 +30,12 @@ export default function HomePage() {
       {/* ── 3. SERVICES GRID ── */}
       <ServicesGrid />
 
-      {/* ── 4. THE LOTUS EXPERIENCE (Alternating split rows) ── */}
+      {/* ── 4. THE LOTUS EXPERIENCE (4 Core Pillars & Visual Showcase) ── */}
       <section id="tentang" className="section-pad bg-white border-t border-espresso/5">
         <div className="container-wellness">
           
           <motion.div
-            className="text-center max-w-xl mx-auto mb-16 lg:mb-24"
+            className="text-center max-w-2xl mx-auto mb-16 lg:mb-20"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -44,106 +44,91 @@ export default function HomePage() {
             <span className="tag-pill bg-blush/20 text-blush-deep font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-blush/20">
               {t("experience.tagline")}
             </span>
-            <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
+            <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight mb-4">
               {t("experience.title")}
             </h2>
+            <p className="font-sans text-espresso/70 text-base md:text-lg leading-relaxed">
+              {t("experience.desc")}
+            </p>
           </motion.div>
 
-          <div className="flex flex-col gap-20 lg:gap-32">
-            
-            {/* Row 1: Left Text, Right Image */}
-            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-              <motion.div
-                className="lg:col-span-6 flex flex-col gap-5"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className="text-4xl">🔒</span>
-                <h3 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight">
-                  {t("experience.privacyTitle")}
-                </h3>
-                <p className="font-sans text-espresso/70 text-base leading-relaxed">
-                  {t("experience.privacyDesc")}
-                </p>
-                <div className="flex flex-wrap gap-4 mt-2">
-                  <div className="flex items-center gap-2 bg-sage-soft/60 px-3 py-1.5 rounded-full border border-sage/20">
-                    <span className="text-forest font-bold">✓</span>
-                    <span className="font-sans text-xs font-bold text-forest">{t("experience.privacyBadge1")}</span>
+          {/* 4 Pillars Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {((t("experience.pillars") as any[]) || []).map((pillar: any, index: number) => {
+              const bgColors = [
+                "bg-blush-soft/40 border-blush/25",
+                "bg-cream-warm border-espresso/10",
+                "bg-sage-soft/40 border-sage/25",
+                "bg-sand-soft/40 border-sand/30",
+              ];
+              return (
+                <motion.div
+                  key={pillar.title}
+                  className={`rounded-[2rem] p-7 border ${bgColors[index % bgColors.length]} shadow-warm flex flex-col justify-between`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.15 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div>
+                    <span className="text-3.5xl mb-4 block">{pillar.emoji}</span>
+                    <h3 className="font-display font-bold text-espresso text-xl mb-3 leading-snug">
+                      {pillar.title}
+                    </h3>
+                    <p className="font-sans text-espresso/70 text-xs md:text-sm leading-relaxed">
+                      {pillar.desc}
+                    </p>
                   </div>
-                  <div className="flex items-center gap-2 bg-sage-soft/60 px-3 py-1.5 rounded-full border border-sage/20">
-                    <span className="text-forest font-bold">✓</span>
-                    <span className="font-sans text-xs font-bold text-forest">{t("experience.privacyBadge2")}</span>
-                  </div>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                className="lg:col-span-6 relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-warm-lg img-zoom"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <Image
-                  src="/images/lotus_treatment_hydro_female_hijab_float_front.jpg"
-                  alt="Relaksasi Hidroterapi Privat Ramah Hijab"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={85}
-                />
-              </motion.div>
-            </div>
-
-            {/* Row 2: Left Image, Right Text */}
-            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-              <motion.div
-                className="lg:col-span-6 order-2 lg:order-1 relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-warm-lg img-zoom"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <Image
-                  src="/images/lotus_treatment_body_abdomen_male_patient.jpg"
-                  alt="Konsultasi Diagnosa Medis Holistik"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={85}
-                />
-              </motion.div>
-
-              <motion.div
-                className="lg:col-span-6 order-1 lg:order-2 flex flex-col gap-5"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className="text-4xl">👩‍⚕️</span>
-                <h3 className="font-display font-black text-espresso text-3xl lg:text-4xl leading-tight">
-                  {t("experience.scienceTitle")}
-                </h3>
-                <p className="font-sans text-espresso/70 text-base leading-relaxed">
-                  {t("experience.scienceDesc")}
-                </p>
-                <div className="flex flex-wrap gap-4 mt-2">
-                  <div className="flex items-center gap-2 bg-blush-soft/60 px-3 py-1.5 rounded-full border border-blush/20">
-                    <span className="text-blush-deep font-bold">✓</span>
-                    <span className="font-sans text-xs font-bold text-blush-deep">{t("experience.scienceBadge1")}</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-blush-soft/60 px-3 py-1.5 rounded-full border border-blush/20">
-                    <span className="text-blush-deep font-bold">✓</span>
-                    <span className="font-sans text-xs font-bold text-blush-deep">{t("experience.scienceBadge2")}</span>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-
+                </motion.div>
+              );
+            })}
           </div>
+
+          {/* Dual Visual Showcase: Female & Male Patient Care (Professional & Aesthetic) */}
+          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 items-center">
+            <motion.div
+              className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-warm-lg img-zoom border border-espresso/5"
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7 }}
+            >
+              <Image
+                src="/images/lotus_treatment_hydro_female_hijab_float_front.jpg"
+                alt="Pelayanan Terapi Privat dan Ramah Hijab di Lotus Semarang"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent z-10" />
+              <div className="absolute bottom-5 left-6 right-6 z-20 text-white font-sans text-xs md:text-sm font-semibold">
+                Privasi Terjaga Penuh · Ramah Pasien Wanita & Hijab
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-warm-lg img-zoom border border-espresso/5"
+              initial={{ opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+            >
+              <Image
+                src="/images/lotus_hydrotherapy_pool_male_floating_device.jpg"
+                alt="Latihan Terapi Medis Pasien Pria di Kolam Privat Lotus Semarang"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={85}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent z-10" />
+              <div className="absolute bottom-5 left-6 right-6 z-20 text-white font-sans text-xs md:text-sm font-semibold">
+                Pelayanan Terapi Profesional untuk Seluruh Pasien & Keluarga
+              </div>
+            </motion.div>
+          </div>
+
         </div>
       </section>
 

@@ -84,15 +84,30 @@ export const translations: Record<string, any> = {
     },
     experience: {
       tagline: "The Lotus Experience",
-      title: "Suasana Terapi Nyaman yang Dirancang Khusus",
-      privacyTitle: "Privasi Mutlak & Ramah Niqabi",
-      privacyDesc: "Kami memahami kebutuhan kenyamanan ekstra Anda. Setiap kolam hidroterapi, ruang akupunktur, dan ruang fisioterapi disewa khusus 100% secara privat per sesi. Tidak ada mata asing, tidak ada canggung — hanya ruang suaka pribadi Anda sepenuhnya.",
-      privacyBadge1: "One Patient per Session",
-      privacyBadge2: "Fully Enclosed Suite",
-      scienceTitle: "Didukung Sains & Tenaga Medis Bersertifikat",
-      scienceDesc: "Didirikan oleh praktisi berpengalaman drg. Arini Jannata, S.Tr. Akup, MM, seluruh tindakan medis di Lotus Semarang dijalankan oleh fisioterapis dan akupunkturis berlisensi resmi. Kami mendiagnosa secara ilmiah melalui anamnesa fisik, nadi, lidah, dan struktur tulang belakang.",
-      scienceBadge1: "Certified Therapists",
-      scienceBadge2: "Modern Modality Tools"
+      title: "Dirancang untuk Membuatmu Nyaman",
+      desc: "Kesehatan bukan hanya tentang perawatan, tetapi juga tentang bagaimana kamu menjalaninya. Di Lotus, setiap detail dirancang untuk menciptakan pengalaman yang nyaman dan menenangkan, dengan privasi serta kebersihan yang menjadi bagian dari setiap proses perawatan.",
+      pillars: [
+        {
+          emoji: "🔒",
+          title: "Privat",
+          desc: "Setiap sesi dilakukan dengan memperhatikan privasi pasien. Ruang akupunktur, fisioterapi, dan kolam hidroterapi dirancang untuk menghadirkan suasana yang tenang, nyaman, dan personal."
+        },
+        {
+          emoji: "🤍",
+          title: "Personal",
+          desc: "Kami percaya setiap tubuh memiliki kebutuhan yang berbeda. Karena itu, setiap tindakan disesuaikan dengan kondisi, kebutuhan, dan tujuan pasien."
+        },
+        {
+          emoji: "🌿",
+          title: "Nyaman untuk Menjadi Dirimu Sendiri",
+          desc: "Kami memahami bahwa setiap orang memiliki kebutuhan yang berbeda untuk merasa nyaman. Karena itu, Lotus menghadirkan ruang dan fasilitas yang mendukung privasi, sehingga kamu dapat menjalani perawatan dengan lebih nyaman dan leluasa."
+        },
+        {
+          emoji: "✨",
+          title: "Bersih, Terawat, dan Profesional",
+          desc: "Kenyamanan berjalan seiring dengan standar kebersihan dan profesionalisme. Perawatan dilakukan oleh tenaga profesional dan didukung oleh fasilitas yang terjaga kebersihan serta perawatannya. Penggunaan jarum sekali pakai, perawatan kolam secara berkala, dan pengelolaan limbah medis yang tepat menjadi bagian dari perhatian kami dalam menjaga lingkungan perawatan tetap bersih dan nyaman."
+        }
+      ]
     },
     gallery: {
       tagline: "Eksplorasi Ruang",
@@ -465,15 +480,30 @@ export const translations: Record<string, any> = {
     },
     experience: {
       tagline: "The Lotus Experience",
-      title: "Cozy Therapy Atmosphere Tailored For You",
-      privacyTitle: "Absolute Privacy & Niqabi Friendly",
-      privacyDesc: "We understand your need for extra comfort. Every hydrotherapy pool, acupuncture room, and physiotherapy room is leased 100% privately per session. No foreign eyes, no awkwardness — completely your own sanctuary.",
-      privacyBadge1: "One Patient per Session",
-      privacyBadge2: "Fully Enclosed Suite",
-      scienceTitle: "Backed by Science & Certified Medical Staff",
-      scienceDesc: "Founded by experienced practitioner drg. Arini Jannata, S.Tr. Akup, MM, all medical actions at Lotus Semarang are run by licensed physiotherapists and acupuncturists. We diagnose scientifically through physical, pulse, tongue, and spine anamnesis.",
-      scienceBadge1: "Certified Therapists",
-      scienceBadge2: "Modern Modality Tools"
+      title: "Designed for Your Comfort",
+      desc: "Health is not only about treatment, but also about how you experience it. At Lotus, every detail is designed to create a comfortable, soothing journey, with privacy and cleanliness embedded in every step.",
+      pillars: [
+        {
+          emoji: "🔒",
+          title: "Private",
+          desc: "Every session is conducted with patient privacy at the forefront. Acupuncture rooms, physiotherapy suites, and the hydrotherapy pool are tailored to provide a quiet, calm, and personal environment."
+        },
+        {
+          emoji: "🤍",
+          title: "Personal",
+          desc: "We believe every body has distinct needs. Therefore, each medical intervention is tailored to the patient's individual condition, goals, and lifestyle."
+        },
+        {
+          emoji: "🌿",
+          title: "Comfort to Be Yourself",
+          desc: "We understand that everyone needs different conditions to feel at ease. Lotus provides private facilities so you can undergo care with peace of mind and freedom."
+        },
+        {
+          emoji: "✨",
+          title: "Clean, Well-Maintained & Professional",
+          desc: "Comfort goes hand in hand with clinical cleanliness and professionalism. Treatments are delivered by certified specialists, single-use sterile needles, periodic pool maintenance, and proper medical waste protocols."
+        }
+      ]
     },
     gallery: {
       tagline: "Explore Our Space",
