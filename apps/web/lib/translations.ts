@@ -73,6 +73,7 @@ export const translations: Record<string, any> = {
         cta: "Pelajari Lebih Lanjut"
       },
       swimCourse: {
+        name: "Swim Course",
         eyebrow: "Program Lanjutan",
         tagline: "Sehat Bukan Sekadar Pulih",
         title: "Tetap Aktif dan Produktif",
@@ -515,6 +516,7 @@ export const translations: Record<string, any> = {
         cta: "Learn More"
       },
       swimCourse: {
+        name: "Swim Course",
         eyebrow: "Advanced Program",
         tagline: "Health is More Than Just Recovery",
         title: "Stay Active and Productive",
