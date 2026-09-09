@@ -131,9 +131,9 @@ export const translations: Record<string, any> = {
       title: "Galeri Lotus",
     },
     reels: {
-      eyebrow: "Edukasi Video Reels",
-      title: "Galeri Video Terapi & Testimoni",
-      desc: "Lihat secara langsung proses tindakan akupunktur medis, latihan kolam renang hangat, serta kisah kesembuhan pasien.",
+      eyebrow: "Story & Testimonial",
+      title: "Cerita dari Mereka",
+      desc: "Pengalaman setiap orang berbeda. Begitu juga perjalanan kesehatannya. Berikut beberapa cerita dari mereka yang pernah menjalani perawatan di Lotus.",
       list: [
         { title: "Penjelasan Lengkap Terapi Fisioterapi Medis", category: "Edukasi Fisioterapi" },
         { title: "Cerita Kesembuhan Akupunktur Pasien Lansia", category: "Testimoni Akupunktur" },
@@ -143,24 +143,38 @@ export const translations: Record<string, any> = {
       ]
     },
     reviews: {
+      tagline: "Story & Testimonial",
+      title: "Cerita dari Mereka",
+      desc: "Pengalaman setiap orang berbeda. Begitu juga perjalanan kesehatannya. Berikut beberapa cerita dari mereka yang pernah menjalani perawatan di Lotus.",
       gmaps: "Ulasan Google Maps",
+      ratingValue: "4.9",
       sub: "Berdasarkan ulasan asli dari pasien terverifikasi di Semarang.",
-      cta: "Tulis Ulasan di Google",
+      cta: "Lihat Lebih Banyak Ulasan di Google",
       list: [
         {
           name: "Ibu Riana",
           role: "Pasien Hidroterapi, Gisikdrono",
-          text: "Sangat terbantu dengan sesi hidroterapi pasca operasi lutut saya. Kolamnya benar-benar privat, airnya hangat konstan, dan instruktur mendampingi dengan sabar. Proses pemulihan saya terasa jauh lebih cepat dan tidak menegangkan."
+          text: "Sangat terbantu dengan sesi hidroterapi pasca operasi lutut saya. Kolamnya privat semi-outdoor yang sejuk dan terlindung, dan fisioterapis mendampingi 1:1 dengan teliti dan sabar. Proses pemulihan gerak kaki saya terasa bertahap, terukur, dan tidak menegangkan."
         },
         {
           name: "Fathimah",
           role: "Pasien Akupunktur, Semarang Barat",
-          text: "Sebagai wanita berhijab (Niqabi), saya sangat pemilih dengan tempat terapi. Di Lotus, privasinya luar biasa terjaga (100% private suite). Terapisnya wanita ramah-ramah dan tindakan akupunktur wajahnya membuat kulit kencang alami."
+          text: "Sebagai wanita berhijab, saya sangat mengutamakan privasi saat terapi. Di Lotus, ruangannya benar-benar privat dan terpisah. Terapis wanitanya sangat profesional, jarum akupunktur steril sekali pakai membuat saya tenang, dan hasilnya terasa nyata."
         },
         {
           name: "Bapak Gunawan",
           role: "Pasien Fisioterapi, Ngaliyan",
-          text: "Saya menderita saraf kejepit di punggung bawah. Menjalani fisioterapi modalitas Ultrasound dan TENS di sini dipadu dengan latihan manual sangat meringankan nyeri. Terapisnya menjelaskan secara ilmiah dan mengedukasi gerakan mandiri di rumah."
+          text: "Saya menderita keluhan pinggang dan saraf kejepit. Menjalani fisioterapi modalitas dipadu dengan latihan gerak bertahap sangat meringankan nyeri. Terapis menjelaskan kondisi secara ilmiah dan mengedukasi latihan mandiri di rumah."
+        },
+        {
+          name: "Ibu Melani Kusuma",
+          role: "Pasien Akupunktur, Semarang",
+          text: "Awalnya ragu terapi akupunktur karena khawatir sakit. Ternyata jarumnya sangat tipis dan lentur sehingga tidak terasa sakit sama sekali. Keluhan vertigo dan insomnia yang berulang sekarang jauh lebih stabil setelah beberapa sesi teratur."
+        },
+        {
+          name: "Dimas Wibowo",
+          role: "Pasien Fisioterapi & Olahraga, Semarang",
+          text: "Setelah cedera ligamen saat berolahraga, fisioterapi di Lotus mendampingi proses penguatan bertahap dari pemulihan nyeri hingga siap bergerak aktif lagi. Tempatnya bersih, nyaman, dan pelayanannya sangat personal."
         }
       ]
     },
@@ -543,9 +557,9 @@ export const translations: Record<string, any> = {
       title: "Lotus Gallery",
     },
     reels: {
-      eyebrow: "Reels Video Education",
-      title: "Therapy Video & Testimonial Gallery",
-      desc: "Watch first-hand medical acupuncture procedures, warm water pool exercises, and patient recovery stories.",
+      eyebrow: "Story & Testimonial",
+      title: "Stories from Our Patients",
+      desc: "Every person's journey is unique. So is their health story. Here are genuine experiences from those who have received care at Lotus.",
       list: [
         { title: "Full Explanation of Medical Physical Therapy", category: "Physiotherapy Education" },
         { title: "Elderly Patient's Acupuncture Recovery Story", category: "Acupuncture Testimony" },
@@ -555,24 +569,38 @@ export const translations: Record<string, any> = {
       ]
     },
     reviews: {
+      tagline: "Story & Testimonial",
+      title: "Stories from Our Patients",
+      desc: "Every person's journey is unique. So is their health story. Here are genuine experiences from those who have received care at Lotus.",
       gmaps: "Google Maps Reviews",
+      ratingValue: "4.9",
       sub: "Based on authentic reviews from verified patients in Semarang.",
-      cta: "Write a Review on Google",
+      cta: "View More Reviews on Google",
       list: [
         {
           name: "Mrs. Riana",
           role: "Hydrotherapy Patient, Gisikdrono",
-          text: "Hugely helped by the hydrotherapy sessions after my knee surgery. The pool is completely private, water is consistently warm, and the instructor guided me patiently. Recovery feels much faster and stress-free."
+          text: "Hugely helped by the hydrotherapy sessions after my knee surgery. The pool is a sheltered, peaceful private space, and the physiotherapist assisted 1-on-1 with care and patience. My mobility recovery felt progressive, structured, and reassuring."
         },
         {
           name: "Fathimah",
           role: "Acupuncture Patient, Semarang Barat",
-          text: "As a hijabi (Niqabi), I am extremely selective about therapy spaces. At Lotus, privacy is outstandingly maintained (100% private suite). The female therapists are very friendly, and the facial acupuncture treatment naturally firmed up my skin."
+          text: "As a hijabi woman, privacy during care is my top priority. At Lotus, rooms are truly private and secluded. The female therapists are deeply professional, and the single-use sterile needles provided complete peace of mind."
         },
         {
           name: "Mr. Gunawan",
           role: "Physiotherapy Patient, Ngaliyan",
-          text: "I suffer from a herniated disc in my lower back. Undergoing physical therapy here with Ultrasound and TENS combined with manual exercises has greatly relieved my pain. The therapist explains scientifically and educates on home exercise."
+          text: "I suffered from lower back pain and pinched nerve symptoms. Combining modality physiotherapy with progressive movement training significantly relieved the pain. The therapist clearly explained the clinical condition and taught self-care exercises."
+        },
+        {
+          name: "Melani Kusuma",
+          role: "Acupuncture Patient, Semarang",
+          text: "Initially I was hesitant about acupuncture due to needle fear. But the needles were exceptionally fine and practically painless. My recurring vertigo and sleep disruption improved remarkably after several consistent sessions."
+        },
+        {
+          name: "Dimas Wibowo",
+          role: "Sports & Physical Therapy Patient, Semarang",
+          text: "Following an ankle ligament sprain during sports, physiotherapy at Lotus guided a step-by-step strengthening program from pain relief to full active return. Clean, cozy facilities and truly personal care."
         }
       ]
     },

@@ -239,88 +239,48 @@ export default function HomePage() {
 
             {/* Right: Curated Reviews list */}
             <div className="lg:col-span-8 flex flex-col gap-6">
-              
-              {/* Review 1 */}
-              {reviewsList[0] && (
-                <motion.div
-                  className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.1 }}
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-blush-soft text-blush-deep font-display font-black flex items-center justify-center text-sm border border-blush/20">
-                        IR
-                      </div>
-                      <div>
-                        <h4 className="font-display font-bold text-espresso text-sm">{reviewsList[0].name}</h4>
-                        <span className="font-sans text-[0.65rem] text-espresso/50">{reviewsList[0].role}</span>
-                      </div>
-                    </div>
-                    <div className="text-blush text-sm">★★★★★</div>
-                  </div>
-                  <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                    &ldquo;{reviewsList[0].text}&rdquo;
-                  </p>
-                </motion.div>
-              )}
+              {reviewsList.map((review: any, idx: number) => {
+                const avatarThemes = [
+                  "bg-blush-soft text-blush-deep border-blush/20",
+                  "bg-sage-soft text-forest border-sage/20",
+                  "bg-sand-soft text-espresso border-sand/30",
+                  "bg-cream-warm text-espresso border-espresso/10",
+                  "bg-hydro-soft text-hydro-muted border-hydro/30",
+                ];
+                const initials = review.name
+                  .split(" ")
+                  .slice(0, 2)
+                  .map((w: string) => w[0])
+                  .join("")
+                  .toUpperCase();
 
-              {/* Review 2 */}
-              {reviewsList[1] && (
-                <motion.div
-                  className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-sage-soft text-forest font-display font-black flex items-center justify-center text-sm border border-sage/20">
-                        FT
+                return (
+                  <motion.div
+                    key={idx}
+                    className="bg-white rounded-3xl p-7 md:p-8 border border-espresso/6 shadow-sm hover:shadow-warm transition-all duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.08 }}
+                  >
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className={`w-11 h-11 rounded-full font-display font-black flex items-center justify-center text-sm border ${avatarThemes[idx % avatarThemes.length]}`}>
+                          {initials}
+                        </div>
+                        <div>
+                          <h4 className="font-display font-bold text-espresso text-base">{review.name}</h4>
+                          <span className="font-sans text-xs text-espresso/55">{review.role}</span>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-display font-bold text-espresso text-sm">{reviewsList[1].name}</h4>
-                        <span className="font-sans text-[0.65rem] text-espresso/50">{reviewsList[1].role}</span>
-                      </div>
+                      <div className="text-blush text-sm">★★★★★</div>
                     </div>
-                    <div className="text-blush text-sm">★★★★★</div>
-                  </div>
-                  <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                    &ldquo;{reviewsList[1].text}&rdquo;
-                  </p>
-                </motion.div>
-              )}
-
-              {/* Review 3 */}
-              {reviewsList[2] && (
-                <motion.div
-                  className="bg-white rounded-3xl p-8 border border-espresso/5 shadow-sm hover:shadow-warm transition-all duration-300"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-sand-soft text-espresso font-display font-black flex items-center justify-center text-sm border border-sand/30">
-                        BG
-                      </div>
-                      <div>
-                        <h4 className="font-display font-bold text-espresso text-sm">{reviewsList[2].name}</h4>
-                        <span className="font-sans text-[0.65rem] text-espresso/50">{reviewsList[2].role}</span>
-                      </div>
-                    </div>
-                    <div className="text-blush text-sm">★★★★★</div>
-                  </div>
-                  <p className="font-sans text-espresso/70 text-sm leading-relaxed italic">
-                    &ldquo;{reviewsList[2].text}&rdquo;
-                  </p>
-                </motion.div>
-              )}
-
+                    <p className="font-sans text-espresso/75 text-sm md:text-base leading-relaxed italic">
+                      &ldquo;{review.text}&rdquo;
+                    </p>
+                  </motion.div>
+                );
+              })}
             </div>
 
           </div>
