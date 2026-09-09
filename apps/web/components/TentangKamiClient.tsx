@@ -60,7 +60,7 @@ export function TentangKamiClient() {
               fill
               className="object-cover"
               priority
-              sizes="100vw"
+              sizes="(max-width: 1280px) 100vw, 1280px"
               quality={85}
             />
           </motion.div>
@@ -235,7 +235,7 @@ export function TentangKamiClient() {
                   alt={item.alt}
                   fill
                   className="object-cover"
-                  sizes="30vw"
+                  sizes="(max-width: 640px) 100vw, 33vw"
                   quality={80}
                 />
               </motion.div>

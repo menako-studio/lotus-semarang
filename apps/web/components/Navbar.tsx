@@ -77,6 +77,7 @@ export function Navbar() {
                 alt="Lotus Logo"
                 fill
                 priority
+                sizes="(max-width: 768px) 130px, 150px"
                 className="object-contain object-left"
               />
             </div>

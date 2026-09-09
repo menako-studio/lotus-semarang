@@ -322,7 +322,7 @@ export function SwimCourseClient() {
                       alt={app.title}
                       fill
                       className="object-cover"
-                      sizes="20vw"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       quality={80}
                     />
                   </div>
@@ -391,7 +391,7 @@ export function SwimCourseClient() {
                     alt={item.alt}
                     fill
                     className="object-cover"
-                    sizes="30vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     quality={80}
                   />
                 </div>
