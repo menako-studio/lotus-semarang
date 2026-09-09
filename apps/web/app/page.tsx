@@ -10,6 +10,7 @@ import { Footer }       from "@/components/Footer";
 
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 import { SearchableFaq } from "@/components/SearchableFaq";
+import { TeamShowcase }  from "@/components/TeamShowcase";
 import { useLanguage } from "@/components/LanguageContext";
 
 export default function HomePage() {
@@ -132,36 +133,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── 5. SCROLLING MARQUEE (Lotus Blush band) ── */}
+      {/* ── 5. TRUST & KREDIBILITAS: KENALI TIM YANG MERAWATMU ── */}
+      <TeamShowcase />
+
+      {/* ── 5.5. SCROLLING MARQUEE (Lotus Blush band) ── */}
       <Marquee bg="blush" textClass="text-white" speed="slow" />
 
-      {/* ── 6. GALERI SUASANA (Space Showcase Grid) ── */}
+      {/* ── 6. GALERI LOTUS (Ruang & Fasilitas Klinis) ── */}
       <section className="section-pad bg-cream-warm/40 border-y border-espresso/5">
         <div className="container-wellness">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end mb-14">
-            <motion.div
-              className="lg:col-span-7"
-              initial={{ opacity: 0, y: 20 }}
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <motion.span
+              className="tag-pill bg-sage/30 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block"
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.5 }}
             >
-              <span className="tag-pill bg-sage/30 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-                {t("gallery.tagline")}
-              </span>
-              <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight tracking-tight">
-                {t("gallery.title")}
-              </h2>
-            </motion.div>
-            <motion.p
-              className="lg:col-span-5 font-sans text-espresso/65 text-base md:text-lg leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
+              {t("gallery.tagline")}
+            </motion.span>
+            <motion.h2
+              className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight tracking-tight"
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              {t("gallery.desc")}
-            </motion.p>
+              {t("gallery.title")}
+            </motion.h2>
           </div>
 
           {/* Asymmetric Masonry Grid */}
@@ -170,7 +169,7 @@ export default function HomePage() {
               { src: "/images/lotus_interior_reception_greeting_staff.jpg", alt: "Lobby & Resepsionis Lotus Semarang", mt: "" },
               { src: "/images/lotus_tools_acupuncture_needles_steel_jar.jpg", alt: "Peralatan Terapi Akupunktur Steril", mt: "mt-4 md:mt-0" },
               { src: "/images/lotus_treatment_physio_child_exercise_ball.jpg", alt: "Fisioterapi Anak & Keluarga", mt: "" },
-              { src: "/images/swimming-course-lansia-2.jpg", alt: "Kolam Terapi Renang Hangat", mt: "mt-4 md:mt-0" }
+              { src: "/images/swimming-course-lansia-2.jpg", alt: "Kolam Terapi Privat Semi-Outdoor", mt: "mt-4 md:mt-0" }
             ].map((img, idx) => (
               <motion.div
                 key={idx}

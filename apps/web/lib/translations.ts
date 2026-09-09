@@ -109,10 +109,26 @@ export const translations: Record<string, any> = {
         }
       ]
     },
+    team: {
+      tagline: "Trust & Kredibilitas",
+      title: "Kenali Tim yang Merawatmu",
+      subtitle: "Berpengalaman mendampingi perjalanan kesehatan sejak 2014.",
+      desc: "Di balik setiap perawatan, ada tenaga medis profesional yang siap mendampingi prosesmu. Kenali tim Lotus yang akan membantu memberikan perawatan sesuai kondisi, kebutuhan, dan tujuanmu.",
+      members: [
+        { name: "drg. Arini, S.Tr.Akup.", role: "Founder & Akupunkturis Medis", license: "SIP. Terapis Akupunktur", image: "/images/lotus_team_founder_doctor_portrait.jpg" },
+        { name: "Ayun, S.Tr.Akup.", role: "Akupunkturis Medis", license: "SIP. Terapis Akupunktur", image: "/images/lotus_staff_portrait_headshot_beige_hijab.jpg" },
+        { name: "Sofin, S.Tr.Akup.", role: "Akupunkturis Medis", license: "SIP. Terapis Akupunktur" },
+        { name: "Mei, S.Tr.Akup.", role: "Akupunkturis Medis", license: "SIP. Terapis Akupunktur" },
+        { name: "Zul, A.Md.Fis", role: "Fisioterapis", license: "STR. Fisioterapi" },
+        { name: "Aziz, S.Tr.Kes., Ftr", role: "Fisioterapis", license: "STR. Fisioterapi" },
+        { name: "Nikmah, A.Md.Kes", role: "Tenaga Medis", license: "Kesehatan Terpadu" },
+        { name: "Dicky", role: "Instruktur & Tim Terapi", license: "Program Terapi" },
+        { name: "Esti", role: "Tim Layanan & Operasional", license: "Pelayanan Pasien" },
+      ]
+    },
     gallery: {
       tagline: "Eksplorasi Ruang",
-      title: "Galeri Suasana Retreat",
-      desc: "Melihat lebih dekat kenyamanan ruang tunggu, kolam renang air hangat privat, serta peralatan terapi higienis kami."
+      title: "Galeri Lotus",
     },
     reels: {
       eyebrow: "Edukasi Video Reels",
@@ -505,10 +521,26 @@ export const translations: Record<string, any> = {
         }
       ]
     },
+    team: {
+      tagline: "Trust & Credibility",
+      title: "Meet the Team Caring for You",
+      subtitle: "Experienced in guiding your health journey since 2014.",
+      desc: "Behind every treatment is a certified healthcare specialist dedicated to your recovery. Get to know our Lotus team who will provide personalized care tailored to your needs.",
+      members: [
+        { name: "drg. Arini, S.Tr.Akup.", role: "Founder & Medical Acupuncturist", license: "Licensed Acupuncturist", image: "/images/lotus_team_founder_doctor_portrait.jpg" },
+        { name: "Ayun, S.Tr.Akup.", role: "Medical Acupuncturist", license: "Licensed Acupuncturist", image: "/images/lotus_staff_portrait_headshot_beige_hijab.jpg" },
+        { name: "Sofin, S.Tr.Akup.", role: "Medical Acupuncturist", license: "Licensed Acupuncturist" },
+        { name: "Mei, S.Tr.Akup.", role: "Medical Acupuncturist", license: "Licensed Acupuncturist" },
+        { name: "Zul, A.Md.Fis", role: "Physiotherapist", license: "Certified Physiotherapist" },
+        { name: "Aziz, S.Tr.Kes., Ftr", role: "Physiotherapist", license: "Certified Physiotherapist" },
+        { name: "Nikmah, A.Md.Kes", role: "Medical Specialist", license: "Healthcare Practitioner" },
+        { name: "Dicky", role: "Instructor & Therapy Team", license: "Physical Programs" },
+        { name: "Esti", role: "Service & Clinic Assistant", license: "Patient Relations" },
+      ]
+    },
     gallery: {
-      tagline: "Explore Our Space",
-      title: "Retreat Atmosphere Gallery",
-      desc: "Take a closer look at our comfortable waiting area, private warm-water therapy pool, and hygienic therapy equipment."
+      tagline: "Space Exploration",
+      title: "Lotus Gallery",
     },
     reels: {
       eyebrow: "Reels Video Education",
