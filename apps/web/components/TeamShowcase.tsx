@@ -69,17 +69,17 @@ export function TeamShowcase() {
                 <div className="flex items-center gap-4 mb-4">
                   {/* Photo or Monogram Avatar */}
                   {member.image ? (
-                    <div className="relative w-16 h-16 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 border-2 border-white">
+                    <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 border-2 border-white bg-sand-soft">
                       <Image
                         src={member.image}
                         alt={member.name}
                         fill
-                        className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                        sizes="64px"
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        sizes="(max-width: 640px) 72px, 80px"
                       />
                     </div>
                   ) : (
-                    <div className="w-16 h-16 rounded-2xl bg-sand-soft/80 border border-sand/40 flex items-center justify-center text-espresso/70 font-display font-black text-lg flex-shrink-0">
+                    <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-2xl bg-sand-soft/80 border border-sand/40 flex items-center justify-center text-espresso/70 font-display font-black text-xl flex-shrink-0">
                       {member.name.slice(0, 2).toUpperCase()}
                     </div>
                   )}
