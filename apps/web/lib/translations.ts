@@ -138,7 +138,6 @@ export const translations: Record<string, any> = {
       list: [
         { title: "Penjelasan Lengkap Terapi Fisioterapi Medis", category: "Edukasi Fisioterapi" },
         { title: "Cerita Kesembuhan Akupunktur Pasien Lansia", category: "Testimoni Akupunktur" },
-        { title: "Proses Tindakan Akupunktur Slimming Alami", category: "Estetika Wajah" },
         { title: "Akupunktur Anak Mengatasi Susah Makan", category: "Pediatrik / Anak" }
       ]
     },
@@ -581,7 +580,6 @@ export const translations: Record<string, any> = {
       list: [
         { title: "Full Explanation of Medical Physical Therapy", category: "Physiotherapy Education" },
         { title: "Elderly Patient's Acupuncture Recovery Story", category: "Acupuncture Testimony" },
-        { title: "Natural Slimming Acupuncture Flow", category: "Facial Aesthetics" },
         { title: "Children Acupuncture for Loss of Appetite", category: "Pediatrics" }
       ]
     },
