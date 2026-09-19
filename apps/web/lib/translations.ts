@@ -373,27 +373,37 @@ export const translations: Record<string, any> = {
       }
     },
     tentangKamiPage: {
-      eyebrow: "Kisah Kami",
-      title: "Mendefinisikan Ulang Kesehatan & Perawatan.",
-      desc: "Sejak tahun 2014, kami telah merancang ulang pengalaman pemulihan kesehatan dan terapi tubuh menjadi ritual perawatan diri yang menyenangkan.",
-      cta: "Pesan Sesi Pertamamu",
-      missionTitle: "Penyembuhan Tidak Harus Terasa Dingin.",
-      missionDesc1: "Banyak orang membayangkan klinik terapi sebagai ruangan yang sunyi, dingin, dan menegangkan. Di Lotus Semarang, kami mematahkan stigma tersebut. Kami percaya bahwa pemulihan fisik berjalan optimal ketika pikiran Anda merasa tenang, aman, dan disambut dengan hangat.",
-      missionDesc2: "Kami merancang tempat retret di mana Anda dapat berkonsultasi secara privat, berenang di air hangat tanpa cemas terlihat orang lain, serta melakukan sesi penjaruman akupunktur dalam suasana santai layaknya klub perawatan diri premium.",
-      values: {
-        val1Title: "01. Privasi Mutlak",
-        val1Desc: "Setiap ruangan kolam dan bilik tindakan disewakan khusus privat per sesi. Kami sangat menjaga privasi ibu berhijab (Niqabi) dan pasien yang membutuhkan ketenangan penuh.",
-        val2Title: "02. Personalisasi Terapi",
-        val2Desc: "Tidak ada resep universal. Program latihan hidroterapi, titik akupunktur, dan stimulasi fisioterapi Anda dirancang khusus mengikuti asesmen gerak tubuh Anda.",
-        val3Title: "03. Pendekatan Medis Modern",
-        val3Desc: "Kami menggabungkan terapi fisik tradisional seperti akupunktur meridian dengan modalitas modern (Ultrasound, TENS, Infra Red) berbasis sains anatomis yang terukur."
-      },
-      founderTitle: "Pendiri Lotus Semarang",
-      founderDesc1: "Didirikan pada tahun 2014, Lotus Semarang lahir dari visi drg. Arini Jannata untuk menghadirkan suaka pemulihan medis yang nyaman, estetik, dan berorientasi pada privasi pasien.",
-      founderDesc2: "Menggabungkan latar belakang medis gigi, pendidikan akupunktur klinis, serta manajemen pelayanan kesehatan, beliau merancang alur terapi holistik terintegrasi yang menggabungkan hidroterapi kolam hangat, stimulasi saraf akupunktur, dan rehabilitasi fisioterapi di Semarang.",
+      eyebrow: "Tentang Kami",
+      title: "Merawat Kesehatan dengan Pendekatan yang Personal dan Profesional",
+      desc: "Sejak 2014, Lotus hadir untuk memberikan pengalaman perawatan yang nyaman, privat, dan personal melalui akupunktur, fisioterapi, dan hidroterapi. Kami percaya bahwa setiap orang memiliki kondisi, kebutuhan, dan tujuan yang berbeda. Karena itu, setiap perawatan dilakukan dengan pendekatan yang disesuaikan, didukung oleh tenaga profesional dan fasilitas yang terjaga.",
+      missionTitle: "Tentang Lotus",
+      missionDesc1: "Lotus hadir dari keinginan untuk menciptakan tempat perawatan kesehatan yang tidak hanya berfokus pada tindakan, tetapi juga pada pengalaman pasien selama menjalaninya.",
+      missionDesc2: "Kami menggabungkan pendekatan profesional dengan suasana yang nyaman dan privat, sehingga setiap pasien dapat menjalani proses perawatan dengan lebih tenang dan leluasa. Selain perawatan, Lotus juga menghadirkan Swim Course sebagai pilihan aktivitas untuk tetap aktif dan menjaga tubuh tetap bergerak.",
+      valuesTitle: "Yang Menjadi Perhatian Kami",
+      values: [
+        {
+          title: "Privat",
+          desc: "Setiap sesi dirancang dengan memperhatikan privasi pasien, termasuk ruang perawatan dan kolam hidroterapi yang digunakan secara privat."
+        },
+        {
+          title: "Personal",
+          desc: "Setiap tubuh memiliki kebutuhan yang berbeda. Karena itu, pendekatan perawatan disesuaikan dengan kondisi, kebutuhan, dan tujuan masing-masing pasien."
+        },
+        {
+          title: "Nyaman",
+          desc: "Kami menghadirkan lingkungan yang nyaman dan tenang agar pasien dapat menjalani setiap proses perawatan dengan lebih leluasa."
+        },
+        {
+          title: "Bersih & Terawat",
+          desc: "Kebersihan dan perawatan fasilitas menjadi bagian penting dari pengalaman di Lotus, mulai dari penggunaan jarum sekali pakai hingga perawatan kolam dan pengelolaan limbah medis."
+        }
+      ],
+      founderTitle: "Didirikan Sejak 2014",
       founderName: "drg. Arini Jannata, S.Tr. Akup, MM",
+      founderDesc1: "Lotus didirikan pada tahun 2014 oleh drg. Arini Jannata dengan visi menghadirkan layanan perawatan kesehatan yang profesional, nyaman, dan memperhatikan kebutuhan setiap pasien.",
+      founderDesc2: "Seiring waktu, Lotus berkembang dengan menghadirkan layanan akupunktur, fisioterapi, hidroterapi, serta Swim Course sebagai bagian dari perjalanan untuk membantu masyarakat menjaga kesehatan dan tetap aktif.",
       galleryTitle: "Galeri Ruang Kami",
-      galleryTag: "Retreat Space"
+      galleryTag: "Fasilitas & Suasana"
     },
     bookingFlow: {
       step: "Langkah",
@@ -814,27 +824,37 @@ export const translations: Record<string, any> = {
       }
     },
     tentangKamiPage: {
-      eyebrow: "Our Story",
-      title: "Redefining Health & Care.",
-      desc: "Since 2014, we have redesigned the health recovery and body therapy experience into an enjoyable self-care ritual.",
-      cta: "Book Your First Session",
-      missionTitle: "Healing Doesn't Have to Feel Cold.",
-      missionDesc1: "Many people imagine a therapy clinic as silent, cold, and stressful. At Lotus Semarang, we break that stigma. We believe physical recovery runs optimally when your mind feels calm, safe, and warmly welcomed.",
-      missionDesc2: "We designed a retreat space where you can consult privately, swim in warm water without worrying about being seen, and do acupuncture sessions in a relaxed atmosphere like a premium self-care club.",
-      values: {
-        val1Title: "01. Absolute Privacy",
-        val1Desc: "Every pool room and treatment booth is rented exclusively private per session. We strongly protect the privacy of hijabi mothers (Niqabi) and patients requiring complete quietness.",
-        val2Title: "02. Personalized Therapy",
-        val2Desc: "No universal prescription. Your hydrotherapy exercises, acupuncture points, and physical therapy stimulations are custom-designed following your body movement assessment.",
-        val3Title: "03. Modern Medical Approach",
-        val3Desc: "We combine traditional physical therapies like meridian acupuncture with modern science-based anatomical modalities (Ultrasound, TENS, Infra Red)."
-      },
-      founderTitle: "Founder of Lotus Semarang",
-      founderDesc1: "Founded in 2014, Lotus Semarang was born from drg. Arini Jannata's vision to present a comfortable, aesthetic, and privacy-oriented medical recovery sanctuary.",
-      founderDesc2: "Combining a dental medical background, clinical acupuncture education, and health service management, she designed an integrated holistic therapy flow combining warm pool hydrotherapy, acupuncture nerve stimulation, and physical therapy rehabilitation in Semarang.",
+      eyebrow: "About Us",
+      title: "Caring for Health with a Personal and Professional Approach",
+      desc: "Since 2014, Lotus has provided a comfortable, private, and personalized care experience through acupuncture, physiotherapy, and hydrotherapy. We believe each person has unique needs, conditions, and goals. Therefore, every treatment is delivered with tailored care, supported by certified professionals and pristine facilities.",
+      missionTitle: "About Lotus",
+      missionDesc1: "Lotus was born from the desire to create a healthcare space that focuses not only on medical action, but also on the patient's entire journey and experience.",
+      missionDesc2: "We blend clinical professionalism with a calm and private atmosphere, allowing each patient to undergo their care with peace of mind and freedom. Beyond therapies, Lotus also offers our Swim Course as an active way to stay mobile and healthy.",
+      valuesTitle: "What Guides Our Care",
+      values: [
+        {
+          title: "Private",
+          desc: "Every session is designed around patient privacy, including private therapy rooms and hydrotherapy pool used exclusively."
+        },
+        {
+          title: "Personalized",
+          desc: "Every body has unique needs. Treatment approaches are customized to each individual's physical condition, goals, and pace."
+        },
+        {
+          title: "Comfortable",
+          desc: "We foster a soothing and quiet environment so patients can experience each step of treatment in complete ease."
+        },
+        {
+          title: "Clean & Pristine",
+          desc: "Cleanliness and facility maintenance are fundamental to the Lotus experience, from single-use sterile needles to pool sanitization and medical waste management."
+        }
+      ],
+      founderTitle: "Founded in 2014",
       founderName: "drg. Arini Jannata, S.Tr. Akup, MM",
+      founderDesc1: "Lotus was founded in 2014 by drg. Arini Jannata with the vision of delivering professional, comfortable healthcare tailored to each patient's individual needs.",
+      founderDesc2: "Over time, Lotus expanded to integrate acupuncture, physiotherapy, hydrotherapy, and a Swim Course to empower the community in maintaining health and staying active.",
       galleryTitle: "Our Space Gallery",
-      galleryTag: "Retreat Space"
+      galleryTag: "Facilities & Ambiance"
     },
     bookingFlow: {
       step: "Step",

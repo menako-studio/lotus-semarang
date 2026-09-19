@@ -6,7 +6,7 @@ const SEPARATOR = "✦";
 
 interface MarqueeProps {
   /** Background color token (default: espresso) */
-  bg?: "espresso" | "peach" | "sage" | "terra" | "sand" | "blush" | "forest" | "hydro";
+  bg?: "espresso" | "peach" | "sage" | "terra" | "sand" | "blush" | "forest" | "hydro" | "swim";
   /** Text color */
   textClass?: string;
   /** Speed variant */
@@ -27,6 +27,7 @@ export function Marquee({
     blush:    "bg-blush",
     forest:   "bg-forest",
     hydro:    "bg-hydro",
+    swim:     "bg-swim",
   };
 
   const { t } = useLanguage();

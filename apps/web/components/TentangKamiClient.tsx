@@ -55,8 +55,8 @@ export function TentangKamiClient() {
           >
             <div className="absolute inset-0 bg-espresso/5 z-10 pointer-events-none" />
             <Image
-              src="/images/team-lotus.jpg"
-              alt="Lotus Wellness Retreat Semarang"
+              src="/images/lotus_interior_reception_greeting_staff.jpg"
+              alt="Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang"
               fill
               className="object-cover"
               priority
@@ -100,46 +100,49 @@ export function TentangKamiClient() {
         </div>
       </section>
 
-      {/* ── 3. THREE-PILLAR STORY BLOCK (Core Values) ── */}
+      {/* ── 3. FOUR-PILLAR STORY BLOCK (Yang Menjadi Perhatian Kami) ── */}
       <section className="section-pad bg-cream-warm/40 border-y border-espresso/5">
         <div className="container-wellness">
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            <motion.div
-              className="flex flex-col gap-4 bg-white/80 p-8 rounded-3xl border border-blush/20 shadow-warm"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <span className="font-display font-black text-blush-deep text-lg">{t("tentangKamiPage.values.val1Title")}</span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {t("tentangKamiPage.values.val1Desc")}
-              </p>
-            </motion.div>
-            <motion.div
-              className="flex flex-col gap-4 bg-white/80 p-8 rounded-3xl border border-sage/20 shadow-warm"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <span className="font-display font-black text-forest text-lg">{t("tentangKamiPage.values.val2Title")}</span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {t("tentangKamiPage.values.val2Desc")}
-              </p>
-            </motion.div>
-            <motion.div
-              className="flex flex-col gap-4 bg-white/80 p-8 rounded-3xl border border-sand/30 shadow-warm"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <span className="font-display font-black text-espresso text-lg">{t("tentangKamiPage.values.val3Title")}</span>
-              <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                {t("tentangKamiPage.values.val3Desc")}
-              </p>
-            </motion.div>
+          <div className="text-center max-w-xl mx-auto mb-12 lg:mb-16">
+            <span className="badge-pill mb-3 inline-block bg-blush-soft text-blush-deep border border-blush/20">
+              Lotus Pillars
+            </span>
+            <h2 className="font-display font-black text-espresso text-3xl md:text-4xl">
+              {t("tentangKamiPage.valuesTitle")}
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {(t("tentangKamiPage.values") || []).map((val: any, idx: number) => {
+              const borderColors = [
+                "border-blush/20 hover:border-blush/50",
+                "border-sage/20 hover:border-sage/50",
+                "border-hydro/20 hover:border-hydro/50",
+                "border-sand/30 hover:border-sand/60",
+              ];
+              const titleColors = [
+                "text-blush-deep",
+                "text-forest",
+                "text-hydro-deep",
+                "text-espresso",
+              ];
+              return (
+                <motion.div
+                  key={idx}
+                  className={`flex flex-col gap-3.5 bg-white/90 p-7 rounded-3xl border shadow-warm hover:shadow-warm-lg transition-all duration-300 ${borderColors[idx % borderColors.length]}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <span className={`font-display font-black text-lg ${titleColors[idx % titleColors.length]}`}>
+                    {val.title}
+                  </span>
+                  <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                    {val.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

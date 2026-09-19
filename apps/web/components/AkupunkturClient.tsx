@@ -1,107 +1,100 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Marquee } from "@/components/Marquee";
 import { useLanguage } from "@/components/LanguageContext";
-import { ChevronDown, ChevronUp, HelpCircle, ArrowRight } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
 export function AkupunkturClient() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { t, language } = useLanguage();
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   const applications = language === "id" ? [
     {
-      title: "Anak-Anak (Tumbuh Kembang)",
-      desc: "Menstimulasi tumbuh kembang motorik, meningkatkan konsentrasi belajar, merelaksasi stabilitas emosi, serta meningkatkan daya tahan tubuh alami.",
+      title: "Anak-anak (Tumbuh Kembang)",
+      desc: "Membantu mendukung tumbuh kembang motorik, konsentrasi belajar, regulasi emosi, nafsu makan, serta daya tahan tubuh.",
       img: "/images/lotus_treatment_baby_model_high_angle.webp",
       bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
       title: "Dewasa & Lansia",
-      desc: "Efektif untuk meredakan nyeri sendi, vertigo, gerd, hipertensi, saraf kejepit, migrain, pemulihan stroke, hingga mengurangi mual akibat kemoterapi.",
+      desc: "Membantu menangani berbagai keluhan seperti nyeri sendi, vertigo, GERD, hipertensi, saraf terjepit, migrain, pemulihan pascastroke, serta mual yang berkaitan dengan efek samping kemoterapi.",
       img: "/images/lotus_treatment_facial_portrait_patient_elderly.jpg",
       bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
       title: "Reproduksi & Hormonal",
-      desc: "Menyeimbangkan hormon reproduksi untuk mendukung program kehamilan (promil) alami dan mempersiapkan program bayi tabung (IVF).",
+      desc: "Membantu menangani keluhan terkait siklus menstruasi dan masa premenopause, serta dapat digunakan sebagai terapi pendamping dalam program reproduksi, termasuk persiapan program bayi tabung.",
       img: "/images/lotus_treatment_body_abdomen_male_patient.jpg",
       bg: "bg-peach-soft/80 border border-peach/20",
     },
     {
-      title: "Slimming & Estetika Wajah",
-      desc: "Terapi akupunktur kecantikan wajah untuk merangsang kolagen, mengencangkan kulit, menyamarkan kerutan, dan meredakan jerawat.",
+      title: "Slimming & Estetika",
+      desc: "Akupunktur untuk membantu menangani keluhan kulit seperti jerawat dan kulit kusam, serta mendukung perawatan wajah, pengencangan, shaping, dan program slimming.",
       img: "/images/lotus_treatment_facial_portrait_patient_closed_eyes.jpg",
       bg: "bg-sand-soft/80 border border-sand/30",
     },
   ] : [
     {
       title: "Children (Growth & Development)",
-      desc: "Stimulates motor growth and development, improves concentration, relaxes emotional stability, and boosts natural immunity.",
+      desc: "Supports motor growth and development, learning focus, emotional regulation, appetite improvement, and natural immunity.",
       img: "/images/lotus_treatment_baby_model_high_angle.webp",
       bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
       title: "Adults & Seniors",
-      desc: "Effective for relieving joint pain, vertigo, GERD, hypertension, pinched nerves, migraines, stroke recovery, and reducing chemotherapy nausea.",
+      desc: "Helps manage conditions such as joint pain, vertigo, GERD, hypertension, pinched nerves, migraines, post-stroke recovery, and chemotherapy-related nausea.",
       img: "/images/lotus_treatment_facial_portrait_patient_elderly.jpg",
       bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
       title: "Reproductive & Hormonal",
-      desc: "Balances reproductive hormones to support natural pregnancy programs (promil) and prepare for in vitro fertilization (IVF).",
+      desc: "Helps address menstrual cycle and perimenopausal complaints, and serves as complementary therapy for natural fertility and IVF preparation.",
       img: "/images/lotus_treatment_body_abdomen_male_patient.jpg",
       bg: "bg-peach-soft/80 border border-peach/20",
     },
     {
-      title: "Slimming & Facial Aesthetics",
-      desc: "Facial beauty acupuncture therapy to stimulate collagen, tighten skin, smooth wrinkles, and clear acne.",
+      title: "Slimming & Aesthetics",
+      desc: "Acupuncture to support skin concerns such as acne and dullness, while promoting facial rejuvenation, skin tightening, body shaping, and slimming.",
       img: "/images/lotus_treatment_facial_portrait_patient_closed_eyes.jpg",
       bg: "bg-sand-soft/80 border border-sand/30",
     },
   ];
 
-  const faqs = language === "id" ? [
+  const mechanisms = language === "id" ? [
     {
-      q: "Apakah terapi akupunktur terasa sakit?",
-      a: "Sebagian besar pasien merasakan sensasi gigitan semut kecil yang sangat minim saat jarum dimasukkan. Jarum yang digunakan adalah disposable sterile needle kualitas premium yang berukuran sangat tipis (jauh lebih kecil dari jarum suntik biasa).",
+      num: "01",
+      title: "Diagnosis",
+      desc: "Pemeriksaan awal dilakukan untuk memahami kondisi kesehatan, kebutuhan, serta tujuan terapi pasien.",
     },
     {
-      q: "Berapa sesi terapi yang saya butuhkan?",
-      a: "Tergantung pada keluhan dan respon tubuh Anda. Untuk keluhan akut, biasanya 4-6 sesi sudah terasa perubahannya. Untuk keluhan kronis atau program kehamilan (promil), disarankan melakukan paket perawatan 10-12 sesi secara rutin.",
+      num: "02",
+      title: "Menstimulasi Sistem Saraf",
+      desc: "Stimulasi jarum akupunktur pada titik-titik spesifik di tubuh memberikan rangsangan pada sistem saraf yang dapat membantu mendukung keseimbangan berbagai fungsi tubuh, termasuk regulasi saraf, sirkulasi, hormonal, dan imunitas.",
     },
     {
-      q: "Apakah aman bagi ibu hamil dan anak-anak?",
-      a: "Sangat aman. Terapis kami bersertifikat medis resmi dan memahami titik-titik meridian mana saja yang aman untuk menstimulasi tumbuh kembang anak-anak serta titik kontraindikasi bagi ibu hamil.",
-    },
-    {
-      q: "Apa yang harus saya persiapkan sebelum sesi terapi?",
-      a: "Kenakan pakaian yang longgar dan nyaman (agar mudah mengakses titik lengan/kaki), pastikan Anda sudah makan sekitar 1-2 jam sebelum terapi, dan hindari konsumsi kafein berlebih sebelum sesi dimulai.",
+      num: "03",
+      title: "Pendekatan yang Disesuaikan",
+      desc: "Titik-titik akupunktur dipilih berdasarkan hasil konsultasi dan pemeriksaan, sehingga setiap sesi dapat disesuaikan dengan kondisi pasien.",
     },
   ] : [
     {
-      q: "Does acupuncture therapy hurt?",
-      a: "Most patients feel a very minor sensation like a small ant bite when the needle is inserted. The needles used are premium quality disposable sterile needles that are extremely thin (much smaller than standard injection needles).",
+      num: "01",
+      title: "Comprehensive Diagnosis",
+      desc: "Initial assessment is conducted to thoroughly understand your health condition, personal needs, and therapy goals.",
     },
     {
-      q: "How many therapy sessions will I need?",
-      a: "It depends on your symptoms and body response. For acute complaints, changes are usually felt in 4-6 sessions. For chronic conditions or fertility programs (promil), a package of 10-12 regular sessions is recommended.",
+      num: "02",
+      title: "Stimulating Nervous System",
+      desc: "Acupuncture stimulation at specific anatomical points activates the nervous system, helping support balance across neural regulation, circulation, hormones, and immune functions.",
     },
     {
-      q: "Is it safe for pregnant women and children?",
-      a: "Extremely safe. Our therapists are officially certified medical practitioners who understand which meridian points are safe for stimulating child growth and development, as well as contraindication points for pregnant mothers.",
-    },
-    {
-      q: "What should I prepare before a therapy session?",
-      a: "Wear loose and comfortable clothing (for easy access to arm/leg points), ensure you have eaten about 1-2 hours before therapy, and avoid excessive caffeine intake before the session.",
+      num: "03",
+      title: "Tailored Treatment Approach",
+      desc: "Points are selected based on personal consultation and clinical examination, ensuring every session is customized to individual progress.",
     },
   ];
 
@@ -123,36 +116,34 @@ export function AkupunkturClient() {
             >
               <div>
                 <span className="tag-pill bg-blush/20 text-blush-deep font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-blush/20">
-                  {t("akupunkturPage.eyebrow")}
+                  {language === "id" ? "Layanan Terapi" : "Therapy Service"}
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
-                  {language === "id" ? "Akupunktur" : "Medical"}<br />
-                  <span className="text-blush">{language === "id" ? "Medis Privat." : "Private Acupuncture."}</span>
+                  Akupunktur
                 </h1>
               </div>
               <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
                 {language === "id" 
-                  ? "Kembalikan keseimbangan aliran energi tubuh Anda secara ilmiah. Kami menggabungkan stimulasi saraf modern dengan jarum steril sekali pakai untuk pemulihan nyeri, kesehatan hormonal, dan kecantikan kulit wajah Anda."
-                  : "Restore the balance of your body's energy flow scientifically. We combine modern nerve stimulation with single-use sterile needles for pain relief, hormonal health, and facial skin aesthetics."}
+                  ? "Akupunktur merupakan tindakan terapi yang menggunakan jarum steril sekali pakai (disposable sterile needle) yang ditusukkan pada titik-titik akupunktur di tubuh sesuai dengan kondisi dan kebutuhan pasien."
+                  : "Acupuncture is a therapeutic treatment using single-use disposable sterile needles inserted at specific acupuncture points tailored to each patient's condition and needs."}
               </p>
               
               <div className="flex flex-wrap gap-4 pt-2">
-                <a
-                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(t("akupunkturPage.whatsAppPrompt"))}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill-dark font-bold text-sm px-8 py-4 shadow-warm group gap-2"
+                <Link
+                  href="/reservasi"
+                  className="btn-pill-dark font-bold text-sm px-8 py-4 shadow-warm group inline-flex items-center gap-2"
                 >
-                  {t("akupunkturPage.cta")}
+                  {language === "id" ? "Reservasi Sekarang" : "Reserve Now"}
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                </a>
+                </Link>
                 <a
-                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(language === "id" ? "Halo Lotus, mau tanya dulu tentang Akupunktur" : "Hello Lotus, I'd like to ask about Acupuncture first")}`}
+                  href={`https://wa.me/6287700303645?text=${encodeURIComponent(language === "id" ? "Halo Lotus, mau tanya tentang layanan Akupunktur" : "Hello Lotus, I'd like to ask about Acupuncture therapy")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-outline font-bold text-sm px-8 py-4"
+                  className="btn-pill-outline font-bold text-sm px-8 py-4 inline-flex items-center gap-2"
                 >
-                  {language === "id" ? "Tanya Dokter" : "Ask Doctor"}
+                  <MessageCircle size={16} className="text-forest" />
+                  {language === "id" ? "Tanya Admin" : "Ask Admin"}
                 </a>
               </div>
             </motion.div>
@@ -195,7 +186,7 @@ export function AkupunkturClient() {
       {/* Marquee Accent */}
       <Marquee bg="blush" textClass="text-white" speed="slow" />
 
-      {/* Science Section */}
+      {/* Mechanism Section: Bagaimana Cara Kerja Akupunktur? */}
       <section className="section-pad bg-white">
         <div className="container-wellness">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
@@ -223,65 +214,35 @@ export function AkupunkturClient() {
               transition={{ duration: 0.7 }}
             >
               <span className="tag-pill bg-espresso/5 text-espresso/80 font-bold text-xs uppercase tracking-wider self-start">
-                {language === "id" ? "Sains di Balik Terapi" : "Science Behind Therapy"}
+                {language === "id" ? "Cara Kerja Terapi" : "How It Works"}
               </span>
-              <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight tracking-tight">
-                {language === "id" ? "Bagaimana Akupunktur Memulihkan Tubuhmu?" : "How Does Acupuncture Heal Your Body?"}
+              <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight tracking-tight">
+                {language === "id" ? "Bagaimana Cara Kerja Akupunktur?" : "How Does Acupuncture Work?"}
               </h2>
               <div className="flex flex-col gap-6 mt-4">
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-blush-soft text-blush-deep flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-blush/20">
-                    01
+                {mechanisms.map((mech, idx) => (
+                  <div key={idx} className="flex gap-4">
+                    <div className="w-12 h-12 rounded-2xl bg-blush-soft text-blush-deep flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-blush/20">
+                      {mech.num}
+                    </div>
+                    <div>
+                      <h3 className="font-display font-bold text-espresso text-lg mb-1">
+                        {mech.title}
+                      </h3>
+                      <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                        {mech.desc}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
-                      {language === "id" ? "Membuka Aliran Oksigen" : "Unblocking Oxygen Flow"}
-                    </h3>
-                    <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      {language === "id" 
-                        ? "Penusukan titik meridian memicu sirkulasi darah lokal secara instan, mengalirkan oksigen dan nutrisi untuk memperbaiki sel-sel tubuh yang meradang."
-                        : "Needling meridian points triggers local blood circulation instantly, delivering oxygen and nutrients to repair inflamed body cells."}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-sage-soft text-forest flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-sage/20">
-                    02
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
-                      {language === "id" ? "Stimulasi Pelepasan Endorfin" : "Stimulating Endorphin Release"}
-                    </h3>
-                    <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      {language === "id"
-                        ? "Stimulasi jarum memberi sinyal pada otak untuk melepaskan hormon endorfin dan enkefalin, pereda nyeri alami tubuh yang efektif meredakan nyeri fisik dan stres mental."
-                        : "Needle stimulation signals the brain to release endorphins and enkephalins, the body's natural painkillers that effectively relieve physical pain and mental stress."}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-sand-soft text-espresso flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-sand/30">
-                    03
-                  </div>
-                  <div>
-                    <h3 className="font-display font-bold text-espresso text-lg mb-1">
-                      {language === "id" ? "Regulasi Sistem Saraf & Hormon" : "Regulating Nervous System & Hormones"}
-                    </h3>
-                    <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                      {language === "id"
-                        ? "Membantu menyelaraskan kembali sistem saraf otonom Anda, menurunkan kadar hormon stres kortisol, serta memperbaiki keseimbangan hormon reproduksi tubuh."
-                        : "Helps realign your autonomic nervous system, lowers cortisol stress hormone levels, and improves reproductive hormone balance."}
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Applications Grid */}
-      <section className="section-pad bg-cream-warm/40 border-y border-espresso/5">
+      {/* Applications Grid: Kasus & Penanganan */}
+      <section className="section-pad bg-cream-warm/40 border-t border-espresso/5">
         <div className="container-wellness">
           <motion.div
             className="text-center max-w-xl mx-auto mb-16"
@@ -294,7 +255,7 @@ export function AkupunkturClient() {
               {language === "id" ? "Kasus & Penanganan" : "Cases & Treatments"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              {language === "id" ? "Bidang Aplikasi Terapi Akupunktur" : "Acupuncture Therapy Application Areas"}
+              {language === "id" ? "Bidang Aplikasi Akupunktur" : "Acupuncture Therapy Applications"}
             </h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
@@ -330,137 +291,16 @@ export function AkupunkturClient() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Steps Section */}
-      <section className="section-pad bg-white">
-        <div className="container-wellness">
-          <motion.div
-            className="text-center max-w-xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="tag-pill bg-blush/20 text-blush-deep font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-blush/20">
-              {language === "id" ? "Prosedur Tindakan" : "Treatment Procedure"}
-            </span>
-            <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
-              {language === "id" ? "Bagaimana Sesi Terapi Anda Berlangsung?" : "How Does Your Therapy Session Go?"}
-            </h2>
-          </motion.div>
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            {[
-              {
-                img: "/images/lotus_consultation_doctor_patient_model_hijab.jpg",
-                alt: "Konsultasi Diagnosa Lidah & Nadi",
-                step: language === "id" ? "01. Diagnosa Holistik" : "01. Holistic Diagnosis",
-                desc: language === "id"
-                  ? "Kami melakukan konsultasi personal meliputi anamnesa keluhan, palpasi denyut nadi, pemeriksaan visual lidah, serta keselarasan 5 unsur organ tubuh Anda."
-                  : "We conduct a personal consultation covering case history, pulse palpation, visual tongue check, and the harmony of your body's 5 organ elements."
-              },
-              {
-                img: "/images/lotus_equipment_kwd808_electro_acupuncture.jpg",
-                alt: "Sesi Penjaruman Aman & Steril",
-                step: language === "id" ? "02. Penjaruman & Stimulasi" : "02. Needling & Stimulation",
-                desc: language === "id"
-                  ? "Jarum steril berukuran mikro dimasukkan dengan lembut ke titik terapi. Dapat dikombinasikan dengan stimulasi elektrik elektro-akupunktur atau terapi moxibustion (pembakaran moxa)."
-                  : "Micro-sized sterile needles are gently inserted into therapy points. Can be combined with electro-acupuncture electrical stimulation or moxibustion therapy."
-              },
-              {
-                img: "/images/lotus_treatment_body_arm_therapist_interaction.jpg",
-                alt: "Edukasi Pasca Terapi",
-                step: language === "id" ? "03. Rencana Tindak Lanjut" : "03. Follow-Up Plan",
-                desc: language === "id"
-                  ? "Jarum dilepas secara steril setelah 20-30 menit. Terapis memberikan anjuran gaya hidup, asupan nutrisi penyeimbang, serta menjadwalkan sesi evaluasi lanjutan."
-                  : "Needles are sterilely removed after 20-30 minutes. The therapist advises on lifestyle, balancing nutritional intake, and schedules follow-up evaluations."
-              }
-            ].map((item, idx) => (
-              <motion.div
-                key={idx}
-                className="flex flex-col gap-4"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: idx * 0.15 }}
-              >
-                <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-warm img-zoom mb-2">
-                  <Image
-                    src={item.img}
-                    alt={item.alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    quality={80}
-                  />
-                </div>
-                <span className="font-display font-black text-blush-deep text-lg">
-                  {item.step}
-                </span>
-                <p className="font-sans text-espresso/65 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-pad bg-cream-warm/40 border-t border-espresso/5">
-        <div className="container-wellness max-w-4xl">
-          <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
-              {language === "id" ? "Pertanyaan Umum" : "Frequently Asked Questions"}
-            </span>
-            <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight">
-              {language === "id" ? "Hal-Hal yang Sering Ditanyakan" : "Common Questions Asked"}
-            </h2>
-          </motion.div>
-          <div className="flex flex-col gap-3">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                className="bg-white rounded-2xl border border-espresso/5 shadow-warm overflow-hidden transition-all duration-300"
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-              >
-                <button
-                  className="w-full px-6 py-5 flex items-center justify-between text-left font-display font-bold text-espresso hover:text-blush text-base md:text-lg transition-colors"
-                  onClick={() => toggleFaq(index)}
-                >
-                  <span className="flex items-center gap-3">
-                    <HelpCircle size={18} className="text-blush flex-shrink-0" />
-                    {faq.q}
-                  </span>
-                  {openFaq === index ? <ChevronUp size={18} className="flex-shrink-0 text-blush" /> : <ChevronDown size={18} className="flex-shrink-0 text-espresso/40" />}
-                </button>
-                <AnimatePresence>
-                  {openFaq === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="px-6 pb-6 pt-1 font-sans text-espresso/65 text-sm leading-relaxed border-t border-espresso/5">
-                        {faq.a}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+          {/* Bottom CTA */}
+          <div className="text-center mt-12">
+            <Link
+              href="/reservasi"
+              className="btn-pill-dark font-bold text-sm px-8 py-4 shadow-warm inline-flex items-center gap-2"
+            >
+              {language === "id" ? "Reservasi Sekarang" : "Reserve Now"}
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
