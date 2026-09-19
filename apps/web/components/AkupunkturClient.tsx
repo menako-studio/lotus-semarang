@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Marquee } from "@/components/Marquee";
 import { useLanguage } from "@/components/LanguageContext";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
@@ -103,26 +102,26 @@ export function AkupunkturClient() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
+      <section className="overflow-hidden pt-32 pb-16 lg:pt-40 lg:pb-24">
         <div className="container-wellness">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid gap-12 items-center lg:grid-cols-12 lg:gap-16">
             
             {/* Left Content */}
             <motion.div
-              className="lg:col-span-6 flex flex-col gap-6"
+              className="flex flex-col gap-6 lg:col-span-6"
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             >
               <div>
-                <span className="tag-pill bg-blush/20 text-blush-deep font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-blush/20">
+                <span className="inline-block mb-4 text-xs font-bold tracking-wider uppercase border tag-pill bg-blush/20 text-blush-deep border-blush/20">
                   {language === "id" ? "Layanan Terapi" : "Therapy Service"}
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
                   Akupunktur
                 </h1>
               </div>
-              <p className="font-sans text-espresso/70 text-lg leading-relaxed max-w-lg">
+              <p className="max-w-lg font-sans text-lg leading-relaxed text-espresso/70">
                 {language === "id" 
                   ? "Akupunktur merupakan tindakan terapi yang menggunakan jarum steril sekali pakai (disposable sterile needle) yang ditusukkan pada titik-titik akupunktur di tubuh sesuai dengan kondisi dan kebutuhan pasien."
                   : "Acupuncture is a therapeutic treatment using single-use disposable sterile needles inserted at specific acupuncture points tailored to each patient's condition and needs."}
@@ -131,7 +130,7 @@ export function AkupunkturClient() {
               <div className="flex flex-wrap gap-4 pt-2">
                 <Link
                   href="/reservasi"
-                  className="btn-pill-dark font-bold text-sm px-8 py-4 shadow-warm group inline-flex items-center gap-2"
+                  className="inline-flex gap-2 items-center px-8 py-4 text-sm font-bold btn-pill-dark shadow-warm group"
                 >
                   {language === "id" ? "Reservasi Sekarang" : "Reserve Now"}
                   <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
@@ -140,7 +139,7 @@ export function AkupunkturClient() {
                   href={`https://wa.me/6287700303645?text=${encodeURIComponent(language === "id" ? "Halo Lotus, mau tanya tentang layanan Akupunktur" : "Hello Lotus, I'd like to ask about Acupuncture therapy")}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-pill-outline font-bold text-sm px-8 py-4 inline-flex items-center gap-2"
+                  className="inline-flex gap-2 items-center px-8 py-4 text-sm font-bold btn-pill-outline"
                 >
                   <MessageCircle size={16} className="text-forest" />
                   {language === "id" ? "Tanya Admin" : "Ask Admin"}
@@ -183,13 +182,10 @@ export function AkupunkturClient() {
         </div>
       </section>
 
-      {/* Marquee Accent */}
-      <Marquee bg="blush" textClass="text-white" speed="slow" />
-
       {/* Mechanism Section: Bagaimana Cara Kerja Akupunktur? */}
-      <section className="section-pad bg-white">
+      <section className="bg-white section-pad">
         <div className="container-wellness">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="grid gap-12 items-center lg:grid-cols-12 lg:gap-20">
             <motion.div
               className="lg:col-span-6 relative aspect-[4/3] rounded-[3.5rem] overflow-hidden shadow-warm-lg img-zoom"
               initial={{ opacity: 0, x: -30 }}
@@ -207,29 +203,29 @@ export function AkupunkturClient() {
               />
             </motion.div>
             <motion.div
-              className="lg:col-span-6 flex flex-col gap-6"
+              className="flex flex-col gap-6 lg:col-span-6"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="tag-pill bg-espresso/5 text-espresso/80 font-bold text-xs uppercase tracking-wider self-start">
+              <span className="self-start text-xs font-bold tracking-wider uppercase tag-pill bg-espresso/5 text-espresso/80">
                 {language === "id" ? "Cara Kerja Terapi" : "How It Works"}
               </span>
-              <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight tracking-tight">
+              <h2 className="text-3xl font-black tracking-tight leading-tight font-display text-espresso md:text-5xl">
                 {language === "id" ? "Bagaimana Cara Kerja Akupunktur?" : "How Does Acupuncture Work?"}
               </h2>
               <div className="flex flex-col gap-6 mt-4">
                 {mechanisms.map((mech, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <div className="w-12 h-12 rounded-2xl bg-blush-soft text-blush-deep flex items-center justify-center font-display font-black text-lg flex-shrink-0 border border-blush/20">
+                    <div className="flex flex-shrink-0 justify-center items-center w-12 h-12 text-lg font-black rounded-2xl border bg-blush-soft text-blush-deep font-display border-blush/20">
                       {mech.num}
                     </div>
                     <div>
-                      <h3 className="font-display font-bold text-espresso text-lg mb-1">
+                      <h3 className="mb-1 text-lg font-bold font-display text-espresso">
                         {mech.title}
                       </h3>
-                      <p className="font-sans text-espresso/65 text-sm leading-relaxed">
+                      <p className="font-sans text-sm leading-relaxed text-espresso/65">
                         {mech.desc}
                       </p>
                     </div>
@@ -242,23 +238,23 @@ export function AkupunkturClient() {
       </section>
 
       {/* Applications Grid: Kasus & Penanganan */}
-      <section className="section-pad bg-cream-warm/40 border-t border-espresso/5">
+      <section className="border-t section-pad bg-cream-warm/40 border-espresso/5">
         <div className="container-wellness">
           <motion.div
-            className="text-center max-w-xl mx-auto mb-16"
+            className="mx-auto mb-16 max-w-xl text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="tag-pill bg-espresso/5 text-espresso/70 font-bold text-xs uppercase tracking-wider mb-4 inline-block">
+            <span className="inline-block mb-4 text-xs font-bold tracking-wider uppercase tag-pill bg-espresso/5 text-espresso/70">
               {language === "id" ? "Kasus & Penanganan" : "Cases & Treatments"}
             </span>
             <h2 className="font-display font-black text-espresso text-3xl md:text-5.5xl leading-tight">
               {language === "id" ? "Bidang Aplikasi Akupunktur" : "Acupuncture Therapy Applications"}
             </h2>
           </motion.div>
-          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 lg:gap-8">
             {applications.map((app, i) => (
               <motion.div
                 key={i}
@@ -270,14 +266,14 @@ export function AkupunkturClient() {
               >
                 <div className="grid grid-cols-[3fr_1.5fr] gap-4 items-center">
                   <div className="flex flex-col gap-2">
-                    <h3 className="font-display font-black text-espresso text-xl lg:text-2xl leading-tight">
+                    <h3 className="text-xl font-black leading-tight font-display text-espresso lg:text-2xl">
                       {app.title}
                     </h3>
-                    <p className="font-sans text-espresso/65 text-xs lg:text-sm leading-relaxed">
+                    <p className="font-sans text-xs leading-relaxed text-espresso/65 lg:text-sm">
                       {app.desc}
                     </p>
                   </div>
-                  <div className="relative aspect-square w-full rounded-2xl overflow-hidden shadow-warm img-zoom">
+                  <div className="overflow-hidden relative w-full rounded-2xl aspect-square shadow-warm img-zoom">
                     <Image
                       src={app.img}
                       alt={app.title}
@@ -293,10 +289,10 @@ export function AkupunkturClient() {
           </div>
 
           {/* Bottom CTA */}
-          <div className="text-center mt-12">
+          <div className="mt-12 text-center">
             <Link
               href="/reservasi"
-              className="btn-pill-dark font-bold text-sm px-8 py-4 shadow-warm inline-flex items-center gap-2"
+              className="inline-flex gap-2 items-center px-8 py-4 text-sm font-bold btn-pill-dark shadow-warm"
             >
               {language === "id" ? "Reservasi Sekarang" : "Reserve Now"}
               <ArrowRight size={16} />

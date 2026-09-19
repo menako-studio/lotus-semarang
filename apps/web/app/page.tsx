@@ -1,10 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Navbar }       from "@/components/Navbar";
 import { Hero }         from "@/components/Hero";
-import { Marquee }      from "@/components/Marquee";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { Footer }       from "@/components/Footer";
 
@@ -26,36 +24,33 @@ export default function HomePage() {
       <Navbar />
       <Hero />
 
-      {/* ── 2. SCROLLING MARQUEE (Dark band) ── */}
-      <Marquee bg="espresso" textClass="text-cream" speed="normal" />
-
       {/* ── 3. SERVICES GRID ── */}
       <ServicesGrid />
 
       {/* ── 4. THE LOTUS EXPERIENCE (4 Core Pillars & Visual Showcase) ── */}
-      <section id="tentang" className="section-pad bg-white border-t border-espresso/5">
+      <section id="tentang" className="bg-white border-t section-pad border-espresso/5">
         <div className="container-wellness">
           
           <motion.div
-            className="text-center max-w-2xl mx-auto mb-16 lg:mb-20"
+            className="mx-auto mb-16 max-w-2xl text-center lg:mb-20"
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="tag-pill bg-blush/20 text-blush-deep font-bold text-xs uppercase tracking-wider mb-4 inline-block border border-blush/20">
+            <span className="inline-block mb-4 text-xs font-bold tracking-wider uppercase border tag-pill bg-blush/20 text-blush-deep border-blush/20">
               {t("experience.tagline")}
             </span>
-            <h2 className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight mb-4">
+            <h2 className="mb-4 text-3xl font-black leading-tight font-display text-espresso md:text-5xl">
               {t("experience.title")}
             </h2>
-            <p className="font-sans text-espresso/70 text-base md:text-lg leading-relaxed">
+            <p className="font-sans text-base leading-relaxed text-espresso/70 md:text-lg">
               {t("experience.desc")}
             </p>
           </motion.div>
 
           {/* 4 Pillars Grid (Clean, no top emojis, 2 photos removed) */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {((t("experience.pillars") as any[]) || []).map((pillar: any, index: number) => {
               const bgColors = [
                 "bg-blush-soft/40 border-blush/25",
@@ -73,10 +68,10 @@ export default function HomePage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <div>
-                    <h3 className="font-display font-bold text-espresso text-xl mb-3 leading-snug">
+                    <h3 className="mb-3 text-xl font-bold leading-snug font-display text-espresso">
                       {pillar.title}
                     </h3>
-                    <p className="font-sans text-espresso/70 text-xs md:text-sm leading-relaxed">
+                    <p className="font-sans text-xs leading-relaxed text-espresso/70 md:text-sm">
                       {pillar.desc}
                     </p>
                   </div>
@@ -91,8 +86,6 @@ export default function HomePage() {
       {/* ── 5. TRUST & KREDIBILITAS: KENALI TIM YANG MERAWATMU ── */}
       <TeamShowcase />
 
-      {/* ── 5.5. SCROLLING MARQUEE (Lotus Blush band) ── */}
-      <Marquee bg="blush" textClass="text-white" speed="slow" />
 
       {/* ── 6. GALERI LOTUS (Ruang & Fasilitas Klinis Ala Amana) ── */}
       <GallerySection />
