@@ -18,48 +18,6 @@ export function Footer() {
 
   return (
     <footer id="kontak" className="bg-espresso text-cream overflow-hidden">
-
-      {/* ── Top CTA Band ── */}
-      <div className="bg-blush py-16 px-6 relative overflow-hidden">
-        <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-white/10 blur-2xl pointer-events-none" />
-        <div className="container-wellness text-center relative z-10">
-          <motion.h2
-            className="font-display font-black text-white whitespace-pre-line"
-            style={{
-              fontSize: "clamp(2rem, 5vw, 4rem)",
-              lineHeight: "1.05",
-              letterSpacing: "-0.025em",
-            }}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            {t("footer.ctaTitle")}
-          </motion.h2>
-          <motion.p
-            className="font-sans text-white/85 mt-4 mb-8 max-w-md mx-auto leading-relaxed"
-            style={{ fontSize: "1rem" }}
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            {t("footer.ctaDesc")}
-          </motion.p>
-          <motion.a
-            href="/reservasi"
-            className="inline-flex items-center gap-2.5 bg-white text-espresso rounded-full font-sans font-bold px-8 py-4 text-base hover:bg-cream-warm transition-all duration-300 hover:scale-105 shadow-warm-lg"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            {t("footer.ctaBtn")}
-          </motion.a>
-        </div>
-      </div>
-
       {/* ── Main Footer ── */}
       <div className="section-pad">
         <div className="container-wellness">
@@ -75,7 +33,7 @@ export function Footer() {
                   Lotus
                 </div>
                 <div className="font-sans text-cream/40 text-[0.6rem] tracking-widest uppercase mt-0.5">
-                  Health · Beauty · Care
+                  Akupunktur · Hidroterapi · Fisioterapi
                 </div>
               </div>
               <p className="font-sans text-cream/55 leading-relaxed max-w-sm" style={{ fontSize: "0.9rem" }}>

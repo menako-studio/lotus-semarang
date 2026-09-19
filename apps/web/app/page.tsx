@@ -54,8 +54,8 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          {/* 4 Pillars Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* 4 Pillars Grid (Clean, no top emojis, 2 photos removed) */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {((t("experience.pillars") as any[]) || []).map((pillar: any, index: number) => {
               const bgColors = [
                 "bg-blush-soft/40 border-blush/25",
@@ -73,7 +73,6 @@ export default function HomePage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <div>
-                    <span className="text-3.5xl mb-4 block">{pillar.emoji}</span>
                     <h3 className="font-display font-bold text-espresso text-xl mb-3 leading-snug">
                       {pillar.title}
                     </h3>
@@ -84,51 +83,6 @@ export default function HomePage() {
                 </motion.div>
               );
             })}
-          </div>
-
-          {/* Dual Visual Showcase: Female & Male Patient Care (Professional & Aesthetic) */}
-          <div className="grid sm:grid-cols-2 gap-6 lg:gap-8 items-center">
-            <motion.div
-              className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-warm-lg img-zoom border border-espresso/5"
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7 }}
-            >
-              <Image
-                src="/images/lotus_treatment_hydro_female_hijab_float_front.jpg"
-                alt="Pelayanan Terapi Privat dan Ramah Hijab di Lotus Semarang"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent z-10" />
-              <div className="absolute bottom-5 left-6 right-6 z-20 text-white font-sans text-xs md:text-sm font-semibold">
-                Privasi Terjaga Penuh · Ramah Pasien Wanita & Hijab
-              </div>
-            </motion.div>
-
-            <motion.div
-              className="relative aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-warm-lg img-zoom border border-espresso/5"
-              initial={{ opacity: 0, scale: 0.96 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-            >
-              <Image
-                src="/images/lotus_hydrotherapy_pool_male_floating_device.jpg"
-                alt="Latihan Terapi Medis Pasien Pria di Kolam Privat Lotus Semarang"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={85}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent z-10" />
-              <div className="absolute bottom-5 left-6 right-6 z-20 text-white font-sans text-xs md:text-sm font-semibold">
-                Pelayanan Terapi Profesional untuk Seluruh Pasien & Keluarga
-              </div>
-            </motion.div>
           </div>
 
         </div>

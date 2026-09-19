@@ -70,14 +70,14 @@ export function Navbar() {
         <div className="container-wellness flex items-center justify-between">
 
           {/* Logo / Brand Name */}
-          <Link href="/" className="group flex items-center gap-3" aria-label="Lotus Health, Beauty & Care">
-            <div className="relative w-[130px] h-[55px] md:w-[150px] md:h-[64px] transition-all duration-300">
+          <Link href="/" className="group flex items-center gap-3" aria-label="Lotus Akupunktur, Hidroterapi, Fisioterapi">
+            <div className="relative w-[165px] h-[70px] md:w-[195px] md:h-[82px] transition-all duration-300">
               <Image
                 src="/logo.png"
-                alt="Lotus Logo"
+                alt="Lotus Akupunktur, Hidroterapi, Fisioterapi Logo"
                 fill
                 priority
-                sizes="(max-width: 768px) 130px, 150px"
+                sizes="(max-width: 768px) 165px, 195px"
                 className="object-contain object-left"
               />
             </div>
@@ -85,6 +85,14 @@ export function Navbar() {
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8">
+            <Link
+              href="/tentang-kami"
+              className="font-sans text-sm font-semibold text-espresso/85 hover:text-blush transition-colors duration-200 relative group"
+            >
+              {t("navbar.tentangKami")}
+              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blush rounded-full group-hover:w-full transition-all duration-300" />
+            </Link>
+
             {/* Layanan Dropdown */}
             <div
               className="relative"
@@ -116,14 +124,6 @@ export function Navbar() {
                 )}
               </AnimatePresence>
             </div>
-
-            <Link
-              href="/tentang-kami"
-              className="font-sans text-sm font-semibold text-espresso/85 hover:text-blush transition-colors duration-200 relative group"
-            >
-              {t("navbar.tentangKami")}
-              <span className="absolute -bottom-0.5 left-0 w-0 h-0.5 bg-blush rounded-full group-hover:w-full transition-all duration-300" />
-            </Link>
 
             <Link
               href="#kontak"
@@ -166,6 +166,16 @@ export function Navbar() {
             transition={{ duration: 0.3 }}
           >
             <nav className="flex flex-col gap-5 mt-8">
+              <Link
+                href="/tentang-kami"
+                onClick={() => setIsOpen(false)}
+                className="font-display text-2xl font-bold text-espresso hover:text-blush transition-colors"
+              >
+                {t("navbar.tentangKami")}
+              </Link>
+
+              <div className="h-px bg-espresso/5 my-1" />
+
               <span className="text-xs font-bold text-espresso/40 tracking-wider uppercase">
                 {t("navbar.layanan")}
               </span>
@@ -174,21 +184,14 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="font-display text-2xl font-bold text-espresso hover:text-blush transition-colors"
+                  className="font-display text-xl font-bold text-espresso/80 hover:text-blush transition-colors pl-2"
                 >
                   {item.label}
                 </Link>
               ))}
 
-              <div className="h-px bg-espresso/5 my-2" />
+              <div className="h-px bg-espresso/5 my-1" />
 
-              <Link
-                href="/tentang-kami"
-                onClick={() => setIsOpen(false)}
-                className="font-display text-2xl font-bold text-espresso hover:text-blush transition-colors"
-              >
-                {t("navbar.tentangKami")}
-              </Link>
               <Link
                 href="#kontak"
                 onClick={() => setIsOpen(false)}

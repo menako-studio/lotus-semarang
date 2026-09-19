@@ -18,12 +18,12 @@ export const translations: Record<string, any> = {
       titleEnd: "Menyenangkan.",
       subheading: "Karena merawat tubuh bukan hanya tentang mengatasi keluhan, tetapi juga tentang menjaga dan menikmati kualitas hidup. Di Lotus, setiap perawatan dilakukan secara personal, profesional, dan privat dalam suasana yang nyaman.",
       ctaStart: "Reservasi Sekarang",
-      ctaServices: "Lihat Layanan",
+      ctaAbout: "Tentang Kami",
     },
     services: {
       eyebrow: "Layanan Lotus",
       title: "Temukan Perawatan yang Sesuai\nuntukmu.",
-      subheading: "Di Lotus, setiap perawatan disesuaikan dengan kondisi, tujuan, dan kebutuhanmu—dengan pendekatan yang profesional dan personal.",
+      subheading: "Di Lotus, setiap perawatan disesuaikan dengan kondisi, tujuan, dan kebutuhanmu—dengan pendekatan yang personal dan profesional.",
       helpsWithLabel: "Dapat membantu untuk:",
       learnMore: "Pelajari Lebih Lanjut",
       akupunktur: {
@@ -54,6 +54,7 @@ export const translations: Record<string, any> = {
           "Stimulasi tumbuh kembang anak",
           "Kehamilan dan persiapan persalinan"
         ],
+        badges: ["Kolam privat", "1 pasien : 1 fisioterapis"],
         badge: "Kolam privat · 1 pasien : 1 fisioterapis",
         cta: "Pelajari Lebih Lanjut"
       },
@@ -74,12 +75,11 @@ export const translations: Record<string, any> = {
       },
       swimCourse: {
         name: "Swim Course",
-        eyebrow: "Program Lanjutan",
-        tagline: "Sehat Bukan Sekadar Pulih",
-        title: "Tetap Aktif dan Produktif",
-        journey: "Care → Recovery → Maintenance → Active",
+        tagline: "Renang privat untuk anak, dewasa, hingga lansia",
+        title: "Swim Course",
         desc: "Menjaga tubuh tetap aktif juga menjadi bagian dari kesehatan. Lotus menghadirkan latihan renang privat untuk anak hingga dewasa, baik untuk yang ingin mulai belajar berenang, meningkatkan kemampuan, maupun menjadikan renang sebagai bagian dari rutinitas menjaga kesehatan.",
-        badge: "Privat · Anak hingga lansia · Instruktur berpengalaman",
+        badges: ["Kolam privat", "Anak, dewasa, lansia", "Instruktur berpengalaman"],
+        badge: "Kolam privat · Anak, dewasa, lansia · Instruktur berpengalaman",
         cta: "Pelajari Lebih Lanjut"
       }
     },
@@ -89,24 +89,20 @@ export const translations: Record<string, any> = {
       desc: "Kesehatan bukan hanya tentang perawatan, tetapi juga tentang bagaimana kamu menjalaninya. Di Lotus, setiap detail dirancang untuk menciptakan pengalaman yang nyaman dan menenangkan, dengan privasi serta kebersihan yang menjadi bagian dari setiap proses perawatan.",
       pillars: [
         {
-          emoji: "🔒",
           title: "Privat",
           desc: "Setiap sesi dilakukan dengan memperhatikan privasi pasien. Ruang akupunktur, fisioterapi, dan kolam hidroterapi dirancang untuk menghadirkan suasana yang tenang, nyaman, dan personal."
         },
         {
-          emoji: "🤍",
           title: "Personal",
           desc: "Kami percaya setiap tubuh memiliki kebutuhan yang berbeda. Karena itu, setiap tindakan disesuaikan dengan kondisi, kebutuhan, dan tujuan pasien."
         },
         {
-          emoji: "🌿",
           title: "Nyaman untuk Menjadi Dirimu Sendiri",
           desc: "Kami memahami bahwa setiap orang memiliki kebutuhan yang berbeda untuk merasa nyaman. Karena itu, Lotus menghadirkan ruang dan fasilitas yang mendukung privasi, sehingga kamu dapat menjalani perawatan dengan lebih nyaman dan leluasa."
         },
         {
-          emoji: "✨",
           title: "Bersih, Terawat, dan Profesional",
-          desc: "Kenyamanan berjalan seiring dengan standar kebersihan dan profesionalisme. Perawatan dilakukan oleh tenaga profesional dan didukung oleh fasilitas yang terjaga kebersihan serta perawatannya. Penggunaan jarum sekali pakai, perawatan kolam secara berkala, dan pengelolaan limbah medis yang tepat menjadi bagian dari perhatian kami dalam menjaga lingkungan perawatan tetap bersih dan nyaman."
+          desc: "Kenyamanan berjalan seiring dengan standar kebersihan dan profesionalisme. Perawatan dilakukan oleh tenaga medis profesional dan didukung oleh fasilitas yang terjaga kebersihan serta perawatannya. Penggunaan jarum steril sekali pakai, perawatan kolam secara berkala, dan pengelolaan limbah medis yang tepat menjadi bagian dari perhatian kami dalam menjaga lingkungan perawatan tetap bersih dan nyaman."
         }
       ]
     },
@@ -183,12 +179,12 @@ export const translations: Record<string, any> = {
       ctaBtn: "🌸 Reservasi Jadwal Terapi",
       desc: "Tempat perawatan kesehatan yang terasa seperti rumah sendiri — hangat, privat, dan selalu menyambut kamu apa adanya.",
       opsHours: "Jam Operasional",
-      mondaySaturday: "Senin – Sabtu: 09.00 – 17.00",
+      mondaySaturday: "Senin – Sabtu: 08.00 – 17.00",
       sundayClosed: "Minggu: Libur (Tutup)",
       servicesHeader: "Layanan",
       contactHeader: "Hubungi Kami",
       askWa: "💬 Tanya Gratis via WA",
-      rights: "© 2025 Lotus Health, Beauty & Care. Semua hak dilindungi."
+      rights: "© 2025 Lotus Akupunktur, Hidroterapi, Fisioterapi. Semua hak dilindungi."
     },
     faq: {
       eyebrow: "Pusat Edukasi & FAQ",
@@ -222,22 +218,22 @@ export const translations: Record<string, any> = {
         {
           category: "hidroterapi",
           q: "Apa perbedaan hidroterapi dengan berenang biasa?",
-          a: "Hidroterapi merupakan bagian dari fisioterapi yang menggunakan media air untuk membantu latihan gerak dan pemulihan. Latihan dilakukan bersama fisioterapis dan disesuaikan dengan kondisi pasien.",
+          a: "Hidroterapi merupakan tindakan fisioterapi yang memanfaatkan sifat fisik air untuk tujuan terapi dan pemulihan, didampingi secara privat (1 pasien : 1 fisioterapis). Berbeda dengan berenang biasa, gerakan dalam hidroterapi dirancang khusus sesuai kondisi tubuh pasien.",
         },
         {
           category: "hidroterapi",
-          q: "Apakah hidroterapi harus bisa berenang?",
-          a: "Tidak. Hidroterapi berbeda dengan kursus renang. Latihan disesuaikan dengan kemampuan dan kondisi pasien serta didampingi fisioterapis.",
+          q: "Apakah harus bisa berenang untuk mengikuti hidroterapi?",
+          a: "Tidak perlu. Seluruh sesi hidroterapi dilakukan di kolam khusus yang aman dan didampingi secara langsung oleh fisioterapis selama sesi berlangsung.",
         },
         {
           category: "fisioterapi",
-          q: "Apakah harus ada rujukan / hasil pemeriksaan?",
-          a: "Disarankan untuk memiliki surat rujukan / hasil pemeriksaan. Namun jika tidak ada, terapis kami akan tetap melakukan anamnesa dan pemeriksaan awal berdasarkan kondisi dan keluhan pasien.",
+          q: "Apakah harus membawa rujukan dokter?",
+          a: "Tidak wajib. Namun jika Anda memiliki hasil pemeriksaan medis, rontgen, atau riwayat pengobatan sebelumnya, sangat dianjurkan untuk dibawa agar fisioterapis dapat memahami kondisi Anda dengan lebih menyeluruh.",
         },
         {
           category: "umum",
-          q: "Apakah bisa datang untuk konsultasi terlebih dahulu?",
-          a: "Bisa. Kondisi dan kebutuhanmu akan menjadi pertimbangan dalam menentukan perawatan yang sesuai.",
+          q: "Bagaimana proses saat pertama kali datang ke Lotus?",
+          a: "Pada kunjungan pertama, terapis akan melakukan konsultasi awal dan asesmen kondisi fisik untuk memahami keluhan, kebutuhan, serta tujuan terapi Anda, sebelum menentukan rencana perawatan yang paling sesuai.",
         }
       ]
     },
@@ -248,22 +244,22 @@ export const translations: Record<string, any> = {
       nameLabel: "Nama Lengkap *",
       namePlaceholder: "Masukkan nama Anda",
       genderLabel: "Jenis Kelamin *",
-      genderMale: "Laki-laki",
       genderFemale: "Perempuan",
-      genderSelect: "Pilih jenis kelamin",
+      genderMale: "Laki-laki",
       ageLabel: "Usia *",
       agePlaceholder: "Contoh: 28 tahun",
-      messageLabel: "Pesan / Catatan (Opsional)",
-      messagePlaceholder: "Tuliskan keluhan atau perawatan yang ingin Anda konsultasikan...",
-      submitBtn: "Kirim via WhatsApp 💬",
+      msgLabel: "Pesan / Catatan (Opsional)",
+      msgPlaceholder: "Tuliskan keluhan atau perawatan yang ingin Anda konsultasikan...",
+      submitBtn: "Kirim via WhatsApp",
+      note: "Data Anda dijaga kerahasiaannya khusus untuk koordinasi konsultasi dan pelayanan medis.",
       successTitle: "WhatsApp Disiapkan!",
       successDesc: "WhatsApp sedang terbuka. Tim Lotus akan segera merespons jadwal dan kebutuhan konsultasi Anda.",
       sendAgain: "Kirim Pesan Lain",
       infoTitle: "Info tentang Kami",
       addressLabel: "Alamat",
-      addressVal: "Jl. Pamularsih No. 90/100, Gisikdrono, Semarang Barat, Semarang 50148",
+      addressVal: "Jl. Pamularsih No. 90/100, Gisikdrono, Semarang Barat, Semarang 50149",
       opsLabel: "Jam Operasional",
-      opsVal: "Senin – Sabtu: 09.00 – 17.00 WIB\nMinggu: Tutup",
+      opsVal: "Senin – Sabtu: 08.00 – 17.00 WIB\nMinggu: Tutup",
       waLabel: "WhatsApp",
       igLabel: "Instagram",
       chatDirect: "Chat WhatsApp Sekarang 💬",
@@ -460,12 +456,12 @@ export const translations: Record<string, any> = {
       titleEnd: "Delightful.",
       subheading: "Because caring for your body is not just about addressing complaints, but also about maintaining and enjoying your quality of life. At Lotus, each treatment is delivered personally, professionally, and privately in a comfortable atmosphere.",
       ctaStart: "Book Reservation",
-      ctaServices: "Explore Services",
+      ctaAbout: "About Us",
     },
     services: {
       eyebrow: "Lotus Services",
       title: "Find the Care Tailored\nFor You.",
-      subheading: "At Lotus, every treatment is tailored to your condition, goals, and needs — with a professional and personalized approach.",
+      subheading: "At Lotus, every treatment is tailored to your condition, goals, and needs — with a personalized and professional approach.",
       helpsWithLabel: "Can help with:",
       learnMore: "Learn More",
       akupunktur: {
@@ -496,6 +492,7 @@ export const translations: Record<string, any> = {
           "Child development stimulation",
           "Pregnancy support and labor preparation"
         ],
+        badges: ["Private pool", "1 patient : 1 physiotherapist"],
         badge: "Private pool · 1 patient : 1 physiotherapist",
         cta: "Learn More"
       },
@@ -516,12 +513,11 @@ export const translations: Record<string, any> = {
       },
       swimCourse: {
         name: "Swim Course",
-        eyebrow: "Advanced Program",
-        tagline: "Health is More Than Just Recovery",
-        title: "Stay Active and Productive",
-        journey: "Care → Recovery → Maintenance → Active",
+        tagline: "Private swimming for children, adults, to seniors",
+        title: "Swim Course",
         desc: "Keeping your body active is an essential part of health. Lotus presents private swimming lessons for children to adults, whether beginning to swim, leveling up skills, or maintaining lifelong active vitality.",
-        badge: "Private · Children to seniors · Experienced instructors",
+        badges: ["Private pool", "Children, adults, seniors", "Experienced instructors"],
+        badge: "Private pool · Children to seniors · Experienced instructors",
         cta: "Learn More"
       }
     },
@@ -531,24 +527,20 @@ export const translations: Record<string, any> = {
       desc: "Health is not only about treatment, but also about how you experience it. At Lotus, every detail is designed to create a comfortable, soothing journey, with privacy and cleanliness embedded in every step.",
       pillars: [
         {
-          emoji: "🔒",
           title: "Private",
           desc: "Every session is conducted with patient privacy at the forefront. Acupuncture rooms, physiotherapy suites, and the hydrotherapy pool are tailored to provide a quiet, calm, and personal environment."
         },
         {
-          emoji: "🤍",
           title: "Personal",
           desc: "We believe every body has distinct needs. Therefore, each medical intervention is tailored to the patient's individual condition, goals, and lifestyle."
         },
         {
-          emoji: "🌿",
           title: "Comfort to Be Yourself",
           desc: "We understand that everyone needs different conditions to feel at ease. Lotus provides private facilities so you can undergo care with peace of mind and freedom."
         },
         {
-          emoji: "✨",
           title: "Clean, Well-Maintained & Professional",
-          desc: "Comfort goes hand in hand with clinical cleanliness and professionalism. Treatments are delivered by certified specialists, single-use sterile needles, periodic pool maintenance, and proper medical waste protocols."
+          desc: "Comfort goes hand in hand with clinical cleanliness and professionalism. Treatments are delivered by professional medical personnel, supported by well-maintained facilities. The use of single-use sterile needles, periodic pool maintenance, and proper medical waste management are central to maintaining a pristine environment."
         }
       ]
     },
@@ -624,20 +616,19 @@ export const translations: Record<string, any> = {
       ctaDesc: "One small step to a healthier and happier life. Our team is ready to welcome you.",
       ctaBtn: "🌸 Book Therapy Appointment",
       desc: "A healthcare treatment space that feels like home — warm, private, and always welcoming you as you are.",
-      opsHours: "Operating Hours",
-      mondaySaturday: "Monday – Saturday: 09:00 – 17:00",
+      opsHours: "Opening Hours",
+      mondaySaturday: "Monday – Saturday: 08:00 – 17:00",
       sundayClosed: "Sunday: Closed",
       servicesHeader: "Services",
       contactHeader: "Contact Us",
-      askWa: "💬 Ask Free via WhatsApp",
-      rights: "© 2025 Lotus Health, Beauty & Care. All rights reserved."
+      askWa: "💬 Free Inquiry via WA",
+      rights: "© 2025 Lotus Akupunktur, Hidroterapi, Fisioterapi. All rights reserved."
     },
     faq: {
-      eyebrow: "FAQ",
-      title: "Have Questions?",
-      desc: "Find quick answers regarding reservations, types of therapy, private facilities, and our comfort policies.",
-      searchPlaceholder: "Search questions...",
-      noResults: "No results match your search keywords.",
+      eyebrow: "Education & FAQ",
+      title: "Frequently Asked Questions",
+      searchPlaceholder: "Search your concern or question here...",
+      noResults: "No answers found matching your search term.",
       categories: {
         all: "All Categories",
         umum: "General & Facilities",
@@ -649,64 +640,64 @@ export const translations: Record<string, any> = {
       list: [
         {
           category: "umum",
-          q: "Do I need to make a reservation beforehand?",
-          a: "Yes. All treatments at Lotus are conducted by reservation so that the time and treatment suite can be properly prepared according to your needs. Patients arrive according to their reserved schedule without having to queue.",
+          q: "Do I need to make a reservation in advance?",
+          a: "Yes. All treatments at Lotus are conducted by prior reservation so that preparation of time and room suits your needs. Patients arrive according to booked slots without waiting in lines.",
         },
         {
           category: "akupunktur",
           q: "Does acupuncture hurt?",
-          a: "Acupuncture does not cause pain, does not cause bleeding, leaves no marks, and is completely safe even for children. The needles used are ultra-thin, flexible, sterile, single-use disposable needles, ensuring zero risk of disease transmission.",
+          a: "Acupuncture does not cause pain, bleeding, or marks, and is very safe even for children because the needles used are sterile single-use disposable needles that are ultra-thin and flexible.",
         },
         {
           category: "akupunktur",
-          q: "Can children undergo acupuncture?",
-          a: "Yes. Pediatric acupuncture is carried out with an approach tailored to the child's age, condition, and specific needs.",
+          q: "Can children receive acupuncture?",
+          a: "Yes. Acupuncture for children is performed with an approach tailored to their age, emotional state, and developmental needs.",
         },
         {
           category: "hidroterapi",
           q: "What is the difference between hydrotherapy and regular swimming?",
-          a: "Hydrotherapy is a specialized part of physiotherapy that utilizes the water medium to assist movement exercises and rehabilitation. Exercises are conducted 1-on-1 with a physiotherapist and tailored to the patient's clinical condition.",
+          a: "Hydrotherapy is a specialized physiotherapy intervention utilizing water physical properties for therapeutic recovery, guided 1-on-1 (1 patient : 1 physiotherapist) in a private pool.",
         },
         {
           category: "hidroterapi",
           q: "Do I need to know how to swim for hydrotherapy?",
-          a: "No. Hydrotherapy is different from a swimming course. Exercises are adapted to the patient's abilities and condition, fully guided and supervised by a physiotherapist.",
+          a: "No. All hydrotherapy sessions take place in a secure, dedicated private pool under direct guidance and supervision of a physiotherapist.",
         },
         {
           category: "fisioterapi",
-          q: "Do I need a doctor's referral or previous medical examination results?",
-          a: "It is recommended to bring a referral letter or medical examination results if available. However, if you do not have one, our therapists will perform an initial clinical intake and assessment based on your current condition and complaints.",
+          q: "Do I need a physician referral letter?",
+          a: "Not mandatory. However, if you have prior medical reports or X-rays, bringing them is highly encouraged to give the physiotherapist comprehensive diagnostic context.",
         },
         {
           category: "umum",
-          q: "Can I visit for an initial consultation first?",
-          a: "Yes. Your condition and personal needs will be thoroughly evaluated to determine the most appropriate care and treatment program.",
+          q: "What is the procedure for a first-time visit?",
+          a: "On your first visit, therapists perform an initial consultation and functional movement assessment before designing your customized care program.",
         }
       ]
     },
     contact: {
       eyebrow: "Contact Us",
-      title: "Ready to Start Your Care?",
-      subtitle: "Find the treatment tailored to your needs and experience the healing process with greater comfort at Lotus.",
+      title: "Ready to Begin Your Care?",
+      subtitle: "Find treatments suited to your needs and experience clinical rehabilitation comfortably with Lotus.",
       nameLabel: "Full Name *",
       namePlaceholder: "Enter your name",
       genderLabel: "Gender *",
-      genderMale: "Male",
       genderFemale: "Female",
-      genderSelect: "Select gender",
+      genderMale: "Male",
       ageLabel: "Age *",
-      agePlaceholder: "Example: 28 years old",
-      messageLabel: "Message / Note (Optional)",
-      messagePlaceholder: "Describe your symptoms or the care you would like to consult on...",
-      submitBtn: "Send via WhatsApp 💬",
+      agePlaceholder: "e.g. 28 years",
+      msgLabel: "Notes / Concerns (Optional)",
+      msgPlaceholder: "Describe your physical condition or treatment interest...",
+      submitBtn: "Send via WhatsApp",
+      note: "Your personal information is kept strictly confidential for medical coordination.",
       successTitle: "WhatsApp Ready!",
       successDesc: "WhatsApp is opening. The Lotus team will promptly assist with your schedule and consultation needs.",
       sendAgain: "Send Another Message",
       infoTitle: "About Lotus",
       addressLabel: "Address",
-      addressVal: "Jl. Pamularsih No. 90/100, Gisikdrono, West Semarang, Semarang 50148",
+      addressVal: "Jl. Pamularsih No. 90/100, Gisikdrono, West Semarang, Semarang 50149",
       opsLabel: "Operating Hours",
-      opsVal: "Monday – Saturday: 09:00 – 17:00 WIB\nSunday: Closed",
+      opsVal: "Monday – Saturday: 08:00 – 17:00 WIB\nSunday: Closed",
       waLabel: "WhatsApp",
       igLabel: "Instagram",
       chatDirect: "Chat on WhatsApp Now 💬",

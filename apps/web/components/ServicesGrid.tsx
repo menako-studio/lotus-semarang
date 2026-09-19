@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Waves, Activity, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, Waves, Activity, Sparkles, UserCheck, Award } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
 import { trackServiceClick } from "@/lib/analytics";
 
 /* ─── ServicesGrid Component ──────────────────────────────────────────────── */
 export function ServicesGrid() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const healthServices = [
     {
@@ -122,20 +122,13 @@ export function ServicesGrid() {
                 className={`w-full rounded-[2.25rem] p-7 lg:p-8 ${service.bg} shadow-warm flex flex-col justify-between transition-all duration-300 hover:shadow-warm-lg`}
               >
                 <div>
-                  {/* Top Bar: Icon + Number */}
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="font-sans text-xs font-bold text-espresso/35 tracking-widest">
-                      {service.number}
+                  {/* Service Name Pill & Title (No numbers or top symbols) */}
+                  <div className="mb-4">
+                    <span className={`tag-pill ${service.accent} text-xs font-bold inline-block`}>
+                      {service.name}
                     </span>
-                    <div className="w-9 h-9 rounded-full bg-white/80 flex items-center justify-center shadow-sm">
-                      {service.icon}
-                    </div>
                   </div>
 
-                  {/* Service Name Pill & Title */}
-                  <span className={`tag-pill ${service.accent} text-xs font-bold mb-3 inline-block`}>
-                    {service.name}
-                  </span>
                   <h3 className="font-display font-bold text-espresso text-xl lg:text-2xl leading-snug mb-3">
                     {service.tagline}
                   </h3>
@@ -145,11 +138,16 @@ export function ServicesGrid() {
                     {service.desc}
                   </p>
 
-                  {/* Optional highlight badge (Hidroterapi) */}
-                  {service.badge && (
-                    <div className="mb-5 inline-block bg-white/80 border border-hydro/30 px-3 py-1.5 rounded-full">
-                      <span className="font-sans text-xs font-bold text-hydro-muted">
-                        ✦ {service.badge}
+                  {/* Hidroterapi 2 Separate Icon Badges */}
+                  {service.id === "hidroterapi" && (
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      <span className="inline-flex items-center gap-1.5 bg-white/90 border border-hydro/30 px-3 py-1.5 rounded-full text-xs font-bold text-hydro-muted">
+                        <Waves size={13} className="text-hydro" />
+                        {language === "en" ? "Private pool" : "Kolam privat"}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 bg-white/90 border border-hydro/30 px-3 py-1.5 rounded-full text-xs font-bold text-hydro-muted">
+                        <UserCheck size={13} className="text-hydro" />
+                        {language === "en" ? "1 patient : 1 physiotherapist" : "1 pasien : 1 fisioterapis"}
                       </span>
                     </div>
                   )}
@@ -186,7 +184,7 @@ export function ServicesGrid() {
           ))}
         </div>
 
-        {/* ── KATEGORI 2: PROGRAM LANJUTAN (Swim Course with Care to Active Journey) ── */}
+        {/* ── KATEGORI 2: SWIM COURSE (Clean Card with 3 Separate Badges) ── */}
         <motion.div
           className="rounded-[2.5rem] bg-sand-soft/50 border border-sand/40 p-8 lg:p-12 shadow-warm"
           initial={{ opacity: 0, y: 24 }}
@@ -194,55 +192,40 @@ export function ServicesGrid() {
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Journey Steps Ribbon */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-8 mb-8 border-b border-espresso/10">
-            <div>
-              <span className="tag-pill bg-sand text-espresso font-bold text-xs uppercase tracking-wider mb-2 inline-block">
-                {swimCourse.eyebrow}
-              </span>
-              <div className="font-sans text-xs md:text-sm font-semibold text-espresso/70">
-                Alur Pemulihan Berkelanjutan:
-              </div>
-            </div>
-
-            {/* Journey steps banner */}
-            <div className="flex flex-wrap items-center gap-2 font-sans text-xs md:text-sm font-bold">
-              <span className="px-3 py-1.5 rounded-full bg-white/70 text-espresso/60 border border-espresso/5">Care</span>
-              <span className="text-espresso/30">→</span>
-              <span className="px-3 py-1.5 rounded-full bg-white/70 text-espresso/60 border border-espresso/5">Recovery</span>
-              <span className="text-espresso/30">→</span>
-              <span className="px-3 py-1.5 rounded-full bg-white/70 text-espresso/60 border border-espresso/5">Maintenance</span>
-              <span className="text-espresso/30">→</span>
-              <span className="px-3.5 py-1.5 rounded-full bg-espresso text-cream shadow-sm flex items-center gap-1.5">
-                <span>Active</span>
-                <span className="text-peach">✦</span>
-              </span>
-            </div>
-          </div>
-
-          {/* Swim Course Content Row */}
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 flex flex-col gap-4">
-              <span className="font-sans text-xs font-bold text-espresso/50 uppercase tracking-widest">
-                {swimCourse.tagline}
+              <span className="tag-pill bg-sand text-espresso font-bold text-xs uppercase tracking-wider w-fit">
+                Swim Course
               </span>
               <h3 className="font-display font-black text-espresso text-2xl lg:text-3.5xl leading-tight">
-                {swimCourse.title}
+                Swim Course
               </h3>
+              <p className="font-sans font-semibold text-espresso/80 text-base md:text-lg">
+                {language === "en" ? "Private swimming for children, adults, to seniors" : "Renang privat untuk anak, dewasa, hingga lansia"}
+              </p>
               <p className="font-sans text-espresso/75 text-sm md:text-base leading-relaxed">
                 {swimCourse.desc}
               </p>
 
-              {/* Badge info */}
-              <div className="mt-2 inline-flex items-center gap-2 bg-white/80 border border-sand/50 px-4 py-2 rounded-full w-fit">
-                <span className="text-xs font-bold text-espresso">
-                  ✦ {swimCourse.badge}
+              {/* 3 Separate Icon Badges */}
+              <div className="flex flex-wrap gap-2.5 pt-1 pb-2">
+                <span className="inline-flex items-center gap-1.5 bg-white/90 border border-sand/60 px-3.5 py-1.5 rounded-full text-xs font-bold text-espresso shadow-xs">
+                  <Waves size={13} className="text-[#2F9FC9]" />
+                  {language === "en" ? "Private pool" : "Kolam privat"}
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/90 border border-sand/60 px-3.5 py-1.5 rounded-full text-xs font-bold text-espresso shadow-xs">
+                  <UserCheck size={13} className="text-[#2F9FC9]" />
+                  {language === "en" ? "Children, adults, seniors" : "Anak, dewasa, lansia"}
+                </span>
+                <span className="inline-flex items-center gap-1.5 bg-white/90 border border-sand/60 px-3.5 py-1.5 rounded-full text-xs font-bold text-espresso shadow-xs">
+                  <Award size={13} className="text-[#2F9FC9]" />
+                  {language === "en" ? "Experienced instructors" : "Instruktur berpengalaman"}
                 </span>
               </div>
 
               {/* CTA Link */}
-              <div className="pt-4">
+              <div className="pt-2">
                 <a
                   href={swimCourse.href}
                   onClick={() => trackServiceClick("swim-course", "Swim Course", "services_journey_card")}
@@ -258,7 +241,7 @@ export function ServicesGrid() {
             <div className="lg:col-span-5 relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-warm-lg img-zoom border border-white/60">
               <Image
                 src="/images/swimming-course-lansia.jpg"
-                alt="Program Lanjutan Renang Privat Lotus Semarang"
+                alt="Swim Course Renang Privat Lotus Semarang"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
