@@ -8,23 +8,43 @@ module.exports = {
   theme: {
     extend: {
       // ─── Refined Lotus Wellness Sanctuary Color Palette ──────────────────
+      // ─── Official Lotus Clinic Color Palette (Client Brand Guide) ──────
       colors: {
-        // Lotus Blossom & Rose Petal (Aligned with Logo Flower)
-        blush:    { DEFAULT: "#D97087", light: "#F4A6C1", muted: "#C45A72", deep: "#B8556D", soft: "#FDF2F4" },
-        lotus:    { DEFAULT: "#D97087", light: "#F4A6C1", muted: "#C45A72", deep: "#B8556D", soft: "#FDF2F4" },
-        // Backgrounds & Accents — skin-tone & warm pastels
+        // Brand Colors
+        brand: {
+          pink: "#D65A8C",      // Primary: Logo, heading utama, tombol utama, aksen brand
+          green: "#A7B89F",     // Secondary: Elemen pendukung, heading sekunder, ikon, navigasi
+        },
+        // Service Colors
+        service: {
+          akupunktur: "#F4C0DF", // Akupunktur (Pink)
+          fisioterapi: "#CDE0D0",// Fisioterapi (Sage Green)
+          hidroterapi: "#416DC2",// Hidroterapi (Blue)
+          swim: "#2F9FC9",       // Swim Course (Active Blue)
+        },
+        // Supporting Tints
+        tint: {
+          pink: "#FBE9F2",
+          blue: "#EAF2FF",
+          sage: "#EEF5EC",
+        },
+        // Neutral Colors
+        neutral: {
+          primary: "#2E2E2E",    // Teks utama, judul
+          secondary: "#6B6B6B",  // Teks pendukung, placeholder
+          divider: "#E8E8E8",    // Border, garis pemisah
+        },
+
+        // ─── Semantic Aliases to preserve component styling ───
+        blush:    { DEFAULT: "#D65A8C", light: "#F4C0DF", muted: "#C45A72", deep: "#B84874", soft: "#FBE9F2" },
+        lotus:    { DEFAULT: "#D65A8C", light: "#F4C0DF", muted: "#A7B89F", deep: "#B84874", soft: "#FBE9F2", green: "#A7B89F" },
         peach:    { DEFAULT: "#F2C4A8", light: "#FAE8DC", muted: "#E8B090", soft: "#FDF0E8" },
         sand:     { DEFAULT: "#E8D5B5", light: "#F5ECD8", muted: "#D4BF98", soft: "#FAF5EC" },
-        // Botanical Lotus Leaf & Sage (Aligned with Logo Stem)
-        sage:     { DEFAULT: "#7A9A82", light: "#A3BDAA", muted: "#5B7F64", soft: "#EEF4F0" },
-        forest:   { DEFAULT: "#2D4836", 700: "#22392B", 600: "#2E4A37", 500: "#3D684E", 400: "#5C8C6F", 300: "#88B298", 200: "#BCD4C5", 100: "#EEF4F0" },
-        // Warm Earth Terracotta
+        sage:     { DEFAULT: "#A7B89F", light: "#CDE0D0", muted: "#7E9475", soft: "#EEF5EC" },
+        forest:   { DEFAULT: "#2E2E2E", 700: "#22392B", 600: "#2E4A37", 500: "#3D684E", 400: "#5C8C6F", 300: "#88B298", 200: "#BCD4C5", 100: "#EEF5EC" },
         terra:    { DEFAULT: "#C86A50", light: "#E08B74", muted: "#AC543D", soft: "#FAEEE8" },
-        // Aquatic Spa & Hydrotherapy Mist
-        hydro:    { DEFAULT: "#5A9491", light: "#7EA8A4", muted: "#437875", soft: "#EBF3F2" },
-        // Deep grounding editorial espresso / charcoal
-        espresso: { DEFAULT: "#241C18", 700: "#332722", 600: "#45362F", 500: "#57443C", 400: "#80685E", 300: "#AC968B", 200: "#D3C6BF", 100: "#EDE6E2" },
-        // Warm retreat cream base
+        hydro:    { DEFAULT: "#416DC2", light: "#2F9FC9", muted: "#2C4E91", soft: "#EAF2FF" },
+        espresso: { DEFAULT: "#2E2E2E", 700: "#3D3D3D", 600: "#4D4D4D", 500: "#6B6B6B", 400: "#8C8C8C", 300: "#B0B0B0", 200: "#D4D4D4", 100: "#E8E8E8" },
         cream:    { DEFAULT: "#FFFFFF", warm: "#FAF7F2", deep: "#F5EDE0" },
         ivory:    { DEFAULT: "#FFFFFF" },
       },

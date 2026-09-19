@@ -4,15 +4,17 @@
 
 /* ─── CSS Design Tokens ───────────────────────────────────────────────────── */
 :root {
-  --color-blush:     #D97087;
-  --color-lotus:     #D97087;
+  --color-blush:     #D65A8C;
+  --color-lotus:     #D65A8C;
+  --color-brand-pink:#D65A8C;
+  --color-brand-green:#A7B89F;
   --color-peach:     #F2C4A8;
   --color-sand:      #E8D5B5;
-  --color-sage:      #7A9A82;
-  --color-forest:    #2D4836;
+  --color-sage:      #A7B89F;
+  --color-forest:    #2E2E2E;
   --color-terra:     #C86A50;
-  --color-hydro:     #5A9491;
-  --color-espresso:  #241C18;
+  --color-hydro:     #416DC2;
+  --color-espresso:  #2E2E2E;
   --color-cream:     #FFFFFF;
   --color-cream-warm:#FAF7F2;
 

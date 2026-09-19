@@ -29,11 +29,11 @@ const dmSans = DM_Sans({
 /* ─── SEO Metadata ───────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
   title: {
-    default: "Lotus Health, Beauty & Care — Akupunktur & Hidroterapi Privat Semarang",
-    template: "%s | Lotus Semarang",
+    default: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
+    template: "%s | Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
   },
   description:
-    "Pusat akupunktur medis profesional, kolam hidroterapi privat semi-outdoor, fisioterapi, dan kursus renang eksklusif di Semarang. Privasi terjamin, nyaman, ditangani tenaga medis bersertifikat.",
+    "Pusat akupunktur profesional, kolam hidroterapi privat semi-outdoor, fisioterapi, dan swim course eksklusif di Semarang. Privasi terjamin, nyaman, ditangani tenaga profesional bersertifikat.",
   keywords: [
     "akupunktur semarang",
     "akupuntur semarang",
@@ -47,11 +47,10 @@ export const metadata: Metadata = {
     "kolam renang privat semarang",
     "wellness semarang",
     "lotus semarang",
-    "lotus health semarang",
     "drg arini jannata",
   ],
-  authors: [{ name: "Lotus Health, Beauty & Care" }],
-  creator: "Lotus Health, Beauty & Care",
+  authors: [{ name: "Lotus Akupunktur, Hidroterapi, Fisioterapi" }],
+  creator: "Lotus Akupunktur, Hidroterapi, Fisioterapi",
   publisher: "Lotus Semarang",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://lotussemarang.com"),
   alternates: {
@@ -66,23 +65,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
     url: "https://lotussemarang.com",
-    siteName: "Lotus Health, Beauty & Care Semarang",
-    title: "Lotus Health, Beauty & Care — Akupunktur & Hidroterapi Privat Semarang",
+    siteName: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
+    title: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
     description:
-      "Layanan akupunktur medis, hidroterapi privat semi-outdoor, fisioterapi, dan les renang eksklusif di Semarang. Pendekatan personal, profesional, dan nyaman.",
+      "Layanan akupunktur, hidroterapi privat semi-outdoor, fisioterapi, dan swim course di Semarang. Pendekatan personal, profesional, dan nyaman.",
     images: [
       {
         url: "/images/hero-1.webp",
         width: 1200,
         height: 630,
-        alt: "Lotus Health, Beauty & Care Semarang - Akupunktur dan Hidroterapi Privat",
+        alt: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lotus Health, Beauty & Care — Akupunktur & Hidroterapi Semarang",
-    description: "Klinik akupunktur medis & kolam hidroterapi privat semi-outdoor profesional di Semarang.",
+    title: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
+    description: "Klinik akupunktur & kolam hidroterapi privat semi-outdoor profesional di Semarang.",
     images: ["/images/hero-1.webp"],
   },
   icons: {
@@ -106,7 +105,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FDF8F2",
+  themeColor: "#FFFFFF",
   colorScheme: "light",
   width: "device-width",
   initialScale: 1,
@@ -116,13 +115,13 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": ["MedicalClinic", "HealthAndBeautyBusiness", "LocalBusiness"],
+    "@type": ["MedicalClinic", "LocalBusiness"],
     "@id": "https://lotussemarang.com/#clinic",
-    "name": "Lotus Health, Beauty & Care",
+    "name": "Lotus Akupunktur, Hidroterapi, Fisioterapi",
     "alternateName": [
       "Lotus Semarang",
-      "Klinik Akupunktur & Hidroterapi Lotus Semarang",
-      "Lotus Acupuncture & Hydrotherapy Clinic Semarang"
+      "Klinik Akupunktur, Hidroterapi, Fisioterapi Lotus Semarang",
+      "Lotus Acupuncture, Hydrotherapy & Physiotherapy Semarang"
     ],
     "image": [
       "https://lotussemarang.com/images/hero-1.webp",
