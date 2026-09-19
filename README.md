@@ -1,8 +1,8 @@
 # 🌸 Lotus Semarang — Accessible Modern Wellness Web App
 
-> *Klinik terapi kesehatan privat terpadu di Semarang: Akupunktur Medis, Fisioterapi, Hidroterapi, dan Program Lanjutan Swim Course.*
+> *Klinik terapi kesehatan privat terpadu di Semarang: Akupunktur, Hidroterapi, Fisioterapi, dan Program Aktivitas Swim Course.*
 >
-> Desain dan layout terintegrasi yang diadaptasi dari benchmark estetika visual **wthn.com** (Accessible Modern Wellness: hangat, aman, privat, profesional, dan nyaman).
+> Desain dan layout terintegrasi yang diadaptasi dari benchmark estetika visual **wthn.com** & **Amana Care** (Accessible Modern Wellness: hangat, aman, privat, profesional, dan nyaman).
 
 ---
 
@@ -15,7 +15,7 @@ lotus-semarang/
 ├── apps/
 │   ├── web/                           # Website Pasien (Next.js 14 App Router, Port 3000)
 │   │   ├── app/
-│   │   │   ├── layout.tsx             # Root layout: Fraunces & DM Sans, Favicon, JSON-LD Schema.org
+│   │   │   ├── layout.tsx             # Root layout: Fraunces & DM Sans, Favicon, JSON-LD Schema.org, Meta
 │   │   │   ├── page.tsx               # Homepage: Hero, Marquee, Services, Experience, Team, Gallery, Reels, Reviews, FAQ, Contact
 │   │   │   ├── tentang-kami/page.tsx  # Halaman Profil Klinik & Filosofi Perawatan (Server Component)
 │   │   │   ├── reservasi/page.tsx     # Wizard Reservasi 4 Langkah (Server Component)
@@ -28,22 +28,21 @@ lotus-semarang/
 │   │   │   └── globals.css            # Desain Token + Custom Utility CSS
 │   │   ├── components/                # Interactive UI & Client Components
 │   │   │   ├── Navbar.tsx             # Sticky navbar + Language Switcher (ID/EN)
-│   │   │   ├── Hero.tsx               # Hero Section: "Sehat Itu Menyenangkan."
-│   │   │   ├── ServicesGrid.tsx       # 3 Layanan Medis Utama + Program Lanjutan Swim Course
-│   │   │   ├── TeamShowcase.tsx       # "Kenali Tim yang Merawatmu" (9 Tenaga Medis Berizin Resmi)
+│   │   │   ├── Hero.tsx               # Hero Section: "Sehat Itu Menyenangkan." + CTAs
+│   │   │   ├── ServicesGrid.tsx       # 3 Layanan Terapi Utama + Program Aktivitas Swim Course
+│   │   │   ├── TeamShowcase.tsx       # "Kenali Tim yang Merawatmu" (9 Tenaga Medis & Instruktur)
+│   │   │   ├── GallerySection.tsx     # Galeri Amana-style dengan Tab Filter & Modal Lightbox
+│   │   │   ├── ReelsShowcase.tsx      # 4 Video Reels YouTube Modal Player + Link Instagram
+│   │   │   ├── ReviewsSection.tsx     # "Kata Mereka" (5 Cerita Pengalaman Pasien Otentik)
 │   │   │   ├── ContactSection.tsx     # Section Kontak WhatsApp (Amana Care pattern) & Google Maps Embed
 │   │   │   ├── SearchableFaq.tsx      # FAQ Accordion 7 Pertanyaan Klinis Utama
-│   │   │   ├── ReelsShowcase.tsx      # Video Reels YouTube Modal Player
-│   │   │   ├── ReservasiClient.tsx    # 4-Step Interactive Booking Wizard ke WhatsApp
+│   │   │   ├── ReservasiClient.tsx    # 4-Step Interactive Booking Wizard ke WhatsApp Admin
 │   │   │   ├── LanguageContext.tsx    # Context Provider Bilingual (ID / EN)
-│   │   │   └── *Client.tsx            # Client wrappers untuk transisi & interaksi
+│   │   │   └── *Client.tsx            # Client views untuk halaman detail layanan
 │   │   ├── lib/
 │   │   │   ├── translations.ts        # Kamus terjemahan Bahasa Indonesia & English
 │   │   │   └── analytics.ts           # Utilitas Tracking GA4 & GTM Event DataLayer
-│   │   ├── public/
-│   │   │   ├── icon.png               # Hi-res Favicon & App Icon
-│   │   │   ├── logo.png               # Brand Identity Logo
-│   │   │   └── images/                # Asset foto terkompresi WebP
+│   │   ├── public/                    # Asset foto terkompresi WebP & logo
 │   │   ├── next.config.js             # Transpile packages & konfigurasi remote images
 │   │   └── package.json
 │   │
@@ -68,68 +67,78 @@ lotus-semarang/
 
 ---
 
-## 🎨 Desain & Estetika Visual (WTHN-Style)
+## 🎨 Palet Warna Resmi Klinik (Sesuai Panduan Brosur & Banner)
 
-### 1. Sistem Warna & Tema Wellness
-* **Background:** `#FFFFFF` (Pure White), `#FAF7F2` (Soft Canvas), `#FAF0E4` (Warm Cream).
-* **Warna Aksen Desain Token:**
-  * `forest` (`#1E3A28`): Identitas warna botani utama, elegan, dan profesional.
-  * `peach` / `peach-soft`: Nuansa hangat & rejuvenasi akupunktur.
-  * `sage` / `sage-soft`: Ketenangan dan pemulihan hidroterapi.
-  * `blush` / `blush-soft`: Kelembutan pemulihan fisioterapi.
-  * `sand` / `sand-soft`: Sentuhan alami swim course.
-  * `espresso` (`#2D1F14`): Warna teks tipografi & tombol kontras.
-  * `terra` (`#D4845A`): Warna aksen terakota hangat.
-
-### 2. Tipografi Premium
-* **Display / Headings:** **Fraunces** (Serif elegan, hangat, dan berwibawa).
-* **Body & UI:** **DM Sans** (Sans-serif modern, bersih, dan nyaman dibaca).
-
----
-
-## ✨ Fitur Utama & Struktur Halaman
-
-1. **Struktur Homepage Berkelanjutan:**
-   * **Hero Section**: Eyebrow `Akupunktur · Fisioterapi · Hidroterapi`, judul `Sehat Itu Menyenangkan.`, tombol `[Lihat Layanan]` dan `[Reservasi Sekarang]`.
-   * **Layanan Terpadu**: 3 kartu terapi klinis setara (Akupunktur, Hidroterapi, Fisioterapi) dengan indikasi keluhan lengkap, ditambah Program Lanjutan (Swim Course) di bawahnya dengan siklus *Care → Recovery → Maintenance → Active*.
-   * **Pengalaman Perawatan**: 4 pilar kenyamanan: *Privat*, *Personal*, *Nyaman untuk Menjadi Dirimu Sendiri*, serta *Bersih Terawat dan Profesional*.
-   * **Kenali Tim yang Merawatmu**: Direktori 9 praktisi medis dan pelatih tersertifikasi dengan gelar kredensial resmi.
-   * **Galeri Fasilitas & Video Reels**: Dokumentasi visual ruangan privat dan 5 video reels informatif dengan pemutar video modal.
-   * **Cerita dari Mereka**: Rating Google 4.9 beserta 5 ulasan pasien nyata dari berbagai kebutuhan terapi.
-   * **FAQ Klinis 7 Pertanyaan**: Jawaban transparan mengenai reservasi, akupunktur tanpa nyeri, hidroterapi, dan konsultasi awal.
-   * **Section Kontak & Reservasi WhatsApp (Amana Care Pattern)**: Form interaktif WhatsApp (Nama, Jenis Kelamin, Usia, Pesan) di sebelah kiri, info kontak dan embed Google Maps di sebelah kanan.
-
-2. **Multilingual i18n (Bahasa Indonesia & English):**
-   * Penggantian bahasa instan (ID ⇄ EN) melalui `LanguageContext` dengan persistensi ke `localStorage`.
-   * Kamus terpusat di `apps/web/lib/translations.ts`.
-
-3. **SEO & Structured Data (JSON-LD):**
-   * Skema `MedicalClinic` & `MedicalProcedure` Schema.org dengan koordinat Google Maps (`-6.9934758, 110.3957242`) dan jam operasional.
-   * XML Sitemap dan `robots.txt` otomatis.
+* **Brand Colors:**
+  * `lotus-pink` (`#D65A8C`): Warna aksen utama bunga teratai.
+  * `lotus-green` (`#A7B89F`): Hijau sage botani yang menenangkan.
+* **Warna Layanan:**
+  * `akupunktur` (`#F4C0DF`): Nuansa pink lembut untuk akupunktur.
+  * `fisioterapi` (`#CDE0D0`): Hijau pastel lembut untuk pemulihan gerak.
+  * `hidroterapi` (`#416DC2`): Biru laut untuk terapi air privat.
+  * `swim` (`#2F9FC9`): Cyan segar untuk aktivitas renang.
+* **Tints & Backgrounds:**
+  * `#FBE9F2` (Pink Tint), `#EAF2FF` (Blue Tint), `#EEF5EC` (Green Tint), `#E4F5FA` (Cyan Tint), `#FFFFFF` (Pure White).
+* **Tipografi:**
+  * **Headings:** `Fraunces` (Serif hangat, elegan, dan berwibawa).
+  * **Body & UI:** `DM Sans` (Sans-serif modern, bersih, dan mudah dibaca).
 
 ---
 
-## 🚀 Cara Menjalankan Aplikasi
+## ✨ Fitur Utama & Hasil Revisi Klien
+
+1. **Homepage:**
+   * **Navbar**: Logo diperbesar, urutan navigasi disesuaikan (`Tentang Kami` → `Layanan` → `Kontak` → `ID/EN` → `Reservasi`).
+   * **Hero**: Aksi utama `[Reservasi Sekarang]` dan aksi sekunder `[Tentang Kami]`.
+   * **Layanan**: Copy disesuaikan ("pendekatan yang personal dan profesional"), nomor 01/02/03 dihapus, ditambahkan badge hidroterapi (`Kolam privat`, `1 pasien : 1 fisioterapis`), serta program Swim Course disederhanakan dengan 3 badge.
+   * **Tim Medis**: Tampilan kartu ringkas (Foto, Nama, Gelar, Jabatan) dengan peran terapis akupunktur, fisioterapis, dan instruktur renang yang diperbarui.
+   * **Galeri Foto**: Galeri interaktif ala Amana Care dengan preview 4 kartu, tombol `[Lihat Foto Lainnya]`, filter kategori (`Semua`, `Fasilitas`, `Akupunktur`, `Hidroterapi`, `Fisioterapi`, `Swim Course`), dan lightbox.
+   * **Video Reels**: 4 reels video YouTube Shorts informatif (`Penjelasan Lotus`, `Alur Kedatangan`, `Cinematic Hydrotherapy`, `Proses Renang Anak`) + tombol direct ke Instagram `@lotus_semarang`.
+   * **Kata Mereka**: 5 cerita pengalaman otentik pasien (`Ibu Lanny`, `Nin Hisyam dan Hisyam`, `Ibu Anny Chris`, `Ibu Reynelda`, `Indira`) menggantikan badge rating Google.
+   * **Footer**: Banner CTA pita merah muda dihapus sepenuhnya; jam operasional diperbarui menjadi `08.00 – 17.00 WIB`.
+
+2. **Wizard Reservasi (`/reservasi`):**
+   * Judul: `Reservasi Jadwal Terapi Anda`.
+   * Terhubung langsung ke WhatsApp `admin`.
+   * 4 opsi layanan: `Akupunktur`, `Hidroterapi`, `Fisioterapi`, `Swim Course`.
+   * 9 slot waktu: `08.00` hingga `16.00`.
+   * Form catatan disederhanakan menjadi `Catatan Tambahan`.
+
+3. **Halaman Detail Layanan (`/layanan/*` & `/tentang-kami`):**
+   * **Tentang Kami**: Foto tim grup dihapus, copy diperbarui mencakup 4 pilar (`Privat`, `Personal`, `Nyaman`, `Bersih & Terawat`) dan sejarah pendiri drg. Arini Jannata sejak 2014.
+   * **Akupunktur**: Menampilkan mekanisme kerja 3 langkah (`Diagnosis`, `Menstimulasi Sistem Saraf`, `Pendekatan yang Disesuaikan`) dan 4 bidang kasus (`Anak-anak`, `Dewasa & Lansia`, `Reproduksi & Hormonal`, `Slimming & Estetika`). Prosedur dan FAQ yang berulang telah dihapus.
+   * **Hidroterapi**: Menampilkan mekanisme daya apung, tekanan air, dan kolam privat 1:1 bersama fisioterapis, serta 4 bidang penanganan (`Muskuloskeletal`, `Rehabilitasi Gerak`, `Tumbuh Kembang Anak`, `Kehamilan`).
+   * **Fisioterapi**: Menampilkan asesmen fisik, latihan gerak, dan pendekatan individual, serta 4 bidang penanganan (`Muskuloskeletal`, `Rehabilitasi Pascaoperasi`, `Ibu Hamil & Tumbuh Kembang Anak`, `Koreksi Postur`).
+   * **Swim Course**: Eyebrow `Program Aktivitas`, judul `Swim Course - Renang untuk Memulai, Berkembang, dan Tetap Aktif`, callout `Sehat Bukan Sekadar Pulih`, dan 4 tujuan latihan tanpa foto.
+
+4. **Status Foto Menunggu Klien (Senin Sore):**
+   * Homepage: Foto Tim Esti
+   * Homepage: Foto Galeri Hidro Nikmah
+   * Detail Page: Foto Hidroterapi Kehamilan
+   *(Aset fallback yang bersih dan proporsional telah terpasang dengan baik dan siap diganti saat file diterima).*
+
+---
+
+## 🚀 Menjalankan Proyek Secara Lokal
 
 ```bash
-# 1. Pasang seluruh dependensi workspace
+# Install dependencies
 pnpm install
 
-# 2. Jalankan development server
-# - Patient Web: http://localhost:3000
-# - Admin Portal: http://localhost:3001
+# Jalankan server development
 pnpm dev
-
-# 3. Validasi tipe TypeScript
-pnpm type-check
-
-# 4. Jalankan linter ESLint
-pnpm lint
-
-# 5. Build seluruh workspace untuk produksi
-pnpm build
 ```
+
+Buka [http://localhost:3000](http://localhost:3000) di browser untuk melihat aplikasi web.
 
 ---
 
-*Dibuat dengan ❤ oleh Menako Studio untuk Lotus Semarang.*
+## 🧪 Validasi & Pengujian
+
+```bash
+# Build production (100% lulus tanpa error)
+pnpm --filter @lotus/web build
+
+# Linting kode
+pnpm --filter @lotus/web lint
+```
