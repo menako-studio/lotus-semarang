@@ -96,20 +96,22 @@ lotus-semarang/
    * **Video Reels**: 4 reels video YouTube Shorts informatif (`Penjelasan Lotus`, `Alur Kedatangan`, `Cinematic Hydrotherapy`, `Proses Renang Anak`) + tombol direct ke Instagram `@lotus_semarang`.
    * **Kata Mereka**: 5 cerita pengalaman otentik pasien (`Ibu Lanny`, `Nin Hisyam dan Hisyam`, `Ibu Anny Chris`, `Ibu Reynelda`, `Indira`) menggantikan badge rating Google.
    * **Footer**: Banner CTA pita merah muda dihapus sepenuhnya; jam operasional diperbarui menjadi `08.00 – 17.00 WIB`.
+   * **Konsistensi & Responsivitas**: Standardisasi badge (`.tag-pill`), tombol (`.btn-pill-*`), padding container terpadu, dan tata letak responsif penuh pada resolusi mobile, tablet, dan desktop.
 
 2. **Wizard Reservasi (`/reservasi`):**
    * Judul: `Reservasi Jadwal Terapi Anda`.
    * Terhubung langsung ke WhatsApp `admin`.
    * 4 opsi layanan: `Akupunktur`, `Hidroterapi`, `Fisioterapi`, `Swim Course`.
    * 9 slot waktu: `08.00` hingga `16.00`.
-   * Form catatan disederhanakan menjadi `Catatan Tambahan`.
+   * Form catatan disederhanakan menjadi `Catatan Tambahan`, dirangkum pada ringkasan konfirmasi langkah 4.
+   * Padding kartu responsif (`p-6 sm:p-8 lg:p-12`) dan tombol aksi responsif penuh di mobile.
 
 3. **Halaman Detail Layanan (`/layanan/*` & `/tentang-kami`):**
-   * **Tentang Kami**: Foto tim grup dihapus, copy diperbarui mencakup 4 pilar (`Privat`, `Personal`, `Nyaman`, `Bersih & Terawat`) dan sejarah pendiri drg. Arini Jannata sejak 2014.
-   * **Akupunktur**: Menampilkan mekanisme kerja 3 langkah (`Diagnosis`, `Menstimulasi Sistem Saraf`, `Pendekatan yang Disesuaikan`) dan 4 bidang kasus (`Anak-anak`, `Dewasa & Lansia`, `Reproduksi & Hormonal`, `Slimming & Estetika`). Prosedur dan FAQ yang berulang telah dihapus.
+   * **Tentang Kami**: Foto tim grup dihapus, copy diperbarui mencakup 4 pilar (`Privat`, `Personal`, `Nyaman`, `Bersih & Terawat`) dan sejarah pendiri drg. Arini Jannata sejak 2014. Grid 4 pilar responsif (`sm:grid-cols-2 lg:grid-cols-4`).
+   * **Akupunktur**: Menampilkan mekanisme kerja 3 langkah (`Diagnosis`, `Menstimulasi Sistem Saraf`, `Pendekatan yang Disesuaikan`) dan 4 bidang kasus (`Anak-anak`, `Dewasa & Lansia`, `Reproduksi & Hormonal`, `Slimming & Estetika`). Prosedur, FAQ, dan marquee berulang dihapus demi estetika yang bersih.
    * **Hidroterapi**: Menampilkan mekanisme daya apung, tekanan air, dan kolam privat 1:1 bersama fisioterapis, serta 4 bidang penanganan (`Muskuloskeletal`, `Rehabilitasi Gerak`, `Tumbuh Kembang Anak`, `Kehamilan`).
    * **Fisioterapi**: Menampilkan asesmen fisik, latihan gerak, dan pendekatan individual, serta 4 bidang penanganan (`Muskuloskeletal`, `Rehabilitasi Pascaoperasi`, `Ibu Hamil & Tumbuh Kembang Anak`, `Koreksi Postur`).
-   * **Swim Course**: Eyebrow `Program Aktivitas`, judul `Swim Course - Renang untuk Memulai, Berkembang, dan Tetap Aktif`, callout `Sehat Bukan Sekadar Pulih`, dan 4 tujuan latihan tanpa foto.
+   * **Swim Course**: Eyebrow `Program Aktivitas`, judul `Swim Course - Renang untuk Memulai, Berkembang, dan Tetap Aktif`, callout `Sehat Bukan Sekadar Pulih`, dan 4 tujuan latihan tanpa foto. Asset 404 telah dihubungkan ke foto lokal yang valid.
 
 4. **Status Foto Menunggu Klien (Senin Sore):**
    * Homepage: Foto Tim Esti
