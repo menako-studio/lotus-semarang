@@ -23,7 +23,7 @@
 
 ### 1.2 Tech Stack & Key Tooling
 - **Monorepo & Build System**: Turborepo (`turbo 2.x`), `pnpm` workspaces (`pnpm@9.x`).
-- **Framework**: Next.js 14 (`14.2.35` / App Router) + React 18 (`18.3.1`).
+- **Framework**: Next.js 15 (`15.5.25` / App Router) + React 18 (`18.3.1`).
 - **Language**: TypeScript 5 (`5.4.5` / strict mode).
 - **Styling**: Tailwind CSS v3 (`3.4.4`) with official clinic color tokens + PostCSS + Autoprefixer.
 - **Animation & Transitions**: `framer-motion` (`^11.2.10`).
@@ -151,4 +151,5 @@ Clean existing fallback assets are currently in place with optimal aspect ratios
 - **Asset Integrity**: 0 broken images or 404 asset requests.
 - **Type Safety**: TypeScript 5 strict mode passed with 0 errors.
 - **Linting**: ESLint passed with 0 warnings.
+- **Security & Dependency Audit**: 0 vulnerabilities (`pnpm audit` clean). Remediated 82 Dependabot alerts across critical, high, moderate, and low severities by upgrading Next.js to `15.5.25`, PostCSS, and configuring workspace overrides for sub-dependencies (`glob`, `minimatch`, `nanoid`, `browserslist`, `baseline-browser-mapping`).
 - **Git Commit History**: Clean split commits in English documenting each progressive phase.
