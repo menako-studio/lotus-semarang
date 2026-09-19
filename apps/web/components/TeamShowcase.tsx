@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ShieldCheck, UserCheck } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
 
 export function TeamShowcase() {
@@ -54,56 +53,41 @@ export function TeamShowcase() {
           </motion.p>
         </div>
 
-        {/* Team Grid */}
+        {/* Team Grid (Clean layout: photo, name, role) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {members.map((member, idx) => (
             <motion.div
               key={idx}
-              className="bg-cream rounded-[2.25rem] p-6 border border-espresso/8 shadow-warm hover:shadow-warm-lg transition-all duration-300 flex flex-col justify-between group"
+              className="bg-cream rounded-[2.25rem] p-6 border border-espresso/8 shadow-warm hover:shadow-warm-lg transition-all duration-300 flex items-center gap-4 group"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
             >
-              <div>
-                <div className="flex items-center gap-4 mb-4">
-                  {/* Photo or Monogram Avatar */}
-                  {member.image ? (
-                    <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 border-2 border-white bg-sand-soft">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
-                        sizes="(max-width: 640px) 72px, 80px"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-2xl bg-sand-soft/80 border border-sand/40 flex items-center justify-center text-espresso/70 font-display font-black text-xl flex-shrink-0">
-                      {member.name.slice(0, 2).toUpperCase()}
-                    </div>
-                  )}
-
-                  <div>
-                    <h3 className="font-display font-bold text-espresso text-base lg:text-lg leading-snug">
-                      {member.name}
-                    </h3>
-                    <p className="font-sans text-espresso/60 text-xs mt-0.5">
-                      {member.role}
-                    </p>
-                  </div>
+              {/* Photo or Monogram Avatar */}
+              {member.image ? (
+                <div className="relative w-18 h-18 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-sm flex-shrink-0 border-2 border-white bg-sand-soft">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 640px) 72px, 80px"
+                  />
                 </div>
-              </div>
+              ) : (
+                <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-2xl bg-sand-soft/80 border border-sand/40 flex items-center justify-center text-espresso/70 font-display font-black text-xl flex-shrink-0">
+                  {member.name.slice(0, 2).toUpperCase()}
+                </div>
+              )}
 
-              {/* License / Credentials badge */}
-              <div className="pt-3 border-t border-espresso/5 flex items-center justify-between">
-                <span className="inline-flex items-center gap-1.5 font-sans text-[0.7rem] font-bold text-forest bg-sage-soft/60 px-3 py-1 rounded-full border border-sage/20">
-                  <ShieldCheck size={13} className="text-forest" />
-                  {member.license}
-                </span>
-                <span className="font-sans text-[0.65rem] text-espresso/40 font-semibold">
-                  Lotus Team
-                </span>
+              <div>
+                <h3 className="font-display font-bold text-espresso text-base lg:text-lg leading-snug">
+                  {member.name}
+                </h3>
+                <p className="font-sans text-espresso/60 text-xs sm:text-sm mt-0.5">
+                  {member.role}
+                </p>
               </div>
             </motion.div>
           ))}
