@@ -134,7 +134,7 @@ ${t("bookingFlow.waMessage.outro")}`;
           </div>
 
           {/* Wizard Card */}
-          <div className="bg-white border border-espresso/5 rounded-[2.5rem] p-8 lg:p-12 shadow-warm-lg overflow-hidden">
+          <div className="bg-white border border-espresso/5 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 lg:p-12 shadow-warm-lg overflow-hidden">
             <AnimatePresence mode="wait">
               {/* STEP 1: PILIH LAYANAN */}
               {step === 1 && (
@@ -365,18 +365,26 @@ ${t("bookingFlow.waMessage.outro")}`;
                         {formData.keluhan}
                       </span>
                     </div>
+                    {formData.catatan && (
+                      <div className="flex flex-col gap-1">
+                        <span className="text-espresso/50">{language === "id" ? "Catatan Tambahan:" : "Additional Notes:"}</span>
+                        <span className="font-medium text-espresso/80 bg-white p-2.5 rounded-lg border border-espresso/5 text-xs">
+                          {formData.catatan}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
-                  <div className="flex justify-between items-center mt-6 pt-6 border-t border-espresso/5">
+                  <div className="flex flex-col-reverse sm:flex-row justify-between items-center gap-4 mt-6 pt-6 border-t border-espresso/5">
                     <button
                       onClick={prevStep}
-                      className="flex items-center gap-1.5 font-sans font-bold text-xs text-espresso/50 hover:text-espresso"
+                      className="flex items-center justify-center w-full sm:w-auto py-2.5 gap-1.5 font-sans font-bold text-xs text-espresso/50 hover:text-espresso"
                     >
                       <ChevronLeft size={16} /> {t("bookingFlow.prev")}
                     </button>
                     <button
                       onClick={handleSendWhatsApp}
-                      className="btn-pill-dark px-8 py-3.5 text-sm font-bold flex items-center gap-2 bg-forest hover:bg-forest/90 text-white shadow-warm"
+                      className="btn-pill-dark w-full sm:w-auto justify-center px-8 py-3.5 text-sm font-bold flex items-center gap-2 bg-forest hover:bg-forest/90 text-white shadow-warm"
                     >
                       <Send size={16} />
                       {t("bookingFlow.sendWhatsApp")}

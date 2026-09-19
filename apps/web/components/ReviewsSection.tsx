@@ -28,13 +28,13 @@ export function ReviewsSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="badge-pill mb-4 inline-block bg-blush-soft text-blush-deep border border-blush/20">
+          <span className="inline-block mb-4 text-xs font-bold tracking-wider uppercase border tag-pill bg-blush/20 text-blush-deep border-blush/20">
             {t("reviews.eyebrow")}
           </span>
-          <h2 className="heading-lg text-espresso mb-4">
+          <h2 className="mb-4 text-3xl font-black leading-tight font-display text-espresso md:text-5xl">
             {t("reviews.title")}
           </h2>
-          <p className="font-sans text-espresso/60 text-base md:text-lg leading-relaxed">
+          <p className="font-sans text-base leading-relaxed text-espresso/65 md:text-lg">
             {t("reviews.desc")}
           </p>
         </motion.div>

@@ -104,14 +104,14 @@ export function TentangKamiClient() {
       <section className="section-pad bg-cream-warm/40 border-y border-espresso/5">
         <div className="container-wellness">
           <div className="text-center max-w-xl mx-auto mb-12 lg:mb-16">
-            <span className="badge-pill mb-3 inline-block bg-blush-soft text-blush-deep border border-blush/20">
+            <span className="inline-block mb-3 text-xs font-bold tracking-wider uppercase border tag-pill bg-blush/20 text-blush-deep border-blush/20">
               Lotus Pillars
             </span>
-            <h2 className="font-display font-black text-espresso text-3xl md:text-4xl">
+            <h2 className="text-3xl font-black font-display text-espresso md:text-4xl">
               {t("tentangKamiPage.valuesTitle")}
             </h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {(t("tentangKamiPage.values") || []).map((val: any, idx: number) => {
               const borderColors = [
                 "border-blush/20 hover:border-blush/50",
