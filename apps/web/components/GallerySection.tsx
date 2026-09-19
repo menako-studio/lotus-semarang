@@ -155,7 +155,7 @@ export function GallerySection() {
         {/* Header */}
         <div className="text-center max-w-xl mx-auto mb-12">
           <motion.span
-            className="tag-pill bg-sage/30 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block"
+            className="inline-block mb-4 text-xs font-bold tracking-wider uppercase border tag-pill bg-blush/20 text-blush-deep border-blush/20"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -307,7 +307,7 @@ export function GallerySection() {
       <AnimatePresence>
         {lightboxImg && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-espresso/90 backdrop-blur-md"
+            className="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-espresso/90 backdrop-blur-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

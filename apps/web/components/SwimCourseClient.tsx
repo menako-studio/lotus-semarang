@@ -5,7 +5,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Marquee } from "@/components/Marquee";
 import { useLanguage } from "@/components/LanguageContext";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
@@ -176,8 +175,8 @@ export function SwimCourseClient() {
               </div>
               <div className="absolute bottom-4 left-4 w-[45%] aspect-square rounded-3xl overflow-hidden shadow-warm-xl border-4 border-white img-zoom z-20">
                 <Image
-                  src="/images/swimming-course-anak.jpg"
-                  alt="Latihan Renang Anak Ramah & Aman"
+                  src="/images/swimming-course-lansia.jpg"
+                  alt="Latihan Renang Privat Aman & Nyaman"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 50vw, 25vw"
@@ -189,9 +188,6 @@ export function SwimCourseClient() {
           </div>
         </div>
       </section>
-
-      {/* Marquee Accent */}
-      <Marquee bg="swim" textClass="text-white" speed="slow" />
 
       {/* Mechanism Section: Bagaimana Belajar Renang di Lotus? */}
       <section className="section-pad bg-white">
@@ -205,7 +201,7 @@ export function SwimCourseClient() {
               transition={{ duration: 0.7 }}
             >
               <Image
-                src="/images/swimming-course-dewasa.jpg"
+                src="/images/lotus_treatment_hydro_adult_float_therapy_therapist.jpg"
                 alt="Proses Belajar Renang Dewasa Privat"
                 fill
                 className="object-cover"
