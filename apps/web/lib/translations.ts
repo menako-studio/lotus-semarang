@@ -140,38 +140,39 @@ export const translations: Record<string, any> = {
       ]
     },
     reviews: {
-      tagline: "Story & Testimonial",
-      title: "Cerita dari Mereka",
-      desc: "Pengalaman setiap orang berbeda. Begitu juga perjalanan kesehatannya. Berikut beberapa cerita dari mereka yang pernah menjalani perawatan di Lotus.",
-      gmaps: "Ulasan Google Maps",
-      ratingValue: "4.9",
-      sub: "Berdasarkan ulasan asli dari pasien terverifikasi di Semarang.",
-      cta: "Lihat Lebih Banyak Ulasan di Google",
+      eyebrow: "Cerita & Pengalaman Pasien",
+      title: "Kata Mereka",
+      desc: "Setiap langkah pemulihan dan kesehatan memiliki cerita yang berharga. Berikut penuturan langsung dari pasien yang telah menjalani perawatan di Lotus.",
       list: [
         {
-          name: "Ibu Riana",
-          role: "Pasien Hidroterapi, Gisikdrono",
-          text: "Sangat terbantu dengan sesi hidroterapi pasca operasi lutut saya. Kolamnya privat semi-outdoor yang sejuk dan terlindung, dan fisioterapis mendampingi 1:1 dengan teliti dan sabar. Proses pemulihan gerak kaki saya terasa bertahap, terukur, dan tidak menegangkan."
+          name: "Ibu Lanny",
+          role: "Pasien hidroterapi pasca operasi lutut",
+          category: "Hidroterapi",
+          quote: "Pertama kali coba hidroterapi itu pas saya sakit saraf kejepit, saat itu saya menjalani pengobatan dan hidroterapi di Singapur. Tapi kan saya gak mungkin menetap lama disana. Akhirnya saya pulang ke Semarang. Pas di Semarang lutut saya sakit jadi perlu di operasi, lalu saya mikir \"wah setelah operasi gak mungkin langsung selesai pasti saya tetep butuh latihan\". Kalo latihan di darat itu gak nyaman karena udh sulit untuk tekuk lutut. Lalu temen saya info ada hidroterapi di Semarang, saya datangi dan ini seperti yang saya harapkan. Saya latihan seminggu sekali dan saat ini sudah ngejalanin 16 sesi. Senang karena dulu kalo naik tangga harus satu-satu kakinya, kalo sekarang sudah bisa kanan kiri."
         },
         {
-          name: "Fathimah",
-          role: "Pasien Akupunktur, Semarang Barat",
-          text: "Sebagai wanita berhijab, saya sangat mengutamakan privasi saat terapi. Di Lotus, ruangannya benar-benar privat dan terpisah. Terapis wanitanya sangat profesional, jarum akupunktur steril sekali pakai membuat saya tenang, dan hasilnya terasa nyata."
+          name: "Nin Hisyam dan Hisyam",
+          role: "Pasien Akupunktur anak - Nafsu makan",
+          category: "Akupunktur",
+          quote: "Cucu saya susah sekali makan nasi. Maunya cuma kentang, roti, dan tahu bagian dalamnya aja. Trus adik saya menyarankan untuk akupunktur di Lotus Pamularsih. Setelah beberapa sesi terapi, cucu saya sudah mulai mau makan nasi sedikit-sedikit. Alhamdulillah sekarang bongsor ya. Cucu saya juga ga merasa kesakitan karena Bude Arini dan tim yang jago sekali melakukan pendekatan ke anak jadi ngebuat anak ga takut. Terima Kasih Lotus."
         },
         {
-          name: "Bapak Gunawan",
-          role: "Pasien Fisioterapi, Ngaliyan",
-          text: "Saya menderita keluhan pinggang dan saraf kejepit. Menjalani fisioterapi modalitas dipadu dengan latihan gerak bertahap sangat meringankan nyeri. Terapis menjelaskan kondisi secara ilmiah dan mengedukasi latihan mandiri di rumah."
+          name: "Ibu Anny Chris",
+          role: "Pasien Hidroterapi kasus saraf kejepit",
+          category: "Hidroterapi",
+          quote: "Saya memang ada saraf kejepit di tulang belakang 5-6. Selain itu saya itu punya kelemahan di kaki jadi kalo lagi jalan itu suka kesandung trs kecetit rasanya. Setelah menjalani hidroterapi saya merasa lebih enak. Saya sempat berhenti saat pandemi, lalu anak saya bilang \"mama kenapa kok jalannya miring-miring lagi?\" Akhirnya setelah pandemi selesai saya mulai latihan lagi. Saya ngerasa latihan 2x seminggu hasilnya lebih enak daripada latihan seminggu sekali. Kaki saya terasa lebih kuat, jadi pas saya mau jatuh saya berhasil menghindar dan bisa berdiri stabil lagi. Latihan di air itu jauh lebih enak karena lebih ringan."
         },
         {
-          name: "Ibu Melani Kusuma",
-          role: "Pasien Akupunktur, Semarang",
-          text: "Awalnya ragu terapi akupunktur karena khawatir sakit. Ternyata jarumnya sangat tipis dan lentur sehingga tidak terasa sakit sama sekali. Keluhan vertigo dan insomnia yang berulang sekarang jauh lebih stabil setelah beberapa sesi teratur."
+          name: "Ibu Reynelda",
+          role: "Pasien akupunktur promil & slimming",
+          category: "Akupunktur & Hidroterapi",
+          quote: "Saat itu, pernikahan saya sudah memasuki usia 4 tahun. Saya mencoba akupunktur dan Alhamdulillah, saya berhasil mendapatkan garis dua. Saat hamil, saya juga mengalami nyeri punggung karena ukuran kandungan yang semakin besar hingga mengganggu aktivitas. Saya kemudian menjalani hidroterapi. Selama hidroterapi, saya melakukan stretching dan beberapa gerakan yang membantu mengurangi nyeri, sehingga saya bisa kembali beraktivitas. Setelah melahirkan, saya sempat mengalami kendala karena produksi ASI saya berkurang. Saya akupunktur lagi untuk membantu meningkatkan produksi ASI. Alhamdulillah, saya berhasil memberikan ASI hingga anak saya berusia 2 tahun. Tidak berhenti di situ, saya juga melakukan akupunktur slimming untuk membantu mengembalikan bentuk tubuh setelah melahirkan dan menyusui."
         },
         {
-          name: "Dimas Wibowo",
-          role: "Pasien Fisioterapi & Olahraga, Semarang",
-          text: "Setelah cedera ligamen saat berolahraga, fisioterapi di Lotus mendampingi proses penguatan bertahap dari pemulihan nyeri hingga siap bergerak aktif lagi. Tempatnya bersih, nyaman, dan pelayanannya sangat personal."
+          name: "Indira",
+          role: "Pasien akupunktur kasus psoriasis",
+          category: "Akupunktur",
+          quote: "Setelah psoriasis menahun, akhirnya aku memutuskan untuk ke dokter kulit. Tapi setelah dikasih krim dan obat, bekas psoriasis menjadi kehitaman. Akhirnya coba akupunktur dan bekas psoriasis menjadi lebih cerah! Selain terasa perbedaan di kulit, pola tidur pun jadi bagus karena terbantu oleh akupunktur di Lotus."
         }
       ]
     },
@@ -580,38 +581,39 @@ export const translations: Record<string, any> = {
       ]
     },
     reviews: {
-      tagline: "Story & Testimonial",
-      title: "Stories from Our Patients",
-      desc: "Every person's journey is unique. So is their health story. Here are genuine experiences from those who have received care at Lotus.",
-      gmaps: "Google Maps Reviews",
-      ratingValue: "4.9",
-      sub: "Based on authentic reviews from verified patients in Semarang.",
-      cta: "View More Reviews on Google",
+      eyebrow: "Patient Stories & Experiences",
+      title: "Words from Our Patients",
+      desc: "Every step towards recovery and well-being carries a meaningful story. Here are genuine experiences shared by patients cared for at Lotus.",
       list: [
         {
-          name: "Mrs. Riana",
-          role: "Hydrotherapy Patient, Gisikdrono",
-          text: "Hugely helped by the hydrotherapy sessions after my knee surgery. The pool is a sheltered, peaceful private space, and the physiotherapist assisted 1-on-1 with care and patience. My mobility recovery felt progressive, structured, and reassuring."
+          name: "Mrs. Lanny",
+          role: "Post-Knee Surgery Hydrotherapy Patient",
+          category: "Hydrotherapy",
+          quote: "I first tried hydrotherapy when suffering from a pinched nerve, receiving therapy in Singapore. But I couldn't stay abroad indefinitely, so I returned to Semarang. Here my knee required surgery, and I realized recovery wouldn't happen immediately without progressive rehab. Land exercises felt uncomfortable due to stiffness. A friend told me about Lotus hydrotherapy—it exceeded my expectations. I practice weekly and have completed 16 sessions. Before, climbing stairs required step-by-step caution; now I alternate steps naturally."
         },
         {
-          name: "Fathimah",
-          role: "Acupuncture Patient, Semarang Barat",
-          text: "As a hijabi woman, privacy during care is my top priority. At Lotus, rooms are truly private and secluded. The female therapists are deeply professional, and the single-use sterile needles provided complete peace of mind."
+          name: "Nin Hisyam & Hisyam",
+          role: "Pediatric Acupuncture Patient (Appetite)",
+          category: "Acupuncture",
+          quote: "My grandson found it very hard to eat rice—he only accepted potatoes, bread, and tofu centres. My sister recommended acupuncture at Lotus Pamularsih. After a few gentle sessions, he gradually started eating rice. Thank God he is growing strong and healthy now! He never felt scared or in pain because Bude Arini and the team are wonderful at connecting with young children."
         },
         {
-          name: "Mr. Gunawan",
-          role: "Physiotherapy Patient, Ngaliyan",
-          text: "I suffered from lower back pain and pinched nerve symptoms. Combining modality physiotherapy with progressive movement training significantly relieved the pain. The therapist clearly explained the clinical condition and taught self-care exercises."
+          name: "Mrs. Anny Chris",
+          role: "Hydrotherapy Patient (Pinched Nerve)",
+          category: "Hydrotherapy",
+          quote: "I have a pinched nerve between L5-S6 and weakness in my legs causing occasional stumbling and sudden sharp aches. Hydrotherapy brought immense relief. During the pandemic I paused, and my child noticed my gait shifting again. Once reopened, I returned twice a week—which yielded even better stability than once weekly. My legs feel firmer; whenever I lose balance, I can recover and stand firmly. Water exercises are so much gentler because body weight is lifted."
         },
         {
-          name: "Melani Kusuma",
-          role: "Acupuncture Patient, Semarang",
-          text: "Initially I was hesitant about acupuncture due to needle fear. But the needles were exceptionally fine and practically painless. My recurring vertigo and sleep disruption improved remarkably after several consistent sessions."
+          name: "Mrs. Reynelda",
+          role: "Acupuncture Fertility & Postnatal Slimming Patient",
+          category: "Acupuncture & Hydrotherapy",
+          quote: "Four years into our marriage, I underwent acupuncture at Lotus and Alhamdulillah, conceived. During pregnancy, back discomfort grew as the baby grew, so I took hydrotherapy to stretch safely and stay active. After delivery, when breast milk production dropped, I received acupuncture again to support lactation until my child reached age 2. Later, I also continued with acupuncture slimming to gently regain my natural body shape."
         },
         {
-          name: "Dimas Wibowo",
-          role: "Sports & Physical Therapy Patient, Semarang",
-          text: "Following an ankle ligament sprain during sports, physiotherapy at Lotus guided a step-by-step strengthening program from pain relief to full active return. Clean, cozy facilities and truly personal care."
+          name: "Indira",
+          role: "Acupuncture Patient (Psoriasis Care)",
+          category: "Acupuncture",
+          quote: "After chronic psoriasis, creams and medications left darkened blemishes on my skin. I decided to try acupuncture at Lotus—and the post-inflammatory hyperpigmentation visibly brightened! Beyond noticeable skin improvement, my sleep patterns improved significantly thanks to regular acupuncture sessions."
         }
       ]
     },

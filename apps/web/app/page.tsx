@@ -10,6 +10,7 @@ import { Footer }       from "@/components/Footer";
 
 import { GallerySection } from "@/components/GallerySection";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { SearchableFaq } from "@/components/SearchableFaq";
 import { TeamShowcase }  from "@/components/TeamShowcase";
 import { ContactSection } from "@/components/ContactSection";
@@ -17,8 +18,6 @@ import { useLanguage } from "@/components/LanguageContext";
 
 export default function HomePage() {
   const { t } = useLanguage();
-
-  const reviewsList = t("reviews.list") || [];
 
   return (
     <main className="min-h-screen bg-white text-espresso">
@@ -101,96 +100,8 @@ export default function HomePage() {
       {/* ── 6.5. REELS VIDEO SHOWCASE ── */}
       <ReelsShowcase />
 
-      {/* ── 7. GOOGLE REVIEWS SHOWCASE ── */}
-      <section className="section-pad bg-white">
-        <div className="container-wellness">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            
-            {/* Left: Google Ratings Card */}
-            <motion.div
-              className="lg:col-span-4 bg-sand-soft/30 rounded-[2.5rem] p-8 border border-espresso/5 flex flex-col gap-6 lg:sticky lg:top-32 shadow-warm"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex items-center gap-3">
-                <span className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm font-sans font-black text-espresso text-lg border border-espresso/5">
-                  G
-                </span>
-                <div>
-                  <div className="font-display font-bold text-espresso text-base">{t("reviews.gmaps")}</div>
-                  <div className="font-sans text-xs text-espresso/50">Lotus Health, Beauty & Care</div>
-                </div>
-              </div>
-
-              <div>
-                <div className="font-display font-black text-espresso text-6xl leading-none">4.9</div>
-                <div className="text-blush text-xl mt-2 tracking-wide">★★★★★</div>
-                <p className="font-sans text-espresso/60 text-xs mt-2">
-                  {t("reviews.sub")}
-                </p>
-              </div>
-
-              <a
-                href="https://maps.app.goo.gl/PWpA655K59Gq82Xy9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill-dark text-center w-full py-3.5 text-xs font-bold"
-              >
-                {t("reviews.cta")}
-              </a>
-            </motion.div>
-
-            {/* Right: Curated Reviews list */}
-            <div className="lg:col-span-8 flex flex-col gap-6">
-              {reviewsList.map((review: any, idx: number) => {
-                const avatarThemes = [
-                  "bg-blush-soft text-blush-deep border-blush/20",
-                  "bg-sage-soft text-forest border-sage/20",
-                  "bg-sand-soft text-espresso border-sand/30",
-                  "bg-cream-warm text-espresso border-espresso/10",
-                  "bg-hydro-soft text-hydro-muted border-hydro/30",
-                ];
-                const initials = review.name
-                  .split(" ")
-                  .slice(0, 2)
-                  .map((w: string) => w[0])
-                  .join("")
-                  .toUpperCase();
-
-                return (
-                  <motion.div
-                    key={idx}
-                    className="bg-white rounded-3xl p-7 md:p-8 border border-espresso/6 shadow-sm hover:shadow-warm transition-all duration-300"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: idx * 0.08 }}
-                  >
-                    <div className="flex justify-between items-start mb-4">
-                      <div className="flex items-center gap-3">
-                        <div className={`w-11 h-11 rounded-full font-display font-black flex items-center justify-center text-sm border ${avatarThemes[idx % avatarThemes.length]}`}>
-                          {initials}
-                        </div>
-                        <div>
-                          <h4 className="font-display font-bold text-espresso text-base">{review.name}</h4>
-                          <span className="font-sans text-xs text-espresso/55">{review.role}</span>
-                        </div>
-                      </div>
-                      <div className="text-blush text-sm">★★★★★</div>
-                    </div>
-                    <p className="font-sans text-espresso/75 text-sm md:text-base leading-relaxed italic">
-                      &ldquo;{review.text}&rdquo;
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </div>
-
-          </div>
-        </div>
-      </section>
+      {/* ── 7. KATA MEREKA (Cerita & Pengalaman Pasien Ala Amana) ── */}
+      <ReviewsSection />
 
       {/* ── 7.5. SEARCHABLE FAQ SECTION ── */}
       <SearchableFaq />
