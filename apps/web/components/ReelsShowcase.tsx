@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, X, Heart } from "lucide-react";
+import { Play, X, Heart, Instagram, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
 import { trackReelView } from "@/lib/analytics";
 
@@ -17,11 +17,11 @@ interface ReelItem {
 
 export function ReelsShowcase() {
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const reelsList = t("reels.list") || [];
-  const videoIds = ["azv-Y1Or_Ps", "DqXYDhLji4Y", "VtuUAN56IfI"];
-  const likesList = ["1.2k", "945", "1.5k"];
+  const videoIds = ["azv-Y1Or_Ps", "DqXYDhLji4Y", "VtuUAN56IfI", "azv-Y1Or_Ps"];
+  const likesList = ["1.2k", "945", "1.5k", "1.1k"];
 
   const reels: ReelItem[] = videoIds.map((id, index) => ({
     id,
@@ -54,18 +54,16 @@ export function ReelsShowcase() {
           </p>
         </motion.div>
 
-        {/* Reels Horizontal Scroll / Responsive Centered Grid */}
-        <div className="flex overflow-x-auto gap-6 pb-6 scrollbar-hide snap-x snap-mandatory md:grid md:grid-cols-2 md:pb-0 lg:grid-cols-3 md:gap-6 lg:gap-8 max-w-5xl mx-auto justify-center md:overflow-visible">
+        {/* 4 Reels Responsive Grid */}
+        <div className="flex overflow-x-auto gap-5 pb-6 scrollbar-hide snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-4 md:pb-0 md:gap-6 max-w-6xl mx-auto justify-center md:overflow-visible">
           {reels.map((reel, idx) => (
             <motion.div
-              key={reel.id}
+              key={`${reel.id}-${idx}`}
               onClick={() => {
                 setActiveVideoId(reel.id);
                 trackReelView(reel.id, reel.title);
               }}
-              className={`flex-shrink-0 w-[260px] md:w-full snap-start group relative aspect-[9/16] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden bg-espresso/5 shadow-warm border border-espresso/5 cursor-pointer hover:shadow-warm-lg transition-all duration-300 ${
-                idx === 2 ? "md:col-span-2 md:max-w-[340px] md:mx-auto lg:col-span-1 lg:max-w-none lg:mx-0" : ""
-              }`}
+              className="flex-shrink-0 w-[240px] md:w-full snap-start group relative aspect-[9/16] rounded-[2rem] overflow-hidden bg-espresso/5 shadow-warm border border-espresso/5 cursor-pointer hover:shadow-warm-lg transition-all duration-300"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
@@ -79,7 +77,7 @@ export function ReelsShowcase() {
                   alt={reel.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 260px, (max-width: 1024px) 45vw, 320px"
+                  sizes="(max-width: 768px) 240px, (max-width: 1024px) 45vw, 280px"
                   quality={80}
                 />
                 <div className="absolute inset-0 z-10 bg-gradient-to-t to-transparent from-espresso/90 via-espresso/30" />
@@ -109,6 +107,20 @@ export function ReelsShowcase() {
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* [Lihat Reels Lainnya] CTA to Instagram */}
+        <div className="text-center mt-10">
+          <a
+            href="https://www.instagram.com/lotus_semarang/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-pill-outline inline-flex items-center gap-2.5 px-8 py-3.5 text-sm font-bold shadow-warm hover:scale-105 transition-all"
+          >
+            <Instagram size={18} className="text-blush" />
+            <span>{language === "en" ? "Watch More Reels on Instagram" : "Lihat Reels Lainnya di Instagram"}</span>
+            <ArrowRight size={16} />
+          </a>
         </div>
       </div>
 

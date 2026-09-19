@@ -128,13 +128,15 @@ export const translations: Record<string, any> = {
       title: "Galeri Lotus",
     },
     reels: {
-      eyebrow: "Story & Testimonial",
-      title: "Cerita dari Mereka",
-      desc: "Pengalaman setiap orang berbeda. Begitu juga perjalanan kesehatannya. Berikut beberapa cerita dari mereka yang pernah menjalani perawatan di Lotus.",
+      eyebrow: "Reels & Video",
+      title: "Reels Lotus",
+      desc: "Lihat suasana perawatan, alur kedatangan, dan aktivitas terapi di Lotus Semarang.",
+      ctaInstagram: "Lihat Reels Lainnya",
       list: [
-        { title: "Penjelasan Lengkap Terapi Fisioterapi Medis", category: "Edukasi Fisioterapi" },
-        { title: "Cerita Kesembuhan Akupunktur Pasien Lansia", category: "Testimoni Akupunktur" },
-        { title: "Akupunktur Anak Mengatasi Susah Makan", category: "Pediatrik / Anak" }
+        { title: "Penjelasan Lotus", category: "Lotus" },
+        { title: "Alur Kedatangan", category: "Reservasi" },
+        { title: "Cinematic Hydrotherapy", category: "Hidroterapi" },
+        { title: "Proses Renang Anak", category: "Swim Course" }
       ]
     },
     reviews: {
@@ -566,13 +568,15 @@ export const translations: Record<string, any> = {
       title: "Lotus Gallery",
     },
     reels: {
-      eyebrow: "Story & Testimonial",
-      title: "Stories from Our Patients",
-      desc: "Every person's journey is unique. So is their health story. Here are genuine experiences from those who have received care at Lotus.",
+      eyebrow: "Reels & Video",
+      title: "Lotus Reels",
+      desc: "Take a closer look at our private clinic atmosphere, arrival walkthrough, and therapies in action.",
+      ctaInstagram: "Watch More Reels",
       list: [
-        { title: "Full Explanation of Medical Physical Therapy", category: "Physiotherapy Education" },
-        { title: "Elderly Patient's Acupuncture Recovery Story", category: "Acupuncture Testimony" },
-        { title: "Children Acupuncture for Loss of Appetite", category: "Pediatrics" }
+        { title: "Lotus Clinic Overview", category: "Lotus" },
+        { title: "Arrival & Consultation Flow", category: "Reservation" },
+        { title: "Cinematic Hydrotherapy", category: "Hydrotherapy" },
+        { title: "Kids Swimming Program", category: "Swim Course" }
       ]
     },
     reviews: {

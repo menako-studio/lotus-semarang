@@ -8,6 +8,7 @@ import { Marquee }      from "@/components/Marquee";
 import { ServicesGrid } from "@/components/ServicesGrid";
 import { Footer }       from "@/components/Footer";
 
+import { GallerySection } from "@/components/GallerySection";
 import { ReelsShowcase } from "@/components/ReelsShowcase";
 import { SearchableFaq } from "@/components/SearchableFaq";
 import { TeamShowcase }  from "@/components/TeamShowcase";
@@ -94,59 +95,8 @@ export default function HomePage() {
       {/* ── 5.5. SCROLLING MARQUEE (Lotus Blush band) ── */}
       <Marquee bg="blush" textClass="text-white" speed="slow" />
 
-      {/* ── 6. GALERI LOTUS (Ruang & Fasilitas Klinis) ── */}
-      <section className="section-pad bg-cream-warm/40 border-y border-espresso/5">
-        <div className="container-wellness">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <motion.span
-              className="tag-pill bg-sage/30 text-forest font-bold text-xs uppercase tracking-wider mb-4 inline-block"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              {t("gallery.tagline")}
-            </motion.span>
-            <motion.h2
-              className="font-display font-black text-espresso text-3xl md:text-5xl leading-tight tracking-tight"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              {t("gallery.title")}
-            </motion.h2>
-          </div>
-
-          {/* Asymmetric Masonry Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { src: "/images/lotus_interior_reception_greeting_staff.jpg", alt: "Lobby & Resepsionis Lotus Semarang", mt: "" },
-              { src: "/images/lotus_tools_acupuncture_needles_steel_jar.jpg", alt: "Peralatan Terapi Akupunktur Steril", mt: "mt-4 md:mt-0" },
-              { src: "/images/lotus_treatment_physio_child_exercise_ball.jpg", alt: "Fisioterapi Anak & Keluarga", mt: "" },
-              { src: "/images/swimming-course-lansia-2.jpg", alt: "Kolam Terapi Privat Semi-Outdoor", mt: "mt-4 md:mt-0" }
-            ].map((img, idx) => (
-              <motion.div
-                key={idx}
-                className={`relative rounded-3xl overflow-hidden aspect-square img-zoom shadow-warm ${img.mt}`}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-              >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  quality={80}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── 6. GALERI LOTUS (Ruang & Fasilitas Klinis Ala Amana) ── */}
+      <GallerySection />
 
       {/* ── 6.5. REELS VIDEO SHOWCASE ── */}
       <ReelsShowcase />
