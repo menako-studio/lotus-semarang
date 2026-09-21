@@ -107,17 +107,18 @@ lotus-semarang/
    * Padding kartu responsif (`p-6 sm:p-8 lg:p-12`) dan tombol aksi responsif penuh di mobile.
 
 3. **Halaman Detail Layanan (`/layanan/*` & `/tentang-kami`):**
-   * **Tentang Kami**: Foto tim grup dihapus, copy diperbarui mencakup 4 pilar (`Privat`, `Personal`, `Nyaman`, `Bersih & Terawat`) dan sejarah pendiri drg. Arini Jannata sejak 2014. Grid 4 pilar responsif (`sm:grid-cols-2 lg:grid-cols-4`).
-   * **Akupunktur**: Menampilkan mekanisme kerja 3 langkah (`Diagnosis`, `Menstimulasi Sistem Saraf`, `Pendekatan yang Disesuaikan`) dan 4 bidang kasus (`Anak-anak`, `Dewasa & Lansia`, `Reproduksi & Hormonal`, `Slimming & Estetika`). Prosedur, FAQ, dan marquee berulang dihapus demi estetika yang bersih.
-   * **Hidroterapi**: Menampilkan mekanisme daya apung, tekanan air, dan kolam privat 1:1 bersama fisioterapis, serta 4 bidang penanganan (`Muskuloskeletal`, `Rehabilitasi Gerak`, `Tumbuh Kembang Anak`, `Kehamilan`).
-   * **Fisioterapi**: Menampilkan asesmen fisik, latihan gerak, dan pendekatan individual, serta 4 bidang penanganan (`Muskuloskeletal`, `Rehabilitasi Pascaoperasi`, `Ibu Hamil & Tumbuh Kembang Anak`, `Koreksi Postur`).
-   * **Swim Course**: Eyebrow `Program Aktivitas`, judul `Swim Course - Renang untuk Memulai, Berkembang, dan Tetap Aktif`, callout `Sehat Bukan Sekadar Pulih`, dan 4 tujuan latihan tanpa foto. Asset 404 telah dihubungkan ke foto lokal yang valid.
+   * **Tentang Kami**: Banner foto utama diperbarui menggunakan aset resmi `1669435688176.jpg`. Copy diperbarui mencakup 4 pilar (`Privat`, `Personal`, `Nyaman`, `Bersih & Terawat`) dan sejarah pendiri drg. Arini Jannata sejak 2014. Grid 4 pilar responsif (`sm:grid-cols-2 lg:grid-cols-4`).
+   * **Akupunktur**: Menampilkan mekanisme kerja 3 langkah (`Diagnosis`, `Menstimulasi Sistem Saraf`, `Pendekatan yang Disesuaikan`) dan 4 bidang kasus (`Anak-anak`, `Dewasa & Lansia` dengan foto resmi `1670160632616.jpg`, `Reproduksi & Hormonal`, `Slimming & Estetika`). Prosedur, FAQ, dan marquee berulang dihapus demi estetika yang bersih.
+   * **Hidroterapi**: Menampilkan mekanisme daya apung, tekanan air, dan kolam privat 1:1 bersama fisioterapis, serta 4 bidang penanganan (`Muskuloskeletal`, `Rehabilitasi Gerak`, `Tumbuh Kembang Anak` dengan foto resmi `1669852014391.jpg`, `Kehamilan`).
+   * **Fisioterapi**: Menampilkan asesmen fisik, latihan gerak, dan pendekatan individual, serta 4 bidang penanganan (`Muskuloskeletal`, `Rehabilitasi Pascaoperasi`, `Ibu Hamil & Tumbuh Kembang Anak`, `Koreksi Postur`). Foto hero sekunder diperbarui ke `1669852561694.jpg`.
+   * **Swim Course**: Eyebrow `Program Aktivitas`, judul `Swim Course - Renang untuk Memulai, Berkembang, dan Tetap Aktif`, callout `Sehat Bukan Sekadar Pulih`, dan 4 tujuan latihan tanpa foto. Foto hero sekunder diperbarui dengan `swim_anak.jpg`.
+   * **Tim & Galeri**: Foto profil `Mei` (`meiryana(akupunktur).jpg`) dan `Dicky` (`dicky(instruktur).jpg`) telah aktif. Galeri foto dilengkapi dengan `kolam.jpg`, `1669871798393.jpg`, dan `swim_anak.jpg`.
 
-4. **Status Foto Menunggu Klien (Senin Sore):**
-   * Homepage: Foto Tim Esti
+4. **Status Foto Menunggu Klien:**
+   * Homepage: Foto Tim Esti (instruktur)
    * Homepage: Foto Galeri Hidro Nikmah
    * Detail Page: Foto Hidroterapi Kehamilan
-   *(Aset fallback yang bersih dan proporsional telah terpasang dengan baik dan siap diganti saat file diterima).*
+   *(Aset fallback yang proporsional telah terpasang dengan baik dan siap diganti saat file diterima).*
 
 ---
 
