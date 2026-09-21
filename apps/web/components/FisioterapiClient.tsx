@@ -168,8 +168,8 @@ export function FisioterapiClient() {
               </div>
               <div className="absolute bottom-4 left-4 w-[45%] aspect-square rounded-3xl overflow-hidden shadow-warm-xl border-4 border-white img-zoom z-20">
                 <Image
-                  src="/images/lotus_treatment_hydro_adult_dumbbell_therapy.jpg"
-                  alt="Latihan Penguatan Fisik"
+                  src="/images/1669852561694.jpg"
+                  alt="Sesi Latihan Fisioterapi"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 50vw, 25vw"

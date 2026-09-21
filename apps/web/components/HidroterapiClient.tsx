@@ -27,7 +27,7 @@ export function HidroterapiClient() {
     {
       title: "Tumbuh Kembang Anak",
       desc: "Media air dapat digunakan untuk mendukung stimulasi gerak dan perkembangan motorik anak melalui latihan yang disesuaikan dengan kondisi dan kebutuhannya.",
-      img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
+      img: "/images/1669852014391.jpg",
       bg: "bg-blush-soft/80 border border-blush/20",
     },
     {
@@ -52,7 +52,7 @@ export function HidroterapiClient() {
     {
       title: "Child Growth & Motor Stimulation",
       desc: "Water provides a gentle, encouraging medium to stimulate pediatric movement and motor development tailored to each child's pace.",
-      img: "/images/lotus_treatment_baby_group_foot_hijab.webp",
+      img: "/images/1669852014391.jpg",
       bg: "bg-blush-soft/80 border border-blush/20",
     },
     {

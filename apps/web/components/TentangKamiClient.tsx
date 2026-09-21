@@ -55,7 +55,7 @@ export function TentangKamiClient() {
           >
             <div className="absolute inset-0 bg-espresso/5 z-10 pointer-events-none" />
             <Image
-              src="/images/lotus_interior_reception_greeting_staff.jpg"
+              src="/images/1669435688176.jpg"
               alt="Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang"
               fill
               className="object-cover"

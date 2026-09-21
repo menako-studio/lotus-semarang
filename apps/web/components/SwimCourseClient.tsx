@@ -175,8 +175,8 @@ export function SwimCourseClient() {
               </div>
               <div className="absolute bottom-4 left-4 w-[45%] aspect-square rounded-3xl overflow-hidden shadow-warm-xl border-4 border-white img-zoom z-20">
                 <Image
-                  src="/images/swimming-course-lansia.jpg"
-                  alt="Latihan Renang Privat Aman & Nyaman"
+                  src="/images/swim_anak.jpg"
+                  alt="Latihan Renang Anak Privat Lotus Semarang"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 50vw, 25vw"

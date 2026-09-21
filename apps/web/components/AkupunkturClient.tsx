@@ -21,7 +21,7 @@ export function AkupunkturClient() {
     {
       title: "Dewasa & Lansia",
       desc: "Membantu menangani berbagai keluhan seperti nyeri sendi, vertigo, GERD, hipertensi, saraf terjepit, migrain, pemulihan pascastroke, serta mual yang berkaitan dengan efek samping kemoterapi.",
-      img: "/images/lotus_treatment_facial_portrait_patient_elderly.jpg",
+      img: "/images/1670160632616.jpg",
       bg: "bg-sage-soft/80 border border-sage/20",
     },
     {
@@ -46,7 +46,7 @@ export function AkupunkturClient() {
     {
       title: "Adults & Seniors",
       desc: "Helps manage conditions such as joint pain, vertigo, GERD, hypertension, pinched nerves, migraines, post-stroke recovery, and chemotherapy-related nausea.",
-      img: "/images/lotus_treatment_facial_portrait_patient_elderly.jpg",
+      img: "/images/1670160632616.jpg",
       bg: "bg-sage-soft/80 border border-sage/20",
     },
     {

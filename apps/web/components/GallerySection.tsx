@@ -22,10 +22,10 @@ const allPhotos: GalleryPhoto[] = [
     title: "Lobi & Resepsionis",
   },
   {
-    src: "/images/lotus_hydrotherapy_pool_male_floating_device.jpg",
-    alt: "Kolam Hidroterapi Semi-Outdoor Teduh & Privat",
+    src: "/images/kolam.jpg",
+    alt: "Kolam Hidroterapi & Renang Privat Lotus Semarang",
     category: "fasilitas",
-    title: "Kolam Hidroterapi Semi-Outdoor",
+    title: "Area Kolam Privat Semi-Outdoor",
   },
   {
     src: "/images/memoria.jpg",
@@ -52,6 +52,12 @@ const allPhotos: GalleryPhoto[] = [
     alt: "Alat Elektroakupunktur Modern",
     category: "akupunktur",
     title: "Elektroakupunktur Modern",
+  },
+  {
+    src: "/images/1669871798393.jpg",
+    alt: "Sesi Perawatan Akupunktur Lotus Semarang",
+    category: "akupunktur",
+    title: "Sesi Terapi Akupunktur",
   },
   {
     src: "/images/lotus_treatment_body_acupuncture_macro_needle.jpg",
@@ -107,6 +113,12 @@ const allPhotos: GalleryPhoto[] = [
   },
 
   // Swim Course
+  {
+    src: "/images/swim_anak.jpg",
+    alt: "Latihan Renang Privat Anak Lotus Semarang",
+    category: "swim",
+    title: "Renang Privat Anak",
+  },
   {
     src: "/images/swimming-course-lansia.jpg",
     alt: "Kelas Renang Privat Anak, Dewasa, hingga Lansia",
