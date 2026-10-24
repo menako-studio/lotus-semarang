@@ -111,6 +111,9 @@ export function SwimCourseClient() {
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
                   Swim Course
+                  <span className="block mt-2 text-3xl lg:text-5xl text-blush">
+                    {language === "id" ? "di Semarang" : "in Semarang"}
+                  </span>
                 </h1>
                 <p className="font-display font-bold text-blush text-xl lg:text-2xl mt-2">
                   {language === "id"

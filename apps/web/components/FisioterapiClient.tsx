@@ -119,6 +119,9 @@ export function FisioterapiClient() {
                 </span>
                 <h1 className="font-display font-black text-espresso text-5xl lg:text-7.5xl leading-[1.05] tracking-tight">
                   Fisioterapi
+                  <span className="block mt-2 text-3xl lg:text-5xl text-blush">
+                    {language === "id" ? "di Semarang" : "in Semarang"}
+                  </span>
                 </h1>
               </div>
               <p className="max-w-lg font-sans text-lg leading-relaxed text-espresso/70">
