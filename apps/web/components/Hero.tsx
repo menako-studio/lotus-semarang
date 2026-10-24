@@ -28,14 +28,7 @@ export function Hero() {
           {/* ── LEFT: Content ── */}
           <div className="flex flex-col gap-6 lg:gap-8 py-8 lg:py-16">
 
-            {/* Eyebrow pill */}
-            <motion.div {...fadeUp(0.05)}>
-              <span className="font-sans font-bold text-xs md:text-sm text-espresso/60 tracking-wider uppercase">
-                {t("hero.eyebrow")}
-              </span>
-            </motion.div>
-
-            {/* Main Headline */}
+            {/* Main Headline — eyebrow lives inside the h1 so the heading carries "Semarang" */}
             <motion.h1
               className="font-display font-black text-espresso"
               style={{
@@ -43,8 +36,11 @@ export function Hero() {
                 lineHeight: "1.02",
                 letterSpacing: "-0.025em",
               }}
-              {...fadeUp(0.15)}
+              {...fadeUp(0.05)}
             >
+              <span className="block mb-6 lg:mb-8 font-sans font-bold text-xs md:text-sm text-espresso/60 tracking-wider uppercase leading-normal">
+                {t("hero.eyebrow")}
+              </span>
               {t("hero.titleStart")}{" "}
               <span className="relative inline-block text-blush">
                 {t("hero.titleEnd")}

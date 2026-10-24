@@ -13,7 +13,7 @@ export const translations: Record<string, any> = {
       address: "Jl. Pamularsih No. 90/100, Semarang"
     },
     hero: {
-      eyebrow: "Akupunktur · Fisioterapi · Hidroterapi",
+      eyebrow: "Akupunktur · Fisioterapi · Hidroterapi Semarang",
       titleStart: "Sehat Itu ",
       titleEnd: "Menyenangkan.",
       subheading: "Karena merawat tubuh bukan hanya tentang mengatasi keluhan, tetapi juga tentang menjaga dan menikmati kualitas hidup. Di Lotus, setiap perawatan dilakukan secara personal, profesional, dan privat dalam suasana yang nyaman.",
@@ -374,7 +374,7 @@ export const translations: Record<string, any> = {
     },
     tentangKamiPage: {
       eyebrow: "Tentang Kami",
-      title: "Merawat Kesehatan dengan Pendekatan yang Personal dan Profesional",
+      title: "Merawat Kesehatan di Semarang dengan Pendekatan yang Personal dan Profesional",
       desc: "Sejak 2014, Lotus hadir untuk memberikan pengalaman perawatan yang nyaman, privat, dan personal melalui akupunktur, fisioterapi, dan hidroterapi. Kami percaya bahwa setiap orang memiliki kondisi, kebutuhan, dan tujuan yang berbeda. Karena itu, setiap perawatan dilakukan dengan pendekatan yang disesuaikan, didukung oleh tenaga profesional dan fasilitas yang terjaga.",
       missionTitle: "Tentang Lotus",
       missionDesc1: "Lotus hadir dari keinginan untuk menciptakan tempat perawatan kesehatan yang tidak hanya berfokus pada tindakan, tetapi juga pada pengalaman pasien selama menjalaninya.",
@@ -410,7 +410,7 @@ export const translations: Record<string, any> = {
       of: "dari",
       prev: "Kembali",
       next: "Lanjut",
-      title: "Reservasi Jadwal Terapi Anda",
+      title: "Reservasi Jadwal Terapi di Lotus Semarang",
       subtitle: "Sistem reservasi privat mudah yang langsung terhubung dengan admin kami via WhatsApp.",
       tag: "Reservasi Online",
       step1Title: "Layanan apa yang Anda butuhkan?",
@@ -464,7 +464,7 @@ export const translations: Record<string, any> = {
       address: "Jl. Pamularsih No. 90/100, Semarang"
     },
     hero: {
-      eyebrow: "Acupuncture · Physiotherapy · Hydrotherapy",
+      eyebrow: "Acupuncture · Physiotherapy · Hydrotherapy Semarang",
       titleStart: "Healthy Living is ",
       titleEnd: "Delightful.",
       subheading: "Because caring for your body is not just about addressing complaints, but also about maintaining and enjoying your quality of life. At Lotus, each treatment is delivered personally, professionally, and privately in a comfortable atmosphere.",
@@ -825,7 +825,7 @@ export const translations: Record<string, any> = {
     },
     tentangKamiPage: {
       eyebrow: "About Us",
-      title: "Caring for Health with a Personal and Professional Approach",
+      title: "Caring for Health in Semarang with a Personal and Professional Approach",
       desc: "Since 2014, Lotus has provided a comfortable, private, and personalized care experience through acupuncture, physiotherapy, and hydrotherapy. We believe each person has unique needs, conditions, and goals. Therefore, every treatment is delivered with tailored care, supported by certified professionals and pristine facilities.",
       missionTitle: "About Lotus",
       missionDesc1: "Lotus was born from the desire to create a healthcare space that focuses not only on medical action, but also on the patient's entire journey and experience.",
@@ -861,7 +861,7 @@ export const translations: Record<string, any> = {
       of: "of",
       prev: "Back",
       next: "Next",
-      title: "Reserve Your Therapy Schedule",
+      title: "Reserve Your Therapy at Lotus Semarang",
       subtitle: "Simple private booking system directly connected to our admin via WhatsApp.",
       tag: "Online Reservation",
       step1Title: "Which service do you need?",
