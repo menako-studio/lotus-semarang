@@ -14,6 +14,7 @@ export const CLINIC_ID = `${SITE_URL}/#clinic`;
 export const PHONE = "+6287700303645";
 export const MAPS_URL = "https://maps.app.goo.gl/PWpA655K59Gq82Xy9";
 export const INSTAGRAM_URL = "https://www.instagram.com/lotus_semarang";
+export const FACEBOOK_URL = "https://www.facebook.com/lotusacupuncturecenter";
 export const DEFAULT_OG_IMAGE = "/og-image.jpg";
 
 export const ADDRESS = {

@@ -5,7 +5,7 @@ import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Tentang Kami & drg. Arini Jannata",
   description:
-    "Didirikan tahun 2014 oleh drg. Arini Jannata, S.Tr. Akup, MM. Lotus Semarang menghadirkan pelayanan perawatan kesehatan yang profesional, nyaman, dan memperhatikan kebutuhan setiap pasien.",
+    "Didirikan 2014 oleh drg. Arini Jannata, S.Tr. Akup, MM, Lotus Semarang memberi perawatan akupunktur, hidroterapi & fisioterapi yang profesional dan personal.",
   path: "/tentang-kami",
   keywords: [
     "lotus semarang",

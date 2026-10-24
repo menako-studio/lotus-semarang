@@ -5,7 +5,7 @@ import { SITE_URL, breadcrumbJsonLd, clinicRef, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Akupunktur Medis & Estetika Semarang",
   description:
-    "Klinik akupunktur medis profesional di Semarang Barat. Terapi akupunktur steril untuk saraf kejepit, stroke, promil, insomnia, kecantikan wajah & slimming. Reservasi via WhatsApp.",
+    "Klinik akupunktur medis di Semarang Barat. Terapi steril untuk saraf kejepit, stroke, promil, insomnia, kecantikan wajah & slimming. Reservasi via WhatsApp.",
   path: "/layanan/akupunktur",
   keywords: [
     "akupunktur semarang",
@@ -31,16 +31,13 @@ export default function AkupunkturPage() {
         { name: "Akupunktur Medis Semarang", path: "/layanan/akupunktur" },
       ]),
       {
-        "@type": "MedicalProcedure",
+        "@type": "Service",
+        "@id": `${SITE_URL}/layanan/akupunktur#service`,
         "name": "Terapi Akupunktur Medis & Estetika Semarang",
         "description": "Layanan akupunktur medis profesional di Semarang untuk pengobatan saraf kejepit, pemulihan stroke, program hamil (promil), insomnia, slimming, dan peremajaan wajah.",
         "url": `${SITE_URL}/layanan/akupunktur`,
-        "procedureType": "NonSurgicalProcedure",
-        "bodyLocation": "Full Body",
-        "relevantSpecialty": {
-          "@type": "MedicalSpecialty",
-          "name": "Acupuncture"
-        },
+        "serviceType": "Akupunktur",
+        "areaServed": { "@type": "City", "name": "Semarang" },
         "provider": clinicRef
       }
     ]

@@ -8,6 +8,7 @@ import {
   BRAND_NAME,
   CLINIC_ID,
   DEFAULT_OG_IMAGE,
+  FACEBOOK_URL,
   INSTAGRAM_URL,
   MAPS_URL,
   PHONE,
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     template: `%s | ${BRAND_NAME}`,
   },
   description:
-    "Pusat akupunktur profesional, kolam hidroterapi privat semi-outdoor, fisioterapi, dan swim course eksklusif di Semarang. Privasi terjamin, nyaman, ditangani tenaga profesional bersertifikat.",
+    "Klinik akupunktur, kolam hidroterapi privat semi-outdoor, fisioterapi, dan les renang privat di Semarang Barat. Ditangani tenaga profesional bersertifikat.",
   keywords: [
     "akupunktur semarang",
     "akupuntur semarang",
@@ -144,10 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "priceRange": "$$",
     "currenciesAccepted": "IDR",
     "paymentAccepted": "Cash, QRIS, Bank Transfer, Debit Card",
-    "medicalSpecialty": [
-      "Acupuncture",
-      "Physiotherapy"
-    ],
+    "medicalSpecialty": "Physiotherapy",
     "address": ADDRESS,
     "geo": {
       "@type": "GeoCoordinates",
@@ -176,7 +174,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "MedicalProcedure",
+            "@type": "Service",
             "name": "Terapi Akupunktur Medis & Wajah Semarang",
             "description": "Terapi tusuk jarum steril untuk saraf kejepit, stroke, insomnia, promil, slimming, dan peremajaan wajah.",
             "url": `${SITE_URL}/layanan/akupunktur`
@@ -185,7 +183,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "MedicalProcedure",
+            "@type": "Service",
             "name": "Hidroterapi Privat Semi-Outdoor Semarang",
             "description": "Fisioterapi media air di kolam privat semi-outdoor untuk pemulihan sendi, saraf, pasca stroke, dan relaksasi.",
             "url": `${SITE_URL}/layanan/hidroterapi`
@@ -194,7 +192,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {
           "@type": "Offer",
           "itemOffered": {
-            "@type": "MedicalProcedure",
+            "@type": "Service",
             "name": "Fisioterapi & Rehabilitasi Medik",
             "description": "Penanganan gangguan gerak, saraf kejepit, nyeri otot dengan modalitas modern TENS, Ultrasound, dan IR.",
             "url": `${SITE_URL}/layanan/fisioterapi`
@@ -236,6 +234,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     ],
     "sameAs": [
       INSTAGRAM_URL,
+      FACEBOOK_URL,
       MAPS_URL
     ]
   };

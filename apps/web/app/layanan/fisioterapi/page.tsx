@@ -27,15 +27,13 @@ export default function FisioterapiPage() {
         { name: "Fisioterapi Semarang", path: "/layanan/fisioterapi" },
       ]),
       {
-        "@type": "MedicalProcedure",
+        "@type": "Service",
+        "@id": `${SITE_URL}/layanan/fisioterapi#service`,
         "name": "Fisioterapi Medis & Rehabilitasi Fisik Semarang",
         "description": "Layanan rehabilitasi medis komprehensif untuk saraf kejepit (HNP), frozen shoulder, pemulihan stroke, dan cedera otot.",
         "url": `${SITE_URL}/layanan/fisioterapi`,
-        "procedureType": "NonSurgicalProcedure",
-        "relevantSpecialty": {
-          "@type": "MedicalSpecialty",
-          "name": "Physiotherapy"
-        },
+        "serviceType": "Fisioterapi",
+        "areaServed": { "@type": "City", "name": "Semarang" },
         "provider": clinicRef
       }
     ]

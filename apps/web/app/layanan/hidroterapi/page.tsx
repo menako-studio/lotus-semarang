@@ -3,9 +3,9 @@ import { HidroterapiClient } from "@/components/HidroterapiClient";
 import { SITE_URL, breadcrumbJsonLd, clinicRef, pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Kolam Hidroterapi Privat Semi-Outdoor Semarang",
+  title: "Kolam Hidroterapi Privat Semarang",
   description:
-    "Kolam hidroterapi privat semi-outdoor di Semarang: fisioterapi media air untuk pinggang, lutut, saraf, pasca stroke, dan ibu hamil. Pendampingan 1 pasien 1 fisioterapis.",
+    "Kolam hidroterapi privat semi-outdoor di Semarang: terapi air untuk pinggang, lutut, saraf, pasca stroke & ibu hamil. 1 pasien didampingi 1 fisioterapis.",
   path: "/layanan/hidroterapi",
   keywords: [
     "hidroterapi semarang",
@@ -29,16 +29,13 @@ export default function HidroterapiPage() {
         { name: "Hidroterapi Privat Semarang", path: "/layanan/hidroterapi" },
       ]),
       {
-        "@type": "MedicalProcedure",
+        "@type": "Service",
+        "@id": `${SITE_URL}/layanan/hidroterapi#service`,
         "name": "Kolam Hidroterapi Privat Semi-Outdoor Semarang",
         "description": "Fisioterapi media air di kolam semi-outdoor privat Semarang untuk rehabilitasi saraf, kelumpuhan pasca stroke, keluhan persendian, nyeri pinggang, dan relaksasi kehamilan.",
         "url": `${SITE_URL}/layanan/hidroterapi`,
-        "procedureType": "NonSurgicalProcedure",
-        "bodyLocation": "Full Body",
-        "relevantSpecialty": {
-          "@type": "MedicalSpecialty",
-          "name": "Physiotherapy"
-        },
+        "serviceType": "Hidroterapi",
+        "areaServed": { "@type": "City", "name": "Semarang" },
         "provider": clinicRef
       }
     ]
