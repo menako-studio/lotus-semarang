@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { AkupunkturClient } from "@/components/AkupunkturClient";
+import { SITE_URL, breadcrumbJsonLd, clinicRef, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Terapi Akupunktur Medis & Estetika Semarang | Lotus Health",
+export const metadata: Metadata = pageMetadata({
+  title: "Akupunktur Medis & Estetika Semarang",
   description:
-    "Cari tempat terapi akupunktur medis profesional di Semarang? Lotus Health menyediakan terapi akupunktur steril untuk syaraf kejepit, stroke, promil, kecantikan & slimming.",
+    "Klinik akupunktur medis profesional di Semarang Barat. Terapi akupunktur steril untuk saraf kejepit, stroke, promil, insomnia, kecantikan wajah & slimming. Reservasi via WhatsApp.",
+  path: "/layanan/akupunktur",
   keywords: [
     "akupunktur semarang",
     "akupuntur semarang",
@@ -16,72 +18,30 @@ export const metadata: Metadata = {
     "akupunktur pelangsing semarang",
     "drg arini jannata",
   ],
-  alternates: {
-    canonical: "/layanan/akupunktur",
-    languages: {
-      "id-ID": "/layanan/akupunktur",
-      "en-US": "/layanan/akupunktur",
-      "x-default": "/layanan/akupunktur",
-    },
-  },
-  openGraph: {
-    title: "Terapi Akupunktur Medis & Estetika di Semarang | Lotus Health",
-    description: "Klinik akupunktur medis bersertifikasi di Semarang Barat. Ditangani tenaga profesional di ruangan privat dan steril.",
-    url: "https://lotussemarang.com/layanan/akupunktur",
-    images: [{ url: "/images/hero-1.webp", width: 1200, height: 630, alt: "Akupunktur Medis Semarang Lotus Health" }],
-  },
-};
+  imageAlt: "Akupunktur Medis di Lotus Semarang",
+});
 
 export default function AkupunkturPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Beranda",
-            "item": "https://lotussemarang.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Layanan",
-            "item": "https://lotussemarang.com/#layanan"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Akupunktur Medis Semarang",
-            "item": "https://lotussemarang.com/layanan/akupunktur"
-          }
-        ]
-      },
+      breadcrumbJsonLd([
+        { name: "Beranda", path: "/" },
+        { name: "Layanan", path: "/#layanan" },
+        { name: "Akupunktur Medis Semarang", path: "/layanan/akupunktur" },
+      ]),
       {
         "@type": "MedicalProcedure",
         "name": "Terapi Akupunktur Medis & Estetika Semarang",
         "description": "Layanan akupunktur medis profesional di Semarang untuk pengobatan saraf kejepit, pemulihan stroke, program hamil (promil), insomnia, slimming, dan peremajaan wajah.",
+        "url": `${SITE_URL}/layanan/akupunktur`,
         "procedureType": "NonSurgicalProcedure",
         "bodyLocation": "Full Body",
         "relevantSpecialty": {
           "@type": "MedicalSpecialty",
           "name": "Acupuncture"
         },
-        "provider": {
-          "@type": "MedicalClinic",
-          "name": "Lotus Health, Beauty & Care",
-          "telephone": "+6287700303645",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Jl. Pamularsih No. 90/100, Gisikdrono, Semarang Barat",
-            "addressLocality": "Semarang",
-            "addressRegion": "Jawa Tengah",
-            "postalCode": "50149",
-            "addressCountry": "ID"
-          }
-        }
+        "provider": clinicRef
       }
     ]
   };

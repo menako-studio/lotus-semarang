@@ -1,6 +1,6 @@
 /**
  * Google Tag Manager & Google Analytics 4 Helper Utilities
- * Lotus Semarang - https://lotussemarang.com
+ * Lotus Semarang - https://www.lotussemarang.com
  */
 
 declare global {
@@ -12,7 +12,7 @@ declare global {
 
 export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || "";
 export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://lotussemarang.com";
+export { SITE_URL } from "./seo";
 
 /**
  * Push an event to GTM dataLayer and GA4 gtag if available

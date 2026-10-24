@@ -3,9 +3,23 @@ import { Fraunces, DM_Sans } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageContext";
+import {
+  ADDRESS,
+  BRAND_NAME,
+  CLINIC_ID,
+  DEFAULT_OG_IMAGE,
+  INSTAGRAM_URL,
+  MAPS_URL,
+  PHONE,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/seo";
 
 const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+// When GTM is present, GA4 must be configured as a tag inside GTM; loading
+// gtag.js as well would double-count every page view and conversion.
+const GA_ID = GTM_ID ? undefined : process.env.NEXT_PUBLIC_GA_ID;
+const GSC_VERIFICATION = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
 /* ─── Font Loading ───────────────────────────────────────────────────────────
  * Fraunces — chunky, friendly display serif for all headings
@@ -29,8 +43,8 @@ const dmSans = DM_Sans({
 /* ─── SEO Metadata ───────────────────────────────────────────────────────── */
 export const metadata: Metadata = {
   title: {
-    default: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
-    template: "%s | Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
+    default: SITE_NAME,
+    template: `%s | ${BRAND_NAME}`,
   },
   description:
     "Pusat akupunktur profesional, kolam hidroterapi privat semi-outdoor, fisioterapi, dan swim course eksklusif di Semarang. Privasi terjamin, nyaman, ditangani tenaga profesional bersertifikat.",
@@ -49,40 +63,35 @@ export const metadata: Metadata = {
     "lotus semarang",
     "drg arini jannata",
   ],
-  authors: [{ name: "Lotus Akupunktur, Hidroterapi, Fisioterapi" }],
-  creator: "Lotus Akupunktur, Hidroterapi, Fisioterapi",
-  publisher: "Lotus Semarang",
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://lotussemarang.com"),
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: BRAND_NAME,
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: "/",
-    languages: {
-      "id-ID": "/",
-      "en-US": "/",
-      "x-default": "/",
-    },
   },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://lotussemarang.com",
-    siteName: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
-    title: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
+    url: "/",
+    siteName: SITE_NAME,
+    title: SITE_NAME,
     description:
       "Layanan akupunktur, hidroterapi privat semi-outdoor, fisioterapi, dan swim course di Semarang. Pendekatan personal, profesional, dan nyaman.",
     images: [
       {
-        url: "/images/hero-1.webp",
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
+        alt: SITE_NAME,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
+    title: SITE_NAME,
     description: "Klinik akupunktur & kolam hidroterapi privat semi-outdoor profesional di Semarang.",
-    images: ["/images/hero-1.webp"],
+    images: [DEFAULT_OG_IMAGE],
   },
   icons: {
     icon: [{ url: "/icon.png", type: "image/png" }],
@@ -102,6 +111,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  ...(GSC_VERIFICATION && { verification: { google: GSC_VERIFICATION } }),
 };
 
 export const viewport: Viewport = {
@@ -113,24 +123,24 @@ export const viewport: Viewport = {
 
 /* ─── Root Layout ────────────────────────────────────────────────────────── */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": ["MedicalClinic", "LocalBusiness"],
-    "@id": "https://lotussemarang.com/#clinic",
-    "name": "Lotus Akupunktur, Hidroterapi, Fisioterapi",
+  const clinic = {
+    "@type": "MedicalClinic",
+    "@id": CLINIC_ID,
+    "name": SITE_NAME,
     "alternateName": [
       "Lotus Semarang",
       "Klinik Akupunktur, Hidroterapi, Fisioterapi Lotus Semarang",
       "Lotus Acupuncture, Hydrotherapy & Physiotherapy Semarang"
     ],
     "image": [
-      "https://lotussemarang.com/images/hero-1.webp",
-      "https://lotussemarang.com/logo.png",
-      "https://lotussemarang.com/icon.png"
+      `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+      `${SITE_URL}/images/hero-1.webp`,
+      `${SITE_URL}/logo.png`
     ],
-    "logo": "https://lotussemarang.com/logo.png",
-    "url": "https://lotussemarang.com",
-    "telephone": "+6287700303645",
+    "logo": `${SITE_URL}/logo.png`,
+    "url": SITE_URL,
+    "telephone": PHONE,
+    "hasMap": MAPS_URL,
     "priceRange": "$$",
     "currenciesAccepted": "IDR",
     "paymentAccepted": "Cash, QRIS, Bank Transfer, Debit Card",
@@ -138,14 +148,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       "Acupuncture",
       "Physiotherapy"
     ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jl. Pamularsih No. 90/100, Gisikdrono, Semarang Barat",
-      "addressLocality": "Semarang",
-      "addressRegion": "Jawa Tengah",
-      "postalCode": "50149",
-      "addressCountry": "ID"
-    },
+    "address": ADDRESS,
     "geo": {
       "@type": "GeoCoordinates",
       "latitude": -6.9934758,
@@ -176,7 +179,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             "@type": "MedicalProcedure",
             "name": "Terapi Akupunktur Medis & Wajah Semarang",
             "description": "Terapi tusuk jarum steril untuk saraf kejepit, stroke, insomnia, promil, slimming, dan peremajaan wajah.",
-            "url": "https://lotussemarang.com/layanan/akupunktur"
+            "url": `${SITE_URL}/layanan/akupunktur`
           }
         },
         {
@@ -185,7 +188,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             "@type": "MedicalProcedure",
             "name": "Hidroterapi Privat Semi-Outdoor Semarang",
             "description": "Fisioterapi media air di kolam privat semi-outdoor untuk pemulihan sendi, saraf, pasca stroke, dan relaksasi.",
-            "url": "https://lotussemarang.com/layanan/hidroterapi"
+            "url": `${SITE_URL}/layanan/hidroterapi`
           }
         },
         {
@@ -194,7 +197,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             "@type": "MedicalProcedure",
             "name": "Fisioterapi & Rehabilitasi Medik",
             "description": "Penanganan gangguan gerak, saraf kejepit, nyeri otot dengan modalitas modern TENS, Ultrasound, dan IR.",
-            "url": "https://lotussemarang.com/layanan/fisioterapi"
+            "url": `${SITE_URL}/layanan/fisioterapi`
           }
         },
         {
@@ -203,7 +206,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             "@type": "Course",
             "name": "Kursus Les Renang Privat",
             "description": "Pelatihan renang privat intensif untuk balita, anak-anak, wanita, dan dewasa dengan instruktur berpengalaman di kolam semi-outdoor privat.",
-            "url": "https://lotussemarang.com/layanan/swim-course"
+            "url": `${SITE_URL}/layanan/swim-course`
           }
         }
       ]
@@ -225,16 +228,31 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+6287700303645",
+        "telephone": PHONE,
         "contactType": "customer service",
-        "contactOption": "WhatsApp",
         "areaServed": "ID",
         "availableLanguage": ["Indonesian", "English"]
       }
     ],
     "sameAs": [
-      "https://www.instagram.com/lotus_semarang",
-      "https://maps.app.goo.gl/uX3L3Yq9HwHwHwHw"
+      INSTAGRAM_URL,
+      MAPS_URL
+    ]
+  };
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      clinic,
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        "url": SITE_URL,
+        "name": SITE_NAME,
+        "alternateName": BRAND_NAME,
+        "inLanguage": "id-ID",
+        "publisher": { "@id": CLINIC_ID }
+      }
     ]
   };
 
@@ -245,8 +263,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
     >
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
