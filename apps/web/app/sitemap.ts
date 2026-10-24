@@ -1,12 +1,13 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lotussemarang.com";
+  const baseUrl = SITE_URL;
   const now = new Date();
 
   return [
     {
-      url: `${baseUrl}`,
+      url: `${baseUrl}/`,
       lastModified: now,
       changeFrequency: "daily",
       priority: 1.0,

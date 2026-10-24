@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { HidroterapiClient } from "@/components/HidroterapiClient";
+import { SITE_URL, breadcrumbJsonLd, clinicRef, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Kolam Hidroterapi Privat Semi-Outdoor Semarang | Lotus Health",
+export const metadata: Metadata = pageMetadata({
+  title: "Kolam Hidroterapi Privat Semarang",
   description:
-    "Cari kolam hidroterapi privat di Semarang? Lotus Health menyediakan fisioterapi media air semi-outdoor untuk pemulihan pinggang, lutut, saraf, pasca stroke, dan bumil.",
+    "Kolam hidroterapi privat semi-outdoor di Semarang: terapi air untuk pinggang, lutut, saraf, pasca stroke & ibu hamil. 1 pasien didampingi 1 fisioterapis.",
+  path: "/layanan/hidroterapi",
   keywords: [
     "hidroterapi semarang",
     "kolam hidroterapi semarang",
@@ -14,72 +16,27 @@ export const metadata: Metadata = {
     "hydrotherapy semarang",
     "kolam renang privat semarang",
   ],
-  alternates: {
-    canonical: "/layanan/hidroterapi",
-    languages: {
-      "id-ID": "/layanan/hidroterapi",
-      "en-US": "/layanan/hidroterapi",
-      "x-default": "/layanan/hidroterapi",
-    },
-  },
-  openGraph: {
-    title: "Kolam Hidroterapi Privat Semi-Outdoor di Semarang | Lotus Health",
-    description: "Kolam hidroterapi privat semi-outdoor di Semarang dengan pendampingan 1 pasien 1 fisioterapis dan privasi terjaga.",
-    url: "https://lotussemarang.com/layanan/hidroterapi",
-    images: [{ url: "/images/hero-1.webp", width: 1200, height: 630, alt: "Hidroterapi Semi-Outdoor Semarang Lotus Health" }],
-  },
-};
+  imageAlt: "Hidroterapi Semi-Outdoor di Lotus Semarang",
+});
 
 export default function HidroterapiPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      breadcrumbJsonLd([
+        { name: "Beranda", path: "/" },
+        { name: "Layanan", path: "/#layanan" },
+        { name: "Hidroterapi Privat Semarang", path: "/layanan/hidroterapi" },
+      ]),
       {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Beranda",
-            "item": "https://lotussemarang.com"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Layanan",
-            "item": "https://lotussemarang.com/#layanan"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Hidroterapi Privat Semarang",
-            "item": "https://lotussemarang.com/layanan/hidroterapi"
-          }
-        ]
-      },
-      {
-        "@type": "MedicalProcedure",
+        "@type": "Service",
+        "@id": `${SITE_URL}/layanan/hidroterapi#service`,
         "name": "Kolam Hidroterapi Privat Semi-Outdoor Semarang",
         "description": "Fisioterapi media air di kolam semi-outdoor privat Semarang untuk rehabilitasi saraf, kelumpuhan pasca stroke, keluhan persendian, nyeri pinggang, dan relaksasi kehamilan.",
-        "procedureType": "NonSurgicalProcedure",
-        "bodyLocation": "Full Body",
-        "relevantSpecialty": {
-          "@type": "MedicalSpecialty",
-          "name": "Physiotherapy"
-        },
-        "provider": {
-          "@type": "MedicalClinic",
-          "name": "Lotus Health, Beauty & Care",
-          "telephone": "+6287700303645",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Jl. Pamularsih No. 90/100, Gisikdrono, Semarang Barat",
-            "addressLocality": "Semarang",
-            "addressRegion": "Jawa Tengah",
-            "postalCode": "50149",
-            "addressCountry": "ID"
-          }
-        }
+        "url": `${SITE_URL}/layanan/hidroterapi`,
+        "serviceType": "Hidroterapi",
+        "areaServed": { "@type": "City", "name": "Semarang" },
+        "provider": clinicRef
       }
     ]
   };

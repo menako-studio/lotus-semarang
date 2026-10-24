@@ -1,26 +1,17 @@
 import { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/seo";
 
+/* `/_next/` must stay crawlable: it serves the JS/CSS Googlebot needs to
+ * render pages. Blocking it makes Google index an unstyled, partial page. */
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lotussemarang.com";
-
   return {
     rules: [
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/_next/", "/admin/"],
-      },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/", "/_next/", "/admin/"],
-      },
-      {
-        userAgent: "Googlebot-Image",
-        allow: ["/images/", "/icon.png", "/logo.png", "/og-image.jpg"],
+        disallow: ["/api/", "/admin/"],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
-    host: baseUrl,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

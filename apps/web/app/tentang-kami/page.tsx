@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { TentangKamiClient } from "@/components/TentangKamiClient";
+import { breadcrumbJsonLd, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Tentang Kami | Lotus Akupunktur, Hidroterapi, Fisioterapi Semarang",
+export const metadata: Metadata = pageMetadata({
+  title: "Tentang Kami & drg. Arini Jannata",
   description:
-    "Didirikan tahun 2014 oleh drg. Arini Jannata, S.Tr. Akup, MM. Lotus Semarang menghadirkan pelayanan perawatan kesehatan yang profesional, nyaman, dan memperhatikan kebutuhan setiap pasien.",
+    "Didirikan 2014 oleh drg. Arini Jannata, S.Tr. Akup, MM, Lotus Semarang memberi perawatan akupunktur, hidroterapi & fisioterapi yang profesional dan personal.",
+  path: "/tentang-kami",
   keywords: [
     "lotus semarang",
     "drg arini jannata",
@@ -13,34 +15,15 @@ export const metadata: Metadata = {
     "klinik kesehatan privat semarang",
     "fisioterapi privat semarang",
   ],
-  alternates: {
-    canonical: "/tentang-kami",
-    languages: {
-      "id-ID": "/tentang-kami",
-      "en-US": "/tentang-kami",
-      "x-default": "/tentang-kami",
-    },
-  },
-};
+});
 
 export default function TentangKamiPage() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Beranda",
-        "item": "https://lotussemarang.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Tentang Kami",
-        "item": "https://lotussemarang.com/tentang-kami"
-      }
-    ]
+    ...breadcrumbJsonLd([
+      { name: "Beranda", path: "/" },
+      { name: "Tentang Kami", path: "/tentang-kami" },
+    ]),
   };
 
   return (
